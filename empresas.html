@@ -53,7 +53,7 @@
             --color-surface-alt: #eef0f3;
             --color-text: #111215;
             --color-muted: #5f6470;
-            --color-accent: #00b45a;
+            --color-accent: #10B981;
             --color-border: rgba(17, 18, 21, 0.08);
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --radius-md: 18px;
@@ -132,7 +132,7 @@
         .btn-primary {
             background: var(--color-accent);
             color: #02130a;
-            box-shadow: 0 14px 30px rgba(0, 180, 90, 0.2);
+            box-shadow: 0 14px 30px rgba(16, 185, 129, 0.2);
         }
 
         .btn-ghost {
@@ -223,34 +223,118 @@
         }
 
         .hero-visual {
-            min-height: 420px;
+            min-height: 460px;
             border-radius: var(--radius-lg);
-            background: radial-gradient(circle at top left, rgba(0, 180, 90, 0.12), transparent 55%),
-                        linear-gradient(145deg, #ffffff, #edf1f4 60%);
+            background: #f5f5f7;
             border: 1px solid var(--color-border);
             box-shadow: var(--shadow-soft);
             position: relative;
             overflow: hidden;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: 16% 12% 20% 12%;
-            border-radius: 32px;
-            border: 1px solid rgba(17, 18, 21, 0.12);
-            background: linear-gradient(180deg, #ffffff, #f3f4f7);
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
         }
 
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            left: 12%;
-            bottom: 14%;
-            width: 200px;
-            height: 140px;
-            border-radius: 24px;
-            background: linear-gradient(120deg, rgba(0, 180, 90, 0.18), rgba(0, 180, 90, 0));
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        .product-image-container {
+            background: #f5f5f7;
+            border-radius: 18px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-surface);
+            border-radius: 18px;
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.2rem 1.4rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: middle;
+        }
+
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--color-text);
+            background: #f9fafb;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .product-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            margin-right: 0.75rem;
+            color: #c7c9cf;
+        }
+
+        .product-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .section-title {
@@ -354,6 +438,10 @@
             .hero-grid {
                 grid-template-columns: 1fr;
             }
+
+            .equipment-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 600px) {
@@ -372,6 +460,10 @@
 
             .hero-actions .btn {
                 width: 100%;
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -426,7 +518,172 @@
                     <a href="/salva/" class="btn btn-ghost">Volver a reparación</a>
                 </div>
             </div>
-            <div class="hero-visual" aria-hidden="true"></div>
+            <div class="hero-visual">
+                <img src="https://www.apple.com/newsroom/images/product/mac/lifestyle/Apple-MacBook-Pro-M3-chip-240129.jpg.large.jpg" alt="Espacio de trabajo con MacBook Pro en uso">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Equipos disponibles para leasing</h2>
+                <p>Hardware Apple actualizado, listo para operar con continuidad y soporte local.</p>
+            </div>
+            <div class="equipment-grid">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-2up-hero-240129.jpg.large.jpg" alt="MacBook Pro disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>MacBook Pro</h3>
+                        <p>Potencia para equipos creativos y analíticos que necesitan rendimiento sostenido.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M3-hero-240304.jpg.large.jpg" alt="MacBook Air disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>MacBook Air</h3>
+                        <p>Ligero, silencioso y listo para trabajo híbrido con gran autonomía.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-iMac-hero-240130.jpg.large.jpg" alt="iMac disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>iMac</h3>
+                        <p>Todo en uno elegante para salas de diseño, recepción y operaciones.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-240507.jpg.large.jpg" alt="iPad Pro disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>iPad Pro</h3>
+                        <p>Movilidad total para ventas, inspecciones o flujos en campo.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-Mac-mini-hero-240130.jpg.large.jpg" alt="Mac mini disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Mac mini</h3>
+                        <p>Compacto, eficiente y perfecto para estaciones compartidas.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-Mac-Studio-hero-240130.jpg.large.jpg" alt="Studio Display disponible para leasing">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Studio Display</h3>
+                        <p>Imagen precisa para equipos creativos, edición y contenido premium.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comparativo rápido de leasing</h2>
+                <p>Elige el equipo ideal con una vista clara por perfil de uso.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Equipo</th>
+                            <th>Perfil ideal</th>
+                            <th>Ventaja clave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="6" y="6" width="36" height="18" rx="3"></rect>
+                                        <rect x="2" y="26" width="44" height="4" rx="2"></rect>
+                                    </svg>
+                                </span>
+                                MacBook Pro
+                            </td>
+                            <td>Creatividad avanzada, data y desarrollo.</td>
+                            <td>Rendimiento sostenido.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="6" y="6" width="36" height="18" rx="3"></rect>
+                                        <rect x="2" y="26" width="44" height="4" rx="2"></rect>
+                                    </svg>
+                                </span>
+                                MacBook Air
+                            </td>
+                            <td>Equipos móviles y operación híbrida.</td>
+                            <td>Ligereza y autonomía.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="10" y="4" width="28" height="20" rx="2"></rect>
+                                        <rect x="18" y="24" width="12" height="4" rx="2"></rect>
+                                    </svg>
+                                </span>
+                                iMac
+                            </td>
+                            <td>Recepción, diseño y operaciones fijas.</td>
+                            <td>Todo en uno elegante.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="8" y="4" width="32" height="24" rx="3"></rect>
+                                    </svg>
+                                </span>
+                                iPad Pro
+                            </td>
+                            <td>Ventas, campo y flujos táctiles.</td>
+                            <td>Movilidad total.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="12" y="8" width="24" height="16" rx="4"></rect>
+                                    </svg>
+                                </span>
+                                Mac mini
+                            </td>
+                            <td>Estaciones compartidas y automatización.</td>
+                            <td>Compacto y eficiente.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="product-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 48 32" fill="currentColor">
+                                        <rect x="8" y="4" width="32" height="18" rx="2"></rect>
+                                        <rect x="16" y="22" width="16" height="4" rx="2"></rect>
+                                    </svg>
+                                </span>
+                                Studio Display
+                            </td>
+                            <td>Creatividad, edición y revisión de color.</td>
+                            <td>Visual premium.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 

@@ -61,8 +61,8 @@
             --color-surface-strong: #efeff2;
             --color-text: #0b0c0f;
             --color-muted: #5b5f69;
-            --color-accent: #0071e3;
-            --color-accent-soft: rgba(0, 113, 227, 0.12);
+            --color-accent: #10B981;
+            --color-accent-soft: rgba(16, 185, 129, 0.12);
             --color-border: rgba(15, 17, 23, 0.08);
             --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             --radius-sm: 12px;
@@ -167,7 +167,7 @@
         .btn-primary {
             background: var(--color-accent);
             color: #fff;
-            box-shadow: 0 18px 36px rgba(0, 113, 227, 0.24);
+            box-shadow: 0 18px 36px rgba(16, 185, 129, 0.24);
         }
 
         .btn-primary:hover {
@@ -296,20 +296,19 @@
             position: relative;
             border-radius: var(--radius-lg);
             min-height: 520px;
-            background: radial-gradient(circle at top left, rgba(0, 113, 227, 0.08), transparent 55%),
-                        linear-gradient(140deg, #ffffff, #f0f1f4 60%);
+            background: #f5f5f7;
             border: 1px solid var(--color-border);
             box-shadow: var(--shadow-soft);
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2.5rem;
+            padding: 40px;
         }
 
         .hero-media img {
             width: 100%;
-            max-width: 520px;
+            max-width: 100%;
             object-fit: contain;
         }
 
@@ -374,37 +373,53 @@
             color: var(--color-muted);
         }
 
-        .device-section {
-            padding: 6rem 0;
-        }
-
-        .device-grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
         }
 
-        .device-copy p {
-            margin-top: 1.2rem;
-            max-width: 520px;
-        }
-
-        .device-media {
-            border-radius: var(--radius-lg);
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            padding: 2.5rem;
-            min-height: 380px;
+        .product-image-container {
+            background: #f5f5f7;
+            border-radius: 18px;
+            padding: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .device-media img {
-            max-height: 360px;
-            width: auto;
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
             object-fit: contain;
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .product-card-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .steps-grid {
@@ -452,9 +467,9 @@
 
         .business-media {
             border-radius: var(--radius-lg);
-            background: #fff;
+            background: #f5f5f7;
             border: 1px solid var(--color-border);
-            padding: 2.5rem;
+            padding: 40px;
             min-height: 400px;
             display: flex;
             align-items: center;
@@ -607,7 +622,6 @@
             }
 
             .hero-grid,
-            .device-grid,
             .business-grid {
                 grid-template-columns: 1fr;
             }
@@ -700,8 +714,8 @@
                     <span>2 talleres en ciudad</span>
                 </div>
             </div>
-            <div class="hero-media" aria-hidden="true">
-                <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-15-Pro-lineup-230912.jpg" alt="iPhone 15 Pro lineup">
+            <div class="hero-media">
+                <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="iPhone 16 en acabado oscuro">
                 <div class="hero-badge">Apple-native. Control total.</div>
             </div>
         </div>
@@ -747,54 +761,53 @@
         </div>
     </section>
 
-    <section class="device-section section-muted">
-        <div class="container device-grid">
-            <div class="device-copy">
-                <span class="eyebrow">iPhone</span>
-                <h2>El centro de tu día.</h2>
-                <p>Reparamos pantalla, batería, cámaras y conectividad. Sin excusas. Sin vueltas. Lo dejas y sales con un plan claro.</p>
+    <section class="section-muted" id="equipos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Servicios por dispositivo.</h2>
+                <p>Reparamos cada equipo con piezas correctas y procesos Apple-first.</p>
             </div>
-            <div class="device-media">
-                <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-15-lineup-230912.jpg" alt="iPhone 15 lineup">
-            </div>
-        </div>
-    </section>
-
-    <section class="device-section">
-        <div class="container device-grid">
-            <div class="device-media">
-                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-14-and-16-inch-M2-Pro-M2-Max-hero-230117.jpg" alt="MacBook Pro 14 and 16">
-            </div>
-            <div class="device-copy">
-                <span class="eyebrow">MacBook</span>
-                <h2>Tu estación de control.</h2>
-                <p>Desde boards críticos hasta proyectos creativos. Recuperamos tu Mac con precisión y control de temperatura, batería y rendimiento.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="device-section section-muted">
-        <div class="container device-grid">
-            <div class="device-copy">
-                <span class="eyebrow">iPad</span>
-                <h2>Portátil. Potente. Siempre listo.</h2>
-                <p>Reparamos pantallas y conectividad, optimizamos tu flujo de trabajo y devolvemos tu iPad con la fluidez que esperas.</p>
-            </div>
-            <div class="device-media">
-                <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-230509.jpg" alt="iPad Pro hero">
-            </div>
-        </div>
-    </section>
-
-    <section class="device-section">
-        <div class="container device-grid">
-            <div class="device-media">
-                <img src="https://www.apple.com/newsroom/images/product/watch/standard/Apple-Watch-Series-9-hero-230912.jpg" alt="Apple Watch Series 9">
-            </div>
-            <div class="device-copy">
-                <span class="eyebrow">Apple Watch</span>
-                <h2>Pequeño. Crítico.</h2>
-                <p>Si el reloj deja de responder, el ritmo se corta. Lo devolvemos funcionando con pruebas completas y garantía real.</p>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="iPhone 16 en vista frontal">
+                    </div>
+                    <div class="product-card-content">
+                        <span class="eyebrow">iPhone</span>
+                        <h3>El centro de tu día.</h3>
+                        <p>Reparamos pantalla, batería, cámaras y conectividad. Sin excusas. Sin vueltas.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-2up-hero-240129.jpg.large.jpg" alt="MacBook Pro abierto en escritorio">
+                    </div>
+                    <div class="product-card-content">
+                        <span class="eyebrow">MacBook</span>
+                        <h3>Tu estación de control.</h3>
+                        <p>Recuperamos tu Mac con precisión y control de temperatura, batería y rendimiento.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-240507.jpg.large.jpg" alt="iPad Pro en posición horizontal">
+                    </div>
+                    <div class="product-card-content">
+                        <span class="eyebrow">iPad</span>
+                        <h3>Portátil. Potente. Siempre listo.</h3>
+                        <p>Reparamos pantallas y conectividad para mantener tu iPad fluido y estable.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://www.apple.com/newsroom/images/2024/09/introducing-apple-watch-series-10/article/Apple-Watch-Series-10-hero-240909_inline.jpg.large.jpg" alt="Apple Watch Series 10 con correa deportiva">
+                    </div>
+                    <div class="product-card-content">
+                        <span class="eyebrow">Apple Watch</span>
+                        <h3>Pequeño. Crítico.</h3>
+                        <p>Pruebas completas y garantía real para que tu reloj no vuelva a fallar.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -861,7 +874,7 @@
                 </div>
             </div>
             <div class="business-media">
-                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M2-hero-220606.jpg" alt="MacBook Air M2">
+                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M3-hero-240304.jpg.large.jpg" alt="MacBook Air M3 en vista lateral">
             </div>
         </div>
     </section>
