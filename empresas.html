@@ -48,17 +48,17 @@
 
     <style>
         :root {
-            --color-black: #080809;
-            --color-graphite: #121318;
-            --color-ash: #191a20;
-            --color-white: #f7f7f7;
-            --color-muted: #b7b9c3;
-            --color-accent: #00d26a;
-            --color-border: rgba(255, 255, 255, 0.08);
+            --color-bg: #f6f7f8;
+            --color-surface: #ffffff;
+            --color-surface-alt: #eef0f3;
+            --color-text: #111215;
+            --color-muted: #5f6470;
+            --color-accent: #00b45a;
+            --color-border: rgba(17, 18, 21, 0.08);
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --radius-md: 18px;
             --radius-lg: 28px;
-            --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.45);
+            --shadow-soft: 0 24px 50px rgba(16, 24, 40, 0.12);
             --transition: 200ms ease;
         }
 
@@ -70,8 +70,8 @@
 
         body {
             font-family: var(--font-family);
-            background: var(--color-black);
-            color: var(--color-white);
+            background: var(--color-bg);
+            color: var(--color-text);
             line-height: 1.5;
         }
 
@@ -131,12 +131,14 @@
 
         .btn-primary {
             background: var(--color-accent);
-            color: #04140b;
+            color: #02130a;
+            box-shadow: 0 14px 30px rgba(0, 180, 90, 0.2);
         }
 
         .btn-ghost {
             border-color: var(--color-border);
-            color: var(--color-white);
+            color: var(--color-text);
+            background: var(--color-surface);
         }
 
         .header {
@@ -145,14 +147,14 @@
             width: 100%;
             z-index: 1000;
             backdrop-filter: blur(12px);
-            background: rgba(11, 11, 13, 0.6);
+            background: rgba(246, 247, 248, 0.88);
             border-bottom: 1px solid transparent;
             transition: border-color var(--transition), background var(--transition);
         }
 
         .header.scrolled {
             border-bottom-color: var(--color-border);
-            background: rgba(11, 11, 13, 0.92);
+            background: rgba(255, 255, 255, 0.96);
         }
 
         .header-container {
@@ -179,7 +181,7 @@
 
         .nav-links a.active,
         .nav-links a:hover {
-            color: var(--color-white);
+            color: var(--color-text);
         }
 
         .nav-cta {
@@ -199,7 +201,7 @@
             width: 24px;
             height: 2px;
             margin: 5px auto;
-            background: var(--color-white);
+            background: var(--color-text);
         }
 
         .hero {
@@ -223,7 +225,9 @@
         .hero-visual {
             min-height: 420px;
             border-radius: var(--radius-lg);
-            background: linear-gradient(145deg, #1c1d25, #0f1015 60%);
+            background: radial-gradient(circle at top left, rgba(0, 180, 90, 0.12), transparent 55%),
+                        linear-gradient(145deg, #ffffff, #edf1f4 60%);
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow-soft);
             position: relative;
             overflow: hidden;
@@ -234,7 +238,8 @@
             position: absolute;
             inset: 16% 12% 20% 12%;
             border-radius: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(17, 18, 21, 0.12);
+            background: linear-gradient(180deg, #ffffff, #f3f4f7);
         }
 
         .hero-visual::after {
@@ -245,7 +250,7 @@
             width: 200px;
             height: 140px;
             border-radius: 24px;
-            background: linear-gradient(120deg, rgba(0, 210, 106, 0.3), rgba(0, 210, 106, 0));
+            background: linear-gradient(120deg, rgba(0, 180, 90, 0.18), rgba(0, 180, 90, 0));
         }
 
         .section-title {
@@ -265,7 +270,7 @@
         .panel {
             padding: 2rem;
             border-radius: var(--radius-md);
-            background: var(--color-graphite);
+            background: var(--color-surface);
             border: 1px solid var(--color-border);
         }
 
@@ -276,7 +281,7 @@
         }
 
         .steps {
-            background: var(--color-graphite);
+            background: var(--color-surface-alt);
         }
 
         .cta {
@@ -287,7 +292,7 @@
         .footer {
             padding: 3rem 0 2rem;
             border-top: 1px solid var(--color-border);
-            background: #070708;
+            background: var(--color-surface-alt);
         }
 
         .footer-grid {
@@ -310,7 +315,7 @@
         .mobile-menu {
             position: fixed;
             inset: 0;
-            background: rgba(5, 5, 6, 0.96);
+            background: rgba(250, 251, 252, 0.98);
             display: flex;
             flex-direction: column;
             padding: 2rem;
@@ -333,7 +338,7 @@
         .mobile-menu-close {
             background: transparent;
             border: none;
-            color: var(--color-white);
+            color: var(--color-text);
             font-size: 1.5rem;
         }
 
@@ -379,12 +384,11 @@
             </a>
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="/salva/">Inicio</a></li>
                     <li><a href="/salva/empresas.html" class="active">Empresas</a></li>
                     <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
                 </ul>
                 <div class="nav-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hablar con ventas</a>
+                    <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
                 </div>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
@@ -403,12 +407,11 @@
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
         </div>
         <ul class="mobile-menu-links">
-            <li><a href="/salva/">Inicio</a></li>
             <li><a href="/salva/empresas.html" class="active">Empresas</a></li>
             <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
         </ul>
         <div class="mobile-menu-cta">
-            <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hablar con ventas</a>
+            <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
         </div>
     </div>
 
