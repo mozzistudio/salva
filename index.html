@@ -1,1014 +1,392 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Salva Mi Máquina | Reparación y Leasing Apple en Panamá</title>
-    <meta name="description" content="Reparación Apple, leasing y soporte con respuesta inmediata en Panamá. Confianza real, diagnóstico claro, 6 meses de garantía.">
-    <meta name="keywords" content="reparación Apple Panamá, leasing Apple Panamá, servicio técnico Apple">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://salvamimaquina.com/">
-
-    <meta property="og:title" content="Salva Mi Máquina | Reparación y Leasing Apple en Panamá">
-    <meta property="og:description" content="Reparación, leasing y soporte Apple con respuesta inmediata. Hecho para gente que no puede perder tiempo.">
-    <meta property="og:url" content="https://salvamimaquina.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://salvamimaquina.com/images/og-home.jpg">
-    <meta property="og:locale" content="es_PA">
-
-    <link rel="icon" type="image/png" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
-    <link rel="apple-touch-icon" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Salva Mi Máquina",
-        "image": "https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png",
-        "description": "Reparación y leasing de equipos Apple en Panamá",
-        "@id": "https://salvamimaquina.com",
-        "url": "https://salvamimaquina.com",
-        "telephone": "+507-394-9351",
-        "address": [
-            {
-                "@type": "PostalAddress",
-                "streetAddress": "Vía Porras con Av. 31 Sur",
-                "addressLocality": "San Francisco, Panamá",
-                "addressCountry": "PA"
-            },
-            {
-                "@type": "PostalAddress",
-                "streetAddress": "PH Seawaves, planta baja",
-                "addressLocality": "Bella Vista, Panamá",
-                "addressCountry": "PA"
-            }
-        ],
-        "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
-        "priceRange": "$$",
-        "areaServed": "Panamá"
-    }
-    </script>
-
-    <style>
-        :root {
-            --color-bg: #ffffff;
-            --color-surface: #f5f5f7;
-            --color-surface-strong: #efeff2;
-            --color-text: #0b0c0f;
-            --color-muted: #5b5f69;
-            --color-accent: #10B981;
-            --color-accent-soft: rgba(16, 185, 129, 0.12);
-            --color-border: rgba(15, 17, 23, 0.08);
-            --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 32px;
-            --shadow-soft: 0 24px 60px rgba(15, 17, 23, 0.1);
-            --transition: 200ms ease;
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        h1 {
-            font-size: clamp(2.9rem, 6vw, 5rem);
-            line-height: 1.02;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            line-height: 1.08;
-        }
-
-        h3 {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-        }
-
-        p {
-            color: var(--color-muted);
-            font-size: 1.05rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 6.5rem 0;
-        }
-
-        .section-muted {
-            background: var(--color-surface);
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            font-size: 0.72rem;
-            color: var(--color-muted);
-            font-weight: 600;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.85rem 1.9rem;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--color-accent);
-            color: #fff;
-            box-shadow: 0 18px 36px rgba(16, 185, 129, 0.24);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-ghost {
-            border-color: var(--color-border);
-            color: var(--color-text);
-            background: transparent;
-        }
-
-        .btn-ghost:hover {
-            background: var(--color-surface-strong);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(14px);
-            background: rgba(255, 255, 255, 0.86);
-            border-bottom: 1px solid transparent;
-            transition: border-color var(--transition), background var(--transition);
-        }
-
-        .header.scrolled {
-            border-bottom-color: var(--color-border);
-            background: rgba(255, 255, 255, 0.96);
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-        }
-
-        .logo-image {
-            width: 150px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.2rem;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        .nav-links a {
-            color: var(--color-muted);
-            transition: color var(--transition);
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: var(--color-text);
-        }
-
-        .nav-cta {
-            margin-left: 2rem;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            margin: 5px auto;
-            background: var(--color-text);
-        }
-
-        .hero {
-            padding-top: 130px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-copy p {
-            max-width: 520px;
-            margin-top: 1.5rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .hero-highlights {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: var(--color-muted);
-        }
-
-        .hero-highlights span {
-            padding: 0.75rem 1rem;
-            border-radius: 999px;
-            background: var(--color-surface);
-            text-align: center;
-            color: var(--color-text);
-        }
-
-        .hero-media {
-            position: relative;
-            border-radius: var(--radius-lg);
-            min-height: 520px;
-            background: #f5f5f7;
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-soft);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-
-        .hero-media img {
-            width: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-
-        .hero-badge {
-            position: absolute;
-            bottom: 28px;
-            left: 28px;
-            padding: 0.65rem 1rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid var(--color-border);
-            font-size: 0.85rem;
-            color: var(--color-text);
-        }
-
-        .statement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .statement {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-title p {
-            max-width: 460px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .service-card {
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            min-height: 240px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .service-card span {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            font-size: 0.7rem;
-            color: var(--color-muted);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-image-container {
-            background: #f5f5f7;
-            border-radius: 18px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-image-container img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .product-card-content {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .step-card {
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
-            background: #fff;
-        }
-
-        .step-card strong {
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 0.6rem;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .why-card {
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-        }
-
-        .business {
-            background: var(--color-surface);
-        }
-
-        .business-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .business-media {
-            border-radius: var(--radius-lg);
-            background: #f5f5f7;
-            border: 1px solid var(--color-border);
-            padding: 40px;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .business-media img {
-            max-height: 360px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .proof {
-            background: var(--color-bg);
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .proof-card {
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
-            background: #fff;
-        }
-
-        .proof-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cta {
-            padding: 6rem 0 7rem;
-            text-align: center;
-        }
-
-        .cta h2 {
-            margin-bottom: 1rem;
-        }
-
-        .footer {
-            padding: 3.5rem 0 2rem;
-            border-top: 1px solid var(--color-border);
-            background: var(--color-surface);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer small {
-            color: var(--color-muted);
-            display: block;
-            margin-top: 1rem;
-        }
-
-        .footer-links li {
-            margin: 0.5rem 0;
-            color: var(--color-muted);
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            border-top: 1px solid var(--color-border);
-            padding-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            color: var(--color-muted);
-            font-size: 0.85rem;
-        }
-
-        .whatsapp-widget {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 999;
-        }
-
-        .whatsapp-btn {
-            width: 56px;
-            height: 56px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.28);
-            transition: transform var(--transition);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .whatsapp-btn svg {
-            width: 30px;
-            height: 30px;
-            color: #fff;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.98);
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            transform: translateX(100%);
-            transition: transform var(--transition);
-            z-index: 2000;
-        }
-
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mobile-menu-links {
-            margin-top: 3rem;
-            display: grid;
-            gap: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .mobile-menu-close {
-            background: transparent;
-            border: none;
-            color: var(--color-text);
-            font-size: 1.5rem;
-        }
-
-        @media (max-width: 980px) {
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-grid,
-            .business-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-media,
-            .device-media,
-            .business-media {
-                min-height: 320px;
-            }
-
-            .hero-highlights {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            section {
-                padding: 4.5rem 0;
-            }
-
-            .hero {
-                padding-top: 110px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-actions .btn {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salva Mi Máquina | Reparación Apple Panamá y Servicio Técnico Premium</title>
+  <meta name="description" content="Reparación Apple Panamá con diagnóstico en 24 horas, garantía real y especialistas en iPhone, MacBook, iPad y Watch. Servicio técnico Apple en Ciudad de Panamá.">
+  <meta name="keywords" content="reparación apple panamá, servicio técnico apple panamá, reparar iphone panamá, reparar macbook panamá, arreglar ipad panamá, garantía reparación apple, técnico apple certificado panamá">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://salvamimaquina.com/">
+
+  <meta property="og:title" content="Salva Mi Máquina | Reparación Apple Panamá con garantía real">
+  <meta property="og:description" content="Diagnóstico en 24 horas, garantía de 6 meses y especialistas Apple en Panamá. Tu iPhone, MacBook, iPad y Watch vuelven a rendir como nuevos.">
+  <meta property="og:url" content="https://salvamimaquina.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://salvamimaquina.com/images/og-home.jpg">
+  <meta property="og:locale" content="es_PA">
+
+  <link rel="icon" type="image/png" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
+  <link rel="apple-touch-icon" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
-                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="150" height="36">
-            </a>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="/salva/empresas.html">Empresas</a></li>
-                    <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
-                </ul>
-                <div class="nav-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
-                </div>
-            </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
-        <div class="mobile-menu-header">
-            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
-                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="150" height="36">
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
-        </div>
-        <ul class="mobile-menu-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="/salva/empresas.html">Empresas</a></li>
-            <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
-        </ul>
-        <div class="mobile-menu-cta">
-            <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
-        </div>
+  <header class="header">
+    <div class="container">
+      <div class="logo">Salva Mi Máquina</div>
+      <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#dispositivos">Dispositivos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="empresas.html">Empresas</a>
+      </nav>
+      <a class="btn btn-primary" href="https://wa.me/50769784955">Hablar por WhatsApp</a>
     </div>
+  </header>
 
+  <main>
     <section class="hero" id="inicio">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <span class="eyebrow">Apple repair + leasing. Panamá.</span>
-                <h1>Tu Apple no se detiene. Punto.</h1>
-                <p>Reparación, leasing y soporte Apple con ritmo de ciudad. Diagnóstico claro, decisiones rápidas y un equipo que responde como tú trabajas.</p>
-                <div class="hero-actions">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20reparar%20mi%20equipo%20Apple" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero diagnóstico</a>
-                    <a href="/salva/empresas.html" class="btn btn-ghost">Ver leasing empresarial</a>
-                </div>
-                <div class="hero-highlights">
-                    <span>Diagnóstico en 24h</span>
-                    <span>6 meses de garantía real</span>
-                    <span>2 talleres en ciudad</span>
-                </div>
-            </div>
-            <div class="hero-media">
-                <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="iPhone 16 en acabado oscuro">
-                <div class="hero-badge">Apple-native. Control total.</div>
-            </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Reparación Apple Panamá</p>
+          <h1>Tu máquina no falla. Lo que falla es el tiempo que pierdes sin ella.</h1>
+          <p>Salva Mi Máquina es el servicio técnico Apple en Ciudad de Panamá que actúa rápido y con precisión. Diagnóstico en 24 horas, técnicos Apple certificados en la práctica diaria, y una garantía de reparación Apple de 6 meses que sí se respeta. Recupera tu ritmo con un equipo que entiende lo que tu iPhone, MacBook, iPad o Apple Watch significa para tu vida digital. Punto.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50769784955">Agendar reparación</a>
+            <a class="link-arrow" href="#servicios">Conocer servicios <span>→</span></a>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badge">Diagnóstico en 24 horas</div>
+            <div class="trust-badge">Garantía real 6 meses</div>
+            <div class="trust-badge">Especialistas Apple en Panamá</div>
+          </div>
         </div>
+        <div class="hero-media">
+          <img src="https://www.apple.com/v/macbook-pro/al/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg" alt="MacBook Pro hero para reparación Apple Panamá" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <section class="section-muted">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cuando tu Apple falla, todo se frena.</h2>
-                <p>Tu tiempo vale demasiado para esperar. Salva existe para resolverlo con calma, precisión y velocidad.</p>
-            </div>
-            <div class="statement-grid">
-                <div class="statement">Tu iPhone no puede quedarse sin señal.</div>
-                <div class="statement">Tu Mac no puede detener tus entregas.</div>
-                <div class="statement">Tu equipo no puede fallar en medio de una reunión.</div>
-            </div>
+    <section class="section-dark" id="dolor">
+      <div class="container">
+        <p class="eyebrow">Lo que se siente</p>
+        <h2>Sabemos lo que pasa cuando todo depende de tu equipo.</h2>
+        <p>Un iPhone apagado en medio de una venta, un MacBook que no enciende antes de una entrega, un iPad que pierde el lápiz justo cuando llega la idea. Eso no es solo una reparación pendiente, es estrés real. Por eso creamos un servicio técnico Apple en Panamá que responde con velocidad, claridad y soluciones definitivas. Te escuchamos, diagnosticamos, y te devolvemos el control con un plan claro y sin excusas.</p>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Tu trabajo se detiene</h3>
+            <p>Cuando el MacBook falla, todo tu flujo se corta. No podés esperar días sin saber qué pasa. Aquí tienes respuestas en 24 horas y reparación inmediata si aprobás el plan.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Tu vida digital se desconecta</h3>
+            <p>Arreglar iPhone en Panamá no debería ser un salto de fe. Te damos transparencia total, repuestos de calidad y seguimiento en cada etapa.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>El miedo a una mala reparación</h3>
+            <p>Sabés que un arreglo mal hecho cuesta más. Por eso somos Apple-only: hacemos reparaciones precisas y garantizadas que duran.</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="servicios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lo que hacemos. Sin rodeos.</h2>
-                <p>Reparamos, rentamos y cuidamos equipos Apple con una sola meta: que tu día siga en marcha.</p>
-            </div>
-            <div class="service-grid">
-                <div class="service-card">
-                    <span>Reparación</span>
-                    <h3>Arreglamos lo esencial.</h3>
-                    <p>iPhone, MacBook, iPad, Apple Watch. Diagnóstico claro, piezas correctas, entrega impecable.</p>
-                </div>
-                <div class="service-card">
-                    <span>Leasing</span>
-                    <h3>Equipos listos para trabajar.</h3>
-                    <p>Apple para tu operación sin inversión inicial. Contratos simples, reposición rápida, cero fricción.</p>
-                </div>
-                <div class="service-card">
-                    <span>Soporte</span>
-                    <h3>Te respondemos.</h3>
-                    <p>Seguimiento directo con técnicos Apple. Cuando importa, respondemos en horas, no en días.</p>
-                </div>
-            </div>
+      <div class="container">
+        <p class="eyebrow">Servicios clave</p>
+        <h2>Todo lo que tu ecosistema Apple necesita, en un solo lugar.</h2>
+        <p>En Salva Mi Máquina combinamos reparación avanzada, leasing inteligente y soporte técnico experto. Si tu prioridad es reparar iPhone en Panamá o resolver una falla crítica en tu MacBook, estás en el lugar correcto. Si tu empresa necesita equipos Apple sin inversión inicial, también. Así de simple.</p>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">🔧</div>
+            <h3>Reparación Apple</h3>
+            <p>Reparamos iPhone, MacBook, iPad y Apple Watch con procesos precisos y garantía reparación Apple de 6 meses. Te explicamos el diagnóstico, el costo y el tiempo real antes de tocar tu equipo.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">💼</div>
+            <h3>Leasing Apple para empresas</h3>
+            <p>Equipos Apple listos para trabajar, sin inversión inicial. Nuestro leasing tecnológico en Panamá incluye configuración, mantenimiento y renovación planificada.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🎧</div>
+            <h3>Soporte técnico continuo</h3>
+            <p>Soporte local en Ciudad de Panamá para que tu ecosistema Apple no pare. Presencial o remoto, con respuesta rápida y seguimiento real.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="section-muted" id="equipos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Servicios por dispositivo.</h2>
-                <p>Reparamos cada equipo con piezas correctas y procesos Apple-first.</p>
-            </div>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="iPhone 16 en vista frontal">
-                    </div>
-                    <div class="product-card-content">
-                        <span class="eyebrow">iPhone</span>
-                        <h3>El centro de tu día.</h3>
-                        <p>Reparamos pantalla, batería, cámaras y conectividad. Sin excusas. Sin vueltas.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-2up-hero-240129.jpg.large.jpg" alt="MacBook Pro abierto en escritorio">
-                    </div>
-                    <div class="product-card-content">
-                        <span class="eyebrow">MacBook</span>
-                        <h3>Tu estación de control.</h3>
-                        <p>Recuperamos tu Mac con precisión y control de temperatura, batería y rendimiento.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-240507.jpg.large.jpg" alt="iPad Pro en posición horizontal">
-                    </div>
-                    <div class="product-card-content">
-                        <span class="eyebrow">iPad</span>
-                        <h3>Portátil. Potente. Siempre listo.</h3>
-                        <p>Reparamos pantallas y conectividad para mantener tu iPad fluido y estable.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/2024/09/introducing-apple-watch-series-10/article/Apple-Watch-Series-10-hero-240909_inline.jpg.large.jpg" alt="Apple Watch Series 10 con correa deportiva">
-                    </div>
-                    <div class="product-card-content">
-                        <span class="eyebrow">Apple Watch</span>
-                        <h3>Pequeño. Crítico.</h3>
-                        <p>Pruebas completas y garantía real para que tu reloj no vuelva a fallar.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
+    <section class="section-muted" id="dispositivos">
+      <div class="container">
+        <p class="eyebrow">Dispositivos</p>
+        <h2>Lo que importa, tratado como héroe.</h2>
+        <p>Cada dispositivo Apple tiene una función en tu día. En Salva Mi Máquina entendemos el valor emocional y operativo de cada pantalla, cada batería y cada archivo. Por eso ofrecemos diagnóstico especializado para reparar MacBook en Panamá, arreglar iPad en Panamá o devolver la precisión a tu Apple Watch.</p>
+      </div>
     </section>
 
-    <section class="section-muted" id="como-funciona">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cómo funciona.</h2>
-                <p>Simple. Visible. Sin fricción.</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <strong>1. Agenda</strong>
-                    <p>Escríbenos por WhatsApp. Te respondemos con hora y sede.</p>
-                </div>
-                <div class="step-card">
-                    <strong>2. Diagnóstico</strong>
-                    <p>Revisamos tu equipo y te damos un plan claro en 24 horas.</p>
-                </div>
-                <div class="step-card">
-                    <strong>3. Entrega</strong>
-                    <p>Reparado, probado y listo para volver a tu ritmo.</p>
-                </div>
-            </div>
+    <section>
+      <div class="container split">
+        <div class="device-copy">
+          <h2>iPhone — El centro de tu vida digital</h2>
+          <p>Tu iPhone no es solo un teléfono. Es tu comunicación, tu banca, tus fotos y tu seguridad. Cuando falla, todo se vuelve urgente. Somos el taller para reparar iPhone Panamá que ofrece diagnóstico en 24 horas y reparación con trazabilidad real.</p>
+          <p>Reparamos pantallas, baterías, cámaras, conectores y problemas de software con un enfoque especializado en Apple. También optimizamos rendimiento y respaldo de datos para que tu información vuelva a estar segura.</p>
+          <p>Si necesitás arreglar iPhone en Ciudad de Panamá con un equipo que te habla claro, este es tu lugar. Sin excusas. Sin humo.</p>
+          <div class="device-list">
+            <span>• Cambios de pantalla OLED y cristal</span>
+            <span>• Baterías de alto rendimiento</span>
+            <span>• Reparación de Face ID y cámaras</span>
+            <span>• Recuperación de datos y software</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50769784955">Agendar reparación iPhone</a>
+          </div>
         </div>
+        <div class="device-media">
+          <img src="https://www.apple.com/v/iphone/home/bu/images/overview/select/iphone_15_pro__bpnjhcrxofqu_large.png" alt="iPhone 15 Pro para reparar iPhone Panamá" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <section id="por-que">
-        <div class="container">
-            <div class="section-title">
-                <h2>Por qué Salva.</h2>
-                <p>No prometemos lo imposible. Solo hacemos lo correcto, cada vez.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Tiempo primero</h3>
-                    <p>Si tu equipo es clave, el reloj manda. Respondemos rápido, sin excusas.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Solo Apple</h3>
-                    <p>Vivimos en el ecosistema Apple. Cada modelo, cada detalle.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Diagnóstico honesto</h3>
-                    <p>Te decimos lo que es. Sin inflar costos, sin historias.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Entrega impecable</h3>
-                    <p>Se repara, se prueba, se entrega perfecto. Ese es el estándar.</p>
-                </div>
-            </div>
+    <section class="section-muted">
+      <div class="container split reverse">
+        <div class="device-copy">
+          <h2>MacBook — Tu estación de poder</h2>
+          <p>Cuando un MacBook se apaga, tu negocio también. Reparamos MacBook en Panamá con precisión de laboratorio: lógica, pantallas, teclados, puertos y fallas de energía. Nuestro equipo trabaja solo con Apple, por eso vamos directo al problema.</p>
+          <p>Además, cuidamos tu información. Hacemos diagnósticos claros y planes de respaldo antes de intervenir. Si tu MacBook se usa para diseño, ventas o desarrollo, entendemos la presión y la urgencia.</p>
+          <p>Volvé a trabajar sin esperar semanas. Recuperá velocidad, estabilidad y seguridad en tu equipo.</p>
+          <div class="device-list">
+            <span>• Reparación de placas y corto circuito</span>
+            <span>• Pantallas Retina y backlight</span>
+            <span>• Baterías y cargadores MagSafe/USB-C</span>
+            <span>• Optimización térmica y limpieza profunda</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50769784955">Agendar reparación MacBook</a>
+          </div>
         </div>
+        <div class="device-media">
+          <img src="https://www.apple.com/v/macbook-pro/al/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg" alt="MacBook Pro para reparar MacBook Panamá" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <section class="business" id="empresas">
-        <div class="container business-grid">
+    <section>
+      <div class="container split">
+        <div class="device-copy">
+          <h2>iPad — Creatividad sin límites</h2>
+          <p>El iPad es tu estudio portátil. Cuando falla, la creatividad se interrumpe. Somos especialistas en arreglar iPad Panamá con soluciones concretas: pantallas, baterías, conectores y problemas de carga. Trabajamos con precisión para que el Apple Pencil y tu flujo vuelvan a sentirse naturales.</p>
+          <p>Sabemos que muchos iPad son herramientas de trabajo, educación y ventas. Por eso ofrecemos tiempos reales, seguimiento y garantía de seis meses. Reparación Apple Panamá con foco en resultados.</p>
+          <p>Traé tu iPad a nuestras sedes en San Francisco o Bella Vista. Te damos respuesta hoy.</p>
+          <div class="device-list">
+            <span>• Pantallas y cristal con tacto preciso</span>
+            <span>• Conectores y puertos de carga</span>
+            <span>• Restauración de iPadOS</span>
+            <span>• Revisión de audio y micrófonos</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50769784955">Agendar reparación iPad</a>
+          </div>
+        </div>
+        <div class="device-media">
+          <img src="https://www.apple.com/v/ipad-pro/ap/images/overview/hero/hero_ipad_702wx.jpg" alt="iPad Pro para arreglar iPad Panamá" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted">
+      <div class="container split reverse">
+        <div class="device-copy">
+          <h2>Apple Watch — Tu salud en tu muñeca</h2>
+          <p>El Apple Watch acompaña tu salud y tu ritmo diario. Cuando deja de medir o se apaga, se pierde información valiosa. Reparamos Apple Watch con limpieza profesional, cambio de batería y recuperación de sensores para que vuelvas a confiar en tus métricas.</p>
+          <p>Somos servicio técnico Apple Panamá con enfoque en precisión. Cada reparación se prueba a fondo para que el rendimiento sea consistente, desde las notificaciones hasta el seguimiento de entrenamiento.</p>
+          <p>Reparar tu Apple Watch aquí es recuperar tranquilidad, no solo un dispositivo.</p>
+          <div class="device-list">
+            <span>• Cambio de batería y optimización</span>
+            <span>• Reparación de pantalla y cristal</span>
+            <span>• Limpieza de sensores y audio</span>
+            <span>• Actualizaciones y restauración</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50769784955">Agendar reparación Watch</a>
+          </div>
+        </div>
+        <div class="device-media">
+          <img src="https://www.apple.com/v/watch/bn/images/overview/select/product_s11__c23ym6fc09me_large.png" alt="Apple Watch para servicio técnico Apple Panamá" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <p class="eyebrow">Proceso</p>
+        <h2>Así de simple. Así de claro.</h2>
+        <p>Reparar Apple en Panamá no debería ser confuso. Nuestro proceso está diseñado para darte claridad desde el primer mensaje, con tiempos reales y decisiones informadas. Cada paso está pensado para que vuelvas a trabajar sin incertidumbre.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-number">1</div>
             <div>
-                <span class="eyebrow">Empresas</span>
-                <h2>Tu operación no se detiene.</h2>
-                <p>Leasing Apple para equipos que trabajan duro. Renovación constante, soporte dedicado y control de costos mes a mes.</p>
-                <div class="hero-actions">
-                    <a href="/salva/empresas.html" class="btn btn-primary">Explorar leasing</a>
-                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20leasing%20Apple%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Hablar con un asesor</a>
-                </div>
+              <h3>Agenda</h3>
+              <p>Escribinos por WhatsApp o visítanos en San Francisco o Bella Vista. Registramos tu equipo, el problema y tu urgencia para priorizar.</p>
             </div>
-            <div class="business-media">
-                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M3-hero-240304.jpg.large.jpg" alt="MacBook Air M3 en vista lateral">
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div>
+              <h3>Diagnóstico</h3>
+              <p>En menos de 24 horas recibes un diagnóstico claro con costos, tiempos y opciones. Si aprobás, comenzamos de inmediato. Si no, tu equipo vuelve sin sorpresas.</p>
             </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div>
+              <h3>Entrega</h3>
+              <p>Probamos todo frente a ti y activamos la garantía reparación Apple de 6 meses. Salís con tu equipo listo, rápido y respaldado.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="proof" id="prueba">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pruebas claras.</h2>
-                <p>Confianza no se pide. Se demuestra con resultados.</p>
-            </div>
-            <div class="proof-grid">
-                <div class="proof-card">
-                    <h3>24h</h3>
-                    <p>Tiempo máximo para darte diagnóstico y presupuesto.</p>
-                </div>
-                <div class="proof-card">
-                    <h3>6 meses</h3>
-                    <p>Garantía real en cada reparación.</p>
-                </div>
-                <div class="proof-card">
-                    <h3>2 sedes</h3>
-                    <p>San Francisco y Bella Vista. Cerca, rápido.</p>
-                </div>
-                <div class="proof-card">
-                    <h3>Apple-first</h3>
-                    <p>Especialistas dedicados solo a Apple.</p>
-                </div>
-            </div>
+    <section class="section-muted" id="diferenciales">
+      <div class="container">
+        <p class="eyebrow">Por qué elegirnos</p>
+        <h2>Lo que importa cuando buscas técnico Apple certificado Panamá.</h2>
+        <p>Somos especialistas Apple en Panamá con enfoque único. No somos un taller genérico. Trabajamos solo con Apple y eso se nota: diagnóstico preciso, repuestos seleccionados y procesos medidos. Así cuidamos tu inversión y tu tranquilidad.</p>
+        <div class="reasons">
+          <div class="reason">
+            <h3>Diagnóstico en 24 horas</h3>
+            <p>Te damos claridad rápido para que puedas decidir. Sin tiempos muertos ni excusas.</p>
+          </div>
+          <div class="reason">
+            <h3>Garantía real de 6 meses</h3>
+            <p>Nuestra garantía reparación Apple está por escrito y se cumple. Punto.</p>
+          </div>
+          <div class="reason">
+            <h3>Apple-only specialists</h3>
+            <p>Solo Apple. Eso significa herramientas, conocimiento y procedimientos específicos.</p>
+          </div>
+          <div class="reason">
+            <h3>Soporte local en Panamá</h3>
+            <p>Estamos en Ciudad de Panamá con dos sedes y atención directa, no call centers.</p>
+          </div>
+          <div class="reason">
+            <h3>Transparencia total</h3>
+            <p>Te mostramos el problema, el costo y el tiempo. Así de simple.</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="cta" id="contacto">
-        <div class="container">
-            <span class="eyebrow">Listo para volver al ritmo.</span>
-            <h2>Tu equipo no puede esperar.</h2>
-            <p>Agenda diagnóstico o pide soporte ahora. Respuesta directa por WhatsApp.</p>
-            <div class="hero-actions" style="justify-content:center;">
-                <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hablar con Salva</a>
-                <a href="/salva/empresas.html" class="btn btn-ghost">Necesito leasing</a>
+    <section class="section-dark" id="empresas">
+      <div class="container">
+        <div class="enterprise-banner">
+          <div>
+            <p class="eyebrow">Empresas</p>
+            <h2>Leasing Apple sin inversión inicial. Rendimiento desde el día uno.</h2>
+            <p>Para empresas en Panamá que necesitan continuidad, nuestro leasing Apple Panamá ofrece equipos listos, soporte prioritario y renovación planificada. Equipos Apple para empresas con control de costos predecible y sin capital inmovilizado.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="empresas.html">Conocer leasing empresarial</a>
+              <a class="btn btn-secondary" href="https://wa.me/50769784955">Hablar con un asesor</a>
             </div>
+          </div>
+          <div>
+            <img src="https://www.apple.com/v/imac/s/images/overview/hero/hero_imac__cjf0biujh1ua_large.jpg" alt="iMac para leasing Apple Panamá" loading="lazy">
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Salva Mi Máquina</h3>
-                    <p>Reparación Apple y leasing premium en Panamá. Directo, rápido, confiable.</p>
-                    <small>Apple-native. Tiempo primero.</small>
-                </div>
-                <div>
-                    <h3>San Francisco</h3>
-                    <p>Vía Porras con Av. 31 Sur</p>
-                    <p>394-9351 · 6978-0206</p>
-                </div>
-                <div>
-                    <h3>Bella Vista</h3>
-                    <p>PH Seawaves, planta baja</p>
-                    <p>203-2055 · 6932-7190</p>
-                </div>
-                <div>
-                    <h3>Enlaces</h3>
-                    <ul class="footer-links">
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="/salva/empresas.html">Empresas</a></li>
-                        <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Salva Mi Máquina. Panamá.</span>
-                <span>Atención por WhatsApp todos los días hábiles.</span>
-            </div>
+    <section>
+      <div class="container">
+        <p class="eyebrow">Resultados</p>
+        <h2>Datos que respaldan nuestra promesa.</h2>
+        <p>Cada número cuenta una historia real: clientes que recuperaron su productividad, empresas que no detuvieron operaciones y usuarios que volvieron a confiar en su equipo. Salva Mi Máquina es reparación Apple en Panamá con respaldo, no con suerte.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">24h</div>
+            <p class="stat-label">Promedio de diagnóstico</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">6 meses</div>
+            <p class="stat-label">Garantía real incluida</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2 sedes</div>
+            <p class="stat-label">San Francisco y Bella Vista</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">4,000+</div>
+            <p class="stat-label">Reparaciones exitosas</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <div class="whatsapp-widget">
-        <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-        </a>
+    <section class="section-muted">
+      <div class="container">
+        <div class="final-cta">
+          <div>
+            <p class="eyebrow">Listo para volver a tu ritmo</p>
+            <h2>Repará hoy. Escalá mañana.</h2>
+            <p>Si necesitás reparar iPhone Panamá, arreglar iPad Panamá o resolver un MacBook crítico, estamos listos. Y si tu empresa quiere leasing tecnológico Panamá, también. Elegí el camino que te devuelve el control, con respuesta en menos de 24 horas.</p>
+          </div>
+          <div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/50769784955">Hablar por WhatsApp</a>
+              <a class="btn btn-secondary" href="empresas.html">Quiero leasing empresarial</a>
+            </div>
+            <p>Respuesta rápida en WhatsApp: +507 6978-4955</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Salva Mi Máquina</h3>
+        <p>Reparación Apple Panamá, leasing tecnológico y soporte local con técnicos especializados. Dos sedes, un estándar premium.</p>
+      </div>
+      <div>
+        <h3>San Francisco</h3>
+        <p>Vía Porras con Av. 31 Sur</p>
+        <p>Tel: 394-9351 / 6978-0206</p>
+      </div>
+      <div>
+        <h3>Bella Vista</h3>
+        <p>PH Seawaves, planta baja</p>
+        <p>Tel: 203-2055 / 6932-7190</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>WhatsApp: +507 6978-4955</p>
+        <p>Email: ventas@salvamimaquina.com</p>
+        <p><a href="empresas.html">Leasing para empresas</a></p>
+      </div>
     </div>
-
-    <script>
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenu = document.getElementById('mobileMenu');
-        let lastFocusedElement = null;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            lastFocusedElement = document.activeElement;
-            mobileMenu.classList.add('active');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-            const firstLink = mobileMenu.querySelector('a');
-            if (firstLink) {
-                firstLink.focus();
-            } else {
-                mobileMenu.focus();
-            }
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-            if (lastFocusedElement) {
-                lastFocusedElement.focus();
-            }
-        }
-
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
+    <div class="container footer-bottom">
+      <p>© 2024 Salva Mi Máquina. Todos los derechos reservados.</p>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Salva Mi Máquina",
+        "url": "https://salvamimaquina.com",
+        "image": "https://salvamimaquina.com/images/og-home.jpg",
+        "telephone": "+507-394-9351",
+        "priceRange": "$$",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Vía Porras con Av. 31 Sur",
+            "addressLocality": "San Francisco",
+            "addressRegion": "Panamá",
+            "addressCountry": "PA"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "PH Seawaves, planta baja",
+            "addressLocality": "Bella Vista",
+            "addressRegion": "Panamá",
+            "addressCountry": "PA"
+          }
+        ],
+        "areaServed": "Ciudad de Panamá"
+      }
     </script>
+  </footer>
 </body>
 </html>
