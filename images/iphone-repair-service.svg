@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540" role="img" aria-label="Reparación de iPhone">
+  <rect width="720" height="540" rx="48" fill="#F5F6F8"/>
+  <rect x="260" y="90" width="200" height="360" rx="36" fill="#101820"/>
+  <rect x="276" y="120" width="168" height="300" rx="26" fill="#1F2937"/>
+  <rect x="330" y="106" width="60" height="10" rx="5" fill="#2D3748"/>
+  <circle cx="360" cy="430" r="8" fill="#2D3748"/>
+</svg>

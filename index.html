@@ -20,7 +20,8 @@
     <meta property="og:locale" content="es_PA">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300D26A' rx='20' width='100' height='100'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='50' font-family='system-ui'>S</text></svg>">
+    <link rel="icon" type="image/png" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
+    <link rel="apple-touch-icon" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -272,46 +273,20 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.625rem;
+            gap: 0.5rem;
+            max-width: 140px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-primary);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            overflow: hidden;
+        .logo-image {
+            width: auto;
+            height: 28px;
+            opacity: 0.75;
+            transition: opacity var(--transition-fast);
         }
 
-        .logo-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        .logo-text {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            line-height: 1.1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .logo-text span {
-            display: block;
+        .logo:hover .logo-image,
+        .logo:focus-visible .logo-image {
+            opacity: 0.95;
         }
 
         .nav {
@@ -667,55 +642,58 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.75rem;
             align-items: stretch;
         }
 
         .service-card {
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all var(--transition-base);
+            background: var(--color-white);
+            border-radius: 22px;
+            padding: 1.75rem;
+            text-align: left;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
             cursor: pointer;
-            min-height: 340px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            height: 100%;
         }
 
         .service-card:hover {
-            background: var(--color-white);
-            border-color: var(--color-primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
         }
 
-        .service-card-image {
+        .service-card-media {
             width: 100%;
-            height: 160px;
+            aspect-ratio: 4 / 3;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--color-gray-50);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
         }
 
-        .service-card-image img {
+        .service-card-media img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+        }
+
+        .service-card-body {
+            margin-top: 1.25rem;
         }
 
         .service-card h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.65rem;
             line-height: 1.3;
         }
 
         .service-card p {
-            font-size: 0.875rem;
-            color: var(--color-gray-500);
+            font-size: 0.9375rem;
+            color: var(--color-gray-600);
             line-height: 1.5;
         }
 
@@ -1101,8 +1079,8 @@
             margin-bottom: 1rem;
         }
 
-        .footer-brand .logo-text {
-            color: var(--color-primary);
+        .footer-brand .logo-image {
+            height: 26px;
         }
 
         .footer-brand p {
@@ -1319,14 +1297,8 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="/salva/" class="logo">
-                <div class="logo-icon">
-                    <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina" width="40" height="40">
-                </div>
-                <div class="logo-text">
-                    <span>salva mi</span>
-                    <span>máquina</span>
-                </div>
+            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
+                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="140" height="32">
             </a>
 
             <nav class="nav">
@@ -1356,14 +1328,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
         <div class="mobile-menu-header">
-            <a href="/salva/" class="logo">
-                <div class="logo-icon">
-                    <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina" width="40" height="40">
-                </div>
-                <div class="logo-text">
-                    <span>salva mi</span>
-                    <span>máquina</span>
-                </div>
+            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
+                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="140" height="32">
             </a>
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
         </div>
@@ -1480,46 +1446,54 @@
             <div class="services-grid">
                 <!-- Service Card: iPhone -->
                 <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&q=80" 
-                             alt="Reparación de iPhone en Panamá"
-                             width="200" height="140">
+                    <figure class="service-card-media">
+                        <img src="images/iphone-repair-service.svg"
+                             alt="Reparación de iPhone con cambio de pantalla y batería en Panamá"
+                             width="720" height="540" loading="lazy">
+                    </figure>
+                    <div class="service-card-body">
+                        <h3>Reparación de iPhone</h3>
+                        <p>Cambio de pantalla, batería y puerto de carga con técnicos certificados y repuestos originales confiables.</p>
                     </div>
-                    <h3>iPhone</h3>
-                    <p>Pantalla, batería, puerto de carga</p>
                 </article>
 
                 <!-- Service Card: MacBook -->
                 <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" 
-                             alt="Reparación de MacBook en Panamá"
-                             width="200" height="140">
+                    <figure class="service-card-media">
+                        <img src="images/macbook-repair-service.svg"
+                             alt="Reparación de MacBook con teclado, batería y SSD en Panamá"
+                             width="720" height="540" loading="lazy">
+                    </figure>
+                    <div class="service-card-body">
+                        <h3>Reparación de MacBook</h3>
+                        <p>Teclado, batería, pantalla y SSD con diagnóstico preciso para todos los modelos MacBook del mercado.</p>
                     </div>
-                    <h3>MacBook</h3>
-                    <p>Batería, teclado, pantalla, SSD</p>
                 </article>
 
                 <!-- Service Card: iPad -->
                 <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80" 
-                             alt="Reparación de iPad en Panamá"
-                             width="200" height="140">
+                    <figure class="service-card-media">
+                        <img src="images/ipad-repair-service.svg"
+                             alt="Reparación de iPad con pantalla, batería y puerto de carga en Panamá"
+                             width="720" height="540" loading="lazy">
+                    </figure>
+                    <div class="service-card-body">
+                        <h3>Reparación de iPad</h3>
+                        <p>Reemplazo de pantalla, batería y puerto de carga con prueba completa de funcionamiento en taller certificado.</p>
                     </div>
-                    <h3>iPad</h3>
-                    <p>Pantalla, puerto, batería</p>
                 </article>
 
                 <!-- Service Card: Apple Watch -->
                 <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" 
-                             alt="Reparación de Apple Watch en Panamá"
-                             width="200" height="140">
+                    <figure class="service-card-media">
+                        <img src="images/apple-watch-repair-service.svg"
+                             alt="Reparación de Apple Watch con batería y pantalla en Panamá"
+                             width="720" height="540" loading="lazy">
+                    </figure>
+                    <div class="service-card-body">
+                        <h3>Reparación de Apple Watch</h3>
+                        <p>Servicio de batería, pantalla y corona digital con calibración y sellado profesional para uso diario.</p>
                     </div>
-                    <h3>Apple Watch</h3>
-                    <p>Batería, pantalla, corona</p>
                 </article>
             </div>
         </div>
@@ -1744,14 +1718,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/salva/" class="logo">
-                        <div class="logo-icon">
-                    <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina" width="40" height="40">
-                </div>
-                        <div class="logo-text">
-                            <span>salva mi</span>
-                            <span>máquina</span>
-                        </div>
+                    <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
+                        <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="140" height="32">
                     </a>
                     <p>Servicio técnico especializado en reparación de dispositivos Apple en Panamá.</p>
                     <div class="social-links">
