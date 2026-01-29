@@ -149,11 +149,15 @@ p {
   gap: 24px;
 }
 
-.logo-text {
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -622,6 +626,13 @@ p {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
   margin-bottom: 12px;
 }
 
