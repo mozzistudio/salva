@@ -1,852 +1,346 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Salva Mi Máquina | Leasing Apple para Empresas en Panamá</title>
-    <meta name="description" content="Leasing Apple para empresas en Panamá. Control del parque, continuidad y soporte inmediato. Equipos listos para trabajar sin interrupciones.">
-    <meta name="keywords" content="leasing Apple Panamá, renting MacBook empresas, leasing iPad empresas">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://salvamimaquina.com/empresas">
-
-    <meta property="og:title" content="Salva Mi Máquina | Leasing Apple para Empresas en Panamá">
-    <meta property="og:description" content="Leasing Apple serio, simple y directo. Control total del parque con soporte local.">
-    <meta property="og:url" content="https://salvamimaquina.com/empresas">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://salvamimaquina.com/images/og-empresas.jpg">
-    <meta property="og:locale" content="es_PA">
-
-    <link rel="icon" type="image/png" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
-    <link rel="apple-touch-icon" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Salva Mi Máquina",
-        "description": "Leasing de equipos Apple para empresas en Panamá",
-        "url": "https://salvamimaquina.com",
-        "logo": "https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+507-394-9351",
-            "contactType": "sales",
-            "areaServed": "PA",
-            "availableLanguage": "Spanish"
-        },
-        "sameAs": [
-            "https://www.facebook.com/salvamimaquina",
-            "https://www.instagram.com/salvamimaquina"
-        ]
-    }
-    </script>
-
-    <style>
-        :root {
-            --color-bg: #f6f7f8;
-            --color-surface: #ffffff;
-            --color-surface-alt: #eef0f3;
-            --color-text: #111215;
-            --color-muted: #5f6470;
-            --color-accent: #10B981;
-            --color-border: rgba(17, 18, 21, 0.08);
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --radius-md: 18px;
-            --radius-lg: 28px;
-            --shadow-soft: 0 24px 50px rgba(16, 24, 40, 0.12);
-            --transition: 200ms ease;
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.5;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        h1, h2, h3 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2.6rem, 6vw, 4.8rem);
-            line-height: 1.05;
-        }
-
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-        }
-
-        p {
-            color: var(--color-muted);
-            font-size: 1.05rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.75rem;
-            color: var(--color-muted);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.85rem 1.8rem;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: transform var(--transition), background var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--color-accent);
-            color: #02130a;
-            box-shadow: 0 14px 30px rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-ghost {
-            border-color: var(--color-border);
-            color: var(--color-text);
-            background: var(--color-surface);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            background: rgba(246, 247, 248, 0.88);
-            border-bottom: 1px solid transparent;
-            transition: border-color var(--transition), background var(--transition);
-        }
-
-        .header.scrolled {
-            border-bottom-color: var(--color-border);
-            background: rgba(255, 255, 255, 0.96);
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-        }
-
-        .logo-image {
-            width: 150px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        .nav-links a {
-            color: var(--color-muted);
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: var(--color-text);
-        }
-
-        .nav-cta {
-            margin-left: 2rem;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: none;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            margin: 5px auto;
-            background: var(--color-text);
-        }
-
-        .hero {
-            padding-top: 110px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-visual {
-            min-height: 460px;
-            border-radius: var(--radius-lg);
-            background: #f5f5f7;
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-visual img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 2rem;
-        }
-
-        .product-image-container {
-            background: #f5f5f7;
-            border-radius: 18px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-image-container img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card-content {
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .comparison-table-wrapper {
-            overflow-x: auto;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--color-surface);
-            border-radius: 18px;
-            border: 1px solid var(--color-border);
-            overflow: hidden;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1.2rem 1.4rem;
-            text-align: left;
-            border-bottom: 1px solid var(--color-border);
-            vertical-align: middle;
-        }
-
-        .comparison-table th {
-            font-weight: 600;
-            color: var(--color-text);
-            background: #f9fafb;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .product-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            margin-right: 0.75rem;
-            color: #c7c9cf;
-        }
-
-        .product-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .split-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .panel {
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-        }
-
-        .panel strong {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .steps {
-            background: var(--color-surface-alt);
-        }
-
-        .cta {
-            text-align: center;
-            padding-bottom: 6rem;
-        }
-
-        .footer {
-            padding: 3rem 0 2rem;
-            border-top: 1px solid var(--color-border);
-            background: var(--color-surface-alt);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            border-top: 1px solid var(--color-border);
-            padding-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            color: var(--color-muted);
-            font-size: 0.85rem;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(250, 251, 252, 0.98);
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            transform: translateX(100%);
-            transition: transform var(--transition);
-            z-index: 2000;
-        }
-
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        .mobile-menu-links {
-            margin-top: 3rem;
-            display: grid;
-            gap: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .mobile-menu-close {
-            background: transparent;
-            border: none;
-            color: var(--color-text);
-            font-size: 1.5rem;
-        }
-
-        @media (max-width: 980px) {
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .equipment-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            section {
-                padding: 4rem 0;
-            }
-
-            .hero {
-                padding-top: 96px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-actions .btn {
-                width: 100%;
-            }
-
-            .equipment-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salva Mi Máquina | Leasing Apple Panamá para Empresas</title>
+  <meta name="description" content="Leasing Apple Panamá para empresas con equipos listos, soporte prioritario y costos predecibles. Alquiler de MacBook, iPad y más en Ciudad de Panamá hoy.">
+  <meta name="keywords" content="leasing apple panamá, alquiler macbook empresas panamá, renting equipos apple, leasing tecnológico panamá, equipos apple para empresas, arrendamiento macbook pro, leasing ipad empresas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://salvamimaquina.com/empresas">
+
+  <meta property="og:title" content="Salva Mi Máquina | Leasing Apple Panamá para Empresas">
+  <meta property="og:description" content="Leasing tecnológico Panamá con equipos Apple listos, soporte local y renovación planificada. Continuidad operativa sin inversión inicial.">
+  <meta property="og:url" content="https://salvamimaquina.com/empresas">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://salvamimaquina.com/images/og-empresas.jpg">
+  <meta property="og:locale" content="es_PA">
+
+  <link rel="icon" type="image/png" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
+  <link rel="apple-touch-icon" href="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
-                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="150" height="36">
-            </a>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="/salva/empresas.html" class="active">Empresas</a></li>
-                    <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
-                </ul>
-                <div class="nav-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
-                </div>
-            </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
-        <div class="mobile-menu-header">
-            <a href="/salva/" class="logo" aria-label="Salva Mi Máquina">
-                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina" width="150" height="36">
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
-        </div>
-        <ul class="mobile-menu-links">
-            <li><a href="/salva/empresas.html" class="active">Empresas</a></li>
-            <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
-        </ul>
-        <div class="mobile-menu-cta">
-            <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda por WhatsApp</a>
-        </div>
+  <header class="header">
+    <div class="container">
+      <div class="logo">Salva Mi Máquina</div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#equipos">Equipos</a>
+        <a href="#proceso">Proceso</a>
+      </nav>
+      <a class="btn btn-primary" href="mailto:ventas@salvamimaquina.com">Solicitar propuesta</a>
     </div>
+  </header>
 
-    <section class="hero">
-        <div class="container hero-grid">
+  <main>
+    <section class="hero hero-b2b">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Leasing Apple Panamá</p>
+          <h1>Tu operación no puede detenerse. Tu parque Apple tampoco.</h1>
+          <p>Salva Mi Máquina ofrece leasing tecnológico Panamá pensado para empresas que necesitan continuidad, control y velocidad. Equipos Apple para empresas, configurados y listos para trabajar desde el día uno. Sin inversión inicial, con soporte prioritario y renovación planificada. Así mantenés a tu equipo productivo, sin excusas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:ventas@salvamimaquina.com">Solicitar propuesta</a>
+            <a class="link-arrow" href="#beneficios">Ver beneficios <span>→</span></a>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badge">Respuesta en menos de 24 horas</div>
+            <div class="trust-badge">Soporte Apple local</div>
+            <div class="trust-badge">Costos predecibles</div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://www.apple.com/v/macbook-air/s/images/overview/hero/hero_mba_702wx.jpg" alt="MacBook Air para alquiler MacBook empresas Panamá" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="beneficios">
+      <div class="container">
+        <p class="eyebrow">Valor real</p>
+        <h2>Por qué leasing Apple con Salva funciona mejor.</h2>
+        <p>El renting equipos Apple con Salva Mi Máquina está diseñado para equipos modernos, ágiles y exigentes. Nuestro enfoque elimina fricción: te damos equipos nuevos o seleccionados, configurados para tu negocio, con soporte local y un plan que crece contigo. Esto es arrendamiento MacBook Pro sin el peso financiero de la compra directa.</p>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">💡</div>
+            <h3>Sin inversión inicial</h3>
+            <p>Convertí una compra grande en un pago mensual claro. Liberás capital y mantenés flujo de caja.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Equipos siempre actualizados</h3>
+            <p>Renovación planificada para que tu equipo trabaje con hardware vigente y seguro.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🧩</div>
+            <h3>Soporte prioritario incluido</h3>
+            <p>Asistencia local en Ciudad de Panamá, con tiempos de respuesta que protegen tu operación.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">📊</div>
+            <h3>Control de costos predecible</h3>
+            <p>Pagos mensuales claros para planificar tu crecimiento sin sorpresas.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Configuración lista para trabajar</h3>
+            <p>Entregamos equipos configurados con apps, usuarios y seguridad listos para tu equipo.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Escalabilidad inmediata</h3>
+            <p>Podés aumentar tu parque tecnológico cuando tu negocio lo pide.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipos">
+      <div class="container">
+        <p class="eyebrow">Catálogo</p>
+        <h2>Equipos disponibles para leasing.</h2>
+        <p>Seleccionamos equipos Apple que elevan productividad y presentación. Desde alquiler MacBook empresas Panamá hasta soluciones con iPad Pro o Mac mini, diseñamos tu mix ideal. Cada equipo sale probado, configurado y listo para integrarse a tu operación.</p>
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/macbook-pro/al/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg" alt="MacBook Pro para arrendamiento MacBook Pro" loading="lazy">
+            <h3>MacBook Pro</h3>
+            <p>Potencia profesional para equipos exigentes.</p>
+          </article>
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/macbook-air/s/images/overview/hero/hero_mba_702wx.jpg" alt="MacBook Air para leasing Apple Panamá" loading="lazy">
+            <h3>MacBook Air</h3>
+            <p>Movilidad ligera, rendimiento confiable.</p>
+          </article>
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/imac/s/images/overview/hero/hero_imac__cjf0biujh1ua_large.jpg" alt="iMac 24 pulgadas para equipos Apple para empresas" loading="lazy">
+            <h3>iMac 24"</h3>
+            <p>Estética premium para front desks y creativos.</p>
+          </article>
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/mac-mini/t/images/overview/hero/hero__e2ec9brake2q_large.jpg" alt="Mac mini para leasing tecnológico Panamá" loading="lazy">
+            <h3>Mac mini</h3>
+            <p>Potencia silenciosa para equipos técnicos.</p>
+          </article>
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/ipad-pro/ap/images/overview/hero/hero_ipad_702wx.jpg" alt="iPad Pro para leasing iPad empresas" loading="lazy">
+            <h3>iPad Pro</h3>
+            <p>Creatividad y ventas en movimiento.</p>
+          </article>
+          <article class="catalog-card">
+            <img src="https://www.apple.com/v/studio-display/a/images/overview/hero/hero_static__g1qz0te3mw6q_large.jpg" alt="Studio Display para renting equipos Apple" loading="lazy">
+            <h3>Studio Display</h3>
+            <p>Imagen impecable para espacios premium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="comparacion">
+      <div class="container">
+        <p class="eyebrow">Comparación</p>
+        <h2>¿Comprar o hacer leasing?</h2>
+        <p>Compará lo que realmente importa: flujo de caja, actualización tecnológica, soporte y velocidad de respuesta. El leasing Apple Panamá con Salva está diseñado para ganarle a la compra directa y al leasing tradicional. Vos decidís cómo querés operar, nosotros hacemos que sea mejor.</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h3>Compra directa</h3>
+            <div class="compare-list">
+              <div class="compare-item">✕ Inversión inicial alta</div>
+              <div class="compare-item">✕ Renovación costosa</div>
+              <div class="compare-item">✕ Soporte fragmentado</div>
+              <div class="compare-item">✕ Equipos se deprecian rápido</div>
+            </div>
+          </div>
+          <div class="compare-card">
+            <h3>Leasing tradicional</h3>
+            <div class="compare-list">
+              <div class="compare-item">✓ Sin inversión inicial</div>
+              <div class="compare-item">✕ Procesos lentos</div>
+              <div class="compare-item">✕ Equipos genéricos</div>
+              <div class="compare-item">✕ Soporte sin especialización Apple</div>
+            </div>
+          </div>
+          <div class="compare-card highlight">
+            <span class="badge">La opción Salva</span>
+            <h3>Salva Mi Máquina</h3>
+            <div class="compare-list">
+              <div class="compare-item">✓ Sin inversión inicial</div>
+              <div class="compare-item">✓ Equipos Apple nuevos o seleccionados</div>
+              <div class="compare-item">✓ Soporte local Apple-only</div>
+              <div class="compare-item">✓ Renovación planificada y rápida</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <p class="eyebrow">Proceso</p>
+        <h2>Cómo funciona el leasing con Salva.</h2>
+        <p>Un proceso simple, pensado para empresas de Panamá que necesitan equipos Apple rápido y sin fricción. Desde la cotización hasta el soporte continuo, cada paso protege tu continuidad operativa.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-number">1</div>
             <div>
-                <span class="eyebrow">Leasing Apple para empresas</span>
-                <h1>Tu operación no puede parar.</h1>
-                <p>Equipos Apple listos para trabajar, soporte inmediato y renovación inteligente. Todo bajo control, sin costos sorpresa.</p>
-                <div class="hero-actions">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20Apple%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero una propuesta</a>
-                    <a href="/salva/" class="btn btn-ghost">Volver a reparación</a>
-                </div>
+              <h3>Cotización</h3>
+              <p>Nos contás cuántos equipos necesitás, perfiles de uso y tiempos. En menos de 24 horas recibís una propuesta clara.</p>
             </div>
-            <div class="hero-visual">
-                <img src="https://www.apple.com/newsroom/images/product/mac/lifestyle/Apple-MacBook-Pro-M3-chip-240129.jpg.large.jpg" alt="Espacio de trabajo con MacBook Pro en uso">
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div>
+              <h3>Configuración</h3>
+              <p>Preparamos los equipos con usuarios, apps, seguridad y políticas internas. Todo listo para trabajar.</p>
             </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div>
+              <h3>Entrega</h3>
+              <p>Entregamos en tus oficinas en Ciudad de Panamá o en nuestras sedes. Tus equipos llegan listos.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div>
+              <h3>Soporte continuo</h3>
+              <p>Soporte técnico prioritario, mantenimiento y opciones de escalamiento. Tu parque Apple siempre operativo.</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="confianza">
+      <div class="container">
+        <p class="eyebrow">Confianza</p>
+        <h2>Empresas que confían en nosotros.</h2>
+        <p>Trabajamos con equipos de tecnología, marketing, finanzas y retail que necesitan continuidad operativa. Nuestro leasing tecnológico Panamá cuida cada detalle: desde la entrega hasta el soporte, con métricas claras y comunicación directa.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">150+</div>
+            <p class="stat-label">Equipos administrados</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">10 años</div>
+            <p class="stat-label">Experiencia Apple en Panamá</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">24h</div>
+            <p class="stat-label">Promedio de respuesta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="faq">
+      <div class="container">
+        <p class="eyebrow">FAQ</p>
+        <h2>Preguntas frecuentes sobre leasing Apple en Panamá.</h2>
+        <p>Resolvemos las dudas más comunes sobre renting equipos Apple, alquiler de MacBook para empresas y leasing iPad empresas. Si necesitás detalles adicionales, respondemos en menos de 24 horas.</p>
+        <div class="faq">
+          <div class="faq-item">
+            <h3>¿Qué incluye el leasing de equipos Apple?</h3>
+            <p>Incluye la entrega de equipos Apple configurados, soporte técnico prioritario y renovación planificada. Todo con costos claros y sin inversión inicial.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Cuál es el plazo mínimo de contrato?</h3>
+            <p>Trabajamos con plazos flexibles según el tamaño de tu operación. La mayoría de empresas eligen entre 12 y 36 meses para optimizar su presupuesto.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Qué pasa si un equipo falla?</h3>
+            <p>Atendemos con soporte local en Panamá. Diagnosticamos y reparamos o reemplazamos según el acuerdo para mantener tu operación activa.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Puedo escalar mi parque tecnológico?</h3>
+            <p>Sí. Nuestro leasing tecnológico Panamá permite sumar equipos Apple cuando tu empresa crece.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Ofrecen equipos nuevos o reacondicionados?</h3>
+            <p>Ofrecemos opciones nuevas y seleccionadas según el plan. Siempre cumplen estándares premium de rendimiento y presentación.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Puedo elegir modelos específicos?</h3>
+            <p>Claro. Definimos contigo el mix ideal entre MacBook Pro, MacBook Air, iPad Pro y más.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>Equipos disponibles para leasing</h2>
-                <p>Hardware Apple actualizado, listo para operar con continuidad y soporte local.</p>
+      <div class="container">
+        <div class="final-cta">
+          <div>
+            <p class="eyebrow">Listos cuando vos lo estés</p>
+            <h2>Leasing Apple con respuesta en menos de 24 horas.</h2>
+            <p>Si buscás alquiler MacBook empresas Panamá o leasing Apple Panamá con soporte real, este es el momento. Enviamos propuesta personalizada y entregamos equipos listos para trabajar. Continuidad operativa, sin excusas.</p>
+          </div>
+          <div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:ventas@salvamimaquina.com">Solicitar propuesta</a>
+              <a class="btn btn-secondary" href="https://wa.me/50769784955">Hablar por WhatsApp</a>
             </div>
-            <div class="equipment-grid">
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-2up-hero-240129.jpg.large.jpg" alt="MacBook Pro disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>MacBook Pro</h3>
-                        <p>Potencia para equipos creativos y analíticos que necesitan rendimiento sostenido.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M3-hero-240304.jpg.large.jpg" alt="MacBook Air disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>MacBook Air</h3>
-                        <p>Ligero, silencioso y listo para trabajo híbrido con gran autonomía.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-iMac-hero-240130.jpg.large.jpg" alt="iMac disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>iMac</h3>
-                        <p>Todo en uno elegante para salas de diseño, recepción y operaciones.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-240507.jpg.large.jpg" alt="iPad Pro disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>iPad Pro</h3>
-                        <p>Movilidad total para ventas, inspecciones o flujos en campo.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-Mac-mini-hero-240130.jpg.large.jpg" alt="Mac mini disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>Mac mini</h3>
-                        <p>Compacto, eficiente y perfecto para estaciones compartidas.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-Mac-Studio-hero-240130.jpg.large.jpg" alt="Studio Display disponible para leasing">
-                    </div>
-                    <div class="product-card-content">
-                        <h3>Studio Display</h3>
-                        <p>Imagen precisa para equipos creativos, edición y contenido premium.</p>
-                    </div>
-                </article>
-            </div>
+            <p>ventas@salvamimaquina.com · +507 6978-4955</p>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section class="steps">
-        <div class="container">
-            <div class="section-title">
-                <h2>Comparativo rápido de leasing</h2>
-                <p>Elige el equipo ideal con una vista clara por perfil de uso.</p>
-            </div>
-            <div class="comparison-table-wrapper">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Equipo</th>
-                            <th>Perfil ideal</th>
-                            <th>Ventaja clave</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="6" y="6" width="36" height="18" rx="3"></rect>
-                                        <rect x="2" y="26" width="44" height="4" rx="2"></rect>
-                                    </svg>
-                                </span>
-                                MacBook Pro
-                            </td>
-                            <td>Creatividad avanzada, data y desarrollo.</td>
-                            <td>Rendimiento sostenido.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="6" y="6" width="36" height="18" rx="3"></rect>
-                                        <rect x="2" y="26" width="44" height="4" rx="2"></rect>
-                                    </svg>
-                                </span>
-                                MacBook Air
-                            </td>
-                            <td>Equipos móviles y operación híbrida.</td>
-                            <td>Ligereza y autonomía.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="10" y="4" width="28" height="20" rx="2"></rect>
-                                        <rect x="18" y="24" width="12" height="4" rx="2"></rect>
-                                    </svg>
-                                </span>
-                                iMac
-                            </td>
-                            <td>Recepción, diseño y operaciones fijas.</td>
-                            <td>Todo en uno elegante.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="8" y="4" width="32" height="24" rx="3"></rect>
-                                    </svg>
-                                </span>
-                                iPad Pro
-                            </td>
-                            <td>Ventas, campo y flujos táctiles.</td>
-                            <td>Movilidad total.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="12" y="8" width="24" height="16" rx="4"></rect>
-                                    </svg>
-                                </span>
-                                Mac mini
-                            </td>
-                            <td>Estaciones compartidas y automatización.</td>
-                            <td>Compacto y eficiente.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="product-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 48 32" fill="currentColor">
-                                        <rect x="8" y="4" width="32" height="18" rx="2"></rect>
-                                        <rect x="16" y="22" width="16" height="4" rx="2"></rect>
-                                    </svg>
-                                </span>
-                                Studio Display
-                            </td>
-                            <td>Creatividad, edición y revisión de color.</td>
-                            <td>Visual premium.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>Resultados que importan.</h2>
-                <p>Menos downtime, más control. Cada equipo entra al flujo correcto desde el día uno.</p>
-            </div>
-            <div class="split-grid">
-                <div class="panel">
-                    <strong>Continuidad total</strong>
-                    <p>Equipos listos cuando tu equipo los necesita. Sin pausas, sin estrés.</p>
-                </div>
-                <div class="panel">
-                    <strong>Control de parque</strong>
-                    <p>Inventario claro, renovación planificada y soporte que no se pierde.</p>
-                </div>
-                <div class="panel">
-                    <strong>Costo predecible</strong>
-                    <p>Cuotas claras, sin inversión inicial. Tu presupuesto respira.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="steps">
-        <div class="container">
-            <div class="section-title">
-                <h2>Así se ve el leasing con Salva.</h2>
-                <p>Simple, directo y diseñado para empresas que se mueven rápido.</p>
-            </div>
-            <div class="split-grid">
-                <div class="panel">
-                    <strong>1. Definimos necesidad</strong>
-                    <p>Modelo, cantidad, uso y plazos. Sin vueltas.</p>
-                </div>
-                <div class="panel">
-                    <strong>2. Entrega y configuración</strong>
-                    <p>Equipos listos para trabajar desde el primer día.</p>
-                </div>
-                <div class="panel">
-                    <strong>3. Soporte continuo</strong>
-                    <p>Si algo falla, respondemos. Si necesitas crecer, escalamos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>Lo que no hacemos.</h2>
-                <p>Las empresas necesitan claridad. Nosotros también.</p>
-            </div>
-            <div class="split-grid">
-                <div class="panel">
-                    <strong>No improvisamos</strong>
-                    <p>El hardware se planifica. La continuidad se respeta.</p>
-                </div>
-                <div class="panel">
-                    <strong>No complicamos</strong>
-                    <p>Un punto de contacto, decisiones rápidas, ejecución limpia.</p>
-                </div>
-                <div class="panel">
-                    <strong>No desaparecemos</strong>
-                    <p>Soporte local real en Panamá. Estamos aquí.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <span class="eyebrow">Empresas serias, respuesta seria.</span>
-            <h2>Hablemos de tu parque Apple.</h2>
-            <p>Cuéntanos tu operación y armamos un plan claro en menos de 24 horas.</p>
-            <div class="hero-actions" style="justify-content:center;">
-                <a href="https://wa.me/+50769784955?text=Hola,%20quiero%20cotizar%20leasing%20Apple%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar propuesta</a>
-                <a href="mailto:ventas@salvamimaquina.com" class="btn btn-ghost">ventas@salvamimaquina.com</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Salva Mi Máquina</h3>
-                    <p>Leasing Apple con control real. Hecho en Panamá.</p>
-                </div>
-                <div>
-                    <h3>Contacto directo</h3>
-                    <p>+507 394-9351</p>
-                    <p>ventas@salvamimaquina.com</p>
-                </div>
-                <div>
-                    <h3>Ubicaciones</h3>
-                    <p>San Francisco · Bella Vista</p>
-                    <p>Ciudad de Panamá</p>
-                </div>
-                <div>
-                    <h3>Enlaces</h3>
-                    <p><a href="/salva/">Inicio</a></p>
-                    <p><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Salva Mi Máquina. Panamá.</span>
-                <span>Leasing Apple con soporte local.</span>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenu = document.getElementById('mobileMenu');
-        let lastFocusedElement = null;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            lastFocusedElement = document.activeElement;
-            mobileMenu.classList.add('active');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-            const firstLink = mobileMenu.querySelector('a');
-            if (firstLink) {
-                firstLink.focus();
-            } else {
-                mobileMenu.focus();
-            }
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-            if (lastFocusedElement) {
-                lastFocusedElement.focus();
-            }
-        }
-
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Salva Mi Máquina</h3>
+        <p>Leasing Apple Panamá y soporte técnico especializado para empresas en Ciudad de Panamá.</p>
+      </div>
+      <div>
+        <h3>San Francisco</h3>
+        <p>Vía Porras con Av. 31 Sur</p>
+        <p>Tel: 394-9351 / 6978-0206</p>
+      </div>
+      <div>
+        <h3>Bella Vista</h3>
+        <p>PH Seawaves, planta baja</p>
+        <p>Tel: 203-2055 / 6932-7190</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>WhatsApp: +507 6978-4955</p>
+        <p>Email: ventas@salvamimaquina.com</p>
+        <p><a href="index.html">Servicio técnico Apple</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2024 Salva Mi Máquina. Todos los derechos reservados.</p>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Salva Mi Máquina",
+        "url": "https://salvamimaquina.com",
+        "telephone": "+507-394-9351",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Vía Porras con Av. 31 Sur",
+            "addressLocality": "San Francisco",
+            "addressRegion": "Panamá",
+            "addressCountry": "PA"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "PH Seawaves, planta baja",
+            "addressLocality": "Bella Vista",
+            "addressRegion": "Panamá",
+            "addressCountry": "PA"
+          }
+        ],
+        "areaServed": "Ciudad de Panamá"
+      }
     </script>
+  </footer>
 </body>
 </html>
