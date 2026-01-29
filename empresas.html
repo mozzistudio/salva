@@ -275,6 +275,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
         }
 
         .logo-icon svg {
@@ -283,11 +285,21 @@
             fill: white;
         }
 
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
         .logo-text {
             font-size: 1.125rem;
             font-weight: 700;
             color: var(--color-primary);
             line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .logo-text span {
@@ -890,27 +902,32 @@
         .process-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 3rem;
         }
 
         .process-step {
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            --step-size: 80px;
         }
 
         .process-step:not(:last-child)::after {
             content: '';
             position: absolute;
-            top: 40px;
-            right: -0.75rem;
-            width: calc(100% - 80px);
+            top: calc(var(--step-size) / 2);
+            left: 50%;
+            width: 100%;
             height: 2px;
             background: linear-gradient(90deg, var(--color-primary), var(--color-gray-200));
+            z-index: 0;
         }
 
         .step-number {
-            width: 80px;
-            height: 80px;
+            width: var(--step-size);
+            height: var(--step-size);
             background: var(--color-primary-light);
             border-radius: 50%;
             display: flex;
@@ -918,12 +935,14 @@
             justify-content: center;
             margin: 0 auto 1.5rem;
             position: relative;
+            z-index: 1;
         }
 
         .step-number span {
             font-size: 1.75rem;
             font-weight: 700;
             color: var(--color-primary);
+            line-height: 1;
         }
 
         .process-step h3 {
