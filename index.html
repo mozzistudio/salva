@@ -56,20 +56,19 @@
 
     <style>
         :root {
-            --color-bg: #f6f7f8;
-            --color-surface: #ffffff;
-            --color-surface-alt: #eef0f3;
-            --color-text: #111215;
-            --color-muted: #5f6470;
-            --color-accent: #00b45a;
-            --color-accent-soft: rgba(0, 180, 90, 0.12);
-            --color-border: rgba(17, 18, 21, 0.08);
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --radius-sm: 10px;
-            --radius-md: 18px;
-            --radius-lg: 28px;
-            --shadow-glow: 0 14px 30px rgba(0, 180, 90, 0.2);
-            --shadow-soft: 0 24px 50px rgba(16, 24, 40, 0.12);
+            --color-bg: #ffffff;
+            --color-surface: #f5f5f7;
+            --color-surface-strong: #efeff2;
+            --color-text: #0b0c0f;
+            --color-muted: #5b5f69;
+            --color-accent: #0071e3;
+            --color-accent-soft: rgba(0, 113, 227, 0.12);
+            --color-border: rgba(15, 17, 23, 0.08);
+            --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --shadow-soft: 0 24px 60px rgba(15, 17, 23, 0.1);
             --transition: 200ms ease;
         }
 
@@ -87,7 +86,7 @@
             font-family: var(--font-family);
             background: var(--color-bg);
             color: var(--color-text);
-            line-height: 1.5;
+            line-height: 1.55;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -106,23 +105,23 @@
             list-style: none;
         }
 
-        h1, h2, h3 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
         h1 {
-            font-size: clamp(2.6rem, 6vw, 4.8rem);
-            line-height: 1.05;
+            font-size: clamp(2.9rem, 6vw, 5rem);
+            line-height: 1.02;
         }
 
         h2 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            line-height: 1.1;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.08;
         }
 
         h3 {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
         }
 
         p {
@@ -132,27 +131,32 @@
 
         .container {
             width: 100%;
-            max-width: 1180px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
 
         section {
-            padding: 5rem 0;
+            padding: 6.5rem 0;
+        }
+
+        .section-muted {
+            background: var(--color-surface);
         }
 
         .eyebrow {
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            font-size: 0.72rem;
             color: var(--color-muted);
+            font-weight: 600;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.85rem 1.8rem;
+            padding: 0.85rem 1.9rem;
             border-radius: 999px;
             border: 1px solid transparent;
             font-weight: 600;
@@ -162,8 +166,8 @@
 
         .btn-primary {
             background: var(--color-accent);
-            color: #02130a;
-            box-shadow: var(--shadow-glow);
+            color: #fff;
+            box-shadow: 0 18px 36px rgba(0, 113, 227, 0.24);
         }
 
         .btn-primary:hover {
@@ -173,11 +177,11 @@
         .btn-ghost {
             border-color: var(--color-border);
             color: var(--color-text);
-            background: var(--color-surface);
+            background: transparent;
         }
 
         .btn-ghost:hover {
-            background: var(--color-surface-alt);
+            background: var(--color-surface-strong);
         }
 
         .header {
@@ -185,8 +189,8 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(12px);
-            background: rgba(246, 247, 248, 0.88);
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.86);
             border-bottom: 1px solid transparent;
             transition: border-color var(--transition), background var(--transition);
         }
@@ -209,7 +213,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
             align-items: center;
             font-weight: 500;
         }
@@ -246,7 +250,7 @@
         }
 
         .hero {
-            padding-top: 110px;
+            padding-top: 130px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -255,7 +259,7 @@
         .hero-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
@@ -282,55 +286,54 @@
 
         .hero-highlights span {
             padding: 0.75rem 1rem;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-sm);
+            border-radius: 999px;
             background: var(--color-surface);
             text-align: center;
             color: var(--color-text);
         }
 
-        .hero-visual {
+        .hero-media {
             position: relative;
             border-radius: var(--radius-lg);
-            min-height: 480px;
-            background: radial-gradient(circle at top left, rgba(0, 180, 90, 0.12), transparent 55%),
-                        linear-gradient(140deg, #ffffff, #eef1f4 60%);
+            min-height: 520px;
+            background: radial-gradient(circle at top left, rgba(0, 113, 227, 0.08), transparent 55%),
+                        linear-gradient(140deg, #ffffff, #f0f1f4 60%);
             border: 1px solid var(--color-border);
             box-shadow: var(--shadow-soft);
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
         }
 
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: 18% 12% 22% 12%;
-            border-radius: 32px;
-            border: 1px solid rgba(17, 18, 21, 0.12);
-            box-shadow: inset 0 0 0 1px rgba(17, 18, 21, 0.05);
-            background: linear-gradient(180deg, #ffffff, #f3f4f7);
-        }
-
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            right: 12%;
-            bottom: 18%;
-            width: 180px;
-            height: 110px;
-            border-radius: 24px;
-            background: linear-gradient(130deg, rgba(0, 180, 90, 0.18), rgba(0, 180, 90, 0));
-            filter: blur(2px);
+        .hero-media img {
+            width: 100%;
+            max-width: 520px;
+            object-fit: contain;
         }
 
         .hero-badge {
             position: absolute;
             bottom: 28px;
             left: 28px;
-            padding: 0.75rem 1rem;
+            padding: 0.65rem 1rem;
             border-radius: 999px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             border: 1px solid var(--color-border);
             font-size: 0.85rem;
+            color: var(--color-text);
+        }
+
+        .statement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .statement {
+            font-size: 1.25rem;
+            font-weight: 600;
             color: var(--color-text);
         }
 
@@ -339,47 +342,129 @@
             justify-content: space-between;
             align-items: flex-end;
             gap: 2rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-title p {
-            max-width: 420px;
+            max-width: 460px;
         }
 
-        .pill-grid {
+        .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
 
-        .pill {
+        .service-card {
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .service-card span {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.7rem;
+            color: var(--color-muted);
+        }
+
+        .device-section {
+            padding: 6rem 0;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .device-copy p {
+            margin-top: 1.2rem;
+            max-width: 520px;
+        }
+
+        .device-media {
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 2.5rem;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .device-media img {
+            max-height: 360px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            background: #fff;
+        }
+
+        .step-card strong {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .why-card {
             padding: 2rem;
             border-radius: var(--radius-md);
             background: var(--color-surface);
             border: 1px solid var(--color-border);
         }
 
-        .pill strong {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .beliefs {
-            background: var(--color-surface-alt);
-        }
-
-        .beliefs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .belief {
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
+        .business {
             background: var(--color-surface);
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .business-media {
+            border-radius: var(--radius-lg);
+            background: #fff;
+            border: 1px solid var(--color-border);
+            padding: 2.5rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .business-media img {
+            max-height: 360px;
+            width: auto;
+            object-fit: contain;
         }
 
         .proof {
@@ -396,8 +481,7 @@
             padding: 2rem;
             border-radius: var(--radius-md);
             border: 1px solid var(--color-border);
-            background: var(--color-surface);
-            text-align: left;
+            background: #fff;
         }
 
         .proof-card h3 {
@@ -406,7 +490,7 @@
         }
 
         .cta {
-            padding: 5rem 0 6rem;
+            padding: 6rem 0 7rem;
             text-align: center;
         }
 
@@ -415,9 +499,9 @@
         }
 
         .footer {
-            padding: 3rem 0 2rem;
+            padding: 3.5rem 0 2rem;
             border-top: 1px solid var(--color-border);
-            background: var(--color-surface-alt);
+            background: var(--color-surface);
         }
 
         .footer-grid {
@@ -480,7 +564,7 @@
         .mobile-menu {
             position: fixed;
             inset: 0;
-            background: rgba(250, 251, 252, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             display: flex;
             flex-direction: column;
             padding: 2rem;
@@ -522,12 +606,16 @@
                 display: block;
             }
 
-            .hero-grid {
+            .hero-grid,
+            .device-grid,
+            .business-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-visual {
-                min-height: 360px;
+            .hero-media,
+            .device-media,
+            .business-media {
+                min-height: 320px;
             }
 
             .hero-highlights {
@@ -537,11 +625,11 @@
 
         @media (max-width: 600px) {
             section {
-                padding: 4rem 0;
+                padding: 4.5rem 0;
             }
 
             .hero {
-                padding-top: 96px;
+                padding-top: 110px;
             }
 
             .hero-actions {
@@ -563,6 +651,7 @@
             </a>
             <nav class="nav">
                 <ul class="nav-links">
+                    <li><a href="#servicios">Servicios</a></li>
                     <li><a href="/salva/empresas.html">Empresas</a></li>
                     <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
                 </ul>
@@ -586,6 +675,7 @@
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
         </div>
         <ul class="mobile-menu-links">
+            <li><a href="#servicios">Servicios</a></li>
             <li><a href="/salva/empresas.html">Empresas</a></li>
             <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
         </ul>
@@ -598,8 +688,8 @@
         <div class="container hero-grid">
             <div class="hero-copy">
                 <span class="eyebrow">Apple repair + leasing. Panamá.</span>
-                <h1>Tu Apple no se detiene.</h1>
-                <p>Reparación, leasing y soporte Apple para gente que valora su tiempo. Te decimos la verdad, lo resolvemos rápido y devolvemos tu equipo listo para seguir.</p>
+                <h1>Tu Apple no se detiene. Punto.</h1>
+                <p>Reparación, leasing y soporte Apple con ritmo de ciudad. Diagnóstico claro, decisiones rápidas y un equipo que responde como tú trabajas.</p>
                 <div class="hero-actions">
                     <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20reparar%20mi%20equipo%20Apple" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero diagnóstico</a>
                     <a href="/salva/empresas.html" class="btn btn-ghost">Ver leasing empresarial</a>
@@ -610,58 +700,168 @@
                     <span>2 talleres en ciudad</span>
                 </div>
             </div>
-            <div class="hero-visual" aria-hidden="true">
+            <div class="hero-media" aria-hidden="true">
+                <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-15-Pro-lineup-230912.jpg" alt="iPhone 15 Pro lineup">
                 <div class="hero-badge">Apple-native. Control total.</div>
             </div>
         </div>
     </section>
 
-    <section class="services" id="servicios">
+    <section class="section-muted">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cuando tu Apple falla, todo se frena.</h2>
+                <p>Tu tiempo vale demasiado para esperar. Salva existe para resolverlo con calma, precisión y velocidad.</p>
+            </div>
+            <div class="statement-grid">
+                <div class="statement">Tu iPhone no puede quedarse sin señal.</div>
+                <div class="statement">Tu Mac no puede detener tus entregas.</div>
+                <div class="statement">Tu equipo no puede fallar en medio de una reunión.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
         <div class="container">
             <div class="section-title">
                 <h2>Lo que hacemos. Sin rodeos.</h2>
                 <p>Reparamos, rentamos y cuidamos equipos Apple con una sola meta: que tu día siga en marcha.</p>
             </div>
-            <div class="pill-grid">
-                <div class="pill">
-                    <strong>Reparar</strong>
-                    <p>iPhone, MacBook, iPad, Apple Watch. Diagnóstico claro y reparación precisa.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span>Reparación</span>
+                    <h3>Arreglamos lo esencial.</h3>
+                    <p>iPhone, MacBook, iPad, Apple Watch. Diagnóstico claro, piezas correctas, entrega impecable.</p>
                 </div>
-                <div class="pill">
-                    <strong>Leasing</strong>
-                    <p>Equipos Apple listos para tu ritmo. Sin inversión inicial. Sin fricción.</p>
+                <div class="service-card">
+                    <span>Leasing</span>
+                    <h3>Equipos listos para trabajar.</h3>
+                    <p>Apple para tu operación sin inversión inicial. Contratos simples, reposición rápida, cero fricción.</p>
                 </div>
-                <div class="pill">
-                    <strong>Soporte</strong>
-                    <p>Seguimiento directo con técnicos Apple. Cuando importa, respondemos.</p>
+                <div class="service-card">
+                    <span>Soporte</span>
+                    <h3>Te respondemos.</h3>
+                    <p>Seguimiento directo con técnicos Apple. Cuando importa, respondemos en horas, no en días.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="beliefs" id="por-que">
+    <section class="device-section section-muted">
+        <div class="container device-grid">
+            <div class="device-copy">
+                <span class="eyebrow">iPhone</span>
+                <h2>El centro de tu día.</h2>
+                <p>Reparamos pantalla, batería, cámaras y conectividad. Sin excusas. Sin vueltas. Lo dejas y sales con un plan claro.</p>
+            </div>
+            <div class="device-media">
+                <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-15-lineup-230912.jpg" alt="iPhone 15 lineup">
+            </div>
+        </div>
+    </section>
+
+    <section class="device-section">
+        <div class="container device-grid">
+            <div class="device-media">
+                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-14-and-16-inch-M2-Pro-M2-Max-hero-230117.jpg" alt="MacBook Pro 14 and 16">
+            </div>
+            <div class="device-copy">
+                <span class="eyebrow">MacBook</span>
+                <h2>Tu estación de control.</h2>
+                <p>Desde boards críticos hasta proyectos creativos. Recuperamos tu Mac con precisión y control de temperatura, batería y rendimiento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="device-section section-muted">
+        <div class="container device-grid">
+            <div class="device-copy">
+                <span class="eyebrow">iPad</span>
+                <h2>Portátil. Potente. Siempre listo.</h2>
+                <p>Reparamos pantallas y conectividad, optimizamos tu flujo de trabajo y devolvemos tu iPad con la fluidez que esperas.</p>
+            </div>
+            <div class="device-media">
+                <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-Pro-hero-230509.jpg" alt="iPad Pro hero">
+            </div>
+        </div>
+    </section>
+
+    <section class="device-section">
+        <div class="container device-grid">
+            <div class="device-media">
+                <img src="https://www.apple.com/newsroom/images/product/watch/standard/Apple-Watch-Series-9-hero-230912.jpg" alt="Apple Watch Series 9">
+            </div>
+            <div class="device-copy">
+                <span class="eyebrow">Apple Watch</span>
+                <h2>Pequeño. Crítico.</h2>
+                <p>Si el reloj deja de responder, el ritmo se corta. Lo devolvemos funcionando con pruebas completas y garantía real.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-muted" id="como-funciona">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cómo funciona.</h2>
+                <p>Simple. Visible. Sin fricción.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <strong>1. Agenda</strong>
+                    <p>Escríbenos por WhatsApp. Te respondemos con hora y sede.</p>
+                </div>
+                <div class="step-card">
+                    <strong>2. Diagnóstico</strong>
+                    <p>Revisamos tu equipo y te damos un plan claro en 24 horas.</p>
+                </div>
+                <div class="step-card">
+                    <strong>3. Entrega</strong>
+                    <p>Reparado, probado y listo para volver a tu ritmo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="por-que">
         <div class="container">
             <div class="section-title">
                 <h2>Por qué Salva.</h2>
                 <p>No prometemos lo imposible. Solo hacemos lo correcto, cada vez.</p>
             </div>
-            <div class="beliefs-grid">
-                <div class="belief">
+            <div class="why-grid">
+                <div class="why-card">
                     <h3>Tiempo primero</h3>
                     <p>Si tu equipo es clave, el reloj manda. Respondemos rápido, sin excusas.</p>
                 </div>
-                <div class="belief">
+                <div class="why-card">
                     <h3>Solo Apple</h3>
                     <p>Vivimos en el ecosistema Apple. Cada modelo, cada detalle.</p>
                 </div>
-                <div class="belief">
+                <div class="why-card">
                     <h3>Diagnóstico honesto</h3>
                     <p>Te decimos lo que es. Sin inflar costos, sin historias.</p>
                 </div>
-                <div class="belief">
+                <div class="why-card">
                     <h3>Entrega impecable</h3>
                     <p>Se repara, se prueba, se entrega perfecto. Ese es el estándar.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business" id="empresas">
+        <div class="container business-grid">
+            <div>
+                <span class="eyebrow">Empresas</span>
+                <h2>Tu operación no se detiene.</h2>
+                <p>Leasing Apple para equipos que trabajan duro. Renovación constante, soporte dedicado y control de costos mes a mes.</p>
+                <div class="hero-actions">
+                    <a href="/salva/empresas.html" class="btn btn-primary">Explorar leasing</a>
+                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20leasing%20Apple%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Hablar con un asesor</a>
+                </div>
+            </div>
+            <div class="business-media">
+                <img src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M2-hero-220606.jpg" alt="MacBook Air M2">
             </div>
         </div>
     </section>
@@ -726,7 +926,7 @@
                 <div>
                     <h3>Enlaces</h3>
                     <ul class="footer-links">
-                        <li><a href="/salva/">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
                         <li><a href="/salva/empresas.html">Empresas</a></li>
                         <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
                     </ul>
