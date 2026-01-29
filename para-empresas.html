@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Reparación Apple en Panamá | iPhone, MacBook, iPad | Salva Mi Máquina</title>
-    <meta name="description" content="Servicio técnico especializado en reparación de dispositivos Apple en Panamá. Diagnóstico rápido, 6 meses de garantía. 2 sucursales: San Francisco y Bella Vista.">
-    <meta name="keywords" content="reparación Apple Panamá, reparación iPhone Panamá, reparación MacBook Panamá, servicio técnico Apple">
+    <title>Leasing de Equipos Apple para Empresas | Panamá | Salva Mi Máquina</title>
+    <meta name="description" content="Solución integral de leasing Apple para empresas en Panamá. MacBook, iPad, iMac. Garantía incluida, renovación cada 2 años, soporte técnico prioritario.">
+    <meta name="keywords" content="leasing Apple Panamá, leasing MacBook empresas Panamá, renting equipos Apple, alquiler MacBook empresas">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://salvamimaquina.com/">
+    <link rel="canonical" href="https://salvamimaquina.com/para-empresas">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Reparación Apple en Panamá | Salva Mi Máquina">
-    <meta property="og:description" content="Servicio técnico especializado en iPhone, MacBook, iPad. 6 meses de garantía.">
-    <meta property="og:url" content="https://salvamimaquina.com/">
+    <meta property="og:title" content="Leasing de Equipos Apple para Empresas | Panamá">
+    <meta property="og:description" content="Equipa a tu equipo con MacBook, iPad, iMac. Sin inversión inicial, con garantía incluida.">
+    <meta property="og:url" content="https://salvamimaquina.com/para-empresas">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://salvamimaquina.com/images/og-home.jpg">
+    <meta property="og:image" content="https://salvamimaquina.com/images/og-empresas.jpg">
     <meta property="og:locale" content="es_PA">
     
     <!-- Favicon -->
@@ -31,30 +31,22 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "Organization",
         "name": "Salva Mi Máquina",
-        "image": "https://salvamimaquina.com/images/logo.png",
-        "description": "Servicio técnico especializado en reparación de dispositivos Apple en Panamá",
-        "@id": "https://salvamimaquina.com",
+        "description": "Solución integral de leasing de equipos Apple para empresas en Panamá",
         "url": "https://salvamimaquina.com",
-        "telephone": "+507-394-9351",
-        "address": [
-            {
-                "@type": "PostalAddress",
-                "streetAddress": "Vía Porras con Av. 31 Sur",
-                "addressLocality": "San Francisco, Panamá",
-                "addressCountry": "PA"
-            },
-            {
-                "@type": "PostalAddress",
-                "streetAddress": "PH Seawaves, planta baja",
-                "addressLocality": "Bella Vista, Panamá",
-                "addressCountry": "PA"
-            }
-        ],
-        "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
-        "priceRange": "$$",
-        "areaServed": "Panamá"
+        "logo": "https://salvamimaquina.com/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+507-394-9351",
+            "contactType": "sales",
+            "areaServed": "PA",
+            "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+            "https://www.facebook.com/salvamimaquina",
+            "https://www.instagram.com/salvamimaquina"
+        ]
     }
     </script>
     
@@ -508,25 +500,36 @@
             margin-bottom: 2.5rem;
         }
 
-        .trust-bar {
+        .trust-logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .trust-logos p {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-gray-500);
+        }
+
+        .trust-logos-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-        }
-
-        .trust-item {
-            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--color-gray-600);
         }
 
-        .trust-item svg {
-            width: 18px;
-            height: 18px;
-            color: var(--color-primary);
+        .trust-logo {
+            height: 28px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all var(--transition-base);
+        }
+
+        .trust-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
         }
 
         .hero-image {
@@ -538,63 +541,6 @@
             max-width: 580px;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
-        }
-
-        .hero-float-card {
-            position: absolute;
-            background: var(--color-white);
-            padding: 1rem 1.25rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero-float-card.top {
-            top: 10%;
-            right: -20px;
-        }
-
-        .hero-float-card.bottom {
-            bottom: 15%;
-            left: -20px;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--color-primary-light);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .float-icon svg {
-            width: 22px;
-            height: 22px;
-            color: var(--color-primary);
-        }
-
-        .float-text {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-navy);
-        }
-
-        .float-text span {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: var(--color-gray-500);
         }
 
         @media (max-width: 1024px) {
@@ -609,7 +555,7 @@
             .hero-cta {
                 justify-content: center;
             }
-            .trust-bar {
+            .trust-logos {
                 justify-content: center;
             }
             .hero-image {
@@ -617,9 +563,6 @@
             }
             .hero-image img {
                 margin: 0 auto;
-            }
-            .hero-float-card {
-                display: none;
             }
         }
 
@@ -633,9 +576,9 @@
         }
 
         /* ========================================
-           Services Section
+           Benefits Section
         ======================================== */
-        .services {
+        .benefits {
             background: var(--color-white);
         }
 
@@ -653,76 +596,301 @@
             font-size: 1.0625rem;
         }
 
-        .services-grid {
+        .benefits-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
-        .service-card {
+        .benefit-card {
             background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--color-gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .benefit-card:hover {
+            background: var(--color-white);
+            border-color: var(--color-primary-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-primary-light);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .benefit-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--color-primary);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.9375rem;
+        }
+
+        @media (max-width: 900px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Equipment Section
+        ======================================== */
+        .equipment {
+            background: var(--color-gray-50);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .equipment-card {
+            background: var(--color-white);
             border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             border: 2px solid transparent;
             transition: all var(--transition-base);
-            cursor: pointer;
         }
 
-        .service-card:hover {
-            background: var(--color-white);
+        .equipment-card:hover {
             border-color: var(--color-primary);
-            transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
         }
 
-        .service-card-image {
+        .equipment-card-image {
             width: 100%;
-            height: 140px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.25rem;
         }
 
-        .service-card-image img {
+        .equipment-card-image img {
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
         }
 
-        .service-card h3 {
+        .equipment-card h3 {
             margin-bottom: 0.5rem;
         }
 
-        .service-card p {
+        .equipment-card p {
             font-size: 0.875rem;
             color: var(--color-gray-500);
         }
 
-        @media (max-width: 900px) {
-            .services-grid {
+        @media (max-width: 768px) {
+            .equipment-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
-            .services-grid {
+            .equipment-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* ========================================
+           Options Section (New vs Refurbished)
+        ======================================== */
+        .options {
+            background: var(--color-white);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .option-card {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 2px solid var(--color-gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .option-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .option-card h3 {
+            font-size: 1.375rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .option-card h3 svg {
+            width: 28px;
+            height: 28px;
+            color: var(--color-primary);
+        }
+
+        .option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--color-gray-700);
+        }
+
+        .option-list-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Comparison Table Section
+        ======================================== */
+        .comparison {
+            background: var(--color-primary-light);
+        }
+
+        .comparison-table-wrapper {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+
+        .comparison-table thead th {
+            font-weight: 600;
+            color: var(--color-navy);
+            font-size: 0.9375rem;
+            border-bottom: 2px solid var(--color-gray-200);
+        }
+
+        .comparison-table thead th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table thead th:last-child {
+            background: var(--color-primary-light);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+        }
+
+        .comparison-table tbody td {
+            border-bottom: 1px solid var(--color-gray-200);
+            font-size: 0.9375rem;
+        }
+
+        .comparison-table tbody td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--color-navy);
+        }
+
+        .comparison-table tbody td:last-child {
+            background: var(--color-primary-light);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:last-child td:last-child {
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary);
+            display: inline-block;
+        }
+
+        .cross-icon {
+            width: 24px;
+            height: 24px;
+            color: #EF4444;
+            display: inline-block;
+        }
+
+        .smm-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .smm-badge svg {
+            width: 24px;
+            height: 24px;
         }
 
         /* ========================================
            Process Section
         ======================================== */
         .process {
-            background: var(--color-gray-50);
+            background: var(--color-white);
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         .process-step {
@@ -734,7 +902,7 @@
             content: '';
             position: absolute;
             top: 40px;
-            right: -1rem;
+            right: -0.75rem;
             width: calc(100% - 80px);
             height: 2px;
             background: linear-gradient(90deg, var(--color-primary), var(--color-gray-200));
@@ -764,241 +932,58 @@
 
         .process-step p {
             font-size: 0.9375rem;
-            max-width: 280px;
+            max-width: 220px;
             margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .process-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
             }
             .process-step::after {
                 display: none;
             }
         }
 
+        @media (max-width: 480px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ========================================
-           Benefits Section
+           Trust Section
         ======================================== */
-        .benefits {
-            background: var(--color-white);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .benefit-card {
+        .trust {
             background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            border: 1px solid var(--color-gray-200);
+        }
+
+        .trust-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .trust-logo-large {
+            height: 40px;
+            opacity: 0.5;
+            filter: grayscale(100%);
             transition: all var(--transition-base);
         }
 
-        .benefit-card:hover {
-            background: var(--color-white);
-            border-color: var(--color-primary-light);
-            box-shadow: var(--shadow-md);
-        }
-
-        .benefit-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--color-primary-light);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .benefit-icon svg {
-            width: 26px;
-            height: 26px;
-            color: var(--color-primary);
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .benefit-card p {
-            font-size: 0.9375rem;
-        }
-
-        @media (max-width: 640px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ========================================
-           Locations Section
-        ======================================== */
-        .locations {
-            background: var(--color-gray-50);
-        }
-
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .location-card {
-            background: var(--color-white);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            border: 1px solid var(--color-gray-200);
-            transition: all var(--transition-base);
-        }
-
-        .location-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .location-name {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .location-name svg {
-            width: 24px;
-            height: 24px;
-            color: var(--color-primary);
-        }
-
-        .location-name h3 {
-            font-size: 1.25rem;
-        }
-
-        .location-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .location-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9375rem;
-            color: var(--color-gray-600);
-        }
-
-        .location-detail svg {
-            width: 18px;
-            height: 18px;
-            color: var(--color-gray-400);
-            flex-shrink: 0;
-        }
-
-        .location-cta {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .location-cta .btn {
-            flex: 1;
-            padding: 0.625rem 1rem;
-            font-size: 0.875rem;
-        }
-
-        @media (max-width: 768px) {
-            .locations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ========================================
-           Testimonials Section (Optional)
-        ======================================== */
-        .testimonials {
-            background: var(--color-white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .testimonial-card {
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-stars svg {
-            width: 18px;
-            height: 18px;
-            color: #FBBF24;
-            fill: #FBBF24;
-        }
-
-        .testimonial-text {
-            font-size: 0.9375rem;
-            color: var(--color-gray-700);
-            margin-bottom: 1.25rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .author-avatar {
-            width: 44px;
-            height: 44px;
-            background: var(--color-primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--color-primary);
-        }
-
-        .author-info {
-            font-size: 0.875rem;
-        }
-
-        .author-info strong {
-            display: block;
-            color: var(--color-navy);
-        }
-
-        .author-info span {
-            color: var(--color-gray-500);
-        }
-
-        @media (max-width: 900px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
+        .trust-logo-large:hover {
+            opacity: 1;
+            filter: grayscale(0%);
         }
 
         /* ========================================
            Cross-Link Section
         ======================================== */
         .crosslink {
-            background: var(--color-primary-light);
+            background: var(--color-gray-100);
             padding: 4rem 0;
         }
 
@@ -1265,28 +1250,6 @@
                 display: none;
             }
         }
-
-        /* ========================================
-           Utilities
-        ======================================== */
-        .text-center { text-align: center; }
-        .text-primary { color: var(--color-primary); }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
     </style>
 </head>
 <body>
@@ -1310,12 +1273,12 @@
 
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="/" class="active">Home</a></li>
-                    <li><a href="/para-empresas">Para Empresas</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/para-empresas" class="active">Para Empresas</a></li>
                     <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer" class="external">Catálogo</a></li>
                 </ul>
                 <div class="nav-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20información%20sobre%20reparación" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
@@ -1352,13 +1315,13 @@
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
         </div>
         <ul class="mobile-menu-links">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/para-empresas">Para Empresas</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/para-empresas" class="active">Para Empresas</a></li>
             <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
         </ul>
         <div class="mobile-menu-cta">
-            <a href="https://wa.me/+50769784955" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Contáctanos por WhatsApp
+            <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Solicitar cotización
             </a>
         </div>
     </div>
@@ -1369,178 +1332,45 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                     </svg>
-                    <span>Técnicos certificados · 2 ubicaciones en Panamá</span>
+                    <span>Solución integral para empresas</span>
                 </div>
 
-                <h1>Expertos en reparación de <span class="highlight">equipos Apple</span> en Panamá</h1>
+                <h1>Leasing de equipos <span class="highlight">Apple</span> para empresas en Panamá</h1>
 
                 <p class="hero-description">
-                    Diagnóstico profesional y reparación de iPhone, MacBook, iPad y Apple Watch. 
-                    Garantía de 6 meses en todas nuestras reparaciones.
+                    Equipa a tu equipo con MacBook, iPad e iMac. Sin inversión inicial, 
+                    con garantía incluida y renovación automática cada 2 años.
                 </p>
 
                 <div class="hero-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20equipo%20Apple" 
+                    <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" 
                        target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Solicitar diagnóstico
+                        Solicitar cotización
                     </a>
-                    <a href="#ubicaciones" class="btn btn-secondary">Ver ubicaciones</a>
                 </div>
 
-                <div class="trust-bar">
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <span>+500 clientes atendidos</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                        <span>6 meses de garantía</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span>Diagnóstico en 24h</span>
+                <div class="trust-logos">
+                    <p>Confían en nosotros:</p>
+                    <div class="trust-logos-grid">
+                        <span class="trust-logo" style="font-weight: 700; font-size: 1rem; color: var(--color-gray-500);">K&B</span>
+                        <span class="trust-logo" style="font-weight: 700; font-size: 1rem; color: var(--color-gray-500);">La Prensa</span>
+                        <span class="trust-logo" style="font-weight: 700; font-size: 1rem; color: var(--color-gray-500);">BOSCH</span>
+                        <span class="trust-logo" style="font-weight: 700; font-size: 1rem; color: var(--color-gray-500);">Cheil</span>
+                        <span class="trust-logo" style="font-weight: 700; font-size: 1rem; color: var(--color-gray-500);">SUEZ</span>
                     </div>
                 </div>
             </div>
 
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=600&q=80" 
-                     alt="Reparación profesional de iPhone en Panamá - Salva Mi Máquina"
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" 
+                     alt="Equipos Apple para empresas - MacBook Pro en ambiente de oficina"
                      width="580" height="400">
-                
-                <div class="hero-float-card top">
-                    <div class="float-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                    </div>
-                    <div class="float-text">
-                        Garantía total
-                        <span>6 meses incluidos</span>
-                    </div>
-                </div>
-
-                <div class="hero-float-card bottom">
-                    <div class="float-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <div class="float-text">
-                        +500 clientes
-                        <span>Confían en nosotros</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <div class="section-header">
-                <h2>Servicios de reparación Apple</h2>
-                <p>Reparamos todos los dispositivos del ecosistema Apple con piezas de calidad y técnicos especializados.</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service Card: iPhone -->
-                <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&q=80" 
-                             alt="Reparación de iPhone en Panamá"
-                             width="200" height="140">
-                    </div>
-                    <h3>iPhone</h3>
-                    <p>Pantalla, batería, puerto de carga</p>
-                </article>
-
-                <!-- Service Card: MacBook -->
-                <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" 
-                             alt="Reparación de MacBook en Panamá"
-                             width="200" height="140">
-                    </div>
-                    <h3>MacBook</h3>
-                    <p>Batería, teclado, pantalla, SSD</p>
-                </article>
-
-                <!-- Service Card: iPad -->
-                <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80" 
-                             alt="Reparación de iPad en Panamá"
-                             width="200" height="140">
-                    </div>
-                    <h3>iPad</h3>
-                    <p>Pantalla, puerto, batería</p>
-                </article>
-
-                <!-- Service Card: Apple Watch -->
-                <article class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1434493789847-2a75b69dbe1f?w=300&q=80" 
-                             alt="Reparación de Apple Watch en Panamá"
-                             width="200" height="140">
-                    </div>
-                    <h3>Apple Watch</h3>
-                    <p>Batería, pantalla, corona</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process" id="proceso">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Cómo funciona nuestro servicio?</h2>
-                <p>Un proceso simple y transparente para que recuperes tu equipo lo antes posible.</p>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">
-                        <span>1</span>
-                    </div>
-                    <h3>Diagnóstico</h3>
-                    <p>Evaluamos tu equipo sin costo. En menos de 24 horas te enviamos un presupuesto detallado por WhatsApp.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">
-                        <span>2</span>
-                    </div>
-                    <h3>Reparación</h3>
-                    <p>Nuestros técnicos especializados trabajan con piezas certificadas. La mayoría de reparaciones están listas en 24-48 horas.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">
-                        <span>3</span>
-                    </div>
-                    <h3>Entrega</h3>
-                    <p>Recoge tu equipo en cualquiera de nuestras sucursales o solicita envío a domicilio en Ciudad de Panamá.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1549,157 +1379,418 @@
     <section class="benefits" id="ventajas">
         <div class="container">
             <div class="section-header">
-                <h2>¿Por qué elegirnos?</h2>
-                <p>Nos especializamos exclusivamente en dispositivos Apple para darte el mejor servicio.</p>
+                <h2>Ventajas del leasing Apple para tu empresa</h2>
+                <p>Una solución integral que simplifica la gestión de tecnología de tu empresa.</p>
             </div>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Sin inversión inicial</h3>
+                    <p>Preserva tu flujo de caja con cuotas mensuales predecibles.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3>6 meses de garantía</h3>
-                    <p>En todas las reparaciones. Si algo falla, lo arreglamos sin costo adicional.</p>
+                    <h3>Garantía total incluida</h3>
+                    <p>Cubrimos cualquier incidente durante todo el contrato.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 16v-4"/>
-                            <path d="M12 8h.01"/>
+                            <polyline points="23 4 23 10 17 10"/>
+                            <polyline points="1 20 1 14 7 14"/>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
                         </svg>
                     </div>
-                    <h3>Técnicos especializados</h3>
-                    <p>Solo trabajamos con dispositivos Apple. Conocemos cada modelo a fondo.</p>
+                    <h3>Renovación cada 2 años</h3>
+                    <p>Siempre con tecnología actualizada. Nos encargamos de todo.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
                     </div>
-                    <h3>Piezas de calidad</h3>
-                    <p>Utilizamos componentes certificados que igualan la calidad original de Apple.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <h3>Diagnóstico en 24 horas</h3>
-                    <p>Respuesta rápida para que sepas exactamente qué necesita tu equipo.</p>
+                    <h3>Soporte prioritario</h3>
+                    <p>Atención dedicada para empresas. Resolución rápida.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Locations Section -->
-    <section class="locations" id="ubicaciones">
+    <!-- Equipment Section -->
+    <section class="equipment" id="equipos">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestras ubicaciones en Panamá</h2>
-                <p>Dos sucursales para atenderte mejor. Visítanos o agenda una cita por WhatsApp.</p>
+                <h2>Equipos disponibles para leasing</h2>
+                <p>MacBook Pro, MacBook Air, iMac, iPad Pro y más. Configuramos cada equipo según las necesidades de tu empresa.</p>
             </div>
 
-            <div class="locations-grid">
-                <!-- Location: San Francisco -->
-                <div class="location-card">
-                    <div class="location-name">
+            <div class="equipment-grid">
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" 
+                             alt="MacBook Pro para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>MacBook Pro</h3>
+                    <p>Ideal para creativos y desarrolladores</p>
+                </article>
+
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=300&q=80" 
+                             alt="MacBook Air para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>MacBook Air</h3>
+                    <p>Ideal para productividad y movilidad</p>
+                </article>
+
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&q=80" 
+                             alt="iMac para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>iMac 24"</h3>
+                    <p>Ideal para estaciones de trabajo fijas</p>
+                </article>
+
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80" 
+                             alt="iPad Pro para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>iPad Pro</h3>
+                    <p>Ideal para presentaciones y trabajo de campo</p>
+                </article>
+
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1624823183493-ed5832f48f18?w=300&q=80" 
+                             alt="Mac Mini para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>Mac Mini</h3>
+                    <p>Ideal para servidores y estaciones compactas</p>
+                </article>
+
+                <article class="equipment-card">
+                    <div class="equipment-card-image">
+                        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=300&q=80" 
+                             alt="Apple Studio Display para leasing empresarial"
+                             width="240" height="160">
+                    </div>
+                    <h3>Studio Display</h3>
+                    <p>Monitores profesionales de alta resolución</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Options Section -->
+    <section class="options" id="opciones">
+        <div class="container">
+            <div class="section-header">
+                <h2>Equipos nuevos o reacondicionados</h2>
+                <p>Elige la opción que mejor se adapte a tu presupuesto. Ambas incluyen garantía completa y soporte técnico.</p>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-card">
+                    <h3>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                            <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                        <h3>San Francisco</h3>
-                    </div>
-                    <div class="location-details">
-                        <div class="location-detail">
+                        Equipos nuevos
+                    </h3>
+                    <ul class="option-list">
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>Vía Porras con Av. 31 Sur, Panamá</span>
-                        </div>
-                        <div class="location-detail">
+                            <span>Configuraciones de última generación</span>
+                        </li>
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>394-9351 / 6978-0206</span>
-                        </div>
-                        <div class="location-detail">
+                            <span>Productos en embalaje original</span>
+                        </li>
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>Lun - Vie: 9am - 6pm | Sáb: 10am - 2pm</span>
-                        </div>
-                    </div>
-                    <div class="location-cta">
-                        <a href="https://wa.me/+50769780206?text=Hola,%20quiero%20agendar%20una%20cita%20en%20San%20Francisco" 
-                           target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
-                        <a href="https://maps.google.com/?q=Via+Porras+Av+31+Sur+Panama" 
-                           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver mapa</a>
-                    </div>
+                            <span>Personalización según necesidades</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Location: Bella Vista -->
-                <div class="location-card">
-                    <div class="location-name">
+                <div class="option-card">
+                    <h3>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                            <polyline points="23 4 23 10 17 10"/>
+                            <polyline points="1 20 1 14 7 14"/>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
                         </svg>
-                        <h3>Bella Vista</h3>
-                    </div>
-                    <div class="location-details">
-                        <div class="location-detail">
+                        Equipos reacondicionados
+                    </h3>
+                    <ul class="option-list">
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>PH Seawaves, planta baja, Panamá</span>
-                        </div>
-                        <div class="location-detail">
+                            <span>Certificación Grado A+ o A</span>
+                        </li>
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>203-2055 / 6932-7190</span>
-                        </div>
-                        <div class="location-detail">
+                            <span>Hasta 40% de ahorro vs. nuevo</span>
+                        </li>
+                        <li class="option-list-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
+                                <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>Lun - Vie: 9am - 6pm | Sáb: 10am - 2pm</span>
-                        </div>
-                    </div>
-                    <div class="location-cta">
-                        <a href="https://wa.me/+50769327190?text=Hola,%20quiero%20agendar%20una%20cita%20en%20Bella%20Vista" 
-                           target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
-                        <a href="https://maps.google.com/?q=PH+Seawaves+Bella+Vista+Panama" 
-                           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver mapa</a>
-                    </div>
+                            <span>Rendimiento equivalente garantizado</span>
+                        </li>
+                        <li class="option-list-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Menor huella de carbono</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- B2B Cross-Link Section -->
+    <!-- Comparison Table Section -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegir leasing con Salva Mi Máquina?</h2>
+                <p>Al suscribirte a nuestro servicio, obtienes una solución integral para el alquiler, manejo y renovación del equipo de TI de tu empresa.</p>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Compra directa</th>
+                            <th>Leasing tradicional</th>
+                            <th>
+                                <span class="smm-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
+                                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
+                                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
+                                        <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
+                                    </svg>
+                                    Salva Mi Máquina
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proceso claro y directo</td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mejora en la gestión de flujo de caja</td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Equipos siempre actualizados</td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Garantía y asistencia de alta calidad</td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sistema centralizado para gestión de flotas</td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="cross-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                            </td>
+                            <td>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Cómo funciona el leasing?</h2>
+                <p>Un proceso simple para que tu empresa tenga los mejores equipos sin complicaciones.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>1</span>
+                    </div>
+                    <h3>Cotización</h3>
+                    <p>Cuéntanos qué necesita tu equipo y cuántas personas lo usarán.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>2</span>
+                    </div>
+                    <h3>Configuración</h3>
+                    <p>Elegimos los equipos ideales y los configuramos según tus necesidades.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>3</span>
+                    </div>
+                    <h3>Entrega</h3>
+                    <p>Entregamos en tu oficina, configurados y listos para trabajar.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>4</span>
+                    </div>
+                    <h3>Soporte</h3>
+                    <p>Durante todo el contrato, estamos disponibles para resolver cualquier incidente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <div class="section-header">
+                <h2>Empresas que confían en nosotros</h2>
+                <p>Más de 50 empresas en Panamá ya equipan a sus equipos con Salva Mi Máquina.</p>
+            </div>
+
+            <div class="trust-grid">
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">K&B</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">La Prensa</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">BOSCH</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">Cheil</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">Tetra Pak</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">SUEZ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2C Cross-Link Section -->
     <section class="crosslink">
         <div class="container crosslink-container">
             <div class="crosslink-content">
-                <h2>¿Necesitas equipar a tu empresa?</h2>
-                <p>Ofrecemos leasing de equipos Apple para empresas. Gestión simplificada, garantía incluida, renovación cada 2 años.</p>
+                <h2>¿También necesitas servicio técnico?</h2>
+                <p>Reparamos equipos Apple de tu empresa con atención prioritaria y garantía de 6 meses en todas las reparaciones.</p>
             </div>
-            <a href="/para-empresas" class="btn btn-primary">
-                Conocer leasing para empresas
+            <a href="/" class="btn btn-primary">
+                Ver servicios de reparación
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>
                     <polyline points="12 5 19 12 12 19"/>
@@ -1711,20 +1802,20 @@
     <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="container final-cta-container">
-            <h2>¿Tu equipo Apple necesita reparación?</h2>
-            <p>Contáctanos por WhatsApp y agenda tu diagnóstico hoy. Respuesta en menos de 1 hora.</p>
-            <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20reparar%20mi%20equipo%20Apple" 
+            <h2>Equipa a tu empresa con tecnología Apple</h2>
+            <p>Solicita una cotización personalizada. Sin compromiso, respuesta en menos de 24 horas.</p>
+            <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa.%20Somos%20[nombre%20empresa]%20y%20necesitamos%20[cantidad]%20equipos." 
                target="_blank" rel="noopener noreferrer" class="btn btn-white">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                Contactar por WhatsApp
+                Solicitar cotización por WhatsApp
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contacto">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -1742,16 +1833,16 @@
                             <span>máquina</span>
                         </div>
                     </a>
-                    <p>Servicio técnico especializado en reparación de dispositivos Apple en Panamá.</p>
+                    <p>Solución integral de leasing de equipos Apple para empresas en Panamá.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
                         <a href="https://wa.me/+50769784955" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
@@ -1820,7 +1911,6 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/para-empresas">Para Empresas</a></li>
                         <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
-                        <li><a href="#ubicaciones">Ubicaciones</a></li>
                     </ul>
                 </div>
             </div>
@@ -1834,8 +1924,8 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <span class="whatsapp-tooltip">¿Necesitas ayuda? ¡Escríbenos!</span>
-        <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20información" 
+        <span class="whatsapp-tooltip">¿Necesitas una cotización?</span>
+        <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" 
            target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
