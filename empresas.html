@@ -7,11 +7,11 @@
   <meta name="description" content="Leasing de equipos Apple para empresas en Panamá con alquiler de MacBook, iPad e iMac, soporte incluido y renovación sin inversión inicial en Ciudad de Panamá.">
   <meta name="keywords" content="leasing Apple empresas Panamá, equipos Apple empresas, alquiler MacBook, renting corporativo, flotas Apple, leasing tecnológico Panamá, arrendamiento MacBook Panamá, renovación equipos Apple">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://salvamimaquina.com/empresas">
+  <link rel="canonical" href="https://salvamimaquina.com/empresas.html">
 
   <meta property="og:title" content="Leasing de Equipos Apple para Empresas en Panamá">
   <meta property="og:description" content="Renting corporativo con equipos Apple listos, soporte incluido y renovación planificada en Panamá.">
-  <meta property="og:url" content="https://salvamimaquina.com/empresas">
+  <meta property="og:url" content="https://salvamimaquina.com/empresas.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/mac_og_774fc77d8.png">
   <meta property="og:locale" content="es_PA">
@@ -319,7 +319,7 @@
           <p class="eyebrow">Soporte adicional</p>
           <h2>¿También necesitas servicio técnico?</h2>
           <p>Ofrecemos servicio técnico Apple para tu equipo interno con atención prioritaria. Conoce la atención especializada para equipos Apple en Panamá.</p>
-          <a class="btn btn-ghost" href="index.html">Ver servicio técnico Apple</a>
+          <a class="btn btn-ghost" href="index.html">Ver servicio técnico Apple en Panamá</a>
         </div>
       </div>
     </section>
@@ -364,7 +364,7 @@
         <h3>Contacto</h3>
         <p>WhatsApp: +507 6978-4955</p>
         <p>Email: ventas@salvamimaquina.com</p>
-        <p><a href="index.html">Servicio técnico Apple</a></p>
+        <p><a href="index.html">Servicio técnico Apple en Panamá</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -373,31 +373,148 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Salva Mi Máquina",
-        "url": "https://salvamimaquina.com",
-        "telephone": "+507-394-9351",
-        "serviceType": "Apple Equipment Leasing",
-        "address": [
+        "@graph": [
           {
-            "@type": "PostalAddress",
-            "streetAddress": "Vía Porras con Av. 31 Sur",
-            "addressLocality": "San Francisco",
-            "addressRegion": "Panamá",
-            "addressCountry": "PA"
+            "@type": "Organization",
+            "@id": "https://salvamimaquina.com/#organization",
+            "name": "Salva Mi Máquina",
+            "url": "https://salvamimaquina.com/",
+            "logo": "https://salvamimaquina.com/images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061.png",
+            "description": "Leasing de equipos Apple para empresas en Panamá.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+507-6978-4955",
+              "contactType": "sales",
+              "availableLanguage": ["Spanish"]
+            }
           },
           {
-            "@type": "PostalAddress",
-            "streetAddress": "PH Seawaves, planta baja",
-            "addressLocality": "Bella Vista",
-            "addressRegion": "Panamá",
-            "addressCountry": "PA"
+            "@type": "WebSite",
+            "@id": "https://salvamimaquina.com/#website",
+            "name": "Salva Mi Máquina",
+            "url": "https://salvamimaquina.com/",
+            "description": "Reparación de equipos Apple y leasing para empresas en Panamá.",
+            "inLanguage": "es",
+            "publisher": {
+              "@id": "https://salvamimaquina.com/#organization"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://salvamimaquina.com/#san-francisco",
+            "name": "Salva Mi Máquina - San Francisco",
+            "url": "https://salvamimaquina.com/",
+            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
+            "telephone": "+507-394-9351",
+            "priceRange": "$$",
+            "serviceType": "Apple Equipment Leasing",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vía Porras con Av. 31 Sur",
+              "addressLocality": "Ciudad de Panamá",
+              "addressRegion": "Panamá",
+              "addressCountry": "PA"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "areaServed": {
+              "@type": "City",
+              "name": "Ciudad de Panamá"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://salvamimaquina.com/#bella-vista",
+            "name": "Salva Mi Máquina - Bella Vista",
+            "url": "https://salvamimaquina.com/",
+            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
+            "telephone": "+507-203-2055",
+            "priceRange": "$$",
+            "serviceType": "Apple Equipment Leasing",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "PH Seawaves, planta baja",
+              "addressLocality": "Ciudad de Panamá",
+              "addressRegion": "Panamá",
+              "addressCountry": "PA"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "areaServed": {
+              "@type": "City",
+              "name": "Ciudad de Panamá"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://salvamimaquina.com/empresas.html#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el plazo mínimo de contrato?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ofrecemos contratos flexibles entre 12 y 36 meses, según el tamaño de tu operación."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué incluye el soporte técnico?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Incluye asistencia prioritaria, seguimiento remoto y reemplazos coordinados para minimizar tiempo fuera de servicio."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo renovar los equipos antes del plazo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. La renovación de equipos Apple se puede planificar antes del vencimiento para mantener la flota vigente."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué pasa si un equipo se daña?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Activamos el soporte incluido y coordinamos sustitución o solución para asegurar continuidad operativa."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Ofrecen configuración personalizada?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Configuramos usuarios, apps corporativas y políticas de seguridad según tu entorno."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Hay opción de compra al final del leasing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Existe opción de compra o renovación según el plan elegido y el estado de los equipos."
+                }
+              }
+            ]
           }
-        ],
-        "areaServed": "Ciudad de Panamá"
+        ]
       }
     </script>
   </footer>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>

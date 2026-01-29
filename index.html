@@ -26,12 +26,13 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a class="logo-text" href="#inicio" aria-label="Salva Mi Máquina">Salva Mi Máquina</a>
+      <a class="logo-text" href="index.html" aria-label="Salva Mi Máquina">Salva Mi Máquina</a>
       <nav class="nav-links" aria-label="Principal">
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
         <a href="#ubicaciones">Ubicaciones</a>
         <a href="#faq">FAQ</a>
+        <a href="empresas.html">Empresas</a>
       </nav>
       <a class="btn btn-primary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">Contactar por WhatsApp</a>
     </div>
@@ -204,7 +205,7 @@
             <p>Tel: 394-9351 / 6978-0206</p>
             <div class="location-actions">
               <a class="btn btn-secondary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">WhatsApp</a>
-              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa</a>
+              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa de San Francisco</a>
             </div>
           </article>
           <article class="location-card">
@@ -214,7 +215,7 @@
             <p>Tel: 203-2055 / 6932-7190</p>
             <div class="location-actions">
               <a class="btn btn-secondary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">WhatsApp</a>
-              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa</a>
+              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa de Bella Vista</a>
             </div>
           </article>
         </div>
@@ -267,7 +268,7 @@
           </div>
           <div class="cta-actions">
             <a class="btn btn-primary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">Contactar por WhatsApp</a>
-            <a class="btn btn-ghost" href="empresas.html">Equipos Apple para equipos de trabajo</a>
+            <a class="btn btn-ghost" href="empresas.html">Leasing de equipos Apple para empresas</a>
             <div class="cta-meta">
               <p>WhatsApp: +507 6978-4955</p>
               <p>Email: ventas@salvamimaquina.com</p>
@@ -298,7 +299,7 @@
         <h3>Contacto</h3>
         <p>WhatsApp: +507 6978-4955</p>
         <p>Email: ventas@salvamimaquina.com</p>
-        <p><a href="empresas.html">Equipos Apple para equipos de trabajo</a></p>
+        <p><a href="empresas.html">Leasing de equipos Apple para empresas</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -307,33 +308,148 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Salva Mi Máquina",
-        "url": "https://salvamimaquina.com",
-        "image": "images/mac_og_774fc77d8.png",
-        "telephone": "+507-394-9351",
-        "priceRange": "$$",
-        "serviceType": "Apple Device Repair",
-        "address": [
+        "@graph": [
           {
-            "@type": "PostalAddress",
-            "streetAddress": "Vía Porras con Av. 31 Sur",
-            "addressLocality": "San Francisco",
-            "addressRegion": "Panamá",
-            "addressCountry": "PA"
+            "@type": "Organization",
+            "@id": "https://salvamimaquina.com/#organization",
+            "name": "Salva Mi Máquina",
+            "url": "https://salvamimaquina.com/",
+            "logo": "https://salvamimaquina.com/images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061.png",
+            "description": "Servicio técnico especializado en reparación de equipos Apple en Panamá.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+507-6978-4955",
+              "contactType": "customer service",
+              "availableLanguage": ["Spanish"]
+            }
           },
           {
-            "@type": "PostalAddress",
-            "streetAddress": "PH Seawaves, planta baja",
-            "addressLocality": "Bella Vista",
-            "addressRegion": "Panamá",
-            "addressCountry": "PA"
+            "@type": "WebSite",
+            "@id": "https://salvamimaquina.com/#website",
+            "name": "Salva Mi Máquina",
+            "url": "https://salvamimaquina.com/",
+            "description": "Reparación de equipos Apple y leasing para empresas en Panamá.",
+            "inLanguage": "es",
+            "publisher": {
+              "@id": "https://salvamimaquina.com/#organization"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://salvamimaquina.com/#san-francisco",
+            "name": "Salva Mi Máquina - San Francisco",
+            "url": "https://salvamimaquina.com/",
+            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
+            "telephone": "+507-394-9351",
+            "priceRange": "$$",
+            "serviceType": "Apple Device Repair",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vía Porras con Av. 31 Sur",
+              "addressLocality": "Ciudad de Panamá",
+              "addressRegion": "Panamá",
+              "addressCountry": "PA"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "areaServed": {
+              "@type": "City",
+              "name": "Ciudad de Panamá"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://salvamimaquina.com/#bella-vista",
+            "name": "Salva Mi Máquina - Bella Vista",
+            "url": "https://salvamimaquina.com/",
+            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
+            "telephone": "+507-203-2055",
+            "priceRange": "$$",
+            "serviceType": "Apple Device Repair",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "PH Seawaves, planta baja",
+              "addressLocality": "Ciudad de Panamá",
+              "addressRegion": "Panamá",
+              "addressCountry": "PA"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "areaServed": {
+              "@type": "City",
+              "name": "Ciudad de Panamá"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://salvamimaquina.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo toma una reparación?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La mayoría de reparaciones de iPhone, iPad y Apple Watch se completan entre 24 y 72 horas. MacBook depende del diagnóstico y disponibilidad de piezas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué garantía ofrecen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Entregamos garantía de reparación de 6 meses por escrito en todas las intervenciones realizadas en Panamá."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Usan piezas originales?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Trabajamos con piezas originales o certificadas. Siempre te indicamos qué componente se instalará antes de iniciar la reparación."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Hacen diagnóstico gratis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. El diagnóstico es gratis y se entrega con un presupuesto claro para que decidas con tranquilidad."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo esperar mientras reparan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si es un cambio de batería o pantalla con disponibilidad inmediata, coordinamos tiempos cortos para que puedas esperar en la sede."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué pasa si el equipo está mojado?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Atendemos equipos con daño por líquido y evaluamos posibilidades reales de recuperación. El diagnóstico define alcance y tiempos."
+                }
+              }
+            ]
           }
-        ],
-        "areaServed": "Ciudad de Panamá"
+        ]
       }
     </script>
   </footer>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>
