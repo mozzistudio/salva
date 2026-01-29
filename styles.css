@@ -416,6 +416,29 @@ p {
   margin-top: 40px;
 }
 
+.image-break {
+  margin-top: 40px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--salva-light);
+  border: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.image-break img {
+  width: 100%;
+  height: auto;
+}
+
+.image-break-caption {
+  padding: 24px 32px;
+  background: var(--salva-white);
+}
+
+.image-break-caption p {
+  color: var(--salva-gray);
+  font-size: 0.95rem;
+}
+
 .product-card {
   border-radius: var(--radius);
   padding: 28px;
@@ -555,8 +578,37 @@ p {
   color: var(--salva-black);
 }
 
+.faq-item summary h3 {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .faq-item p {
   margin-top: 12px;
+}
+
+.locations-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.location-card {
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(26, 26, 26, 0.12);
+  background: var(--salva-white);
+  display: grid;
+  gap: 12px;
+}
+
+.location-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .cta-panel {
