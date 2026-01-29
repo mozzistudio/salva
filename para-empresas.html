@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Leasing de Equipos Apple para Empresas | Panamá | Salva Mi Máquina</title>
-    <meta name="description" content="Solución integral de leasing Apple para empresas en Panamá. MacBook, iPad, iMac. Garantía incluida, renovación cada 2 años, soporte técnico prioritario.">
+    <title>Leasing Apple para Empresas en Panamá | Sin Inversión Inicial</title>
+    <meta name="description" content="Leasing Apple para empresas en Panamá: MacBook, iPad e iMac con cuota mensual fija, soporte prioritario y renovación programada. Cotiza por WhatsApp.">
     <meta name="keywords" content="leasing Apple Panamá, leasing MacBook empresas Panamá, renting equipos Apple, alquiler MacBook empresas">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://salvamimaquina.com/para-empresas">
@@ -35,7 +35,7 @@
         "name": "Salva Mi Máquina",
         "description": "Solución integral de leasing de equipos Apple para empresas en Panamá",
         "url": "https://salvamimaquina.com",
-        "logo": "https://salvamimaquina.com/images/logo.png",
+        "logo": "https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+507-394-9351",
@@ -264,33 +264,12 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.625rem;
+            gap: 0.75rem;
         }
 
-        .logo-icon {
-            width: 40px;
+        .logo-image {
             height: 40px;
-            background: var(--color-primary);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .logo-text {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            line-height: 1.1;
-        }
-
-        .logo-text span {
+            width: auto;
             display: block;
         }
 
@@ -336,8 +315,22 @@
             font-size: 0.75em;
         }
 
-        .nav-cta .btn {
-            padding: 0.625rem 1.25rem;
+        .nav-links .nav-cta-link {
+            padding: 0.65rem 1.25rem;
+            border-radius: var(--radius-full);
+            background: var(--color-primary);
+            color: var(--color-white);
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(0, 210, 106, 0.35);
+        }
+
+        .nav-links .nav-cta-link:hover {
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
+        .nav-links .nav-cta-link::after {
+            content: none;
         }
 
         /* Mobile Menu */
@@ -420,17 +413,8 @@
             color: var(--color-primary);
         }
 
-        .mobile-menu-cta {
-            padding-top: 1rem;
-            border-top: 1px solid var(--color-gray-200);
-        }
-
-        .mobile-menu-cta .btn {
-            width: 100%;
-        }
-
         @media (max-width: 900px) {
-            .nav-links, .nav-cta {
+            .nav-links {
                 display: none;
             }
             .mobile-menu-btn {
@@ -653,6 +637,68 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* ========================================
+           Testimonials Section
+        ======================================== */
+        .testimonials {
+            background: var(--color-gray-50);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--color-gray-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--color-navy);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Service Areas Section
+        ======================================== */
+        .service-areas {
+            background: var(--color-white);
+        }
+
+        .areas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .area-chip {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            color: var(--color-navy);
+            padding: 0.5rem 0.95rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* ========================================
@@ -1060,10 +1106,6 @@
             margin-bottom: 1rem;
         }
 
-        .footer-brand .logo-text {
-            color: var(--color-primary);
-        }
-
         .footer-brand p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9375rem;
@@ -1256,35 +1298,17 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
-                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
-                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
-                        <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span>salva mi</span>
-                    <span>máquina</span>
-                </div>
+            <a href="index.html" class="logo">
+                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina">
             </a>
 
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/para-empresas" class="active">Para Empresas</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="para-empresas.html" class="active">Para Empresas</a></li>
                     <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer" class="external">Catálogo</a></li>
+                    <li><a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="nav-cta-link">Contact Us (WhatsApp)</a></li>
                 </ul>
-                <div class="nav-cta">
-                    <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        Contáctanos
-                    </a>
-                </div>
             </nav>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
@@ -1298,32 +1322,17 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="/" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
-                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
-                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
-                        <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span>salva mi</span>
-                    <span>máquina</span>
-                </div>
+            <a href="index.html" class="logo">
+                <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina">
             </a>
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
         </div>
         <ul class="mobile-menu-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/para-empresas" class="active">Para Empresas</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="para-empresas.html" class="active">Para Empresas</a></li>
             <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
+            <li><a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer">Contact Us (WhatsApp)</a></li>
         </ul>
-        <div class="mobile-menu-cta">
-            <a href="https://wa.me/+50769784955?text=Hola,%20me%20interesa%20cotizar%20leasing%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Solicitar cotización
-            </a>
-        </div>
     </div>
 
     <!-- Hero Section -->
@@ -1335,14 +1344,14 @@
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                     </svg>
-                    <span>Solución integral para empresas</span>
+                    <span>Leasing Apple para equipos corporativos</span>
                 </div>
 
-                <h1>Leasing de equipos <span class="highlight">Apple</span> para empresas en Panamá</h1>
+                <h1>Leasing <span class="highlight">Apple</span> para empresas en Panamá</h1>
 
                 <p class="hero-description">
-                    Equipa a tu equipo con MacBook, iPad e iMac. Sin inversión inicial, 
-                    con garantía incluida y renovación automática cada 2 años.
+                    Equipa a tu equipo con MacBook, iPad e iMac sin inversión inicial.
+                    Cuota mensual fija, soporte prioritario y renovación programada.
                 </p>
 
                 <div class="hero-cta">
@@ -1351,7 +1360,7 @@
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Solicitar cotización
+                        Solicitar cotización por WhatsApp
                     </a>
                 </div>
 
@@ -1379,12 +1388,12 @@
     <section class="benefits" id="ventajas">
         <div class="container">
             <div class="section-header">
-                <h2>Ventajas del leasing Apple para tu empresa</h2>
-                <p>Una solución integral que simplifica la gestión de tecnología de tu empresa.</p>
+                <h2>Servicios incluidos en el leasing Apple</h2>
+                <p>Todo lo que tu empresa necesita para operar con equipos Apple sin fricciones.</p>
             </div>
 
-            <div class="benefits-grid">
-                <div class="benefit-card">
+            <div class="benefits-grid" data-cms-collection="services">
+                <div class="benefit-card" data-cms-item>
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="1" x2="12" y2="23"/>
@@ -1395,17 +1404,17 @@
                     <p>Preserva tu flujo de caja con cuotas mensuales predecibles.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card" data-cms-item>
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
                     <h3>Garantía total incluida</h3>
-                    <p>Cubrimos cualquier incidente durante todo el contrato.</p>
+                    <p>Cubrimos incidentes durante toda la vigencia del contrato.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card" data-cms-item>
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="23 4 23 10 17 10"/>
@@ -1414,17 +1423,17 @@
                         </svg>
                     </div>
                     <h3>Renovación cada 2 años</h3>
-                    <p>Siempre con tecnología actualizada. Nos encargamos de todo.</p>
+                    <p>Siempre con tecnología actualizada. Nosotros gestionamos el recambio.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card" data-cms-item>
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
                     </div>
                     <h3>Soporte prioritario</h3>
-                    <p>Atención dedicada para empresas. Resolución rápida.</p>
+                    <p>Atención dedicada para empresas con tiempos de respuesta acordados.</p>
                 </div>
             </div>
         </div>
@@ -1763,21 +1772,65 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultados con empresas en Panamá</h2>
+                <p>Opiniones de equipos de finanzas, operaciones y liderazgo.</p>
+            </div>
+
+            <div class="testimonials-grid" data-cms-collection="testimonials">
+                <article class="testimonial-card" data-cms-item>
+                    <p>“Migramos 20 MacBook sin inversión inicial y con soporte inmediato. El equipo quedó listo en días.”</p>
+                    <span class="testimonial-name">Gerencia de Operaciones · Empresa de logística</span>
+                </article>
+                <article class="testimonial-card" data-cms-item>
+                    <p>“Controlamos mejor el presupuesto de TI con una cuota fija y renovación programada.”</p>
+                    <span class="testimonial-name">Dirección Financiera · Agencia creativa</span>
+                </article>
+                <article class="testimonial-card" data-cms-item>
+                    <p>“La atención es rápida y el proceso es claro. Renovamos equipos sin interrupciones.”</p>
+                    <span class="testimonial-name">IT Manager · Empresa de tecnología</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="service-areas" id="cobertura">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cobertura corporativa en Panamá</h2>
+                <p>Atendemos empresas en Ciudad de Panamá y zonas de alto crecimiento.</p>
+            </div>
+
+            <div class="areas-grid" data-cms-collection="seo-landing-pages">
+                <span class="area-chip" data-cms-item>San Francisco</span>
+                <span class="area-chip" data-cms-item>Obarrio</span>
+                <span class="area-chip" data-cms-item>Punta Pacífica</span>
+                <span class="area-chip" data-cms-item>Clayton</span>
+                <span class="area-chip" data-cms-item>Costa del Este</span>
+                <span class="area-chip" data-cms-item>Marbella</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Trust Section -->
     <section class="trust">
         <div class="container">
             <div class="section-header">
                 <h2>Empresas que confían en nosotros</h2>
-                <p>Más de 50 empresas en Panamá ya equipan a sus equipos con Salva Mi Máquina.</p>
+                <p>Más de 50 organizaciones en Panamá ya operan con leasing Apple de Salva Mi Máquina.</p>
             </div>
 
-            <div class="trust-grid">
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">K&B</span>
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">La Prensa</span>
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">BOSCH</span>
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">Cheil</span>
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">Tetra Pak</span>
-                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);">SUEZ</span>
+            <div class="trust-grid" data-cms-collection="trust-elements">
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>K&B</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>La Prensa</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>BOSCH</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>Cheil</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>Tetra Pak</span>
+                <span class="trust-logo-large" style="font-weight: 700; font-size: 1.5rem; color: var(--color-gray-400);" data-cms-item>SUEZ</span>
             </div>
         </div>
     </section>
@@ -1786,11 +1839,11 @@
     <section class="crosslink">
         <div class="container crosslink-container">
             <div class="crosslink-content">
-                <h2>¿También necesitas servicio técnico?</h2>
-                <p>Reparamos equipos Apple de tu empresa con atención prioritaria y garantía de 6 meses en todas las reparaciones.</p>
+                <h2>¿Eres cliente particular?</h2>
+                <p>Visita nuestra página principal para conocer la atención para usuarios individuales.</p>
             </div>
-            <a href="/" class="btn btn-primary">
-                Ver servicios de reparación
+            <a href="index.html" class="btn btn-primary">
+                Ir a Home
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>
                     <polyline points="12 5 19 12 12 19"/>
@@ -1819,21 +1872,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="logo">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
-                                <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
-                                <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
-                                <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text">
-                            <span>salva mi</span>
-                            <span>máquina</span>
-                        </div>
+                    <a href="index.html" class="logo">
+                        <img class="logo-image" src="https://assets.softr-files.com/applications/2bd10ea5-6a8e-420c-bf64-e9c01e589919/assets/60716544-3124-4e2c-939b-eadcc7e4c2b2.png" alt="Salva Mi Máquina">
                     </a>
-                    <p>Solución integral de leasing de equipos Apple para empresas en Panamá.</p>
+                    <p>Solución integral de leasing Apple para empresas en Panamá.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1908,8 +1950,8 @@
                 <div class="footer-column">
                     <h4>Enlaces</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/para-empresas">Para Empresas</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="para-empresas.html">Para Empresas</a></li>
                         <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
                     </ul>
                 </div>
