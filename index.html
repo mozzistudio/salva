@@ -1,510 +1,1901 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reparación Apple en Panamá - iPhone, MacBook, iPad | Salva Mi Máquina</title>
-  <meta name="description" content="Reparación de iPhone, MacBook, iPad y Apple Watch en Panamá. Diagnóstico gratis, garantía de 6 meses y piezas originales en Ciudad de Panamá.">
-  <meta name="keywords" content="reparación iPhone Panamá, reparación MacBook Panamá, reparación iPad Panamá, reparación Apple Watch Panamá, servicio técnico Apple Panamá, arreglar iPhone Panamá, cambio pantalla iPhone Panamá, batería MacBook Panamá, garantía reparación Apple">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://salvamimaquina.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Reparación Apple en Panamá | iPhone, MacBook, iPad | Salva Mi Máquina</title>
+    <meta name="description" content="Servicio técnico especializado en reparación de dispositivos Apple en Panamá. Diagnóstico rápido, 6 meses de garantía. 2 sucursales: San Francisco y Bella Vista.">
+    <meta name="keywords" content="reparación Apple Panamá, reparación iPhone Panamá, reparación MacBook Panamá, servicio técnico Apple">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://salvamimaquina.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Reparación Apple en Panamá | Salva Mi Máquina">
+    <meta property="og:description" content="Servicio técnico especializado en iPhone, MacBook, iPad. 6 meses de garantía.">
+    <meta property="og:url" content="https://salvamimaquina.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://salvamimaquina.com/images/og-home.jpg">
+    <meta property="og:locale" content="es_PA">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300D26A' rx='20' width='100' height='100'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='50' font-family='system-ui'>S</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Salva Mi Máquina",
+        "image": "https://salvamimaquina.com/images/logo.png",
+        "description": "Servicio técnico especializado en reparación de dispositivos Apple en Panamá",
+        "@id": "https://salvamimaquina.com",
+        "url": "https://salvamimaquina.com",
+        "telephone": "+507-394-9351",
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "Vía Porras con Av. 31 Sur",
+                "addressLocality": "San Francisco, Panamá",
+                "addressCountry": "PA"
+            },
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "PH Seawaves, planta baja",
+                "addressLocality": "Bella Vista, Panamá",
+                "addressCountry": "PA"
+            }
+        ],
+        "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
+        "priceRange": "$$",
+        "areaServed": "Panamá"
+    }
+    </script>
+    
+    <style>
+        /* ========================================
+           CSS Variables
+        ======================================== */
+        :root {
+            --color-primary: #00D26A;
+            --color-primary-dark: #00B85C;
+            --color-primary-light: #E8FFF3;
+            --color-navy: #0F1C2E;
+            --color-navy-light: #1A2B4A;
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
 
-  <meta property="og:title" content="Reparación Apple en Panamá - Salva Mi Máquina">
-  <meta property="og:description" content="Servicio técnico Apple en Panamá con diagnóstico gratis, garantía de 6 meses y piezas originales.">
-  <meta property="og:url" content="https://salvamimaquina.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="images/mac_og_774fc77d8.png">
-  <meta property="og:locale" content="es_PA">
+        /* ========================================
+           Reset & Base
+        ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group-61.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-gray-700);
+            background-color: var(--color-white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ========================================
+           Typography
+        ======================================== */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-navy);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--color-gray-600);
+        }
+
+        /* ========================================
+           Layout
+        ======================================== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 3.5rem 0;
+            }
+        }
+
+        /* ========================================
+           Buttons
+        ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            font-family: var(--font-family);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+            box-shadow: 0 4px 14px rgba(0, 210, 106, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 210, 106, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-navy);
+            border: 2px solid var(--color-gray-200);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .btn-white {
+            background: var(--color-white);
+            color: var(--color-navy);
+        }
+
+        .btn-white:hover {
+            background: var(--color-gray-100);
+            transform: translateY(-2px);
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ========================================
+           Header
+        ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--color-gray-700);
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-primary);
+            border-radius: 1px;
+        }
+
+        .nav-links a.external::after {
+            content: '↗';
+            margin-left: 2px;
+            font-size: 0.75em;
+        }
+
+        .nav-cta .btn {
+            padding: 0.625rem 1.25rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--color-navy);
+            border-radius: 1px;
+            transition: all var(--transition-fast);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--color-white);
+            z-index: 2000;
+            padding: 1.5rem;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-gray-100);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        .mobile-menu-links {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-menu-links a {
+            display: block;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--color-navy);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+
+        .mobile-menu-links a:hover,
+        .mobile-menu-links a.active {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+        }
+
+        .mobile-menu-cta {
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-gray-200);
+        }
+
+        .mobile-menu-cta .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        /* ========================================
+           Hero Section
+        ======================================== */
+        .hero {
+            padding-top: 72px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, var(--color-white) 0%, var(--color-primary-light) 100%);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-gray-700);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--color-primary);
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: var(--color-primary);
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--color-gray-600);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-gray-600);
+        }
+
+        .trust-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-primary);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 580px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: var(--color-white);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-float-card.top {
+            top: 10%;
+            right: -20px;
+        }
+
+        .hero-float-card.bottom {
+            bottom: 15%;
+            left: -20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .float-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--color-primary);
+        }
+
+        .float-text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .float-text span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--color-gray-500);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .trust-bar {
+                justify-content: center;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .hero-image img {
+                margin: 0 auto;
+            }
+            .hero-float-card {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cta {
+                flex-direction: column;
+            }
+            .hero-cta .btn {
+                width: 100%;
+            }
+        }
+
+        /* ========================================
+           Services Section
+        ======================================== */
+        .services {
+            background: var(--color-white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.0625rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            background: var(--color-white);
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--color-gray-500);
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Process Section
+        ======================================== */
+        .process {
+            background: var(--color-gray-50);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: calc(100% - 80px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-gray-200));
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .step-number span {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            font-size: 0.9375rem;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           Benefits Section
+        ======================================== */
+        .benefits {
+            background: var(--color-white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--color-gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .benefit-card:hover {
+            background: var(--color-white);
+            border-color: var(--color-primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--color-primary-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .benefit-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--color-primary);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.9375rem;
+        }
+
+        @media (max-width: 640px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Locations Section
+        ======================================== */
+        .locations {
+            background: var(--color-gray-50);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .location-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--color-gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .location-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .location-name {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .location-name svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary);
+        }
+
+        .location-name h3 {
+            font-size: 1.25rem;
+        }
+
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--color-gray-600);
+        }
+
+        .location-detail svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-gray-400);
+            flex-shrink: 0;
+        }
+
+        .location-cta {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .location-cta .btn {
+            flex: 1;
+            padding: 0.625rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Testimonials Section (Optional)
+        ======================================== */
+        .testimonials {
+            background: var(--color-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-stars svg {
+            width: 18px;
+            height: 18px;
+            color: #FBBF24;
+            fill: #FBBF24;
+        }
+
+        .testimonial-text {
+            font-size: 0.9375rem;
+            color: var(--color-gray-700);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .author-info {
+            font-size: 0.875rem;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--color-navy);
+        }
+
+        .author-info span {
+            color: var(--color-gray-500);
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           Cross-Link Section
+        ======================================== */
+        .crosslink {
+            background: var(--color-primary-light);
+            padding: 4rem 0;
+        }
+
+        .crosslink-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .crosslink-content {
+            max-width: 600px;
+        }
+
+        .crosslink-content h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .crosslink-content p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .crosslink-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           Final CTA Section
+        ======================================== */
+        .final-cta {
+            background: var(--color-navy);
+            padding: 5rem 0;
+        }
+
+        .final-cta-container {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.0625rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ========================================
+           Footer
+        ======================================== */
+        .footer {
+            background: var(--color-navy-light);
+            color: var(--color-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+            max-width: 280px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--color-primary);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-white);
+        }
+
+        .footer-column h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9375rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9375rem;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-brand p {
+                max-width: 100%;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .footer-contact {
+                align-items: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           WhatsApp Widget
+        ======================================== */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all var(--transition-base);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: calc(100% + 0.75rem);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-white);
+            padding: 0.625rem 1rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-fast);
+        }
+
+        .whatsapp-widget:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 640px) {
+            .whatsapp-widget {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .whatsapp-btn {
+                width: 56px;
+                height: 56px;
+            }
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           Utilities
+        ======================================== */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Salva Mi Máquina">
-        <img src="images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group-61.png" alt="Salva Mi Máquina">
-      </a>
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#ubicaciones">Ubicaciones</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a class="btn btn-primary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">Contactar por WhatsApp</a>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
+                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
+                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
+                        <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span>salva mi</span>
+                    <span>máquina</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/para-empresas">Para Empresas</a></li>
+                    <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer" class="external">Catálogo</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20información%20sobre%20reparación" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Contáctanos
+                    </a>
+                </div>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
+                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
+                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
+                        <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span>salva mi</span>
+                    <span>máquina</span>
+                </div>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/para-empresas">Para Empresas</a></li>
+            <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo ↗</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+            <a href="https://wa.me/+50769784955" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Contáctanos por WhatsApp
+            </a>
+        </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid reveal">
-        <div class="hero-copy">
-          <p class="eyebrow">Servicio técnico Apple Panamá</p>
-          <h1>Reparación premium para tus dispositivos Apple.</h1>
-          <p>Soluciones rápidas para iPhone, MacBook, iPad y Apple Watch en Ciudad de Panamá. Diagnóstico gratis, piezas originales y garantía de reparación de 6 meses con atención directa.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">Solicitar diagnóstico</a>
-            <a class="btn btn-ghost" href="#ubicaciones">Ver ubicaciones</a>
-          </div>
-          <div class="hero-meta">
-            <span>Diagnóstico en 24 horas</span>
-            <span>Garantía de 6 meses</span>
-            <span>+4000 equipos atendidos</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img class="hero-image" src="images/iphone-hero.jpg" alt="iPhone listo para reparación premium" loading="lazy">
-          <div class="hero-card hero-card-top">
-            <p class="hero-card-title">Lo esencial del servicio</p>
-            <ul>
-              <li>
-                <strong>Diagnóstico claro</strong>
-                <span>Costo, tiempo y alcance antes de iniciar.</span>
-              </li>
-              <li>
-                <strong>Proceso limpio</strong>
-                <span>Repuestos certificados y pruebas completas.</span>
-              </li>
-              <li>
-                <strong>Entrega segura</strong>
-                <span>Validación contigo y garantía escrita.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="hero-card hero-card-bottom">
-            <p class="hero-card-title">Tiempo promedio</p>
-            <div class="hero-card-metric">
-              <strong>24-72h</strong>
-              <span>Equipo listo, sin sorpresas.</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>Técnicos certificados · 2 ubicaciones en Panamá</span>
+                </div>
+
+                <h1>Expertos en reparación de <span class="highlight">equipos Apple</span> en Panamá</h1>
+
+                <p class="hero-description">
+                    Diagnóstico profesional y reparación de iPhone, MacBook, iPad y Apple Watch. 
+                    Garantía de 6 meses en todas nuestras reparaciones.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20equipo%20Apple" 
+                       target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Solicitar diagnóstico
+                    </a>
+                    <a href="#ubicaciones" class="btn btn-secondary">Ver ubicaciones</a>
+                </div>
+
+                <div class="trust-bar">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>+500 clientes atendidos</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>6 meses de garantía</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span>Diagnóstico en 24h</span>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=600&q=80" 
+                     alt="Reparación profesional de iPhone en Panamá - Salva Mi Máquina"
+                     width="580" height="400">
+                
+                <div class="hero-float-card top">
+                    <div class="float-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <div class="float-text">
+                        Garantía total
+                        <span>6 meses incluidos</span>
+                    </div>
+                </div>
+
+                <div class="hero-float-card bottom">
+                    <div class="float-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="float-text">
+                        +500 clientes
+                        <span>Confían en nosotros</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="container hero-brands reveal">
-        <p>Especialistas en:</p>
-        <div class="brand-row">
-          <span>iPhone</span>
-          <span>MacBook</span>
-          <span>iPad</span>
-          <span>Apple Watch</span>
-          <span>AirPods</span>
-        </div>
-      </div>
     </section>
 
-    <section class="section" id="servicios">
-      <div class="container reveal">
-        <div class="section-header">
-          <p class="eyebrow">Servicios</p>
-          <h2>Servicios de Reparación Apple</h2>
-          <p>Especialistas Apple en Panamá. Cada reparación se realiza con herramientas de precisión, pruebas de rendimiento y comunicación directa para que sepas exactamente cómo va tu equipo.</p>
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios de reparación Apple</h2>
+                <p>Reparamos todos los dispositivos del ecosistema Apple con piezas de calidad y técnicos especializados.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service Card: iPhone -->
+                <article class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&q=80" 
+                             alt="Reparación de iPhone en Panamá"
+                             width="200" height="140">
+                    </div>
+                    <h3>iPhone</h3>
+                    <p>Pantalla, batería, puerto de carga</p>
+                </article>
+
+                <!-- Service Card: MacBook -->
+                <article class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&q=80" 
+                             alt="Reparación de MacBook en Panamá"
+                             width="200" height="140">
+                    </div>
+                    <h3>MacBook</h3>
+                    <p>Batería, teclado, pantalla, SSD</p>
+                </article>
+
+                <!-- Service Card: iPad -->
+                <article class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80" 
+                             alt="Reparación de iPad en Panamá"
+                             width="200" height="140">
+                    </div>
+                    <h3>iPad</h3>
+                    <p>Pantalla, puerto, batería</p>
+                </article>
+
+                <!-- Service Card: Apple Watch -->
+                <article class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1434493789847-2a75b69dbe1f?w=300&q=80" 
+                             alt="Reparación de Apple Watch en Panamá"
+                             width="200" height="140">
+                    </div>
+                    <h3>Apple Watch</h3>
+                    <p>Batería, pantalla, corona</p>
+                </article>
+            </div>
         </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon">
-              <img src="images/iphone-repair-service.svg" alt="Icono de reparación de iPhone" loading="lazy">
-            </div>
-            <h3>Reparación de iPhone en Panamá</h3>
-            <p>Arreglar pantalla, batería, cámara y puerto de carga con diagnóstico gratis. Cambio de pantalla iPhone con calibración y piezas originales cuando el modelo lo requiere.</p>
-            <a class="service-link" href="#cta">Solicitar evaluación</a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">
-              <img src="images/macbook-repair-service.svg" alt="Icono de reparación de MacBook" loading="lazy">
-            </div>
-            <h3>Reparación de MacBook en Panamá</h3>
-            <p>Reparamos MacBook que no enciende, no carga o baja rendimiento. Incluye cambio de batería MacBook, teclado y control térmico para equipos de trabajo.</p>
-            <a class="service-link" href="#cta">Solicitar evaluación</a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">
-              <img src="images/ipad-repair-service.svg" alt="Icono de reparación de iPad" loading="lazy">
-            </div>
-            <h3>Reparación de iPad en Panamá</h3>
-            <p>Servicio técnico Apple para iPad con pantalla rota, batería agotada o problemas de carga. Soluciones limpias para estudio, ventas y uso familiar.</p>
-            <a class="service-link" href="#cta">Solicitar evaluación</a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">
-              <img src="images/apple-watch-repair-service.svg" alt="Icono de reparación de Apple Watch" loading="lazy">
-            </div>
-            <h3>Reparación de Apple Watch en Panamá</h3>
-            <p>Recuperamos sensores, batería y cristal con pruebas completas. Ideal para mantener salud y notificaciones activas sin interrupciones.</p>
-            <a class="service-link" href="#cta">Solicitar evaluación</a>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section class="section section-quiet" id="proceso">
-      <div class="container reveal">
-        <div class="split">
-          <div>
-            <p class="eyebrow">Proceso</p>
-            <h2>¿Cómo Funciona Nuestro Servicio?</h2>
-            <p>Un flujo simple que elimina dudas. Ingresas el equipo, recibes diagnóstico en 24 horas y decides con total claridad.</p>
-            <div class="step-list">
-              <div>
-                <strong>Diagnóstico</strong>
-                <p>Revisamos hardware y software con diagnóstico gratis. Recibes un reporte con costo, tiempo y piezas originales recomendadas.</p>
-              </div>
-              <div>
-                <strong>Reparación</strong>
-                <p>Ejecutamos el arreglo con técnicos Apple-only, control de calidad y pruebas funcionales de pantalla, batería y rendimiento.</p>
-              </div>
-              <div>
-                <strong>Entrega</strong>
-                <p>Coordinamos retiro en San Francisco o Bella Vista. Verificamos contigo y activamos la garantía de reparación por 6 meses.</p>
-              </div>
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Cómo funciona nuestro servicio?</h2>
+                <p>Un proceso simple y transparente para que recuperes tu equipo lo antes posible.</p>
             </div>
-          </div>
-          <div class="hero-panel">
-            <div class="hero-panel-title">Resultados medibles</div>
-            <ul>
-              <li>
-                <span>24 horas</span>
-                <p>Promedio de diagnóstico para iPhone, MacBook, iPad y Watch.</p>
-              </li>
-              <li>
-                <span>6 meses</span>
-                <p>Garantía escrita para cada reparación Apple.</p>
-              </li>
-              <li>
-                <span>2 sedes</span>
-                <p>Atención local en Ciudad de Panamá para entregas rápidas.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section-dark media-showcase" id="prueba-visual">
-      <div class="container reveal">
-        <div class="section-header">
-          <p class="eyebrow">Prueba visual</p>
-          <h2>Trabajo real, no promesas</h2>
-          <p>Mostramos el taller, las manos trabajando y el antes y después. Si se puede fotografiar, lo mostramos.</p>
-        </div>
-        <div class="media-grid">
-          <div class="media-main">
-            <img src="images/workshop-hero.jpg" alt="Técnico trabajando en un dispositivo Apple en un taller limpio" loading="lazy" width="1200" height="800">
-            <div class="media-caption">
-              <p>Ambiente profesional, iluminación limpia y procesos visibles para cada reparación.</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>1</span>
+                    </div>
+                    <h3>Diagnóstico</h3>
+                    <p>Evaluamos tu equipo sin costo. En menos de 24 horas te enviamos un presupuesto detallado por WhatsApp.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>2</span>
+                    </div>
+                    <h3>Reparación</h3>
+                    <p>Nuestros técnicos especializados trabajan con piezas certificadas. La mayoría de reparaciones están listas en 24-48 horas.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>3</span>
+                    </div>
+                    <h3>Entrega</h3>
+                    <p>Recoge tu equipo en cualquiera de nuestras sucursales o solicita envío a domicilio en Ciudad de Panamá.</p>
+                </div>
             </div>
-          </div>
-          <div class="media-side">
-            <article class="media-card">
-              <img src="images/macbook-repair.jpg" alt="MacBook en revisión" loading="lazy">
-              <div>
-                <h3>MacBook bajo diagnóstico</h3>
-                <p>Pruebas térmicas, rendimiento y control de energía para equipos de trabajo.</p>
-              </div>
-            </article>
-            <article class="media-card">
-              <img src="images/airpods_max_blue__fsfaleh1smuu_large.png" alt="Accesorios Apple listos para revisión" loading="lazy">
-              <div>
-                <h3>Checklist final</h3>
-                <p>Revisión estética y funcional para entregar cada equipo listo.</p>
-              </div>
-            </article>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section class="section section-quiet" id="diferenciales">
-      <div class="container reveal">
-        <div class="section-header">
-          <p class="eyebrow">Confianza</p>
-          <h2>¿Por Qué Elegirnos?</h2>
-          <p>Especialización Apple, procesos claros y trato directo. Sin adornos, solo resultados reales para arreglar tu equipo en Panamá.</p>
-        </div>
-        <div class="card-grid">
-          <article class="product-card">
-            <h3>Apple-only</h3>
-            <p>Reparamos solo Apple. Eso nos permite dominar cada modelo y cada falla común en iPhone, MacBook, iPad y Apple Watch.</p>
-          </article>
-          <article class="product-card">
-            <h3>Piezas originales</h3>
-            <p>Usamos piezas originales o certificadas cuando el equipo lo requiere, con trazabilidad y pruebas antes de la entrega.</p>
-          </article>
-          <article class="product-card">
-            <h3>Precios claros</h3>
-            <p>Diagnóstico gratis y presupuesto definido antes de reparar. Sin cobros sorpresa ni procesos confusos.</p>
-          </article>
-          <article class="product-card">
-            <h3>Garantía real</h3>
-            <p>Garantía de 6 meses en cada reparación Apple para que tengas respaldo real en tu inversión.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="ubicaciones">
-      <div class="container reveal">
-        <div class="section-header">
-          <p class="eyebrow">Ubicaciones</p>
-          <h2>Nuestras Ubicaciones en Panamá</h2>
-          <p>Atención presencial en Ciudad de Panamá con horarios amplios, personal técnico y entrega segura.</p>
-        </div>
-        <div class="locations-grid">
-          <article class="location-card">
-            <h3>San Francisco</h3>
-            <p>Vía Porras con Av. 31 Sur, Ciudad de Panamá.</p>
-            <p>Lunes a sábado · 9:00 a 18:00</p>
-            <p>Tel: 394-9351 / 6978-0206</p>
-            <div class="location-actions">
-              <a class="btn btn-secondary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">WhatsApp</a>
-              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa de San Francisco</a>
+    <!-- Benefits Section -->
+    <section class="benefits" id="ventajas">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegirnos?</h2>
+                <p>Nos especializamos exclusivamente en dispositivos Apple para darte el mejor servicio.</p>
             </div>
-          </article>
-          <article class="location-card">
-            <h3>Bella Vista</h3>
-            <p>PH Seawaves, planta baja, Ciudad de Panamá.</p>
-            <p>Lunes a sábado · 9:00 a 18:00</p>
-            <p>Tel: 203-2055 / 6932-7190</p>
-            <div class="location-actions">
-              <a class="btn btn-secondary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">WhatsApp</a>
-              <a class="btn btn-ghost" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver mapa de Bella Vista</a>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>6 meses de garantía</h3>
+                    <p>En todas las reparaciones. Si algo falla, lo arreglamos sin costo adicional.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Técnicos especializados</h3>
+                    <p>Solo trabajamos con dispositivos Apple. Conocemos cada modelo a fondo.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Piezas de calidad</h3>
+                    <p>Utilizamos componentes certificados que igualan la calidad original de Apple.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Diagnóstico en 24 horas</h3>
+                    <p>Respuesta rápida para que sepas exactamente qué necesita tu equipo.</p>
+                </div>
             </div>
-          </article>
         </div>
-      </div>
     </section>
 
-    <section class="section section-quiet" id="faq">
-      <div class="container reveal">
-        <div class="section-header">
-          <p class="eyebrow">FAQ</p>
-          <h2>Preguntas Frecuentes sobre Reparación Apple</h2>
-          <p>Respuestas directas para que sepas qué esperar antes de dejar tu equipo.</p>
-        </div>
-        <div class="faq">
-          <details class="faq-item">
-            <summary><h3>¿Cuánto tiempo toma una reparación?</h3></summary>
-            <p>La mayoría de reparaciones de iPhone, iPad y Apple Watch se completan entre 24 y 72 horas. MacBook depende del diagnóstico y disponibilidad de piezas.</p>
-          </details>
-          <details class="faq-item">
-            <summary><h3>¿Qué garantía ofrecen?</h3></summary>
-            <p>Entregamos garantía de reparación de 6 meses por escrito en todas las intervenciones realizadas en Panamá.</p>
-          </details>
-          <details class="faq-item">
-            <summary><h3>¿Usan piezas originales?</h3></summary>
-            <p>Trabajamos con piezas originales o certificadas. Siempre te indicamos qué componente se instalará antes de iniciar la reparación.</p>
-          </details>
-          <details class="faq-item">
-            <summary><h3>¿Hacen diagnóstico gratis?</h3></summary>
-            <p>Sí. El diagnóstico es gratis y se entrega con un presupuesto claro para que decidas con tranquilidad.</p>
-          </details>
-          <details class="faq-item">
-            <summary><h3>¿Puedo esperar mientras reparan?</h3></summary>
-            <p>Si es un cambio de batería o pantalla con disponibilidad inmediata, coordinamos tiempos cortos para que puedas esperar en la sede.</p>
-          </details>
-          <details class="faq-item">
-            <summary><h3>¿Qué pasa si el equipo está mojado?</h3></summary>
-            <p>Atendemos equipos con daño por líquido y evaluamos posibilidades reales de recuperación. El diagnóstico define alcance y tiempos.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cta">
-      <div class="container reveal">
-        <div class="cta">
-          <div>
-            <p class="eyebrow">Contacto</p>
-            <h2>Reparación lista. Sin vueltas.</h2>
-            <p>Envíanos tu modelo Apple y el síntoma. Respondemos rápido con diagnóstico y pasos claros.</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20reparaci%C3%B3n%20de%20mi%20equipo%20Apple">Contactar por WhatsApp</a>
-            <div class="cta-meta">
-              <p>WhatsApp: +507 6978-4955</p>
-              <p>Email: ventas@salvamimaquina.com</p>
+    <!-- Locations Section -->
+    <section class="locations" id="ubicaciones">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestras ubicaciones en Panamá</h2>
+                <p>Dos sucursales para atenderte mejor. Visítanos o agenda una cita por WhatsApp.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group-61.png" alt="Salva Mi Máquina">
+            <div class="locations-grid">
+                <!-- Location: San Francisco -->
+                <div class="location-card">
+                    <div class="location-name">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <h3>San Francisco</h3>
+                    </div>
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Vía Porras con Av. 31 Sur, Panamá</span>
+                        </div>
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>394-9351 / 6978-0206</span>
+                        </div>
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>Lun - Vie: 9am - 6pm | Sáb: 10am - 2pm</span>
+                        </div>
+                    </div>
+                    <div class="location-cta">
+                        <a href="https://wa.me/+50769780206?text=Hola,%20quiero%20agendar%20una%20cita%20en%20San%20Francisco" 
+                           target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
+                        <a href="https://maps.google.com/?q=Via+Porras+Av+31+Sur+Panama" 
+                           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver mapa</a>
+                    </div>
+                </div>
+
+                <!-- Location: Bella Vista -->
+                <div class="location-card">
+                    <div class="location-name">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <h3>Bella Vista</h3>
+                    </div>
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>PH Seawaves, planta baja, Panamá</span>
+                        </div>
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>203-2055 / 6932-7190</span>
+                        </div>
+                        <div class="location-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>Lun - Vie: 9am - 6pm | Sáb: 10am - 2pm</span>
+                        </div>
+                    </div>
+                    <div class="location-cta">
+                        <a href="https://wa.me/+50769327190?text=Hola,%20quiero%20agendar%20una%20cita%20en%20Bella%20Vista" 
+                           target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
+                        <a href="https://maps.google.com/?q=PH+Seawaves+Bella+Vista+Panama" 
+                           target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver mapa</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>Servicio técnico Apple en Panamá con diagnóstico gratis, garantía real y atención directa.</p>
-      </div>
-      <div>
-        <h3>San Francisco</h3>
-        <p>Vía Porras con Av. 31 Sur</p>
-        <p>Tel: 394-9351 / 6978-0206</p>
-      </div>
-      <div>
-        <h3>Bella Vista</h3>
-        <p>PH Seawaves, planta baja</p>
-        <p>Tel: 203-2055 / 6932-7190</p>
-      </div>
-      <div>
-        <h3>Contacto</h3>
-        <p>WhatsApp: +507 6978-4955</p>
-        <p>Email: ventas@salvamimaquina.com</p>
-      </div>
+    </section>
+
+    <!-- B2B Cross-Link Section -->
+    <section class="crosslink">
+        <div class="container crosslink-container">
+            <div class="crosslink-content">
+                <h2>¿Necesitas equipar a tu empresa?</h2>
+                <p>Ofrecemos leasing de equipos Apple para empresas. Gestión simplificada, garantía incluida, renovación cada 2 años.</p>
+            </div>
+            <a href="/para-empresas" class="btn btn-primary">
+                Conocer leasing para empresas
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container final-cta-container">
+            <h2>¿Tu equipo Apple necesita reparación?</h2>
+            <p>Contáctanos por WhatsApp y agenda tu diagnóstico hoy. Respuesta en menos de 1 hora.</p>
+            <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20reparar%20mi%20equipo%20Apple" 
+               target="_blank" rel="noopener noreferrer" class="btn btn-white">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" fill="currentColor"/>
+                                <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
+                                <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" fill="currentColor"/>
+                                <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span>salva mi</span>
+                            <span>máquina</span>
+                        </div>
+                    </a>
+                    <p>Servicio técnico especializado en reparación de dispositivos Apple en Panamá.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/+50769784955" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>San Francisco</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Vía Porras con Av. 31 Sur</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>394-9351</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                            <span>6978-0206</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Bella Vista</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>PH Seawaves, planta baja</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>203-2055</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                            <span>6932-7190</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/para-empresas">Para Empresas</a></li>
+                        <li><a href="https://salva.softr.app/" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
+                        <li><a href="#ubicaciones">Ubicaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Salva Mi Máquina. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ en Panamá</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <span class="whatsapp-tooltip">¿Necesitas ayuda? ¡Escríbenos!</span>
+        <a href="https://wa.me/+50769784955?text=Hola,%20necesito%20información" 
+           target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
     </div>
-    <div class="container footer-bottom">
-      <p>© 2024 Salva Mi Máquina. Todos los derechos reservados.</p>
-    </div>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://salvamimaquina.com/#organization",
-            "name": "Salva Mi Máquina",
-            "url": "https://salvamimaquina.com/",
-            "logo": "https://salvamimaquina.com/images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061.png",
-            "description": "Servicio técnico especializado en reparación de equipos Apple en Panamá.",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+507-6978-4955",
-              "contactType": "customer service",
-              "availableLanguage": ["Spanish"]
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://salvamimaquina.com/#website",
-            "name": "Salva Mi Máquina",
-            "url": "https://salvamimaquina.com/",
-            "description": "Reparación de equipos Apple en Panamá con diagnóstico gratis y garantía de 6 meses.",
-            "inLanguage": "es",
-            "publisher": {
-              "@id": "https://salvamimaquina.com/#organization"
-            }
-          },
-          {
-            "@type": "LocalBusiness",
-            "@id": "https://salvamimaquina.com/#san-francisco",
-            "name": "Salva Mi Máquina - San Francisco",
-            "url": "https://salvamimaquina.com/",
-            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
-            "telephone": "+507-394-9351",
-            "priceRange": "$$",
-            "serviceType": "Apple Device Repair",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Vía Porras con Av. 31 Sur",
-              "addressLocality": "Ciudad de Panamá",
-              "addressRegion": "Panamá",
-              "addressCountry": "PA"
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              }
-            ],
-            "areaServed": {
-              "@type": "City",
-              "name": "Ciudad de Panamá"
-            }
-          },
-          {
-            "@type": "LocalBusiness",
-            "@id": "https://salvamimaquina.com/#bella-vista",
-            "name": "Salva Mi Máquina - Bella Vista",
-            "url": "https://salvamimaquina.com/",
-            "image": "https://salvamimaquina.com/images/mac_og_774fc77d8.png",
-            "telephone": "+507-203-2055",
-            "priceRange": "$$",
-            "serviceType": "Apple Device Repair",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "PH Seawaves, planta baja",
-              "addressLocality": "Ciudad de Panamá",
-              "addressRegion": "Panamá",
-              "addressCountry": "PA"
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              }
-            ],
-            "areaServed": {
-              "@type": "City",
-              "name": "Ciudad de Panamá"
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://salvamimaquina.com/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Cuánto tiempo toma una reparación?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "La mayoría de reparaciones de iPhone, iPad y Apple Watch se completan entre 24 y 72 horas. MacBook depende del diagnóstico y disponibilidad de piezas."
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué garantía ofrecen?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Entregamos garantía de reparación de 6 meses por escrito en todas las intervenciones realizadas en Panamá."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Usan piezas originales?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Trabajamos con piezas originales o certificadas. Siempre te indicamos qué componente se instalará antes de iniciar la reparación."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Hacen diagnóstico gratis?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sí. El diagnóstico es gratis y se entrega con un presupuesto claro para que decidas con tranquilidad."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Puedo esperar mientras reparan?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Si es un cambio de batería o pantalla con disponibilidad inmediata, coordinamos tiempos cortos para que puedas esperar en la sede."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué pasa si el equipo está mojado?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Atendemos equipos con daño por líquido y evaluamos posibilidades reales de recuperación. El diagnóstico define alcance y tiempos."
-                }
-              }
-            ]
-          }
-        ]
-      }
+            });
+        });
     </script>
-  </footer>
-  <script src="scripts/main.js" defer></script>
 </body>
 </html>
