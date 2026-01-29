@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Mac mini</title>
+  <desc id="desc">Stylized illustration of a Mac mini desktop.</desc>
+  <rect x="140" y="150" width="520" height="300" rx="40" fill="#0b0b0b" />
+  <rect x="170" y="180" width="460" height="240" rx="30" fill="#1f2937" />
+  <circle cx="580" cy="300" r="14" fill="#374151" />
+</svg>
