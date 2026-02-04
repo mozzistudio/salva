@@ -58,15 +58,22 @@
     .nav-links a:hover { color: var(--white); }
     .nav-links a.active { color: var(--white); }
     .nav-catalog {
-      background: var(--green);
-      color: var(--navy-deep);
+      background: transparent;
+      color: var(--green) !important;
       padding: 8px 18px;
+      border: 1.5px solid var(--green);
       border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      transition: all 0.25s;
     }
+
+    .nav-catalog:hover {
+      background: rgba(43, 221, 127, 0.1);
+      transform: scale(1.02);
+    }
+
     .nav-cta { background: var(--green); color: var(--navy-deep) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.78rem !important; letter-spacing: 0.5px; transition: all 0.25s; }
     .nav-cta:hover { background: var(--green-dark); transform: scale(1.04); box-shadow: 0 4px 20px rgba(43, 221, 127, 0.3); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
@@ -155,7 +162,13 @@
 
     .hero-repair > * { position: relative; z-index: 1; }
 
-    .hero-text { max-width: 600px; }
+    .hero-text {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
     .hero-irp-badge {
       display: inline-flex;
