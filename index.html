@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salva Mi Máquina — Expertos Apple en Panamá</title>
-  <link rel="icon" href="https://cdn.prod.website-files.com/64d26bb91c013aac3de81bbb/6982c124218110474678d598_favicon%20(1).png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
@@ -150,34 +149,6 @@
       background: var(--white);
       border-radius: 2px;
       transition: 0.3s;
-    }
-
-    .whatsapp-widget {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-decoration: none;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      z-index: 1200;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .whatsapp-widget:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 50px rgba(0,0,0,0.4);
-    }
-
-    .whatsapp-widget svg {
-      width: 26px;
-      height: 26px;
     }
 
     /* ============ HERO ============ */
@@ -503,15 +474,15 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
     }
 
     .step-card {
       background: var(--navy);
       border: 1px solid rgba(43,221,127,0.08);
       border-radius: 28px;
-      padding: 48px 36px;
+      padding: 40px 24px 36px;
       position: relative;
       overflow: hidden;
       transition: all 0.4s;
@@ -1249,7 +1220,7 @@
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
-      .steps-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
       .feature-split { grid-template-columns: 1fr; }
       .feature-visual { min-height: 380px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1273,6 +1244,7 @@
       .tradein-inner { padding: 50px 24px; }
       .empresas-section { padding: 60px 24px; }
       .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
       .feature-content { padding: 48px 24px; }
       .product-grid { grid-template-columns: 1fr; }
       .empresas-features { grid-template-columns: 1fr; }
@@ -1333,17 +1305,16 @@
 
   <!-- ====== NAVBAR ====== -->
   <nav>
-    <a href="index.html" class="smm-logo">
+    <a href="#" class="smm-logo">
       <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
     </a>
     <ul class="nav-links">
-      <li><a href="Reparacion.html" class="active">Reparación</a></li>
-      <li><a href="https://salva.softr.app/" target="_blank" rel="noopener">Catálogo</a></li>
-      <li><a href="Trade%20In.html">Trade-In</a></li>
-      <li><a href="Empresas.html">Empresas</a></li>
-      <li><a href="Nosotros.html">Nosotros</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-      <li><a href="index.html#contacto" class="nav-cta">Cotiza Con Nosotros</a></li>
+      <li><a href="#reparacion" class="active">Reparación</a></li>
+      <li><a href="#tienda">Tienda</a></li>
+      <li><a href="#tradein">Trade-In</a></li>
+      <li><a href="#empresas">Empresas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="nav-cta">Cotiza Con Nosotros</a></li>
     </ul>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1358,15 +1329,15 @@
       #1 EN PANAMÁ — DESDE 2016
     </div>
     <h1>
-      SE ROMPIÓ?
-      <span class="line-2">RELAX.</span>
+      TU ALIADO
+      <span class="line-2">APPLE.</span>
     </h1>
     <p class="hero-subtitle">
-      Somos los expertos #1 en Panamá en reparación Apple y Windows. Diagnóstico al instante, precios justos y 6 meses de garantía. Tráelo roto, llévalo como nuevo.
+      Repara, compra, intercambia o alquila. Somos el ecosistema Apple más completo de Panamá — 9 años de experiencia, 50,000+ equipos atendidos y garantía en todo lo que hacemos.
     </p>
     <div class="hero-buttons">
-      <a href="#reparacion" class="btn-primary">Reparar mi equipo →</a>
-      <a href="https://salva.softr.app/" class="btn-secondary" target="_blank" rel="noopener">Explorar Catálogo</a>
+      <a href="https://wa.me/+50769780206" class="btn-primary">Contáctanos →</a>
+      <a href="#servicios" class="btn-secondary">Nuestros servicios</a>
     </div>
     <div class="hero-devices">
       <div class="hero-device">
@@ -1400,86 +1371,100 @@
   <div class="marquee-section">
     <div class="marquee-track">
       <div class="marquee-item"><span class="sep"></span> Reparación Express</div>
-      <div class="marquee-item"><span class="sep"></span> Repuestos Garantizados</div>
-      <div class="marquee-item"><span class="sep"></span> Servicio a Domicilio</div>
-      <div class="marquee-item"><span class="sep"></span> Diagnóstico Rápido</div>
-      <div class="marquee-item"><span class="sep"></span> 6 Meses de Garantía</div>
-      <div class="marquee-item"><span class="sep"></span> Trade-In Disponible</div>
+      <div class="marquee-item"><span class="sep"></span> Tienda en Línea</div>
+      <div class="marquee-item"><span class="sep"></span> Trade-In disponible</div>
       <div class="marquee-item"><span class="sep"></span> Leasing de Equipos</div>
-      <div class="marquee-item"><span class="sep"></span> Asistencia Remota</div>
+      <div class="marquee-item"><span class="sep"></span> Soluciones Empresariales</div>
+      <div class="marquee-item"><span class="sep"></span> 6 Meses de Garantía</div>
+      <div class="marquee-item"><span class="sep"></span> 1er IRP Apple en Panamá</div>
+      <div class="marquee-item"><span class="sep"></span> Equipos Reacondicionados</div>
       <div class="marquee-item"><span class="sep"></span> Reparación Express</div>
-      <div class="marquee-item"><span class="sep"></span> Repuestos Garantizados</div>
-      <div class="marquee-item"><span class="sep"></span> Servicio a Domicilio</div>
-      <div class="marquee-item"><span class="sep"></span> Diagnóstico Rápido</div>
-      <div class="marquee-item"><span class="sep"></span> 6 Meses de Garantía</div>
-      <div class="marquee-item"><span class="sep"></span> Trade-In Disponible</div>
+      <div class="marquee-item"><span class="sep"></span> Tienda en Línea</div>
+      <div class="marquee-item"><span class="sep"></span> Trade-In disponible</div>
       <div class="marquee-item"><span class="sep"></span> Leasing de Equipos</div>
-      <div class="marquee-item"><span class="sep"></span> Asistencia Remota</div>
+      <div class="marquee-item"><span class="sep"></span> Soluciones Empresariales</div>
+      <div class="marquee-item"><span class="sep"></span> 6 Meses de Garantía</div>
+      <div class="marquee-item"><span class="sep"></span> 1er IRP Apple en Panamá</div>
+      <div class="marquee-item"><span class="sep"></span> Equipos Reacondicionados</div>
     </div>
   </div>
 
-  <!-- ====== HOW IT WORKS ====== -->
-  <section class="how-it-works" id="reparacion">
+  <!-- ====== ECOSYSTEM — 5 SERVICES ====== -->
+  <section class="how-it-works" id="servicios">
     <div class="how-header reveal">
-      <span class="section-label">Así de fácil</span>
-      <h2 class="section-title">¿CÓMO FUNCIONA?</h2>
-      <p class="section-desc">Tres pasos simples para que tu equipo vuelva a la vida. Sin complicaciones, sin estrés.</p>
+      <span class="section-label">Nuestro ecosistema</span>
+      <h2 class="section-title">TODO LO QUE TU<br>EQUIPO NECESITA.</h2>
+      <p class="section-desc">No solo reparamos. Vendemos, intercambiamos, alquilamos y damos soporte corporativo. Cinco servicios, un solo lugar.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card reveal">
         <span class="step-number">01</span>
-        <div class="step-icon">🔍</div>
-        <h3>Diagnóstico Express</h3>
-        <p>Evaluamos tu equipo de manera rápida y precisa. MacBook, PC, iPhone — lo que sea. Cambios de pantalla de iPhone en solo 40 minutos.</p>
-        <span class="step-tag">⚡ Resultados al instante</span>
+        <div class="step-icon">🔧</div>
+        <h3>Reparación</h3>
+        <p>iPhone, MacBook, iPad, iMac y Windows. Diagnóstico express, repuestos originales y 6 meses de garantía.</p>
+        <span class="step-tag">⚡ Pantalla en 40 min</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">02</span>
-        <div class="step-icon">📍</div>
-        <h3>Tú eliges cómo</h3>
-        <p>Visítanos en nuestras sucursales en San Francisco y Bella Vista, o programa un servicio de mensajería a domicilio.</p>
-        <span class="step-tag">🏠 Domicilio disponible</span>
+        <div class="step-icon">🛍️</div>
+        <h3>Tienda</h3>
+        <p>Equipos Apple y Windows nuevos y reacondicionados con garantía. Al mejor precio de Panamá.</p>
+        <span class="step-tag">🏷️ Nuevos y reacondicionados</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">03</span>
-        <div class="step-icon">✅</div>
-        <h3>Quédate tranquilo</h3>
-        <p>Recibirás un email cuando tu equipo esté listo. La mayoría de nuestras reparaciones incluyen 6 meses de garantía total.</p>
-        <span class="step-tag">🛡️ Garantía incluida</span>
+        <div class="step-icon">🔄</div>
+        <h3>Trade-In</h3>
+        <p>Trae tu equipo usado y recibe crédito inmediato para uno nuevo. Evaluación gratis, precio justo.</p>
+        <span class="step-tag">💰 Crédito inmediato</span>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-number">04</span>
+        <div class="step-icon">💻</div>
+        <h3>Leasing</h3>
+        <p>Alquila MacBook, iPhone o iPad desde $29/mes. Sin inversión inicial, para personas y empresas.</p>
+        <span class="step-tag">📋 Desde $29/mes</span>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-number">05</span>
+        <div class="step-icon">🏢</div>
+        <h3>Empresas</h3>
+        <p>Soluciones corporativas completas: reparación prioritaria, leasing de flotas y soporte dedicado.</p>
+        <span class="step-tag">🤝 +200 clientes</span>
       </div>
     </div>
   </section>
 
-  <!-- ====== FEATURE: REPARACIÓN ====== -->
+  <!-- ====== FEATURE: POR QUÉ NOSOTROS ====== -->
   <section class="feature-split">
     <div class="feature-visual">
       <div class="glow-ring"></div>
       <div class="glow-ring"></div>
-      <div class="floating-device">🔧</div>
+      <div class="floating-device">🍎</div>
     </div>
     <div class="feature-content">
-      <span class="section-label">Servicio Premium</span>
-      <h2>REPARACIÓN<br>QUE INSPIRA<br>CONFIANZA.</h2>
-      <p>No somos cualquier taller. Somos los líderes en Panamá en reparación Apple. Cada equipo que entra, sale como nuevo.</p>
+      <span class="section-label">¿Por qué nosotros?</span>
+      <h2>EL ALIADO APPLE<br>QUE PANAMÁ<br>NECESITABA.</h2>
+      <p>Desde 2016 construimos el ecosistema Apple más completo del país. No importa si necesitas reparar, comprar o equipar a tu empresa — todo empieza aquí.</p>
       <ul class="feature-list">
-        <li><span class="check">✓</span> Repuestos originales y garantizados</li>
-        <li><span class="check">✓</span> Técnicos certificados Apple</li>
-        <li><span class="check">✓</span> Diagnóstico transparente — sin sorpresas</li>
-        <li><span class="check">✓</span> Intervenciones el mismo día</li>
-        <li><span class="check">✓</span> Asistencia remota disponible</li>
+        <li><span class="check">✓</span> 1er Proveedor Independiente de Reparación Apple en Panamá</li>
+        <li><span class="check">✓</span> Repuestos originales y técnicos certificados</li>
+        <li><span class="check">✓</span> Tienda con equipos nuevos y reacondicionados</li>
+        <li><span class="check">✓</span> Trade-In: crédito inmediato por tu equipo usado</li>
+        <li><span class="check">✓</span> Leasing personal y empresarial desde $29/mes</li>
       </ul>
-      <a href="#contacto" class="btn-primary">Agendar reparación →</a>
+      <a href="https://wa.me/+50769780206" class="btn-primary">Habla con un experto →</a>
     </div>
   </section>
 
   <!-- ====== SERVICES ====== -->
-  <section class="services-section" id="servicios">
+  <section class="services-section" id="servicios-detalle">
     <div class="services-header reveal">
       <div>
-        <span class="section-label">Nuestros Servicios</span>
+        <span class="section-label">Servicios destacados</span>
         <h2 class="section-title">LO QUE<br>HACEMOS MEJOR.</h2>
       </div>
-      <p class="section-desc">Especialistas en todo el ecosistema Apple — y también en Windows. Si tiene circuitos, lo reparamos.</p>
+      <p class="section-desc">Desde reparaciones express hasta leasing corporativo — todo bajo un mismo techo de confianza.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -1492,23 +1477,23 @@
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
         <span class="service-emoji">💻</span>
-        <h3>Reparación MacBook</h3>
-        <p>Pantalla, teclado, batería, placa lógica. Le devolvemos la vida a tu Mac.</p>
-        <span class="service-price">DIAGNÓSTICO RÁPIDO</span>
+        <h3>MacBook Nuevos</h3>
+        <p>MacBook Air y Pro en stock. Nuevos, sellados y con garantía Apple completa.</p>
+        <span class="service-price">EN TIENDA</span>
       </div>
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">🔋</span>
-        <h3>Cambio de Batería</h3>
-        <p>Dale a tu dispositivo la energía que se merece. iPhone, iPad, MacBook.</p>
-        <span class="service-price">DESDE $35</span>
+        <span class="service-emoji">🔄</span>
+        <h3>Trade-In</h3>
+        <p>Trae tu equipo usado y recibe crédito inmediato para uno nuevo. Evaluación en 15 min.</p>
+        <span class="service-price">HASTA $350+</span>
       </div>
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">🖥️</span>
-        <h3>Servicio Windows</h3>
-        <p>No solo Apple. También reparamos PCs y laptops Windows con la misma excelencia.</p>
-        <span class="service-price">SOPORTE TOTAL</span>
+        <span class="service-emoji">📋</span>
+        <h3>Leasing</h3>
+        <p>Alquila MacBook, iPhone o iPad desde $29/mes. Equipo último modelo sin inversión inicial.</p>
+        <span class="service-price">DESDE $29/MES</span>
       </div>
     </div>
   </section>
@@ -1521,16 +1506,16 @@
         <div class="stat-label">Años de experiencia</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">15K+</div>
-        <div class="stat-label">Equipos reparados</div>
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Equipos atendidos</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">40min</div>
-        <div class="stat-label">Cambio de pantalla iPhone</div>
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Clientes empresariales</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Meses de garantía</div>
+        <div class="stat-number">1°</div>
+        <div class="stat-label">IRP Apple en Panamá</div>
       </div>
     </div>
   </section>
@@ -1605,7 +1590,7 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;">
-      <a href="https://salva.softr.app/" class="btn-secondary" target="_blank" rel="noopener">Ver todo el catálogo →</a>
+      <a href="#" class="btn-secondary">Ver toda la tienda →</a>
     </div>
   </section>
 
@@ -1704,29 +1689,29 @@
       <div class="footer-col">
         <h5>Servicios</h5>
         <ul>
-          <li><a href="Reparacion.html">Reparación iPhone</a></li>
-          <li><a href="Reparacion.html">Reparación MacBook</a></li>
-          <li><a href="Reparacion.html">Reparación iPad</a></li>
-          <li><a href="Reparacion.html">Reparación Windows</a></li>
-          <li><a href="Reparacion.html">Diagnóstico</a></li>
+          <li><a href="#">Reparación iPhone</a></li>
+          <li><a href="#">Reparación MacBook</a></li>
+          <li><a href="#">Reparación iPad</a></li>
+          <li><a href="#">Reparación Windows</a></li>
+          <li><a href="#">Diagnóstico</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Tienda</h5>
         <ul>
-          <li><a href="https://salva.softr.app/" target="_blank" rel="noopener">Tienda en línea</a></li>
-          <li><a href="Trade%20In.html">Trade-In</a></li>
-          <li><a href="Leasing.html">Leasing empresarial</a></li>
-          <li><a href="index.html#contacto">Métodos de pago</a></li>
+          <li><a href="#">Tienda en línea</a></li>
+          <li><a href="#">Trade-In</a></li>
+          <li><a href="#">Leasing empresarial</a></li>
+          <li><a href="#">Métodos de pago</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Empresa</h5>
         <ul>
-          <li><a href="Nosotros.html">Nosotros</a></li>
-          <li><a href="Empresas.html">Empresas</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
-          <li><a href="index.html#contacto">Ubicaciones</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Empresas</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Ubicaciones</a></li>
         </ul>
       </div>
     </div>
@@ -1749,12 +1734,6 @@
       </div>
     </div>
   </footer>
-
-  <a class="whatsapp-widget" href="https://wa.me/50769784955" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
 
   <!-- ====== SCRIPTS ====== -->
   <script>
