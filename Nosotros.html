@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soluciones para Empresas — Salva Mi Máquina</title>
-  <meta name="description" content="Soluciones corporativas de reparación, leasing y mantenimiento de equipos Apple y Windows. Gestión de flotas tech para empresas en Panamá.">
-  <meta name="keywords" content="leasing equipos Panamá, reparación corporativa Apple, gestión flotas tech, mantenimiento empresarial">
+  <title>Nosotros — Salva Mi Máquina</title>
+  <meta name="description" content="Conoce a Salva Mi Máquina. Desde 2016 somos los expertos #1 en Panama en reparacion de equipos Apple y Windows.">
+  <meta name="keywords" content="Salva Mi Maquina, quienes somos, reparacion Apple Panama, historia">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://salvamimaquina.com/empresas.html">
-  <meta property="og:title" content="Soluciones para Empresas — Salva Mi Máquina">
-  <meta property="og:description" content="Soluciones corporativas de reparación, leasing y mantenimiento de equipos Apple y Windows en Panamá.">
-  <meta property="og:url" content="https://salvamimaquina.com/empresas.html">
+  <link rel="canonical" href="https://salvamimaquina.com/Nosotros.html">
+  <meta property="og:title" content="Nosotros — Salva Mi Máquina">
+  <meta property="og:description" content="Conoce a Salva Mi Maquina. Desde 2016 somos los expertos #1 en Panama.">
+  <meta property="og:url" content="https://salvamimaquina.com/Nosotros.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PA">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -34,8 +34,6 @@
       --gray-400: #8b93a7;
       --gray-600: #5a6380;
       --black: #060a1e;
-      --mint-bg: #e8faf0;
-      --mint-border: #c8f0da;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -157,66 +155,51 @@
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.95; letter-spacing: -1px; margin-bottom: 20px; }
     .section-desc { font-size: 1.05rem; color: var(--gray-400); line-height: 1.7; max-width: 550px; }
 
-    .benefits-section { padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
-    .benefits-header { text-align: center; margin-bottom: 70px; }
-    .benefits-header .section-desc { margin: 0 auto; }
+    .story-section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+    .story-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .story-text p { color: var(--gray-400); font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
 
-    .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stats-section { padding: 100px 48px; background: rgba(43, 221, 127, 0.02); border-top: 1px solid rgba(43,221,127,0.06); border-bottom: 1px solid rgba(43,221,127,0.06); }
+    .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .stat-item .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; line-height: 1; color: var(--green); }
+    .stat-item .stat-label { margin-top: 8px; font-size: 0.82rem; color: var(--gray-400); font-weight: 500; letter-spacing: 0.5px; }
 
-    .benefit-card {
+    .values-section { padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
+    .values-header { text-align: center; margin-bottom: 70px; }
+    .values-header .section-desc { margin: 0 auto; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .value-card {
       background: var(--navy); border: 1px solid rgba(43,221,127,0.08);
       border-radius: 24px; padding: 40px 28px; text-align: center;
       transition: all 0.4s; position: relative; overflow: hidden;
     }
-    .benefit-card:hover { border-color: rgba(43,221,127,0.25); transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-    .benefit-card .benefit-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
-    .benefit-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.2px; }
-    .benefit-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; }
+    .value-card:hover { border-color: rgba(43,221,127,0.25); transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .value-card .value-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+    .value-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.2px; }
+    .value-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; }
 
-    .leasing-section { padding: 60px 48px 100px; }
-    .leasing-inner { max-width: 1400px; margin: 0 auto; }
-    .leasing-header { text-align: center; margin-bottom: 60px; }
-    .leasing-header .section-desc { margin: 0 auto; }
+    .locations-section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+    .locations-header { text-align: center; margin-bottom: 70px; }
+    .locations-header .section-desc { margin: 0 auto; }
 
-    .leasing-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .locations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 
-    .leasing-card {
-      background: var(--navy); border: 1px solid rgba(43,221,127,0.1);
-      border-radius: 28px; padding: 48px; position: relative; overflow: hidden;
-      transition: all 0.4s;
+    .location-card {
+      background: var(--navy); border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 24px; padding: 40px; transition: all 0.4s;
     }
-    .leasing-card:hover { border-color: rgba(43,221,127,0.25); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-    .leasing-card.featured { border-color: var(--green); background: linear-gradient(135deg, var(--navy), rgba(43, 221, 127, 0.05)); }
-    .leasing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); }
+    .location-card:hover { border-color: rgba(43,221,127,0.25); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .location-card .location-icon { font-size: 2rem; margin-bottom: 20px; }
+    .location-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+    .location-card p { color: var(--gray-400); font-size: 0.9rem; line-height: 1.7; margin-bottom: 8px; }
+    .location-card a { color: var(--green); text-decoration: none; font-weight: 600; }
 
-    .leasing-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; background: var(--green-subtle); color: var(--green); margin-bottom: 20px; }
-    .leasing-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; line-height: 1; margin-bottom: 16px; }
-    .leasing-card > p { color: var(--gray-400); font-size: 0.95rem; line-height: 1.65; margin-bottom: 28px; }
+    .clients-section { padding: 100px 48px; text-align: center; }
+    .clients-section .section-desc { margin: 0 auto 60px; }
 
-    .leasing-features { list-style: none; margin-bottom: 32px; }
-    .leasing-features li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-size: 0.9rem; color: var(--gray-200); border-bottom: 1px solid rgba(43,221,127,0.06); }
-    .leasing-features li .check { width: 20px; height: 20px; border-radius: 50%; background: rgba(43, 221, 127, 0.15); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--green); flex-shrink: 0; font-weight: 700; }
-
-    .process-section { padding: 100px 48px; background: rgba(43, 221, 127, 0.02); border-top: 1px solid rgba(43,221,127,0.06); border-bottom: 1px solid rgba(43,221,127,0.06); }
-    .process-inner { max-width: 1200px; margin: 0 auto; }
-    .process-header { text-align: center; margin-bottom: 70px; }
-    .process-header .section-desc { margin: 0 auto; }
-
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-
-    .process-step { text-align: center; position: relative; }
-    .process-step::after { content: ''; position: absolute; top: 40px; right: -12px; width: 24px; height: 2px; background: rgba(43,221,127,0.2); }
-    .process-step:last-child::after { display: none; }
-
-    .step-number { width: 80px; height: 80px; border-radius: 50%; background: var(--navy); border: 2px solid rgba(43,221,127,0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--green); }
-    .process-step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-    .process-step p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.55; }
-
-    .clients-section { padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
-    .clients-header { text-align: center; margin-bottom: 60px; }
-    .clients-header .section-desc { margin: 0 auto; }
-
-    .clients-logos { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .clients-logos { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
     .client-logo { font-size: 0.78rem; font-weight: 700; color: var(--gray-600); letter-spacing: 2px; text-transform: uppercase; opacity: 0.45; transition: all 0.3s; padding: 14px 24px; border: 1px solid rgba(43,221,127,0.05); border-radius: 12px; }
     .client-logo:hover { opacity: 1; border-color: rgba(43,221,127,0.15); color: var(--green); }
 
@@ -225,12 +208,6 @@
     .cta-section > * { position: relative; z-index: 1; }
 
     .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-    .contact-info { display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap; }
-    .contact-item { text-align: center; }
-    .contact-item .contact-icon { font-size: 1.8rem; margin-bottom: 12px; }
-    .contact-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
-    .contact-item p { font-size: 0.85rem; color: var(--gray-400); }
 
     footer { border-top: 1px solid rgba(43,221,127,0.06); padding: 64px 48px 40px; max-width: 1400px; margin: 0 auto; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
@@ -252,10 +229,10 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 1024px) {
-      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-      .leasing-options { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-      .process-step::after { display: none; }
+      .story-content { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .locations-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -264,14 +241,13 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .hero { padding: 120px 20px 60px; }
-      .benefits-section, .leasing-section, .clients-section { padding: 80px 20px; }
-      .process-section { padding: 80px 20px; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
+      .story-section, .values-section, .locations-section, .clients-section { padding: 80px 20px; }
+      .stats-section { padding: 80px 20px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
       .cta-section { padding: 80px 20px; }
       footer { padding: 48px 20px 32px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-      .contact-info { flex-direction: column; gap: 24px; }
       .smm-logo img { height: 32px; }
     }
 
@@ -279,7 +255,6 @@
       .hero h1 { font-size: 2.8rem; }
       .hero-buttons { flex-direction: column; align-items: stretch; }
       .btn-primary, .btn-secondary { justify-content: center; }
-      .leasing-card { padding: 32px 24px; }
     }
 
     @media (max-width: 768px) {
@@ -305,9 +280,9 @@
       <li><a href="Reparacion.html">Reparacion</a></li>
       <li><a href="Trade In.html">Trade-In</a></li>
       <li><a href="Leasing.html">Leasing</a></li>
-      <li><a href="Nosotros.html">Nosotros</a></li>
-      <li><a href="empresas.html" class="active">Empresas</a></li>
-      <li><a href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20soluciones%20empresariales" class="nav-cta">Cotiza Ahora</a></li>
+      <li><a href="Nosotros.html" class="active">Nosotros</a></li>
+      <li><a href="empresas.html">Empresas</a></li>
+      <li><a href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n" class="nav-cta">Cotiza Ahora</a></li>
     </ul>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -318,126 +293,109 @@
     <div class="hero-grid-overlay"></div>
     <div class="hero-badge">
       <span class="dot"></span>
-      SOLUCIONES EMPRESARIALES
+      DESDE 2016
     </div>
     <h1>
-      TU FLOTA TECH,
-      <span class="line-2">BAJO CONTROL.</span>
+      QUIENES
+      <span class="line-2">SOMOS.</span>
     </h1>
     <p class="hero-subtitle">
-      Soluciones corporativas de reparación, leasing y mantenimiento. Haz más sencillo el alquiler, manejo y actualización de tu equipo de cómputo. Respuesta prioritaria, precios especiales y atención dedicada.
+      Somos los expertos #1 en Panama en reparacion de equipos Apple y Windows. Mas de 9 anos salvando maquinas y haciendo felices a nuestros clientes.
     </p>
     <div class="hero-buttons">
-      <a href="https://wa.me/50769784955?text=Hola%2C%20necesito%20información%20sobre%20soluciones%20empresariales" class="btn-primary">Solicitar cotización →</a>
-      <a href="#leasing" class="btn-secondary">Ver planes de leasing</a>
+      <a href="Reparacion.html" class="btn-primary">Ver servicios</a>
+      <a href="#ubicaciones" class="btn-secondary">Nuestras ubicaciones</a>
     </div>
   </section>
 
-  <section class="benefits-section">
-    <div class="benefits-header reveal">
-      <span class="section-label">Por qué elegirnos</span>
-      <h2 class="section-title">BENEFICIOS PARA<br>TU EMPRESA</h2>
-      <p class="section-desc">Simplificamos la gestión tecnológica de tu empresa para que te enfoques en lo que realmente importa.</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal">
-        <span class="benefit-icon">⚡</span>
-        <h3>Respuesta Prioritaria</h3>
-        <p>Tiempos de respuesta garantizados para clientes corporativos. Tu equipo siempre operativo.</p>
+  <section class="story-section">
+    <div class="story-content reveal">
+      <div class="story-text">
+        <span class="section-label">Nuestra historia</span>
+        <h2 class="section-title">DE LA PASION<br>AL LIDERAZGO</h2>
+        <p>Todo comenzo en 2016 con una simple mision: ofrecer servicio tecnico de calidad a precios justos. Desde entonces, hemos reparado mas de 15,000 equipos y nos hemos convertido en la referencia #1 en Panama para reparacion Apple y Windows.</p>
+        <p>Nuestro equipo de tecnicos certificados esta comprometido con la excelencia. Cada dispositivo que entra por nuestras puertas recibe el mismo nivel de atencion y cuidado, ya sea un iPhone con pantalla rota o un MacBook con problemas de placa logica.</p>
+        <p>Hoy contamos con dos sucursales en Panama City y servimos tanto a clientes individuales como a empresas de todos los tamanos.</p>
       </div>
-      <div class="benefit-card reveal">
-        <span class="benefit-icon">💰</span>
-        <h3>Mejor Flujo de Caja</h3>
-        <p>Equipos siempre actualizados sin comprometer tu capital. Cuotas fijas y predecibles.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <span class="benefit-icon">📊</span>
-        <h3>Gestión Centralizada</h3>
-        <p>Sistema de gestión para todos tus dispositivos. Reportes, seguimiento y control total.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <span class="benefit-icon">🛡️</span>
-        <h3>Garantía Extendida</h3>
-        <p>Cobertura completa en todos los equipos. Reparaciones incluidas sin costo adicional.</p>
-      </div>
+      <div class="story-visual" style="display: flex; align-items: center; justify-content: center; font-size: 12rem; opacity: 0.1;">🔧</div>
     </div>
   </section>
 
-  <section class="leasing-section" id="leasing">
-    <div class="leasing-inner">
-      <div class="leasing-header reveal">
-        <span class="section-label">Planes de Leasing</span>
-        <h2 class="section-title">EQUIPA TU EMPRESA<br>SIN INVERSIÓN INICIAL</h2>
-        <p class="section-desc">Elige entre equipos nuevos o reacondicionados grado A+ con garantía completa. Flexibilidad total para tu negocio.</p>
+  <section class="stats-section">
+    <div class="stats-grid reveal">
+      <div class="stat-item">
+        <div class="stat-number">9+</div>
+        <div class="stat-label">Anos de experiencia</div>
       </div>
-      <div class="leasing-options">
-        <div class="leasing-card reveal">
-          <span class="leasing-badge">Grado A+</span>
-          <h3>REACONDICIONADO PREMIUM</h3>
-          <p>Equipos reacondicionados con los más altos estándares de calidad. Prácticamente indistinguibles de nuevos, a una fracción del costo.</p>
-          <ul class="leasing-features">
-            <li><span class="check">✓</span> MacBooks, iMacs y equipos Windows disponibles</li>
-            <li><span class="check">✓</span> Garantía de 12 meses incluida</li>
-            <li><span class="check">✓</span> Soporte técnico prioritario</li>
-            <li><span class="check">✓</span> Opción de compra al final del contrato</li>
-            <li><span class="check">✓</span> Configuración e instalación incluida</li>
-          </ul>
-          <a href="https://wa.me/50769784955?text=Hola%2C%20me%20interesa%20el%20leasing%20de%20equipos%20reacondicionados%20Grado%20A%2B" class="btn-secondary">Solicitar cotización →</a>
-        </div>
-        <div class="leasing-card featured reveal">
-          <span class="leasing-badge">Nuevo</span>
-          <h3>EQUIPOS NUEVOS</h3>
-          <p>Lo último en tecnología Apple y Windows directo de fábrica. Ideal para empresas que necesitan el máximo rendimiento.</p>
-          <ul class="leasing-features">
-            <li><span class="check">✓</span> Toda la línea Apple y Windows disponible</li>
-            <li><span class="check">✓</span> Garantía de fábrica + extensión SMM</li>
-            <li><span class="check">✓</span> Atención VIP con account manager dedicado</li>
-            <li><span class="check">✓</span> Actualización tecnológica periódica</li>
-            <li><span class="check">✓</span> Servicio de migración de datos incluido</li>
-          </ul>
-          <a href="https://wa.me/50769784955?text=Hola%2C%20me%20interesa%20el%20leasing%20de%20equipos%20nuevos%20para%20mi%20empresa" class="btn-primary">Solicitar cotización →</a>
-        </div>
+      <div class="stat-item">
+        <div class="stat-number">15K+</div>
+        <div class="stat-label">Equipos reparados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Sucursales en Panama</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Empresas clientes</div>
       </div>
     </div>
   </section>
 
-  <section class="process-section">
-    <div class="process-inner">
-      <div class="process-header reveal">
-        <span class="section-label">Proceso simple</span>
-        <h2 class="section-title">¿CÓMO FUNCIONA?</h2>
-        <p class="section-desc">En cuatro pasos tendrás tu flota tecnológica lista para trabajar.</p>
+  <section class="values-section">
+    <div class="values-header reveal">
+      <span class="section-label">Nuestros valores</span>
+      <h2 class="section-title">LO QUE NOS<br>DEFINE</h2>
+      <p class="section-desc">Los principios que guian cada reparacion y cada interaccion con nuestros clientes.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <span class="value-icon">🎯</span>
+        <h3>Excelencia</h3>
+        <p>Cada reparacion se realiza con los mas altos estandares de calidad. No hay atajos.</p>
       </div>
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-number">1</div>
-          <h4>Evaluación</h4>
-          <p>Analizamos las necesidades tecnológicas de tu empresa y tu presupuesto.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-number">2</div>
-          <h4>Propuesta</h4>
-          <p>Te presentamos opciones personalizadas de equipos y planes de pago.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-number">3</div>
-          <h4>Implementación</h4>
-          <p>Configuramos, instalamos y entregamos los equipos listos para usar.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-number">4</div>
-          <h4>Soporte Continuo</h4>
-          <p>Mantenimiento, reparaciones y actualizaciones durante todo el contrato.</p>
-        </div>
+      <div class="value-card reveal">
+        <span class="value-icon">💎</span>
+        <h3>Transparencia</h3>
+        <p>Diagnosticos claros, precios justos y sin sorpresas. Sabes exactamente lo que pagas.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-icon">⚡</span>
+        <h3>Rapidez</h3>
+        <p>Entendemos que tu tiempo es valioso. Trabajamos rapido sin sacrificar calidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="locations-section" id="ubicaciones">
+    <div class="locations-header reveal">
+      <span class="section-label">Ubicaciones</span>
+      <h2 class="section-title">DONDE<br>ENCONTRARNOS</h2>
+      <p class="section-desc">Dos sucursales estrategicamente ubicadas para servirte mejor.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card reveal">
+        <div class="location-icon">📍</div>
+        <h3>San Francisco</h3>
+        <p>Via Porras con Av. 3J Sur</p>
+        <p>Telefono: <a href="tel:+5073949351">394-9351</a></p>
+        <p>Celular: <a href="tel:+50769780206">6978-0206</a></p>
+      </div>
+      <div class="location-card reveal">
+        <div class="location-icon">📍</div>
+        <h3>Bella Vista</h3>
+        <p>PH Seawaves, planta baja</p>
+        <p>Telefono: <a href="tel:+5072032055">203-2055</a></p>
+        <p>Celular: <a href="tel:+50769327190">6932-7190</a></p>
       </div>
     </div>
   </section>
 
   <section class="clients-section">
-    <div class="clients-header reveal">
-      <span class="section-label">Confían en nosotros</span>
-      <h2 class="section-title">EMPRESAS QUE<br>YA NOS ELIGIERON</h2>
-      <p class="section-desc">Más de 50 empresas en Panamá confían en Salva Mi Máquina para su gestión tecnológica.</p>
+    <div class="reveal">
+      <span class="section-label">Confian en nosotros</span>
+      <h2 class="section-title">GRANDES MARCAS.<br>GRAN CONFIANZA.</h2>
+      <p class="section-desc">Empresas lideres confian en Salva Mi Maquina para mantener sus equipos en perfecto estado.</p>
     </div>
     <div class="clients-logos reveal">
       <div class="client-logo">Samsung</div>
@@ -451,30 +409,13 @@
     </div>
   </section>
 
-  <section class="cta-section" id="contacto">
+  <section class="cta-section">
     <span class="section-label">Hablemos</span>
-    <h2 class="section-title">¿LISTO PARA<br>OPTIMIZAR TU EMPRESA?</h2>
-    <p class="section-desc" style="margin: 0 auto 44px;">Agenda una llamada con nuestro equipo comercial y descubre cómo podemos ayudarte a gestionar tu flota tecnológica.</p>
+    <h2 class="section-title">LISTO PARA<br>CONOCERNOS?</h2>
+    <p class="section-desc" style="margin: 0 auto 44px;">Visitanos en cualquiera de nuestras sucursales o contactanos por WhatsApp.</p>
     <div class="cta-buttons">
-      <a href="https://wa.me/50769784955?text=Hola%2C%20quiero%20agendar%20una%20llamada%20para%20hablar%20sobre%20soluciones%20empresariales" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">Agendar llamada →</a>
-      <a href="mailto:empresas@salvamimaquina.com" class="btn-secondary" style="font-size: 1rem; padding: 18px 42px;">Enviar email</a>
-    </div>
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <h4>Teléfono</h4>
-        <p>+507 394-9351</p>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📱</div>
-        <h4>WhatsApp</h4>
-        <p>+507 6978-4955</p>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <h4>Email</h4>
-        <p>empresas@salvamimaquina.com</p>
-      </div>
+      <a href="https://wa.me/50769784955?text=Hola%2C%20necesito%20informaci%C3%B3n" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp</a>
+      <a href="tel:+5073949351" class="btn-secondary" style="font-size: 1rem; padding: 18px 42px;">Llamar ahora</a>
     </div>
   </section>
 
@@ -484,46 +425,40 @@
         <a href="index.html" class="smm-logo">
           <img src="images/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group-61.png" alt="Salva Mi Máquina">
         </a>
-        <p>Empresa líder en Panamá dedicada a la reparación, venta y leasing de dispositivos Apple y Windows. Desde 2016 salvando máquinas.</p>
+        <p>Empresa lider en Panama dedicada a la reparacion, venta y leasing de dispositivos Apple y Windows. Desde 2016 salvando maquinas.</p>
       </div>
       <div class="footer-col">
         <h5>Servicios</h5>
         <ul>
-          <li><a href="index.html#servicios">Reparación iPhone</a></li>
-          <li><a href="index.html#servicios">Reparación MacBook</a></li>
-          <li><a href="index.html#servicios">Reparación iPad</a></li>
-          <li><a href="index.html#servicios">Reparación Windows</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Tienda</h5>
-        <ul>
-          <li><a href="index.html#tienda">Tienda en línea</a></li>
-          <li><a href="index.html#tradein">Trade-In</a></li>
-          <li><a href="#leasing">Leasing empresarial</a></li>
+          <li><a href="Reparacion.html">Reparacion</a></li>
+          <li><a href="Trade In.html">Trade-In</a></li>
+          <li><a href="Leasing.html">Leasing</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Empresa</h5>
         <ul>
+          <li><a href="Nosotros.html">Nosotros</a></li>
           <li><a href="empresas.html">Empresas</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
-          <li><a href="index.html#contacto">Ubicaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:+5073949351">394-9351</a></li>
+          <li><a href="https://wa.me/50769784955">WhatsApp</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>"Mac", "iPhone", "iPad", "Apple Watch", "AirPods" son marcas registradas de Apple Inc.</p>
-      <p>© 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
+      <p>"Mac", "iPhone", "iPad", "Apple Watch" son marcas registradas de Apple Inc.</p>
+      <p>© 2026 Salva Mi Maquina. Todos los derechos reservados.</p>
       <div class="footer-socials">
         <a href="https://www.facebook.com/SalvaMiMaquina/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
         <a href="https://www.instagram.com/salvamimaquina/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/salva-mi-maquina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="https://wa.me/50769784955" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
