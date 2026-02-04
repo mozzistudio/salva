@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresas — Salva Mi Máquina | Leasing & Soporte Apple en Panamá</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2BDD7F;
+      --green-dark: #22c46d;
+      --green-glow: rgba(43, 221, 127, 0.15);
+      --green-subtle: rgba(43, 221, 127, 0.08);
+      --navy: #0D1845;
+      --navy-deep: #080f2e;
+      --navy-light: #141f52;
+      --navy-card: #111a4a;
+      --white: #f8fafb;
+      --gray-100: #f0f2f5;
+      --gray-200: #dde1e8;
+      --gray-400: #8b93a7;
+      --gray-600: #5a6380;
+      --black: #060a1e;
+      --mint-bg: #e8faf0;
+      --mint-border: #c8f0da;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--navy-deep);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ NAV ============ */
+    .smm-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .smm-logo img { height: 38px; width: auto; object-fit: contain; flex-shrink: 0; }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 0 48px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8, 15, 46, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(43, 221, 127, 0.08);
+      transition: background 0.3s;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.3px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--green); color: var(--navy-deep) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.78rem !important; letter-spacing: 0.5px; transition: all 0.25s; }
+    .nav-cta:hover { background: var(--green-dark); transform: scale(1.04); box-shadow: 0 4px 20px rgba(43, 221, 127, 0.3); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ============ SHARED ============ */
+    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
+    .btn-primary { background: var(--green); color: var(--navy-deep); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
+    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+
+    /* ============ HERO — SPLIT: TEXT LEFT + VISUAL RIGHT ============ */
+    .hero-emp {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      padding-top: 64px;
+      overflow: hidden;
+    }
+
+    /* Left column — text */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0 80px 72px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-subtle);
+      border: 1px solid rgba(43,221,127,0.2);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: fadeLeft 0.7s ease-out;
+      width: fit-content;
+    }
+
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .hero-emp h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.2rem, 6.5vw, 7.5rem);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      animation: fadeLeft 0.7s ease-out 0.1s both;
+    }
+
+    .hero-emp h1 .accent {
+      display: block;
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-emp .hero-sub {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--gray-400);
+      max-width: 480px;
+      margin: 28px 0 0;
+      line-height: 1.7;
+      animation: fadeLeft 0.7s ease-out 0.2s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      margin-top: 40px;
+      animation: fadeLeft 0.7s ease-out 0.35s both;
+      flex-wrap: wrap;
+    }
+
+    /* Stat strip under buttons — inline with left side */
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 56px;
+      animation: fadeLeft 0.7s ease-out 0.5s both;
+    }
+
+    .hero-stat {
+      text-align: left;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .hero-stat::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      background: var(--green);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    .hero-stat .hs-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--green);
+      margin-bottom: 2px;
+    }
+
+    .hero-stat .hs-label {
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* Right column — visual composition */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Subtle grid pattern */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(43,221,127,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,221,127,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    }
+
+    /* Central glow */
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(43,221,127,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Orbit container */
+    .orbit-scene {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      z-index: 1;
+      animation: fadeUp 0.9s ease-out 0.3s both;
+    }
+
+    /* Central device */
+    .orbit-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: rgba(43,221,127,0.06);
+      border: 2px solid rgba(43,221,127,0.2);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      z-index: 3;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: centerPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes centerPulse {
+      0%, 100% { box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 0 rgba(43,221,127,0.05); }
+      50% { box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 20px rgba(43,221,127,0.02); }
+    }
+
+    /* Orbit rings */
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(43,221,127,0.08);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .orbit-ring.r1 { width: 220px; height: 220px; }
+    .orbit-ring.r2 { width: 340px; height: 340px; border-color: rgba(43,221,127,0.05); }
+
+    /* Floating satellite devices */
+    .sat {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background: rgba(13, 24, 69, 0.8);
+      border: 1px solid rgba(43,221,127,0.12);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      font-size: 1.4rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.35s;
+      z-index: 2;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    .sat:hover {
+      border-color: var(--green);
+      transform: scale(1.12) !important;
+      box-shadow: 0 12px 40px rgba(43,221,127,0.15);
+    }
+
+    .sat .sat-label {
+      font-size: 0.48rem;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Position satellites around orbit */
+    .sat.s1 { top: 0; left: 50%; transform: translate(-50%, -10px); animation: satFloat1 8s ease-in-out infinite; }
+    .sat.s2 { top: 50%; right: 0; transform: translate(10px, -50%); animation: satFloat2 7s ease-in-out infinite 0.5s; }
+    .sat.s3 { bottom: 0; left: 50%; transform: translate(-50%, 10px); animation: satFloat3 9s ease-in-out infinite 1s; }
+    .sat.s4 { top: 50%; left: 0; transform: translate(-10px, -50%); animation: satFloat4 7.5s ease-in-out infinite 1.5s; }
+    .sat.s5 { top: 12%; right: 8%; animation: satFloat5 8.5s ease-in-out infinite 0.3s; }
+    .sat.s6 { bottom: 12%; left: 8%; animation: satFloat6 8s ease-in-out infinite 0.8s; }
+
+    @keyframes satFloat1 { 0%, 100% { transform: translate(-50%, -10px); } 50% { transform: translate(-50%, -20px); } }
+    @keyframes satFloat2 { 0%, 100% { transform: translate(10px, -50%); } 50% { transform: translate(18px, -50%); } }
+    @keyframes satFloat3 { 0%, 100% { transform: translate(-50%, 10px); } 50% { transform: translate(-50%, 20px); } }
+    @keyframes satFloat4 { 0%, 100% { transform: translate(-10px, -50%); } 50% { transform: translate(-18px, -50%); } }
+    @keyframes satFloat5 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes satFloat6 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+
+    /* Connecting lines (decorative) */
+    .orbit-line {
+      position: absolute;
+      background: linear-gradient(to bottom, rgba(43,221,127,0.12), transparent);
+      width: 1px;
+      z-index: 0;
+    }
+
+    /* ============ TICKER (replaces marquee, different feel) ============ */
+    .ticker {
+      padding: 14px 0;
+      border-top: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      background: rgba(43, 221, 127, 0.015);
+      overflow: hidden;
+    }
+
+    .ticker-track {
+      display: flex;
+      animation: tickerScroll 25s linear infinite;
+      width: max-content;
+    }
+
+    .ticker-item {
+      display: flex; align-items: center; gap: 24px;
+      padding: 0 40px;
+      white-space: nowrap;
+    }
+
+    .ticker-item span {
+      font-size: 0.82rem; color: var(--gray-600); font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+
+    .ticker-item .t-dot {
+      width: 4px; height: 4px; background: var(--green); border-radius: 50%; flex-shrink: 0;
+    }
+
+    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ============ BENTO GRID (completely different from homepage cards) ============ */
+    .bento-section {
+      padding: 120px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .bento-header {
+      margin-bottom: 56px;
+      max-width: 600px;
+    }
+
+    .bento-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95; letter-spacing: -1px; margin-bottom: 16px;
+    }
+
+    .bento-header p { font-size: 1rem; color: var(--gray-400); line-height: 1.7; }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: 16px;
+    }
+
+    .bento-card {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 24px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(43,221,127,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    }
+
+    .bento-card .b-emoji { font-size: 2.4rem; margin-bottom: 20px; display: block; }
+    .bento-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
+    .bento-card p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.6; }
+
+    .bento-card .b-stat {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem; line-height: 1; color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    /* Bento layout — asymmetric */
+    .b1 { grid-column: 1 / 8; grid-row: 1; }
+    .b2 { grid-column: 8 / 13; grid-row: 1; }
+    .b3 { grid-column: 1 / 5; grid-row: 2; }
+    .b4 { grid-column: 5 / 9; grid-row: 2; }
+    .b5 { grid-column: 9 / 13; grid-row: 2; }
+    .b6 { grid-column: 1 / 7; grid-row: 3; }
+    .b7 { grid-column: 7 / 13; grid-row: 3; }
+
+    /* Hero bento card — special wide card */
+    .bento-card.b-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, rgba(43,221,127,0.06) 100%);
+      border-color: rgba(43,221,127,0.15);
+    }
+
+    .bento-card.b-hero h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    /* ============ OFFSET SECTIONS (alternating left/right — NOT 50/50 split) ============ */
+    .offset-section {
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .offset-row {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      align-items: center;
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(43,221,127,0.05);
+    }
+
+    .offset-row:last-child { border-bottom: none; }
+
+    .offset-row.reverse { grid-template-columns: 7fr 5fr; }
+    .offset-row.reverse .offset-visual { order: 2; }
+    .offset-row.reverse .offset-text { order: 1; }
+
+    .offset-visual {
+      position: relative;
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 28px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .offset-visual .ov-emoji {
+      font-size: 5rem;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    }
+
+    .offset-visual .ov-glow {
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(43,221,127,0.1) 0%, transparent 70%);
+    }
+
+    .offset-text .label { margin-bottom: 12px; }
+
+    .offset-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .offset-text p {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 480px;
+    }
+
+    .offset-text .check-list { list-style: none; margin-bottom: 28px; }
+
+    .offset-text .check-list li {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(43,221,127,0.05);
+      font-size: 0.9rem; color: var(--gray-200);
+    }
+
+    .offset-text .check-list li .ck {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(43, 221, 127, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: var(--green); flex-shrink: 0; font-weight: 700;
+    }
+
+    /* ============ COMPARISON — HORIZONTAL SCROLL CARDS (not a table) ============ */
+    .compare-section {
+      padding: 120px 48px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .compare-header { margin-bottom: 56px; max-width: 550px; }
+
+    .compare-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95; letter-spacing: -1px; margin-bottom: 16px;
+    }
+
+    .compare-header p { font-size: 1rem; color: var(--gray-400); line-height: 1.7; }
+
+    .compare-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .compare-card {
+      border-radius: 28px;
+      padding: 44px 32px;
+      position: relative;
+      transition: all 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .compare-card.cc-basic {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .compare-card.cc-lease {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .compare-card.cc-smm {
+      background: linear-gradient(160deg, rgba(43,221,127,0.08), var(--navy) 40%);
+      border: 2px solid var(--green);
+      box-shadow: 0 0 60px rgba(43,221,127,0.08);
+    }
+
+    .compare-card .cc-badge {
+      position: absolute;
+      top: -1px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: var(--navy-deep);
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .compare-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; line-height: 1; margin-bottom: 8px;
+    }
+
+    .compare-card .cc-sub {
+      font-size: 0.82rem; color: var(--gray-400); margin-bottom: 28px; line-height: 1.5;
+    }
+
+    .compare-card .cc-features { list-style: none; flex: 1; }
+
+    .compare-card .cc-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.85rem; color: var(--gray-200); line-height: 1.5;
+    }
+
+    .compare-card .cc-features li .cc-icon {
+      flex-shrink: 0; margin-top: 2px; font-size: 0.85rem;
+    }
+
+    .cc-yes { color: var(--green); }
+    .cc-no { color: var(--gray-600); }
+    .cc-partial { color: #ff9f0a; }
+
+    /* ============ HORIZONTAL PROCESS (not vertical cards) ============ */
+    .process-section {
+      padding: 100px 48px;
+      border-top: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      background: rgba(43, 221, 127, 0.015);
+    }
+
+    .process-inner { max-width: 1400px; margin: 0 auto; }
+
+    .process-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .process-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95; letter-spacing: -1px;
+    }
+
+    .process-header p {
+      font-size: 1rem; color: var(--gray-400); line-height: 1.7; max-width: 400px;
+    }
+
+    .process-track {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    .process-track::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      right: 36px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), rgba(43,221,127,0.1));
+      z-index: 0;
+    }
+
+    .p-step {
+      flex: 1;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .p-step .p-num {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--navy-deep);
+      border: 2px solid rgba(43,221,127,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; color: var(--green);
+      margin-bottom: 24px;
+      transition: all 0.3s;
+    }
+
+    .p-step:hover .p-num {
+      border-color: var(--green);
+      background: rgba(43,221,127,0.08);
+      transform: scale(1.1);
+    }
+
+    .p-step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .p-step p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.55; }
+
+    /* ============ SUSTAINABILITY — FULL-WIDTH MINT BAND (not rounded box) ============ */
+    .sustain-band {
+      background: var(--white);
+      color: var(--navy-deep);
+      padding: 100px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sustain-band::before {
+      content: '';
+      position: absolute;
+      top: -150px; right: -150px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(43,221,127,0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .sustain-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sustain-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95; letter-spacing: -1px;
+      color: var(--navy-deep);
+      margin-bottom: 16px;
+    }
+
+    .sustain-text .label { color: var(--green-dark); }
+    .sustain-text p { font-size: 1rem; color: var(--gray-600); line-height: 1.7; max-width: 520px; margin-bottom: 28px; }
+
+    .sustain-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .s-num {
+      background: var(--mint-bg);
+      border: 1px solid var(--mint-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s;
+      min-width: 170px;
+    }
+
+    .s-num:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43,221,127,0.1);
+    }
+
+    .s-num .s-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .s-num .s-val { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--navy-deep); line-height: 1; margin-bottom: 4px; }
+    .s-num .s-label { font-size: 0.75rem; color: var(--gray-600); line-height: 1.4; }
+
+    /* ============ CTA — ASYMMETRIC (not centered) ============ */
+    .cta-final {
+      padding: 140px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 30%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .cta-left { position: relative; z-index: 1; }
+
+    .cta-left h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .cta-left h2 .accent {
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-left p {
+      font-size: 1.05rem; color: var(--gray-400); line-height: 1.7; max-width: 460px; margin-bottom: 36px;
+    }
+
+    .cta-left .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .cta-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cta-card {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s;
+    }
+
+    .cta-card:hover {
+      border-color: rgba(43,221,127,0.2);
+      transform: translateX(6px);
+    }
+
+    .cta-card .cc-ico {
+      width: 52px; height: 52px; border-radius: 16px;
+      background: var(--green-subtle);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+
+    .cta-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+    .cta-card p { font-size: 0.8rem; color: var(--gray-400); line-height: 1.5; margin: 0; }
+
+    /* ============ FOOTER ============ */
+    footer {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding: 64px 48px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: var(--gray-600); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--green); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding-top: 32px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 0.72rem; color: var(--gray-600); }
+
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 1px solid rgba(43, 221, 127, 0.1); display: flex; align-items: center; justify-content: center; color: var(--gray-400); text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: var(--navy-deep); }
+
+    /* ============ REVEAL ============ */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .hero-emp { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 100px 48px 60px; }
+      .bento-grid { grid-template-columns: 1fr 1fr; }
+      .b1, .b2, .b3, .b4, .b5, .b6, .b7 { grid-column: auto; grid-row: auto; }
+      .offset-row, .offset-row.reverse { grid-template-columns: 1fr; }
+      .offset-row.reverse .offset-visual, .offset-row.reverse .offset-text { order: unset; }
+      .offset-visual { height: 280px; }
+      .compare-cards { grid-template-columns: 1fr; }
+      .process-track { flex-direction: column; gap: 32px; }
+      .process-track::before { display: none; }
+      .sustain-inner { grid-template-columns: 1fr; }
+      .cta-final { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-left { padding: 100px 20px 60px; }
+      .hero-stats { flex-wrap: wrap; gap: 16px; }
+      .bento-section, .offset-section, .compare-section { padding: 80px 20px; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .process-section { padding: 80px 20px; }
+      .process-header { flex-direction: column; align-items: flex-start; }
+      .sustain-band { padding: 80px 20px; }
+      .sustain-nums { grid-template-columns: 1fr 1fr; }
+      .cta-final { padding: 80px 20px; }
+      footer { padding: 48px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .smm-logo img { height: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-emp h1 { font-size: 3rem; letter-spacing: -1px; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-ghost, .btn-secondary { justify-content: center; }
+      .hero-stats { gap: 12px; }
+      .hero-stat .hs-val { font-size: 1.6rem; }
+      .sustain-nums { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links.mobile-open {
+        display: flex !important; flex-direction: column; position: fixed;
+        top: 64px; left: 0; right: 0; bottom: 0;
+        background: rgba(8, 15, 46, 0.98); backdrop-filter: blur(20px);
+        padding: 40px 28px; gap: 20px; z-index: 999; animation: fadeUp 0.3s ease;
+      }
+      .nav-links.mobile-open a { font-size: 1.15rem; color: var(--white); }
+      .nav-links.mobile-open .nav-cta { text-align: center; font-size: 1rem !important; padding: 16px; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <nav>
+    <a href="#" class="smm-logo">
+      <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Reparación</a></li>
+      <li><a href="#">Tienda</a></li>
+      <li><a href="#">Trade-In</a></li>
+      <li><a href="#" class="active">Empresas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/+50769784955" class="nav-cta">Cotiza Con Nosotros</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ====== HERO — SPLIT: TEXT LEFT + ORBIT VISUAL RIGHT ====== -->
+  <section class="hero-emp">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Soluciones Corporativas
+      </div>
+      <h1>
+        EQUIPA TU EMPRESA.
+        <span class="accent">OLVÍDATE DEL RESTO.</span>
+      </h1>
+      <p class="hero-sub">
+        Leasing, reparación prioritaria y soporte Apple certificado. Equipos siempre al día, flujo de caja protegido y un solo proveedor para todo.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/+50769784955" class="btn-primary">Cotizar para mi empresa →</a>
+        <a href="#como" class="btn-ghost">Cómo funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hs-val">50+</div>
+          <div class="hs-label">Empresas activas</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-val">< 4H</div>
+          <div class="hs-label">Respuesta prioritaria</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-val">40%</div>
+          <div class="hs-label">Ahorro promedio</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-val">9+</div>
+          <div class="hs-label">Años de experiencia</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="orbit-scene">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-center">🏢</div>
+        <div class="sat s1">💻<span class="sat-label">MacBook</span></div>
+        <div class="sat s2">📱<span class="sat-label">iPhone</span></div>
+        <div class="sat s3">🖥️<span class="sat-label">iMac</span></div>
+        <div class="sat s4">📱<span class="sat-label">iPad</span></div>
+        <div class="sat s5">⌚<span class="sat-label">Watch</span></div>
+        <div class="sat s6">🪟<span class="sat-label">Windows</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TICKER ====== -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="t-dot"></span><span>Samsung</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Movistar</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Bosch</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Novo Nordisk</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Super 99</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>PostNet</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>McNeil</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Janssen</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Samsung</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Movistar</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Bosch</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Novo Nordisk</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Super 99</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>PostNet</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>McNeil</span></div>
+      <div class="ticker-item"><span class="t-dot"></span><span>Janssen</span></div>
+    </div>
+  </div>
+
+  <!-- ====== BENTO GRID ====== -->
+  <section class="bento-section">
+    <div class="bento-header reveal">
+      <span class="label">Por qué nosotros</span>
+      <h2>TODO LO QUE TU EMPRESA NECESITA. EN UN SOLO LUGAR.</h2>
+      <p>Somos el único proveedor en Panamá que combina leasing, reparación certificada Apple y gestión de flotas en una sola solución.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card b1 b-hero reveal">
+        <span class="b-emoji">📦</span>
+        <h3>LEASING SIN CAPEX</h3>
+        <p>Equipos nuevos o reacondicionados por una cuota mensual predecible. MacBook, iMac, iPhone, iPad — todo disponible. Renovación automática al final del contrato.</p>
+      </div>
+      <div class="bento-card b2 reveal">
+        <div class="b-stat">< 4h</div>
+        <h3>Soporte prioritario</h3>
+        <p>Tu empresa no puede esperar. Respuesta el mismo día para clientes corporativos.</p>
+      </div>
+      <div class="bento-card b3 reveal">
+        <span class="b-emoji">🔧</span>
+        <h3>Reparación certificada</h3>
+        <p>Técnicos Apple certificados. Repuestos originales. 6 meses de garantía.</p>
+      </div>
+      <div class="bento-card b4 reveal">
+        <span class="b-emoji">📊</span>
+        <h3>Gestión de flotas</h3>
+        <p>Sabe quién tiene qué, cuándo renovar, y cuánto llevas gastado. Todo centralizado.</p>
+      </div>
+      <div class="bento-card b5 reveal">
+        <span class="b-emoji">🌱</span>
+        <h3>TI sostenible</h3>
+        <p>Hasta 722 kg de CO₂ ahorrados por dispositivo reacondicionado.</p>
+      </div>
+      <div class="bento-card b6 reveal">
+        <div class="b-stat">9+</div>
+        <h3>Años de experiencia</h3>
+        <p>Desde 2016 siendo la referencia en tecnología Apple en Panamá. Más de 15,000 equipos reparados.</p>
+      </div>
+      <div class="bento-card b7 reveal">
+        <span class="b-emoji">🪟</span>
+        <h3>También Windows</h3>
+        <p>Flotas mixtas? No hay problema. Laptops y PCs Windows con el mismo nivel de soporte y atención.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== OFFSET SECTIONS — LEASING + DEVICES ====== -->
+  <section class="offset-section">
+    <div class="offset-row reveal-left">
+      <div class="offset-visual">
+        <div class="ov-glow"></div>
+        <div class="ov-emoji">✨</div>
+      </div>
+      <div class="offset-text">
+        <span class="label">Dispositivos nuevos</span>
+        <h2>TECNOLOGÍA DE PUNTA.<br>DIRECTO DE FÁBRICA.</h2>
+        <p>Configuraciones de última generación personalizadas según las necesidades de tu equipo. Embalaje original, garantía completa del fabricante.</p>
+        <ul class="check-list">
+          <li><span class="ck">✓</span> Configuración personalizada a tu medida</li>
+          <li><span class="ck">✓</span> Productos completamente nuevos</li>
+          <li><span class="ck">✓</span> Garantía completa del fabricante</li>
+        </ul>
+        <a href="https://wa.me/+50769784955" class="btn-primary">Cotizar equipos nuevos →</a>
+      </div>
+    </div>
+
+    <div class="offset-row reverse reveal-left">
+      <div class="offset-text">
+        <span class="label">Reacondicionados Grado A+</span>
+        <h2>RENDIMIENTO DE NUEVO.<br>PRECIO QUE SORPRENDE.</h2>
+        <p>Certificación Grado A+ o A — sin signos de uso o con mínimos. El mismo rendimiento, una fracción del costo, y mejor para el planeta.</p>
+        <ul class="check-list">
+          <li><span class="ck">✓</span> Certificación Grado A+ o A</li>
+          <li><span class="ck">✓</span> Rendimiento idéntico a producto nuevo</li>
+          <li><span class="ck">✓</span> Ahorro de hasta 722 kg de CO₂ por dispositivo</li>
+        </ul>
+        <a href="https://wa.me/+50769784955" class="btn-primary">Cotizar reacondicionados →</a>
+      </div>
+      <div class="offset-visual">
+        <div class="ov-glow"></div>
+        <div class="ov-emoji">🌱</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COMPARISON CARDS ====== -->
+  <section class="compare-section">
+    <div class="compare-header reveal">
+      <span class="label">Compara</span>
+      <h2>¿COMPRA, ARRIENDO O SALVA MI MÁQUINA?</h2>
+      <p>No todas las opciones son iguales. Mira por qué nuestro modelo integral gana en cada categoría.</p>
+    </div>
+    <div class="compare-cards reveal">
+      <div class="compare-card cc-basic">
+        <h3>COMPRA CLÁSICA</h3>
+        <p class="cc-sub">Adquirir equipos directamente.</p>
+        <ul class="cc-features">
+          <li><span class="cc-icon cc-yes">✓</span> Proceso claro y directo</li>
+          <li><span class="cc-icon cc-no">✕</span> Inversión inicial alta</li>
+          <li><span class="cc-icon cc-no">✕</span> Equipos se desactualizan</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin garantía extendida</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin gestión de flotas</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin soporte técnico</li>
+        </ul>
+      </div>
+      <div class="compare-card cc-lease">
+        <h3>ARRIENDO TRADICIONAL</h3>
+        <p class="cc-sub">Leasing con terceros financieros.</p>
+        <ul class="cc-features">
+          <li><span class="cc-icon cc-partial">~</span> Proceso moderado</li>
+          <li><span class="cc-icon cc-yes">✓</span> Mejor flujo de caja</li>
+          <li><span class="cc-icon cc-yes">✓</span> Equipos actualizados</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin garantía de calidad</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin gestión de flotas</li>
+          <li><span class="cc-icon cc-no">✕</span> Sin soporte técnico</li>
+        </ul>
+      </div>
+      <div class="compare-card cc-smm">
+        <span class="cc-badge">★ Recomendado</span>
+        <h3>SALVA MI MÁQUINA</h3>
+        <p class="cc-sub">Leasing + soporte + gestión. Todo en uno.</p>
+        <ul class="cc-features">
+          <li><span class="cc-icon cc-yes">✓</span> Proceso simple y rápido</li>
+          <li><span class="cc-icon cc-yes">✓</span> Flujo de caja protegido</li>
+          <li><span class="cc-icon cc-yes">✓</span> Renovación automática</li>
+          <li><span class="cc-icon cc-yes">✓</span> Garantía y asistencia incluida</li>
+          <li><span class="cc-icon cc-yes">✓</span> Gestión centralizada de flotas</li>
+          <li><span class="cc-icon cc-yes">✓</span> Soporte Apple certificado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROCESS — HORIZONTAL ====== -->
+  <section class="process-section" id="como">
+    <div class="process-inner">
+      <div class="process-header reveal">
+        <div>
+          <span class="label">Así de fácil</span>
+          <h2>DE COTIZACIÓN<br>A EQUIPOS EN MANO.</h2>
+        </div>
+        <p>Un proceso diseñado para que tú te enfoques en tu negocio, no en logística de TI.</p>
+      </div>
+      <div class="process-track reveal">
+        <div class="p-step">
+          <div class="p-num">01</div>
+          <h4>Cotiza</h4>
+          <p>Cuéntanos qué necesitas y para cuántas personas. Te respondemos el mismo día.</p>
+        </div>
+        <div class="p-step">
+          <div class="p-num">02</div>
+          <h4>Elige tu plan</h4>
+          <p>Nuevo o reacondicionado. Leasing, alquiler corto o compra. Tú decides.</p>
+        </div>
+        <div class="p-step">
+          <div class="p-num">03</div>
+          <h4>Recibe y trabaja</h4>
+          <p>Equipos configurados y listos para usar. Cero setup de tu parte.</p>
+        </div>
+        <div class="p-step">
+          <div class="p-num">04</div>
+          <h4>Soporte total</h4>
+          <p>Reparaciones prioritarias, gestión de flota y renovación cuando quieras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SUSTAINABILITY BAND ====== -->
+  <section class="sustain-band">
+    <div class="sustain-inner">
+      <div class="sustain-text reveal">
+        <span class="label">Sostenibilidad</span>
+        <h2>TI RESPONSABLE.<br>SIN SACRIFICAR<br>CALIDAD.</h2>
+        <p>Cada equipo reacondicionado tiene una segunda vida. Lo renovamos, lo donamos o lo reciclamos responsablemente. Tu empresa reduce su huella de carbono sin renunciar al rendimiento.</p>
+        <a href="https://wa.me/+50769784955" class="btn-primary" style="background: var(--navy); color: var(--white);">Saber más →</a>
+      </div>
+      <div class="sustain-nums reveal">
+        <div class="s-num">
+          <div class="s-icon">🌍</div>
+          <div class="s-val">722 kg</div>
+          <div class="s-label">CO₂ ahorrado por dispositivo</div>
+        </div>
+        <div class="s-num">
+          <div class="s-icon">♻️</div>
+          <div class="s-val">100%</div>
+          <div class="s-label">Equipos reciben segunda vida</div>
+        </div>
+        <div class="s-num">
+          <div class="s-icon">📦</div>
+          <div class="s-val">A+</div>
+          <div class="s-label">Grado de certificación</div>
+        </div>
+        <div class="s-num">
+          <div class="s-icon">⚡</div>
+          <div class="s-val">= Nuevo</div>
+          <div class="s-label">Rendimiento garantizado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA — ASYMMETRIC ====== -->
+  <section class="cta-final" id="contacto">
+    <div class="cta-left reveal">
+      <span class="label">Hablemos</span>
+      <h2>¿LISTO PARA<br><span class="accent">SIMPLIFICAR<br>TU TI?</span></h2>
+      <p>Cotización sin compromiso. Te respondemos el mismo día con una propuesta a la medida de tu empresa.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/+50769784955" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp Empresas →</a>
+        <a href="tel:+5073949351" class="btn-ghost" style="font-size: 1rem; padding: 18px 42px;">Llamar ahora</a>
+      </div>
+    </div>
+    <div class="cta-right reveal">
+      <div class="cta-card">
+        <div class="cc-ico">📍</div>
+        <div>
+          <h4>San Francisco</h4>
+          <p>Vía Porras con Av. 3J Sur · Tel: 394-9351 · Cel: 6978-0206</p>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div class="cc-ico">📍</div>
+        <div>
+          <h4>Bella Vista</h4>
+          <p>PH Seawaves, planta baja · Tel: 203-2055 · Cel: 6932-7190</p>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div class="cc-ico">📧</div>
+        <div>
+          <h4>Email corporativo</h4>
+          <p>contact@salvamimaquina.com · Respuesta en menos de 24h</p>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div class="cc-ico">💬</div>
+        <div>
+          <h4>WhatsApp directo</h4>
+          <p>+507 6978-4955 · Línea exclusiva empresas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="smm-logo">
+          <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+        </a>
+        <p>Empresa líder en Panamá dedicada a la reparación, venta y leasing de dispositivos Apple y Windows. Desde 2016 salvando máquinas.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#">Reparación iPhone</a></li>
+          <li><a href="#">Reparación MacBook</a></li>
+          <li><a href="#">Reparación iPad</a></li>
+          <li><a href="#">Reparación Windows</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresas</h5>
+        <ul>
+          <li><a href="#">Leasing de equipos</a></li>
+          <li><a href="#">Alquiler corto plazo</a></li>
+          <li><a href="#">Gestión de flotas</a></li>
+          <li><a href="#">Soporte Apple certificado</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Tienda en línea</a></li>
+          <li><a href="#">Trade-In</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>"Mac", "iPhone", "iPad", "Apple Watch" son marcas registradas de Apple Inc.</p>
+      <p>© 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/SalvaMiMaquina/" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/salvamimaquina/" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/+50769784955" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const els = document.querySelectorAll('.reveal, .reveal-left');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 60 ? 'rgba(8, 15, 46, 0.96)' : 'rgba(8, 15, 46, 0.85)';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); document.querySelector('.nav-links').classList.remove('mobile-open'); }
+      });
+    });
+  </script>
+</body>
+</html>

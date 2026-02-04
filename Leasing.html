@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leasing Personal — Salva Mi Máquina | Renta tu Mac o iPhone en Panamá</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2BDD7F;
+      --green-dark: #22c46d;
+      --green-glow: rgba(43, 221, 127, 0.15);
+      --green-subtle: rgba(43, 221, 127, 0.08);
+      --navy: #0D1845;
+      --navy-deep: #080f2e;
+      --navy-light: #141f52;
+      --navy-card: #111a4a;
+      --white: #f8fafb;
+      --gray-100: #f0f2f5;
+      --gray-200: #dde1e8;
+      --gray-400: #8b93a7;
+      --gray-600: #5a6380;
+      --black: #060a1e;
+      --mint-bg: #e8faf0;
+      --mint-border: #c8f0da;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--navy-deep);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ NAV (consistent across all pages) ============ */
+    .smm-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .smm-logo img { height: 38px; width: auto; object-fit: contain; flex-shrink: 0; }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 0 48px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8, 15, 46, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(43, 221, 127, 0.08);
+      transition: background 0.3s;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.3px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--green); color: var(--navy-deep) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.78rem !important; letter-spacing: 0.5px; transition: all 0.25s; }
+    .nav-cta:hover { background: var(--green-dark); transform: scale(1.04); box-shadow: 0 4px 20px rgba(43, 221, 127, 0.3); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ============ SHARED ============ */
+    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
+
+    .btn-primary { background: var(--green); color: var(--navy-deep); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
+
+    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+
+    .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ HERO — FULL BLEED CENTERED with STACKED LAYERS ============ */
+    /* (Different from homepage grid-overlay hero AND empresas split hero) */
+    .hero-lease {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Diagonal gradient sweep — unique to this page */
+    .hero-lease::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: conic-gradient(from 160deg at 40% 50%, rgba(43,221,127,0.06) 0deg, transparent 90deg, rgba(43,221,127,0.03) 180deg, transparent 270deg);
+      pointer-events: none;
+      animation: conicSpin 30s linear infinite;
+    }
+
+    @keyframes conicSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Dot matrix pattern — different from homepage grid and empresas grid */
+    .hero-lease::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(43,221,127,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 65%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 20%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-lease > * { position: relative; z-index: 1; }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(43,221,127,0.12), rgba(43,221,127,0.04));
+      border: 1px solid rgba(43,221,127,0.2);
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s ease-out;
+    }
+
+    .hero-pill .pill-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: var(--navy-deep);
+      font-weight: 900;
+    }
+
+    .hero-lease h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      animation: fadeUp 0.7s ease-out 0.1s both;
+    }
+
+    .hero-lease h1 .accent {
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--gray-400);
+      max-width: 560px;
+      margin: 32px auto 0;
+      line-height: 1.7;
+      animation: fadeUp 0.7s ease-out 0.2s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      margin-top: 40px;
+      animation: fadeUp 0.7s ease-out 0.35s both;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Animated price banner — unique element */
+    .price-banner {
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      animation: fadeUp 0.7s ease-out 0.5s both;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .price-chip {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.12);
+      border-radius: 100px;
+      padding: 12px 28px 12px 14px;
+      transition: all 0.35s;
+      cursor: default;
+    }
+
+    .price-chip:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43,221,127,0.1);
+    }
+
+    .price-chip .pc-emoji {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(43,221,127,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .price-chip .pc-info {
+      text-align: left;
+    }
+
+    .price-chip .pc-device {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.2px;
+    }
+
+    .price-chip .pc-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    /* ============ ROTATING BENEFITS STRIP ============ */
+    .benefits-strip {
+      padding: 16px 0;
+      border-top: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      background: rgba(43, 221, 127, 0.015);
+      overflow: hidden;
+    }
+
+    .bs-track {
+      display: flex;
+      animation: stripScroll 35s linear infinite;
+      width: max-content;
+    }
+
+    .bs-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 36px;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .bs-item .bs-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .bs-item .bs-check {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    @keyframes stripScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ============ HOW LEASING WORKS — ZIGZAG STEPS (not horizontal timeline, not cards grid) ============ */
+    .zigzag-section {
+      padding: 120px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .zigzag-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .zigzag-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .zigzag-header p {
+      font-size: 1rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Each step alternates left/right with a connecting center line */
+    .zigzag-steps {
+      position: relative;
+    }
+
+    /* Vertical center line */
+    .zigzag-steps::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(43,221,127,0.2), rgba(43,221,127,0.05));
+      transform: translateX(-50%);
+    }
+
+    .zig-step {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 48px;
+    }
+
+    .zig-step:last-child { margin-bottom: 0; }
+
+    /* The center node */
+    .zig-node {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .zig-node .zn-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 2px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--green);
+      box-shadow: 0 0 30px rgba(43,221,127,0.1);
+    }
+
+    /* Content card */
+    .zig-content {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.1);
+      border-radius: 24px;
+      padding: 36px 32px;
+      transition: all 0.4s;
+    }
+
+    .zig-content:hover {
+      border-color: rgba(43,221,127,0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    }
+
+    .zig-content .zc-emoji { font-size: 2rem; margin-bottom: 16px; display: block; }
+    .zig-content h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
+    .zig-content p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.6; }
+
+    /* Spacer for the empty side */
+    .zig-spacer { }
+
+    /* Odd steps: content LEFT, spacer RIGHT */
+    .zig-step:nth-child(odd) .zig-content { grid-column: 1; }
+    .zig-step:nth-child(odd) .zig-node { grid-column: 2; }
+    .zig-step:nth-child(odd) .zig-spacer { grid-column: 3; }
+
+    /* Even steps: spacer LEFT, content RIGHT */
+    .zig-step:nth-child(even) .zig-spacer { grid-column: 1; }
+    .zig-step:nth-child(even) .zig-node { grid-column: 2; }
+    .zig-step:nth-child(even) .zig-content { grid-column: 3; }
+
+    /* ============ DEVICE SHOWCASE — HORIZONTAL SCROLL CAROUSEL (unique to this page) ============ */
+    .showcase-section {
+      padding: 100px 0;
+      overflow: hidden;
+    }
+
+    .showcase-header {
+      padding: 0 48px;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .showcase-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .showcase-header p { font-size: 1rem; color: var(--gray-400); line-height: 1.7; max-width: 420px; }
+
+    .showcase-scroll {
+      display: flex;
+      gap: 20px;
+      padding: 0 48px 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .showcase-scroll::-webkit-scrollbar { display: none; }
+
+    .device-card {
+      flex: 0 0 320px;
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 28px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+
+    .device-card:hover {
+      border-color: rgba(43,221,127,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .dc-visual {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, rgba(43,221,127,0.03) 100%);
+      position: relative;
+    }
+
+    .dc-visual .dc-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    .dc-badge.new { background: var(--green); color: var(--navy-deep); }
+    .dc-badge.refurb { background: rgba(43,221,127,0.15); color: var(--green); border: 1px solid rgba(43,221,127,0.3); }
+
+    .dc-info {
+      padding: 24px;
+    }
+
+    .dc-info h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+    .dc-info .dc-spec { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 16px; }
+
+    .dc-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .dc-pricing .dc-monthly {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .dc-pricing .dc-period {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    .dc-pricing .dc-vs {
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      text-decoration: line-through;
+    }
+
+    /* ============ WHY LEASE — MAGAZINE FEATURE BLOCKS (alternating full/narrow) ============ */
+    .magazine-section {
+      padding: 120px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .magazine-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .magazine-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .magazine-header p { font-size: 1rem; color: var(--gray-400); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+
+    /* Wide feature row */
+    .mag-wide {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .mag-wide.reverse { grid-template-columns: 2fr 3fr; }
+
+    .mag-card {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 28px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .mag-card:hover {
+      border-color: rgba(43,221,127,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    }
+
+    .mag-card .mc-emoji { font-size: 2.8rem; margin-bottom: 24px; display: block; }
+    .mag-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    .mag-card p { font-size: 0.92rem; color: var(--gray-400); line-height: 1.65; max-width: 420px; }
+
+    .mag-card .mc-stat {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--green);
+      margin-top: 20px;
+    }
+
+    .mag-card .mc-stat-label {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* Highlight card variant */
+    .mag-card.mc-highlight {
+      background: linear-gradient(145deg, var(--navy) 0%, rgba(43,221,127,0.06) 100%);
+      border-color: rgba(43,221,127,0.18);
+    }
+
+    /* Narrow row */
+    .mag-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .mag-trio .mag-card { padding: 36px 28px; }
+    .mag-trio .mag-card h3 { font-size: 1.5rem; }
+
+    /* ============ NEW vs REFURB — OVERLAPPING PANELS (unique composition) ============ */
+    .compare-panels {
+      padding: 120px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .compare-panels .cp-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .compare-panels .cp-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .compare-panels .cp-header p {
+      font-size: 1rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .panels-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .panel {
+      border-radius: 32px;
+      padding: 52px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+    }
+
+    .panel-new {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.12);
+    }
+
+    .panel-new:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.35); border-color: rgba(43,221,127,0.25); }
+
+    .panel-refurb {
+      background: linear-gradient(145deg, rgba(43,221,127,0.08) 0%, rgba(43,221,127,0.02) 100%);
+      border: 2px solid var(--green);
+    }
+
+    .panel-refurb:hover { box-shadow: 0 20px 60px rgba(43,221,127,0.15); }
+
+    .panel .panel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .panel-new .panel-badge {
+      background: rgba(43,221,127,0.1);
+      color: var(--green);
+    }
+
+    .panel-refurb .panel-badge {
+      background: var(--green);
+      color: var(--navy-deep);
+    }
+
+    .panel .panel-emoji { font-size: 3rem; margin-bottom: 20px; display: block; }
+
+    .panel h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .panel > p {
+      font-size: 0.92rem;
+      color: var(--gray-400);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .panel-refurb > p { color: var(--gray-200); }
+
+    .panel .p-checks { list-style: none; }
+
+    .panel .p-checks li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      font-size: 0.88rem;
+      color: var(--gray-200);
+    }
+
+    .panel-refurb .p-checks li { border-color: rgba(43,221,127,0.12); }
+
+    .panel .p-checks li .ck {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(43, 221, 127, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: var(--green);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* ============ FAQ — PILL ACCORDION (unique interaction pattern) ============ */
+    .faq-section {
+      padding: 120px 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .faq-header p { font-size: 1rem; color: var(--gray-400); line-height: 1.7; }
+
+    .faq-item {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 20px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item.open {
+      border-color: rgba(43,221,127,0.2);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .faq-q:hover { background: rgba(43,221,127,0.03); }
+
+    .faq-q h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-q .fq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(43,221,127,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      font-weight: 300;
+    }
+
+    .faq-item.open .fq-icon { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 28px 24px;
+    }
+
+    .faq-a p {
+      font-size: 0.88rem;
+      color: var(--gray-400);
+      line-height: 1.65;
+    }
+
+    /* ============ SUSTAINABILITY BAND — ANGLED (unique to this page) ============ */
+    .eco-band {
+      position: relative;
+      background: var(--white);
+      color: var(--navy-deep);
+      padding: 80px 48px;
+      margin: 0 48px;
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .eco-band::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(43,221,127,0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eco-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .eco-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--navy-deep);
+      margin-bottom: 14px;
+    }
+
+    .eco-text p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .eco-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .eco-stat {
+      background: var(--mint-bg);
+      border: 1px solid var(--mint-border);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .eco-stat:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43,221,127,0.1);
+    }
+
+    .eco-stat .es-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .eco-stat .es-label {
+      font-size: 0.72rem;
+      color: var(--gray-600);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ============ CTA — CENTERED STACKED (different from empresas asymmetric CTA) ============ */
+    .cta-lease {
+      padding: 140px 48px 120px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-lease::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(43,221,127,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .cta-lease > * { position: relative; z-index: 1; }
+
+    .cta-lease h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.9;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .cta-lease h2 .accent {
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-lease > p {
+      font-size: 1.05rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Contact pills — horizontal row */
+    .contact-pills {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 56px;
+    }
+
+    .cpill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.1);
+      border-radius: 100px;
+      padding: 14px 28px 14px 16px;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .cpill:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(43,221,127,0.1);
+    }
+
+    .cpill .cp-ico {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(43,221,127,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .cpill .cp-text {
+      text-align: left;
+    }
+
+    .cpill .cp-label {
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .cpill .cp-value {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* ============ FOOTER (consistent) ============ */
+    footer {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding: 64px 48px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: var(--gray-600); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--green); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding-top: 32px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+
+    .footer-bottom p { font-size: 0.72rem; color: var(--gray-600); }
+
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 1px solid rgba(43, 221, 127, 0.1); display: flex; align-items: center; justify-content: center; color: var(--gray-400); text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: var(--navy-deep); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .mag-wide { grid-template-columns: 1fr; }
+      .mag-wide.reverse { grid-template-columns: 1fr; }
+      .mag-trio { grid-template-columns: 1fr; }
+      .panels-row { grid-template-columns: 1fr; }
+      .eco-inner { grid-template-columns: 1fr; text-align: center; }
+      .eco-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-lease { padding: 100px 20px 60px; }
+      .zigzag-section { padding: 80px 20px; }
+      .showcase-header { padding: 0 20px; }
+      .showcase-scroll { padding: 0 20px 20px; }
+      .magazine-section { padding: 80px 20px; }
+      .compare-panels { padding: 80px 20px; }
+      .faq-section { padding: 80px 20px; }
+      .eco-band { margin: 0 16px; padding: 56px 24px; }
+      .cta-lease { padding: 80px 20px 60px; }
+      footer { padding: 48px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+      /* Zigzag collapses to single column */
+      .zigzag-steps::before { left: 28px; }
+      .zig-step {
+        grid-template-columns: 56px 1fr;
+        gap: 16px;
+      }
+      .zig-step:nth-child(odd) .zig-content { grid-column: 2; }
+      .zig-step:nth-child(odd) .zig-node { grid-column: 1; grid-row: 1; }
+      .zig-step:nth-child(odd) .zig-spacer { display: none; }
+      .zig-step:nth-child(even) .zig-content { grid-column: 2; }
+      .zig-step:nth-child(even) .zig-node { grid-column: 1; grid-row: 1; }
+      .zig-step:nth-child(even) .zig-spacer { display: none; }
+
+      .device-card { flex: 0 0 280px; }
+      .eco-stats { grid-template-columns: 1fr; }
+      .price-banner { gap: 12px; }
+      .price-chip { padding: 10px 20px 10px 10px; }
+
+      .contact-pills { flex-direction: column; align-items: stretch; }
+
+      .smm-logo img { height: 32px; }
+
+      /* Mobile nav */
+      .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0; bottom: 0;
+        background: rgba(8, 15, 46, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 40px 28px;
+        gap: 20px;
+        z-index: 999;
+        animation: fadeUp 0.3s ease;
+      }
+      .nav-links.mobile-open a { font-size: 1.15rem; color: var(--white); }
+      .nav-links.mobile-open .nav-cta { text-align: center; font-size: 1rem !important; padding: 16px; margin-top: 8px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-lease h1 { font-size: 3.2rem; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary, .btn-ghost { justify-content: center; }
+      .price-banner { flex-direction: column; align-items: stretch; }
+      .cta-btns { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav>
+    <a href="#" class="smm-logo">
+      <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Reparación</a></li>
+      <li><a href="#">Tienda</a></li>
+      <li><a href="#" class="active">Leasing Personal</a></li>
+      <li><a href="#">Empresas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/+50769784955" class="nav-cta">Cotiza Ahora</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero-lease">
+    <div class="hero-pill">
+      <span class="pill-icon">✦</span>
+      LEASING PERSONAL — DESDE $29/MES
+    </div>
+    <h1>
+      TU PRÓXIMO MAC.<br>
+      <span class="accent">SIN COMPRARLO.</span>
+    </h1>
+    <p class="hero-sub">
+      Renta el dispositivo Apple que siempre quisiste. Cuota mensual accesible, equipo siempre actualizado y cero estrés. Tú lo usas, nosotros lo mantenemos.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/+50769784955" class="btn-primary">Cotizar mi leasing →</a>
+      <a href="#dispositivos" class="btn-secondary">Ver dispositivos</a>
+    </div>
+    <div class="price-banner">
+      <div class="price-chip">
+        <div class="pc-emoji">💻</div>
+        <div class="pc-info">
+          <div class="pc-device">MacBook Air M3</div>
+          <div class="pc-price">DESDE $45/MES</div>
+        </div>
+      </div>
+      <div class="price-chip">
+        <div class="pc-emoji">📱</div>
+        <div class="pc-info">
+          <div class="pc-device">iPhone 15</div>
+          <div class="pc-price">DESDE $35/MES</div>
+        </div>
+      </div>
+      <div class="price-chip">
+        <div class="pc-emoji">📱</div>
+        <div class="pc-info">
+          <div class="pc-device">iPad 11"</div>
+          <div class="pc-price">DESDE $29/MES</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BENEFITS STRIP ====== -->
+  <div class="benefits-strip">
+    <div class="bs-track">
+      <div class="bs-item"><span class="bs-check">✓</span> Sin cuota inicial</div>
+      <div class="bs-item"><span class="bs-dot"></span> Equipo nuevo o Grado A+</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Garantía incluida</div>
+      <div class="bs-item"><span class="bs-dot"></span> Soporte técnico certificado</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Upgrade cada 2 años</div>
+      <div class="bs-item"><span class="bs-dot"></span> Cuota fija mensual</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Opción de compra al final</div>
+      <div class="bs-item"><span class="bs-dot"></span> Entrega en toda la ciudad</div>
+      <!-- Repeat for seamless loop -->
+      <div class="bs-item"><span class="bs-check">✓</span> Sin cuota inicial</div>
+      <div class="bs-item"><span class="bs-dot"></span> Equipo nuevo o Grado A+</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Garantía incluida</div>
+      <div class="bs-item"><span class="bs-dot"></span> Soporte técnico certificado</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Upgrade cada 2 años</div>
+      <div class="bs-item"><span class="bs-dot"></span> Cuota fija mensual</div>
+      <div class="bs-item"><span class="bs-check">✓</span> Opción de compra al final</div>
+      <div class="bs-item"><span class="bs-dot"></span> Entrega en toda la ciudad</div>
+    </div>
+  </div>
+
+  <!-- ====== ZIGZAG STEPS ====== -->
+  <section class="zigzag-section" id="como-funciona">
+    <div class="zigzag-header reveal">
+      <span class="label">Así de simple</span>
+      <h2>¿CÓMO FUNCIONA<br>EL LEASING?</h2>
+      <p>Cuatro pasos para tener tu equipo Apple sin desembolsar una fortuna. Sin letra pequeña, sin sorpresas.</p>
+    </div>
+    <div class="zigzag-steps">
+      <div class="zig-step reveal">
+        <div class="zig-content">
+          <span class="zc-emoji">💬</span>
+          <h3>Cuéntanos qué necesitas</h3>
+          <p>Escríbenos por WhatsApp o visítanos. Te asesoramos para elegir el equipo ideal según tu presupuesto y uso diario.</p>
+        </div>
+        <div class="zig-node"><div class="zn-circle">01</div></div>
+        <div class="zig-spacer"></div>
+      </div>
+      <div class="zig-step reveal">
+        <div class="zig-spacer"></div>
+        <div class="zig-node"><div class="zn-circle">02</div></div>
+        <div class="zig-content">
+          <span class="zc-emoji">📋</span>
+          <h3>Elige tu plan</h3>
+          <p>Selecciona entre equipo nuevo o reacondicionado Grado A+. Definimos la cuota mensual y el plazo que mejor te funcione.</p>
+        </div>
+      </div>
+      <div class="zig-step reveal">
+        <div class="zig-content">
+          <span class="zc-emoji">📦</span>
+          <h3>Recibe tu equipo</h3>
+          <p>Te lo entregamos configurado y listo para usar. En nuestras sucursales o a domicilio — tú decides.</p>
+        </div>
+        <div class="zig-node"><div class="zn-circle">03</div></div>
+        <div class="zig-spacer"></div>
+      </div>
+      <div class="zig-step reveal">
+        <div class="zig-spacer"></div>
+        <div class="zig-node"><div class="zn-circle">04</div></div>
+        <div class="zig-content">
+          <span class="zc-emoji">🔄</span>
+          <h3>Renueva o quédate con él</h3>
+          <p>Al terminar el plazo, haz upgrade al modelo más nuevo, compra tu equipo a precio residual, o simplemente devuélvelo. Tú mandas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DEVICE SHOWCASE (horizontal scroll) ====== -->
+  <section class="showcase-section" id="dispositivos">
+    <div class="showcase-header reveal">
+      <div>
+        <span class="label">Catálogo Personal</span>
+        <h2>ELIGE TU<br>EQUIPO IDEAL.</h2>
+      </div>
+      <p>Desliza para explorar. Nuevos y reacondicionados con garantía y soporte incluido.</p>
+    </div>
+    <div class="showcase-scroll">
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge new">Nuevo</span>
+          💻
+        </div>
+        <div class="dc-info">
+          <h3>MacBook Air M3</h3>
+          <p class="dc-spec">8GB RAM — 256GB SSD — 13.6"</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$45/MES</span>
+            <span class="dc-period">× 24 meses</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge refurb">Grado A+</span>
+          💻
+        </div>
+        <div class="dc-info">
+          <h3>MacBook Pro M2</h3>
+          <p class="dc-spec">16GB RAM — 512GB SSD — 14"</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$55/MES</span>
+            <span class="dc-period">× 24 meses</span>
+            <span class="dc-vs">$1,899</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge new">Nuevo</span>
+          📱
+        </div>
+        <div class="dc-info">
+          <h3>iPhone 15</h3>
+          <p class="dc-spec">128GB — Negro</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$35/MES</span>
+            <span class="dc-period">× 24 meses</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge new">Nuevo</span>
+          📱
+        </div>
+        <div class="dc-info">
+          <h3>iPad 11" A16</h3>
+          <p class="dc-spec">128GB — WiFi — Blue</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$29/MES</span>
+            <span class="dc-period">× 24 meses</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge refurb">Grado A+</span>
+          💻
+        </div>
+        <div class="dc-info">
+          <h3>MacBook Air M2</h3>
+          <p class="dc-spec">8GB RAM — 256GB SSD — 13.6"</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$38/MES</span>
+            <span class="dc-period">× 24 meses</span>
+            <span class="dc-vs">$999</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge new">Nuevo</span>
+          📱
+        </div>
+        <div class="dc-info">
+          <h3>iPhone 15 Pro</h3>
+          <p class="dc-spec">128GB — Natural Titanium</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$42/MES</span>
+            <span class="dc-period">× 24 meses</span>
+          </div>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-visual">
+          <span class="dc-badge refurb">Grado A</span>
+          🖥️
+        </div>
+        <div class="dc-info">
+          <h3>iMac M1 24"</h3>
+          <p class="dc-spec">8GB RAM — 256GB SSD</p>
+          <div class="dc-pricing">
+            <span class="dc-monthly">$49/MES</span>
+            <span class="dc-period">× 24 meses</span>
+            <span class="dc-vs">$1,299</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY LEASE — MAGAZINE BLOCKS ====== -->
+  <section class="magazine-section">
+    <div class="magazine-header reveal">
+      <span class="label">¿Por qué rentar?</span>
+      <h2>VENTAJAS QUE<br>NO PUEDES IGNORAR.</h2>
+      <p>Tu bolsillo te lo agradecerá. Comprar ya no es la única opción — y tal vez tampoco la mejor.</p>
+    </div>
+
+    <div class="mag-wide reveal">
+      <div class="mag-card mc-highlight">
+        <span class="mc-emoji">💸</span>
+        <h3>OLVÍDATE DEL<br>GASTO FUERTE</h3>
+        <p>Un MacBook puede costar más de $1,000. Con leasing, empiezas a usarlo desde $38 al mes. Sin entrada, sin sorpresas. Solo una cuota fija que cabe en tu presupuesto.</p>
+        <div class="mc-stat">$0</div>
+        <div class="mc-stat-label">Cuota inicial</div>
+      </div>
+      <div class="mag-card">
+        <span class="mc-emoji">🔄</span>
+        <h3>SIEMPRE<br>AL DÍA</h3>
+        <p>Cada 2 años puedes hacer upgrade al modelo más reciente. Nunca más te quedarás con un equipo obsoleto.</p>
+      </div>
+    </div>
+
+    <div class="mag-trio reveal">
+      <div class="mag-card">
+        <span class="mc-emoji">🛡️</span>
+        <h3>GARANTÍA<br>TOTAL</h3>
+        <p>Soporte técnico certificado Apple incluido. Si algo pasa, nosotros lo resolvemos.</p>
+      </div>
+      <div class="mag-card">
+        <span class="mc-emoji">📦</span>
+        <h3>ENTREGA<br>RÁPIDA</h3>
+        <p>Te lo llevamos configurado y listo. Recógelo en tienda o recíbelo en tu casa.</p>
+      </div>
+      <div class="mag-card">
+        <span class="mc-emoji">🎯</span>
+        <h3>TÚ<br>DECIDES</h3>
+        <p>Al final del contrato: renueva, compra a precio residual o devuelve. Sin ataduras.</p>
+      </div>
+    </div>
+
+    <div class="mag-wide reverse reveal">
+      <div class="mag-card">
+        <span class="mc-emoji">📊</span>
+        <h3>CUOTA<br>PREDECIBLE</h3>
+        <p>Planifica tu mes sin sustos. La cuota es fija desde el primer día hasta el último. Sin intereses ocultos.</p>
+      </div>
+      <div class="mag-card mc-highlight">
+        <span class="mc-emoji">🌱</span>
+        <h3>SOSTENIBLE<br>POR DISEÑO</h3>
+        <p>Cada dispositivo reacondicionado ahorra hasta 722 kg de CO₂. Usar tecnología de calidad y cuidar el planeta no están peleados.</p>
+        <div class="mc-stat">722 KG</div>
+        <div class="mc-stat-label">CO₂ ahorrado por dispositivo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== NEW vs REFURB PANELS ====== -->
+  <section class="compare-panels" id="opciones">
+    <div class="cp-header reveal">
+      <span class="label">Tú eliges</span>
+      <h2>NUEVO O<br>REACONDICIONADO.</h2>
+      <p>Ambas opciones incluyen garantía y soporte. La diferencia está en tu presupuesto y preferencia.</p>
+    </div>
+    <div class="panels-row reveal">
+      <div class="panel panel-new">
+        <span class="panel-badge">✨ Dispositivo Nuevo</span>
+        <span class="panel-emoji">💻</span>
+        <h3>RECIÉN<br>SALIDO DE CAJA.</h3>
+        <p>La última generación Apple, sellada de fábrica. Configuraciones personalizadas según lo que necesites.</p>
+        <ul class="p-checks">
+          <li><span class="ck">✓</span> Última generación disponible</li>
+          <li><span class="ck">✓</span> Empaque original sellado</li>
+          <li><span class="ck">✓</span> Configuración personalizada</li>
+          <li><span class="ck">✓</span> Garantía Apple completa</li>
+          <li><span class="ck">✓</span> Soporte técnico incluido</li>
+        </ul>
+      </div>
+      <div class="panel panel-refurb">
+        <span class="panel-badge">★ Recomendado</span>
+        <span class="panel-emoji">🌱</span>
+        <h3>COMO NUEVO.<br>MEJOR PRECIO.</h3>
+        <p>Grado A+ certificado: sin marcas visibles, rendimiento idéntico al nuevo. Y ahorras hasta un 30%.</p>
+        <ul class="p-checks">
+          <li><span class="ck">✓</span> Certificado Grado A+ o A</li>
+          <li><span class="ck">✓</span> Rendimiento = dispositivo nuevo</li>
+          <li><span class="ck">✓</span> Hasta 30% más económico</li>
+          <li><span class="ck">✓</span> Ahorra hasta 722 kg de CO₂</li>
+          <li><span class="ck">✓</span> Misma garantía y soporte</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="faq-section" id="faq">
+    <div class="faq-header reveal">
+      <span class="label">Preguntas frecuentes</span>
+      <h2>TODO LO QUE<br>QUIERES SABER.</h2>
+      <p>Las respuestas a las dudas más comunes sobre el leasing personal.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Necesito dar una cuota inicial?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>No. El leasing personal no requiere cuota inicial. Solo pagas tu mensualidad desde el primer mes. Así de simple.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Qué pasa al final del contrato?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Tienes tres opciones: renovar el contrato con un equipo más nuevo, comprar tu dispositivo actual a un precio residual preferencial, o simplemente devolverlo. Sin penalidad en ningún caso.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Qué incluye la cuota mensual?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Tu cuota incluye el uso del dispositivo, garantía durante todo el contrato y soporte técnico certificado Apple. No hay cargos sorpresa ni cargos de mantenimiento adicionales.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Puedo hacer upgrade antes del plazo?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Sí. Si deseas cambiar a un equipo más reciente antes de que termine tu contrato, podemos ajustar tu plan. Contáctanos para ver las opciones disponibles según tu caso.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Qué diferencia hay entre Grado A+ y Grado A?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Grado A+ significa que el equipo no tiene señales visibles de uso — se ve y funciona como nuevo. Grado A puede tener marcas mínimas casi imperceptibles, pero el rendimiento es idéntico. Ambos pasan por un proceso de certificación riguroso.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <h4>¿Qué requisitos necesito para aplicar?</h4>
+        <span class="fq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>El proceso es rápido y sencillo. Necesitas cédula de identidad y un comprobante de ingresos. Te damos respuesta en menos de 24 horas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ECO BAND ====== -->
+  <section class="eco-band reveal">
+    <div class="eco-inner">
+      <div class="eco-text">
+        <span class="label" style="color: var(--green-dark);">Sostenibilidad</span>
+        <h2>TECH CON<br>CONCIENCIA.</h2>
+        <p>Elegir reacondicionado no es conformarse — es una decisión inteligente que cuida tu bolsillo y el planeta.</p>
+      </div>
+      <div class="eco-stats">
+        <div class="eco-stat">
+          <div class="es-val">722 KG</div>
+          <div class="es-label">CO₂ ahorrado por dispositivo</div>
+        </div>
+        <div class="eco-stat">
+          <div class="es-val">100%</div>
+          <div class="es-label">Segunda vida garantizada</div>
+        </div>
+        <div class="eco-stat">
+          <div class="es-val">A+</div>
+          <div class="es-label">Certificación más alta</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="cta-lease" id="contacto">
+    <span class="label">Hablemos</span>
+    <h2>TU EQUIPO APPLE<br>TE ESPERA.<br><span class="accent">COTIZA HOY.</span></h2>
+    <p>Sin compromiso. Te respondemos el mismo día con una cotización personalizada. Solo dinos qué equipo quieres y nosotros armamos tu plan.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/+50769784955" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp →</a>
+      <a href="tel:+5073949351" class="btn-ghost" style="font-size: 1rem; padding: 18px 42px;">Llamar ahora</a>
+    </div>
+    <div class="contact-pills">
+      <a href="#" class="cpill">
+        <div class="cp-ico">📍</div>
+        <div class="cp-text">
+          <div class="cp-label">San Francisco</div>
+          <div class="cp-value">394-9351</div>
+        </div>
+      </a>
+      <a href="#" class="cpill">
+        <div class="cp-ico">📍</div>
+        <div class="cp-text">
+          <div class="cp-label">Bella Vista</div>
+          <div class="cp-value">203-2055</div>
+        </div>
+      </a>
+      <a href="https://wa.me/+50769784955" class="cpill">
+        <div class="cp-ico">💬</div>
+        <div class="cp-text">
+          <div class="cp-label">WhatsApp</div>
+          <div class="cp-value">+507 6978-4955</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="smm-logo">
+          <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+        </a>
+        <p>Empresa líder en Panamá dedicada a la reparación, venta y leasing de dispositivos Apple y Windows. Desde 2016 salvando máquinas.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#">Reparación iPhone</a></li>
+          <li><a href="#">Reparación MacBook</a></li>
+          <li><a href="#">Reparación iPad</a></li>
+          <li><a href="#">Reparación Windows</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Leasing</h5>
+        <ul>
+          <li><a href="#">Leasing personal</a></li>
+          <li><a href="#">Leasing empresas</a></li>
+          <li><a href="#">Catálogo equipos</a></li>
+          <li><a href="#">Trade-In</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Tienda en línea</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Ubicaciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>"Mac", "iPhone", "iPad", "Apple Watch" son marcas registradas de Apple Inc.</p>
+      <p>© 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/SalvaMiMaquina/" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/salvamimaquina/" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/+50769784955" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script>
+    // Scroll reveal
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    // Navbar scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 60 ? 'rgba(8, 15, 46, 0.96)' : 'rgba(8, 15, 46, 0.85)';
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) {
+          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelector('.nav-links').classList.remove('mobile-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparación — Salva Mi Máquina | Servicio Técnico Apple & Windows en Panamá</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2BDD7F;
+      --green-dark: #22c46d;
+      --green-glow: rgba(43, 221, 127, 0.15);
+      --green-subtle: rgba(43, 221, 127, 0.08);
+      --navy: #0D1845;
+      --navy-deep: #080f2e;
+      --navy-light: #141f52;
+      --navy-card: #111a4a;
+      --white: #f8fafb;
+      --gray-100: #f0f2f5;
+      --gray-200: #dde1e8;
+      --gray-400: #8b93a7;
+      --gray-600: #5a6380;
+      --black: #060a1e;
+      --mint-bg: #e8faf0;
+      --mint-border: #c8f0da;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--navy-deep);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ NAV (consistent) ============ */
+    .smm-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .smm-logo img { height: 38px; width: auto; object-fit: contain; flex-shrink: 0; }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 0 48px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8, 15, 46, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(43, 221, 127, 0.08);
+      transition: background 0.3s;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.3px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--green); color: var(--navy-deep) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.78rem !important; letter-spacing: 0.5px; transition: all 0.25s; }
+    .nav-cta:hover { background: var(--green-dark); transform: scale(1.04); box-shadow: 0 4px 20px rgba(43, 221, 127, 0.3); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ============ SHARED ============ */
+    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
+
+    .btn-primary { background: var(--green); color: var(--navy-deep); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
+
+    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+
+    .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ HERO — LEFT-ALIGNED WITH DIAGNOSTIC VISUAL (unique) ============ */
+    .hero-repair {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 48px 60px;
+      position: relative;
+      overflow: hidden;
+      gap: 40px;
+    }
+
+    /* Scan-line overlay — unique to repair page */
+    .hero-repair::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(43,221,127,0.015) 3px,
+        rgba(43,221,127,0.015) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial accent */
+    .hero-repair::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: -10%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-repair > * { position: relative; z-index: 1; }
+
+    .hero-text { max-width: 600px; }
+
+    .hero-irp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(43,221,127,0.15), rgba(43,221,127,0.05));
+      border: 1px solid rgba(43,221,127,0.25);
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      animation: fadeUp 0.7s ease-out;
+    }
+
+    .hero-irp-badge .irp-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero-text h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.8rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      animation: fadeUp 0.7s ease-out 0.1s both;
+    }
+
+    .hero-text h1 .accent {
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: var(--gray-400);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-top: 28px;
+      animation: fadeUp 0.7s ease-out 0.2s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      animation: fadeUp 0.7s ease-out 0.35s both;
+      flex-wrap: wrap;
+    }
+
+    /* Quick stats under hero text */
+    .hero-quick-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+      animation: fadeUp 0.7s ease-out 0.5s both;
+    }
+
+    .hqs-item {
+      border-left: 2px solid rgba(43,221,127,0.3);
+      padding-left: 16px;
+    }
+
+    .hqs-item .hqs-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .hqs-item .hqs-label {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      font-weight: 600;
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Diagnostic visual — animated concentric rings with device */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 500px;
+      animation: fadeUp 0.7s ease-out 0.4s both;
+    }
+
+    /* === HERO X-RAY: MacBook diagnostic === */
+    .hx-container {
+      position: relative;
+      width: 420px;
+      height: 440px;
+    }
+
+    /* Outer target rings */
+    .hx-ring {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed rgba(43,221,127,0.08);
+      z-index: 0;
+    }
+
+    .hx-ring:nth-child(1) { width: 380px; height: 380px; }
+    .hx-ring:nth-child(2) { width: 480px; height: 480px; border-style: solid; border-color: rgba(43,221,127,0.04); }
+
+    /* Rotating reticle */
+    .hx-reticle {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(43,221,127,0.12);
+      animation: reticleSpin 30s linear infinite;
+      z-index: 1;
+    }
+
+    .hx-reticle::before, .hx-reticle::after {
+      content: '';
+      position: absolute;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .hx-reticle::before {
+      width: 8px; height: 8px;
+      top: -4px; left: 50%; transform: translateX(-50%);
+      box-shadow: 0 0 16px rgba(43,221,127,0.6);
+    }
+
+    .hx-reticle::after {
+      width: 6px; height: 6px;
+      bottom: 20%; right: -3px;
+      background: rgba(43,221,127,0.5);
+      box-shadow: 0 0 12px rgba(43,221,127,0.4);
+    }
+
+    @keyframes reticleSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    /* MacBook body — lid */
+    .hx-laptop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      z-index: 3;
+    }
+
+    .hx-lid {
+      width: 240px;
+      height: 160px;
+      background: rgba(43,221,127,0.02);
+      border: 2px solid rgba(43,221,127,0.2);
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Camera notch */
+    .hx-lid::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: rgba(43,221,127,0.3);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(43,221,127,0.2);
+    }
+
+    /* Screen content area — fake UI lines */
+    .hx-screen-lines {
+      position: absolute;
+      top: 28px;
+      left: 20px;
+      right: 20px;
+      bottom: 16px;
+    }
+
+    .hx-screen-lines .hx-sl {
+      height: 2px;
+      background: rgba(43,221,127,0.06);
+      margin-bottom: 10px;
+      border-radius: 2px;
+    }
+
+    .hx-sl:nth-child(1) { width: 65%; }
+    .hx-sl:nth-child(2) { width: 85%; }
+    .hx-sl:nth-child(3) { width: 45%; }
+    .hx-sl:nth-child(4) { width: 75%; }
+    .hx-sl:nth-child(5) { width: 55%; }
+    .hx-sl:nth-child(6) { width: 90%; }
+    .hx-sl:nth-child(7) { width: 40%; }
+    .hx-sl:nth-child(8) { width: 70%; }
+
+    /* Scan sweep on screen */
+    .hx-lid-scan {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+      pointer-events: none;
+    }
+
+    .hx-lid-scan::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--green) 50%, transparent 100%);
+      box-shadow: 0 0 15px rgba(43,221,127,0.4), 0 0 40px rgba(43,221,127,0.15);
+      animation: heroScan 4s ease-in-out infinite;
+    }
+
+    @keyframes heroScan {
+      0% { top: -3px; }
+      50% { top: 100%; }
+      100% { top: -3px; }
+    }
+
+    /* MacBook base/keyboard */
+    .hx-base {
+      width: 270px;
+      height: 12px;
+      background: rgba(43,221,127,0.04);
+      border: 1.5px solid rgba(43,221,127,0.15);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Trackpad hint */
+    .hx-base::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(43,221,127,0.1), rgba(43,221,127,0.15), rgba(43,221,127,0.1), transparent);
+      border-radius: 0 0 100px 100px;
+    }
+
+    /* Corner focus brackets */
+    .hx-bracket {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-color: var(--green);
+      border-style: solid;
+      border-width: 0;
+      z-index: 4;
+      opacity: 0.5;
+    }
+
+    .hx-bracket.hb-tl { top: 55px; left: 60px; border-top-width: 2px; border-left-width: 2px; }
+    .hx-bracket.hb-tr { top: 55px; right: 60px; border-top-width: 2px; border-right-width: 2px; }
+    .hx-bracket.hb-bl { bottom: 120px; left: 60px; border-bottom-width: 2px; border-left-width: 2px; }
+    .hx-bracket.hb-br { bottom: 120px; right: 60px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    /* Component callout tags */
+    .hx-tag {
+      position: absolute;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hx-tag .ht-line {
+      flex-shrink: 0;
+    }
+
+    .hx-tag .ht-line svg {
+      display: block;
+    }
+
+    .hx-tag .ht-card {
+      background: rgba(8, 15, 46, 0.92);
+      border: 1px solid rgba(43,221,127,0.2);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .hx-tag .ht-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ht-dot.ok { background: var(--green); box-shadow: 0 0 10px rgba(43,221,127,0.5); animation: htPulse 2s infinite; }
+    .ht-dot.warn { background: #ff9f0a; box-shadow: 0 0 10px rgba(255,159,10,0.5); animation: htPulse 2s 0.7s infinite; }
+    .ht-dot.scan { background: #2997ff; box-shadow: 0 0 10px rgba(41,151,255,0.5); animation: htPulse 1.5s 0.3s infinite; }
+
+    @keyframes htPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.6); }
+    }
+
+    .hx-tag .ht-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
+
+    .hx-tag .ht-sub {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .ht-sub.ok { color: var(--green); }
+    .ht-sub.warn { color: #ff9f0a; }
+    .ht-sub.scan { color: #2997ff; }
+
+    /* Tag positions — distributed around the laptop */
+    .hx-tag.ht-display { top: 50px; right: -5px; }
+    .hx-tag.ht-display .ht-line { order: -1; }
+    .hx-tag.ht-keyboard { bottom: 85px; left: -5px; flex-direction: row-reverse; }
+    .hx-tag.ht-battery { top: 145px; left: -10px; flex-direction: row-reverse; }
+    .hx-tag.ht-ssd { bottom: 85px; right: -5px; }
+    .hx-tag.ht-ssd .ht-line { order: -1; }
+    .hx-tag.ht-chip { top: 50px; left: -10px; flex-direction: row-reverse; }
+
+    /* Diagnostic progress bar at bottom */
+    .hx-progress {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 7;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(8,15,46,0.92);
+      border: 1px solid rgba(43,221,127,0.2);
+      border-radius: 100px;
+      padding: 10px 22px;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .hx-progress .hp-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .hx-progress .hp-bar {
+      width: 100px;
+      height: 5px;
+      background: rgba(43,221,127,0.1);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .hx-progress .hp-fill {
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(90deg, var(--green), #5befa5);
+      border-radius: 100px;
+      animation: hpGrow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes hpGrow {
+      0% { width: 45%; }
+      100% { width: 92%; }
+    }
+
+    .hx-progress .hp-pct {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      min-width: 36px;
+      text-align: right;
+    }
+
+    /* ============ TRUST STRIP — HORIZONTAL SCROLLING BADGES (unique pattern) ============ */
+    .trust-strip {
+      padding: 20px 0;
+      border-top: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      background: rgba(43,221,127,0.015);
+      overflow: hidden;
+    }
+
+    .ts-track {
+      display: flex;
+      animation: tsScroll 40s linear infinite;
+      width: max-content;
+    }
+
+    .ts-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 32px;
+      white-space: nowrap;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: 0.5px;
+    }
+
+    .ts-badge .ts-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(43,221,127,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    @keyframes tsScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ============ DEVICE TABS — TABBED INTERFACE (unique interactive pattern) ============ */
+    .devices-section {
+      padding: 120px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .devices-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .devices-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .devices-header p {
+      font-size: 1rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Tab navigation */
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.1);
+      border-radius: 100px;
+      padding: 14px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-400);
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .tab-btn:hover { border-color: rgba(43,221,127,0.3); color: var(--white); }
+    .tab-btn.active { background: var(--green); color: var(--navy-deep); border-color: var(--green); }
+    .tab-btn .tb-emoji { font-size: 1.1rem; }
+
+    /* Tab content */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeUp 0.5s ease-out; }
+
+    /* Service cards within tabs — STAGGERED MASONRY (unique to repair page) */
+    .repair-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .repair-card {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 24px;
+      padding: 36px 28px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .repair-card:hover {
+      border-color: rgba(43,221,127,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    /* Stagger effect — every other card offset */
+    .repair-card:nth-child(2) { margin-top: 32px; }
+    .repair-card:nth-child(5) { margin-top: 32px; }
+
+    .repair-card .rc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .repair-card .rc-emoji { font-size: 2.2rem; }
+
+    .repair-card .rc-time {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: rgba(43,221,127,0.1);
+      color: var(--green);
+    }
+
+    .repair-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .repair-card .rc-desc {
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .repair-card .rc-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--green);
+      letter-spacing: 0.5px;
+    }
+
+    .repair-card .rc-note {
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      margin-top: 4px;
+    }
+
+    /* Glow line on hover */
+    .repair-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .repair-card:hover::after { opacity: 1; }
+
+    /* ============ PROCESS — VERTICAL ACCORDION (unique interactive pattern) ============ */
+    .process-section {
+      padding: 120px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .process-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .process-text > p {
+      font-size: 1rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .process-text .process-stat-row {
+      display: flex;
+      gap: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(43,221,127,0.1);
+    }
+
+    .process-stat-row .ps-item .ps-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .process-stat-row .ps-item .ps-lbl {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* Accordion items */
+    .accord-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .accord-item {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .accord-item.open { border-color: rgba(43,221,127,0.25); }
+
+    .accord-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 24px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .accord-head:hover { background: rgba(43,221,127,0.03); }
+
+    .accord-head .ah-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(43,221,127,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .accord-item.open .ah-num {
+      background: var(--green);
+      color: var(--navy-deep);
+    }
+
+    .accord-head .ah-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .accord-head .ah-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(43,221,127,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--green);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .accord-item.open .ah-toggle { transform: rotate(45deg); }
+
+    .accord-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .accord-item.open .accord-body {
+      max-height: 200px;
+      padding: 0 24px 24px 80px;
+    }
+
+    .accord-body p {
+      font-size: 0.88rem;
+      color: var(--gray-400);
+      line-height: 1.65;
+    }
+
+    /* ============ GUARANTEE BADGES — FLOATING HORIZONTAL ROW (unique pattern) ============ */
+    .guarantee-section {
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .guarantee-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .g-badge {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.1);
+      border-radius: 20px;
+      padding: 32px 20px;
+      text-align: center;
+      transition: all 0.35s;
+      position: relative;
+    }
+
+    .g-badge:hover {
+      border-color: var(--green);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    }
+
+    .g-badge .gb-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(43,221,127,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+
+    .g-badge h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .g-badge p {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* ============ FEATURE — FULL-WIDTH DARK BAND WITH OFFSET IMAGE (unique) ============ */
+    .feature-band {
+      background: var(--navy);
+      border-top: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      padding: 100px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-band::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(43,221,127,0.06), transparent 60%);
+      pointer-events: none;
+    }
+
+    .feature-band-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fb-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .fb-content > p {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+
+    .fb-checks {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .fb-checks li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(43,221,127,0.06);
+      font-size: 0.88rem;
+      color: var(--gray-200);
+    }
+
+    .fb-checks li .ck {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(43, 221, 127, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: var(--green);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* Visual — photo */
+    .fb-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 480px;
+    }
+
+    /* Exploded device diagnostic visual */
+    .xray-container {
+      position: relative;
+      width: 340px;
+      height: 460px;
+    }
+
+    /* Main device silhouette */
+    .xray-device {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 340px;
+      background: rgba(43,221,127,0.03);
+      border: 2px solid rgba(43,221,127,0.25);
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      z-index: 3;
+      box-shadow: 
+        0 0 40px rgba(43,221,127,0.06),
+        inset 0 0 30px rgba(43,221,127,0.03);
+    }
+
+    /* Notch */
+    .xray-device::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      width: 60px;
+      height: 20px;
+      background: rgba(43,221,127,0.08);
+      border-radius: 0 0 12px 12px;
+      border: 1px solid rgba(43,221,127,0.15);
+      border-top: none;
+    }
+
+    /* Home bar */
+    .xray-device::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      width: 80px;
+      height: 4px;
+      background: rgba(43,221,127,0.2);
+      border-radius: 100px;
+    }
+
+    .xray-device .xd-emoji {
+      font-size: 2.4rem;
+      opacity: 0.7;
+    }
+
+    .xray-device .xd-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: rgba(43,221,127,0.5);
+    }
+
+    /* Scanning sweep line */
+    .xray-scan {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 176px;
+      height: 336px;
+      border-radius: 30px;
+      overflow: hidden;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .xray-scan::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      box-shadow: 0 0 20px var(--green), 0 0 60px rgba(43,221,127,0.3);
+      animation: scanSweep 3s ease-in-out infinite;
+    }
+
+    @keyframes scanSweep {
+      0% { top: -5%; }
+      50% { top: 100%; }
+      100% { top: -5%; }
+    }
+
+    /* Corner brackets — technical feel */
+    .xray-bracket {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--green);
+      border-style: solid;
+      border-width: 0;
+      z-index: 5;
+      opacity: 0.6;
+    }
+
+    .xray-bracket.br-tl { top: 40px; left: 60px; border-top-width: 2px; border-left-width: 2px; }
+    .xray-bracket.br-tr { top: 40px; right: 60px; border-top-width: 2px; border-right-width: 2px; }
+    .xray-bracket.br-bl { bottom: 40px; left: 60px; border-bottom-width: 2px; border-left-width: 2px; }
+    .xray-bracket.br-br { bottom: 40px; right: 60px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    /* Floating component callouts */
+    .xray-callout {
+      position: absolute;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .xray-callout .xc-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(43,221,127,0.3);
+      flex-shrink: 0;
+    }
+
+    .xray-callout .xc-tag {
+      background: rgba(8, 15, 46, 0.9);
+      border: 1px solid rgba(43,221,127,0.2);
+      border-radius: 10px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .xray-callout .xc-tag .xc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: xPulse 2s infinite;
+    }
+
+    .xc-dot.green { background: var(--green); box-shadow: 0 0 8px rgba(43,221,127,0.5); }
+    .xc-dot.amber { background: #ff9f0a; box-shadow: 0 0 8px rgba(255,159,10,0.5); animation-delay: 0.5s; }
+    .xc-dot.blue { background: #2997ff; box-shadow: 0 0 8px rgba(41,151,255,0.5); animation-delay: 1s; }
+
+    @keyframes xPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .xray-callout .xc-tag .xc-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gray-200);
+      letter-spacing: 0.3px;
+    }
+
+    .xray-callout .xc-tag .xc-status {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .xc-tag .xc-status.warn { color: #ff9f0a; }
+
+    /* Position each callout */
+    .xray-callout.xc-screen { top: 65px; right: -10px; }
+    .xray-callout.xc-screen .xc-line { order: -1; }
+    .xray-callout.xc-battery { top: 155px; left: -10px; flex-direction: row-reverse; }
+    .xray-callout.xc-chip { top: 240px; right: -10px; }
+    .xray-callout.xc-chip .xc-line { order: -1; }
+    .xray-callout.xc-camera { top: 65px; left: -10px; flex-direction: row-reverse; }
+    .xray-callout.xc-port { bottom: 70px; right: -10px; }
+    .xray-callout.xc-port .xc-line { order: -1; }
+
+    /* Internal "circuit" traces */
+    .xray-traces {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 280px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .xray-traces .xt-h, .xray-traces .xt-v {
+      position: absolute;
+      background: rgba(43,221,127,0.06);
+    }
+
+    .xt-h { height: 1px; }
+    .xt-v { width: 1px; }
+
+    .xt-h.h1 { width: 100px; top: 30%; left: 20px; }
+    .xt-h.h2 { width: 80px; top: 50%; left: 30px; }
+    .xt-h.h3 { width: 120px; top: 70%; left: 10px; }
+    .xt-v.v1 { height: 60px; left: 25%; top: 30%; }
+    .xt-v.v2 { height: 80px; left: 65%; top: 40%; }
+    .xt-v.v3 { height: 50px; left: 45%; top: 55%; }
+
+    /* Node dots on traces */
+    .xt-node {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(43,221,127,0.3);
+    }
+
+    .xt-node.n1 { top: 30%; left: 25%; }
+    .xt-node.n2 { top: 50%; left: 65%; }
+    .xt-node.n3 { top: 70%; left: 45%; }
+    .xt-node.n4 { top: 50%; left: 30%; }
+
+    /* Outer glow rings */
+    .xray-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 40px;
+      border: 1px solid rgba(43,221,127,0.06);
+      z-index: 1;
+      animation: xGlow 4s ease-in-out infinite;
+    }
+
+    .xray-glow:nth-child(1) { width: 240px; height: 400px; }
+    .xray-glow:nth-child(2) { width: 300px; height: 450px; animation-delay: 1.5s; border-color: rgba(43,221,127,0.04); border-radius: 48px; }
+
+    @keyframes xGlow {
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
+    }
+
+    /* Readout bar at bottom */
+    .xray-readout {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8, 15, 46, 0.9);
+      border: 1px solid rgba(43,221,127,0.2);
+      border-radius: 14px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 7;
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+    }
+
+    .xray-readout .xr-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .xray-readout .xr-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .xray-readout .xr-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      color: var(--green);
+      letter-spacing: 0.5px;
+    }
+
+    .xray-readout .xr-sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(43,221,127,0.15);
+    }
+
+    /* ============ TRUST / SOCIAL PROOF — LARGE QUOTE + STATS SIDEBAR (unique) ============ */
+    .trust-section {
+      padding: 120px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .trust-layout {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .trust-quote {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.1);
+      border-radius: 32px;
+      padding: 56px 48px;
+      position: relative;
+    }
+
+    .trust-quote::before {
+      content: '"';
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8rem;
+      line-height: 1;
+      color: rgba(43,221,127,0.08);
+      position: absolute;
+      top: 20px;
+      left: 32px;
+    }
+
+    .trust-quote blockquote {
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+    }
+
+    .trust-quote .tq-author {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .trust-quote .tq-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), #5befa5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--navy-deep);
+      font-weight: 800;
+    }
+
+    .trust-quote .tq-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .trust-quote .tq-role {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+    }
+
+    /* Stats sidebar */
+    .trust-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ts-stat-card {
+      background: var(--navy);
+      border: 1px solid rgba(43,221,127,0.08);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: all 0.3s;
+    }
+
+    .ts-stat-card:hover {
+      border-color: rgba(43,221,127,0.2);
+      transform: translateX(6px);
+    }
+
+    .ts-stat-card .tsc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(43,221,127,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .ts-stat-card .tsc-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .ts-stat-card .tsc-lbl {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      font-weight: 600;
+    }
+
+    /* ============ LOCATIONS — MAP-STYLE SPLIT (unique pattern) ============ */
+    .locations-section {
+      margin: 0 48px;
+      background: var(--white);
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .locations-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .loc-map-side {
+      background: linear-gradient(160deg, #e8faf0 0%, #d4f5e4 100%);
+      padding: 64px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Abstract "map" decoration */
+    .loc-map-side::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 2px dashed rgba(43,221,127,0.2);
+      pointer-events: none;
+    }
+
+    .loc-map-side::after {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px dashed rgba(43,221,127,0.15);
+      pointer-events: none;
+    }
+
+    .loc-map-side h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--navy-deep);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .loc-map-side > p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      max-width: 380px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .loc-hours {
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .loc-hours h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .loc-hours p {
+      font-size: 0.85rem;
+      color: var(--navy-deep);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .loc-cards-side {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      background: var(--white);
+    }
+
+    .loc-card {
+      background: var(--mint-bg);
+      border: 1px solid var(--mint-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      gap: 18px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .loc-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43,221,127,0.1);
+    }
+
+    .loc-card .lc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .loc-card .lc-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 4px;
+    }
+
+    .loc-card .lc-info p {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    .loc-card .lc-info .lc-phones {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .loc-card .lc-info .lc-phone {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      background: rgba(43,221,127,0.1);
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .loc-card .lc-info .lc-phone:hover { background: var(--green); color: var(--navy-deep); }
+
+    /* Domicilio card — slight highlight */
+    .loc-card.lc-domicilio {
+      background: linear-gradient(135deg, rgba(43,221,127,0.08), rgba(43,221,127,0.02));
+      border-color: rgba(43,221,127,0.2);
+    }
+
+    .loc-card.lc-domicilio .lc-icon { background: var(--navy-deep); }
+
+    /* ============ CTA — FULL-WIDTH GRADIENT BAR (unique) ============ */
+    .cta-bar {
+      margin: 80px 48px;
+      background: linear-gradient(135deg, var(--navy) 0%, rgba(43,221,127,0.08) 50%, var(--navy) 100%);
+      border: 1px solid rgba(43,221,127,0.15);
+      border-radius: 32px;
+      padding: 80px 64px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bar::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(43,221,127,0.08), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-bar > * { position: relative; z-index: 1; }
+
+    .cta-bar h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .cta-bar h2 .accent {
+      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-bar > p {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .cta-bar-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .cta-bar-btns .btn-primary { font-size: 1rem; padding: 18px 42px; }
+    .cta-bar-btns .btn-ghost { font-size: 0.88rem; padding: 14px 32px; }
+
+    /* ============ FOOTER (consistent) ============ */
+    footer {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding: 64px 48px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: var(--gray-600); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--green); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(43,221,127,0.06);
+      padding-top: 32px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+
+    .footer-bottom p { font-size: 0.72rem; color: var(--gray-600); }
+
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 1px solid rgba(43, 221, 127, 0.1); display: flex; align-items: center; justify-content: center; color: var(--gray-400); text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: var(--navy-deep); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .hero-repair { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 380px; }
+      .repair-grid { grid-template-columns: repeat(2, 1fr); }
+      .repair-card:nth-child(2), .repair-card:nth-child(5) { margin-top: 0; }
+      .process-layout { grid-template-columns: 1fr; }
+      .guarantee-row { grid-template-columns: repeat(3, 1fr); }
+      .feature-band-inner { grid-template-columns: 1fr; }
+      .fb-visual { justify-content: center; min-height: 400px; }
+      .trust-layout { grid-template-columns: 1fr; }
+      .locations-inner { grid-template-columns: 1fr; }
+      .cta-bar { grid-template-columns: 1fr; text-align: center; }
+      .cta-bar-btns { align-items: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-repair { padding: 100px 20px 60px; }
+      .devices-section { padding: 80px 20px; }
+      .process-section { padding: 80px 20px; }
+      .guarantee-section { padding: 60px 20px; }
+      .feature-band { padding: 60px 20px; }
+      .xray-container { transform: scale(0.78); transform-origin: center center; }
+      .xray-readout { gap: 10px; padding: 8px 14px; }
+      .xray-callout .xc-tag { padding: 6px 10px; }
+      .xray-callout .xc-tag .xc-name { font-size: 0.62rem; }
+      .xray-callout .xc-tag .xc-status { font-size: 0.55rem; }
+      .trust-section { padding: 80px 20px; }
+      .locations-section { margin: 0 16px; }
+      .loc-map-side { padding: 40px 24px; }
+      .loc-cards-side { padding: 32px 24px; }
+      .cta-bar { margin: 60px 16px; padding: 48px 24px; }
+      footer { padding: 48px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+      .repair-grid { grid-template-columns: 1fr; }
+      .guarantee-row { grid-template-columns: 1fr 1fr; }
+      .hero-quick-stats { flex-direction: column; gap: 20px; }
+      .tab-nav { gap: 6px; }
+      .tab-btn { padding: 10px 18px; font-size: 0.75rem; }
+
+      .trust-quote { padding: 36px 28px; }
+      .trust-quote blockquote { font-size: 1.05rem; }
+
+      .hx-container { transform: scale(0.72); transform-origin: center center; }
+      .hx-tag .ht-card { padding: 8px 10px; }
+      .hx-tag .ht-label { font-size: 0.62rem; }
+      .hx-tag .ht-sub { font-size: 0.52rem; }
+
+      .smm-logo img { height: 32px; }
+
+      .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0; bottom: 0;
+        background: rgba(8, 15, 46, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 40px 28px;
+        gap: 20px;
+        z-index: 999;
+        animation: fadeUp 0.3s ease;
+      }
+      .nav-links.mobile-open a { font-size: 1.15rem; color: var(--white); }
+      .nav-links.mobile-open .nav-cta { text-align: center; font-size: 1rem !important; padding: 16px; margin-top: 8px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 3.2rem; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary, .btn-ghost { justify-content: center; }
+      .guarantee-row { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 320px; }
+      .xray-container { transform: scale(0.62); }
+      .fb-visual { min-height: 320px; }
+      .hx-container { transform: scale(0.55); }
+      .hero-visual { min-height: 320px; }
+      .cta-bar-btns { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <nav>
+    <a href="#" class="smm-logo">
+      <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Reparación</a></li>
+      <li><a href="#">Tienda</a></li>
+      <li><a href="#">Leasing</a></li>
+      <li><a href="#">Empresas</a></li>
+      <li><a href="#ubicaciones">Contacto</a></li>
+      <li><a href="https://wa.me/+50769780206" class="nav-cta">Cotiza Ahora</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ====== HERO — LEFT-ALIGNED WITH DIAGNOSTIC VISUAL ====== -->
+  <section class="hero-repair">
+    <div class="hero-text">
+      <div class="hero-irp-badge">
+        <span class="irp-dot"></span>
+        1ER IRP AUTORIZADO POR APPLE EN PANAMÁ
+      </div>
+      <h1>
+        REPARAMOS<br>
+        <span class="accent">TU MÁQUINA.</span>
+      </h1>
+      <p class="hero-desc">
+        Técnicos certificados por Apple con acceso a piezas originales, herramientas oficiales y diagnósticos avanzados. Tu dispositivo en las mejores manos — garantizado.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/+50769780206" class="btn-primary">Solicitar reparación →</a>
+        <a href="#servicios" class="btn-secondary">Ver servicios</a>
+      </div>
+      <div class="hero-quick-stats">
+        <div class="hqs-item">
+          <div class="hqs-val">40 MIN</div>
+          <div class="hqs-label">Pantalla iPhone</div>
+        </div>
+        <div class="hqs-item">
+          <div class="hqs-val">6 MESES</div>
+          <div class="hqs-label">Garantía</div>
+        </div>
+        <div class="hqs-item">
+          <div class="hqs-val">15K+</div>
+          <div class="hqs-label">Equipos reparados</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hx-container">
+        <!-- Outer target rings -->
+        <div class="hx-ring"></div>
+        <div class="hx-ring"></div>
+
+        <!-- Rotating reticle -->
+        <div class="hx-reticle"></div>
+
+        <!-- Corner brackets -->
+        <div class="hx-bracket hb-tl"></div>
+        <div class="hx-bracket hb-tr"></div>
+        <div class="hx-bracket hb-bl"></div>
+        <div class="hx-bracket hb-br"></div>
+
+        <!-- MacBook silhouette -->
+        <div class="hx-laptop">
+          <div class="hx-lid">
+            <div class="hx-screen-lines">
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+              <div class="hx-sl"></div>
+            </div>
+            <div class="hx-lid-scan"></div>
+          </div>
+          <div class="hx-base"></div>
+        </div>
+
+        <!-- Component callouts -->
+        <div class="hx-tag ht-display">
+          <div class="ht-line"><svg width="36" height="2"><line x1="0" y1="1" x2="36" y2="1" stroke="rgba(43,221,127,0.3)" stroke-width="1"/></svg></div>
+          <div class="ht-card">
+            <span class="ht-dot ok"></span>
+            <div>
+              <div class="ht-label">Retina Display</div>
+              <div class="ht-sub ok">OK — Sin daño</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hx-tag ht-chip">
+          <div class="ht-line"><svg width="36" height="2"><line x1="0" y1="1" x2="36" y2="1" stroke="rgba(43,221,127,0.3)" stroke-width="1"/></svg></div>
+          <div class="ht-card">
+            <span class="ht-dot scan"></span>
+            <div>
+              <div class="ht-label">Apple M3</div>
+              <div class="ht-sub scan">Analizando…</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hx-tag ht-battery">
+          <div class="ht-line"><svg width="36" height="2"><line x1="0" y1="1" x2="36" y2="1" stroke="rgba(43,221,127,0.3)" stroke-width="1"/></svg></div>
+          <div class="ht-card">
+            <span class="ht-dot warn"></span>
+            <div>
+              <div class="ht-label">Batería</div>
+              <div class="ht-sub warn">82% — Revisar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hx-tag ht-keyboard">
+          <div class="ht-line"><svg width="36" height="2"><line x1="0" y1="1" x2="36" y2="1" stroke="rgba(43,221,127,0.3)" stroke-width="1"/></svg></div>
+          <div class="ht-card">
+            <span class="ht-dot ok"></span>
+            <div>
+              <div class="ht-label">Teclado</div>
+              <div class="ht-sub ok">OK</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hx-tag ht-ssd">
+          <div class="ht-line"><svg width="36" height="2"><line x1="0" y1="1" x2="36" y2="1" stroke="rgba(43,221,127,0.3)" stroke-width="1"/></svg></div>
+          <div class="ht-card">
+            <span class="ht-dot ok"></span>
+            <div>
+              <div class="ht-label">SSD 256GB</div>
+              <div class="ht-sub ok">Salud 97%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="hx-progress">
+          <span class="hp-label">Diagnóstico</span>
+          <div class="hp-bar"><div class="hp-fill"></div></div>
+          <span class="hp-pct">72%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRUST STRIP ====== -->
+  <div class="trust-strip">
+    <div class="ts-track">
+      <div class="ts-badge"><span class="ts-icon">🏅</span> IRP Autorizado por Apple</div>
+      <div class="ts-badge"><span class="ts-icon">🔧</span> Piezas originales Apple</div>
+      <div class="ts-badge"><span class="ts-icon">👨‍🔧</span> Técnicos certificados</div>
+      <div class="ts-badge"><span class="ts-icon">🛡️</span> 6 meses de garantía</div>
+      <div class="ts-badge"><span class="ts-icon">⚡</span> Diagnóstico en el acto</div>
+      <div class="ts-badge"><span class="ts-icon">🏠</span> Servicio a domicilio</div>
+      <div class="ts-badge"><span class="ts-icon">💻</span> Apple + Windows</div>
+      <div class="ts-badge"><span class="ts-icon">🔐</span> Datos siempre protegidos</div>
+      <!-- repeat -->
+      <div class="ts-badge"><span class="ts-icon">🏅</span> IRP Autorizado por Apple</div>
+      <div class="ts-badge"><span class="ts-icon">🔧</span> Piezas originales Apple</div>
+      <div class="ts-badge"><span class="ts-icon">👨‍🔧</span> Técnicos certificados</div>
+      <div class="ts-badge"><span class="ts-icon">🛡️</span> 6 meses de garantía</div>
+      <div class="ts-badge"><span class="ts-icon">⚡</span> Diagnóstico en el acto</div>
+      <div class="ts-badge"><span class="ts-icon">🏠</span> Servicio a domicilio</div>
+      <div class="ts-badge"><span class="ts-icon">💻</span> Apple + Windows</div>
+      <div class="ts-badge"><span class="ts-icon">🔐</span> Datos siempre protegidos</div>
+    </div>
+  </div>
+
+  <!-- ====== DEVICE TABS — TABBED REPAIR SERVICES ====== -->
+  <section class="devices-section" id="servicios">
+    <div class="devices-header reveal">
+      <span class="label">Servicios de reparación</span>
+      <h2>¿QUÉ EQUIPO<br>NECESITAS REPARAR?</h2>
+      <p>Selecciona tu dispositivo para ver los servicios disponibles, tiempos estimados y precios de referencia.</p>
+    </div>
+
+    <div class="tab-nav reveal">
+      <button class="tab-btn active" data-tab="iphone"><span class="tb-emoji">📱</span> iPhone</button>
+      <button class="tab-btn" data-tab="macbook"><span class="tb-emoji">💻</span> MacBook</button>
+      <button class="tab-btn" data-tab="ipad"><span class="tb-emoji">📱</span> iPad</button>
+      <button class="tab-btn" data-tab="imac"><span class="tb-emoji">🖥️</span> iMac</button>
+      <button class="tab-btn" data-tab="windows"><span class="tb-emoji">🪟</span> Windows</button>
+      <button class="tab-btn" data-tab="watch"><span class="tb-emoji">⌚</span> Watch</button>
+    </div>
+
+    <!-- iPhone Tab -->
+    <div class="tab-panel active" id="tab-iphone">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">📱</span>
+            <span class="rc-time">⚡ 40 min</span>
+          </div>
+          <h3>Cambio de Pantalla</h3>
+          <p class="rc-desc">Pantalla original Apple con True Tone. Instalación rápida con herramientas oficiales y calibración incluida.</p>
+          <div class="rc-price">DESDE $49</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔋</span>
+            <span class="rc-time">⚡ 45 min</span>
+          </div>
+          <h3>Cambio de Batería</h3>
+          <p class="rc-desc">Batería original Apple. Recupera la autonomía de tu iPhone con piezas certificadas y garantía incluida.</p>
+          <div class="rc-price">DESDE $35</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">📷</span>
+            <span class="rc-time">~ 1 hora</span>
+          </div>
+          <h3>Cámara y Sensores</h3>
+          <p class="rc-desc">Reparación de cámara frontal, trasera, Face ID y sensores de proximidad. Piezas originales.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico previo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔌</span>
+            <span class="rc-time">~ 45 min</span>
+          </div>
+          <h3>Puerto de Carga</h3>
+          <p class="rc-desc">Tu iPhone no carga o no conecta. Reemplazamos el conector Lightning o USB-C con piezas originales.</p>
+          <div class="rc-price">DESDE $45</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔊</span>
+            <span class="rc-time">~ 1 hora</span>
+          </div>
+          <h3>Altavoz y Micrófono</h3>
+          <p class="rc-desc">Solución de problemas de audio, altavoz, micrófono y receptor de llamadas.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico previo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">💧</span>
+            <span class="rc-time">24–48 hrs</span>
+          </div>
+          <h3>Daño por Líquido</h3>
+          <p class="rc-desc">Tratamiento de corrosión y limpieza ultrasónica. Mientras más rápido lo traigas, más probable la recuperación.</p>
+          <div class="rc-price">DESDE $65</div>
+          <p class="rc-note">Evaluación requerida</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MacBook Tab -->
+    <div class="tab-panel" id="tab-macbook">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🖥️</span>
+            <span class="rc-time">2–3 días</span>
+          </div>
+          <h3>Pantalla / Display</h3>
+          <p class="rc-desc">Reemplazo de display completo, incluyendo Retina y Liquid Retina XDR. Calibración de color incluida.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">⌨️</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Teclado</h3>
+          <p class="rc-desc">Teclas atascadas, sin respuesta o dañadas. Reemplazo completo del top case con teclado nuevo.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico previo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔋</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Batería MacBook</h3>
+          <p class="rc-desc">Recupera la autonomía de tu Mac. Baterías originales con ciclos óptimos y garantía incluida.</p>
+          <div class="rc-price">DESDE $95</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🧠</span>
+            <span class="rc-time">2–5 días</span>
+          </div>
+          <h3>Placa Lógica</h3>
+          <p class="rc-desc">Reparación a nivel de componente de la placa lógica. Micro-soldadura especializada para chips y circuitos.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico avanzado</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">💧</span>
+            <span class="rc-time">24–72 hrs</span>
+          </div>
+          <h3>Daño por Líquido</h3>
+          <p class="rc-desc">Limpieza ultrasónica profesional y reparación de componentes afectados por corrosión.</p>
+          <div class="rc-price">DESDE $85</div>
+          <p class="rc-note">Evaluación requerida</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">💾</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>SSD / Almacenamiento</h3>
+          <p class="rc-desc">Upgrade de almacenamiento, recuperación de datos y reinstalación de macOS.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Según configuración</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- iPad Tab -->
+    <div class="tab-panel" id="tab-ipad">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">📱</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Pantalla iPad</h3>
+          <p class="rc-desc">Reemplazo de vidrio y LCD/Liquid Retina. Incluye calibración táctil y de color.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔋</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Batería iPad</h3>
+          <p class="rc-desc">Reemplazo de batería con piezas originales. Recupera la autonomía completa de tu tablet.</p>
+          <div class="rc-price">DESDE $55</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔌</span>
+            <span class="rc-time">~ 1 hora</span>
+          </div>
+          <h3>Puerto de Carga</h3>
+          <p class="rc-desc">Reparación del conector de carga Lightning o USB-C. Solución a problemas de carga intermitente.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico previo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- iMac Tab -->
+    <div class="tab-panel" id="tab-imac">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🖥️</span>
+            <span class="rc-time">2–3 días</span>
+          </div>
+          <h3>Pantalla iMac</h3>
+          <p class="rc-desc">Reemplazo de display Retina 4K/5K. Incluye calibración profesional de color.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">💾</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Upgrade SSD / RAM</h3>
+          <p class="rc-desc">Dale nueva vida a tu iMac. Upgrade de almacenamiento a SSD y ampliación de memoria RAM.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Según configuración</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🧠</span>
+            <span class="rc-time">2–5 días</span>
+          </div>
+          <h3>Placa Lógica</h3>
+          <p class="rc-desc">Diagnóstico avanzado y reparación de la placa lógica con micro-soldadura especializada.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico avanzado</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows Tab -->
+    <div class="tab-panel" id="tab-windows">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🖥️</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Pantalla Laptop</h3>
+          <p class="rc-desc">Reemplazo de pantalla LCD/LED para laptops HP, Dell, Lenovo, Acer, Asus y más marcas.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔋</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Batería Laptop</h3>
+          <p class="rc-desc">Reemplazo de batería compatible para tu laptop Windows. Recupera horas de autonomía.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Según marca y modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">💾</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Upgrade SSD / RAM</h3>
+          <p class="rc-desc">Acelera tu PC con un SSD nuevo o más RAM. Incluye migración de datos y reinstalación de Windows.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Según configuración</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🦠</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Virus y Software</h3>
+          <p class="rc-desc">Eliminación de malware, optimización del sistema, reinstalación de Windows y recuperación de datos.</p>
+          <div class="rc-price">DESDE $35</div>
+          <p class="rc-note">Diagnóstico incluido</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">⌨️</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Teclado Laptop</h3>
+          <p class="rc-desc">Reemplazo de teclado o teclas individuales para todas las marcas principales.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según modelo</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔌</span>
+            <span class="rc-time">~ 1 hora</span>
+          </div>
+          <h3>Puerto de Carga</h3>
+          <p class="rc-desc">Reparación del conector de carga. Soldadura profesional o reemplazo del componente completo.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Diagnóstico previo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watch Tab -->
+    <div class="tab-panel" id="tab-watch">
+      <div class="repair-grid">
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">⌚</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Pantalla Watch</h3>
+          <p class="rc-desc">Reemplazo de pantalla OLED/Retina para Apple Watch. Restauramos tu reloj a su estado original.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según serie</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔋</span>
+            <span class="rc-time">1–2 días</span>
+          </div>
+          <h3>Batería Watch</h3>
+          <p class="rc-desc">Tu Apple Watch ya no dura el día. Reemplazamos la batería para que vuelva a rendir como antes.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Varía según serie</p>
+        </div>
+        <div class="repair-card reveal">
+          <div class="rc-header">
+            <span class="rc-emoji">🔍</span>
+            <span class="rc-time">Mismo día</span>
+          </div>
+          <h3>Diagnóstico Watch</h3>
+          <p class="rc-desc">Evaluación completa de tu Apple Watch: batería, pantalla, sensores, conectividad y rendimiento general.</p>
+          <div class="rc-price">CONSULTAR</div>
+          <p class="rc-note">Sin compromiso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROCESS — VERTICAL ACCORDION ====== -->
+  <section class="process-section" id="proceso">
+    <div class="process-layout">
+      <div class="process-text reveal">
+        <span class="label">El proceso</span>
+        <h2>ASÍ DE FÁCIL<br>ES REPARAR.</h2>
+        <p>No tienes que ser experto. Solo tráenos tu equipo — o ni eso, pasamos a buscarlo. Nosotros nos encargamos de todo.</p>
+        <div class="process-stat-row">
+          <div class="ps-item">
+            <div class="ps-val">9+</div>
+            <div class="ps-lbl">Años de experiencia</div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-val">200+</div>
+            <div class="ps-lbl">Empresas confían en nosotros</div>
+          </div>
+        </div>
+      </div>
+      <div class="accord-list reveal">
+        <div class="accord-item open">
+          <div class="accord-head" onclick="toggleAccord(this)">
+            <span class="ah-num">01</span>
+            <span class="ah-title">Contáctanos o visítanos</span>
+            <span class="ah-toggle">+</span>
+          </div>
+          <div class="accord-body">
+            <p>Escríbenos por WhatsApp, llámanos o visita nuestras sucursales en San Francisco o Bella Vista. También puedes programar recogida a domicilio con mensajería especializada.</p>
+          </div>
+        </div>
+        <div class="accord-item">
+          <div class="accord-head" onclick="toggleAccord(this)">
+            <span class="ah-num">02</span>
+            <span class="ah-title">Diagnóstico express</span>
+            <span class="ah-toggle">+</span>
+          </div>
+          <div class="accord-body">
+            <p>Evaluamos tu equipo de forma rápida y transparente. Te decimos exactamente qué tiene, cuánto cuesta y cuánto tarda. Sin sorpresas, sin costos ocultos.</p>
+          </div>
+        </div>
+        <div class="accord-item">
+          <div class="accord-head" onclick="toggleAccord(this)">
+            <span class="ah-num">03</span>
+            <span class="ah-title">Reparación profesional</span>
+            <span class="ah-toggle">+</span>
+          </div>
+          <div class="accord-body">
+            <p>Nuestros técnicos certificados trabajan con piezas originales Apple y herramientas oficiales. Cambios de pantalla iPhone en solo 40 minutos. Intervenciones el mismo día cuando es posible.</p>
+          </div>
+        </div>
+        <div class="accord-item">
+          <div class="accord-head" onclick="toggleAccord(this)">
+            <span class="ah-num">04</span>
+            <span class="ah-title">Recoge tu equipo como nuevo</span>
+            <span class="ah-toggle">+</span>
+          </div>
+          <div class="accord-body">
+            <p>Te notificamos por email cuando tu equipo esté listo. Recógelo en tienda o te lo enviamos. La mayoría de reparaciones incluyen 6 meses de garantía total.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GUARANTEE BADGES ====== -->
+  <section class="guarantee-section">
+    <div class="guarantee-row reveal">
+      <div class="g-badge">
+        <div class="gb-icon">🏅</div>
+        <h4>IRP Autorizado</h4>
+        <p>1er proveedor independiente de reparaciones autorizado por Apple en Panamá</p>
+      </div>
+      <div class="g-badge">
+        <div class="gb-icon">🔧</div>
+        <h4>Piezas Originales</h4>
+        <p>Acceso directo a repuestos originales Apple con garantía de fábrica</p>
+      </div>
+      <div class="g-badge">
+        <div class="gb-icon">🛡️</div>
+        <h4>6 Meses Garantía</h4>
+        <p>La garantía más amplia del mercado en reparaciones Apple en Panamá</p>
+      </div>
+      <div class="g-badge">
+        <div class="gb-icon">👨‍🔧</div>
+        <h4>Técnicos Certificados</h4>
+        <p>Capacitados directamente por Apple con acceso a herramientas oficiales</p>
+      </div>
+      <div class="g-badge">
+        <div class="gb-icon">🔐</div>
+        <h4>Datos Seguros</h4>
+        <p>Tus datos siempre están protegidos. Procesos seguros y transparentes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURE BAND — WHY SMM ====== -->
+  <section class="feature-band">
+    <div class="feature-band-inner reveal">
+      <div class="fb-content">
+        <span class="label">¿Por qué elegirnos?</span>
+        <h2>NO SOMOS<br>CUALQUIER<br>TALLER.</h2>
+        <p>Somos el primer IRP autorizado por Apple en Panamá. Eso significa acceso a piezas genuinas, herramientas de calibración oficiales y los mismos estándares que un Apple Store — pero con precios accesibles y trato personal.</p>
+        <ul class="fb-checks">
+          <li><span class="ck">✔</span> Repuestos originales Apple — no genéricos</li>
+          <li><span class="ck">✔</span> Herramientas de diagnóstico oficiales Apple</li>
+          <li><span class="ck">✔</span> Garantía 6 meses — la más amplia del mercado</li>
+          <li><span class="ck">✔</span> Asistencia remota vía servidor Apple</li>
+          <li><span class="ck">✔</span> Mensajería a domicilio — recogemos tu equipo</li>
+          <li><span class="ck">✔</span> 9+ años de experiencia en Panamá</li>
+        </ul>
+        <a href="https://wa.me/+50769780206" class="btn-primary">Cotizar reparación →</a>
+      </div>
+      <div class="fb-visual">
+        <div class="xray-container">
+          <!-- Outer glow -->
+          <div class="xray-glow"></div>
+          <div class="xray-glow"></div>
+
+          <!-- Corner brackets -->
+          <div class="xray-bracket br-tl"></div>
+          <div class="xray-bracket br-tr"></div>
+          <div class="xray-bracket br-bl"></div>
+          <div class="xray-bracket br-br"></div>
+
+          <!-- Internal circuit traces -->
+          <div class="xray-traces">
+            <div class="xt-h h1"></div>
+            <div class="xt-h h2"></div>
+            <div class="xt-h h3"></div>
+            <div class="xt-v v1"></div>
+            <div class="xt-v v2"></div>
+            <div class="xt-v v3"></div>
+            <div class="xt-node n1"></div>
+            <div class="xt-node n2"></div>
+            <div class="xt-node n3"></div>
+            <div class="xt-node n4"></div>
+          </div>
+
+          <!-- Device silhouette -->
+          <div class="xray-device">
+            <span class="xd-emoji">📱</span>
+            <span class="xd-label">DIAGNÓSTICO</span>
+          </div>
+
+          <!-- Scan sweep -->
+          <div class="xray-scan"></div>
+
+          <!-- Component callouts -->
+          <div class="xray-callout xc-screen">
+            <div class="xc-line"></div>
+            <div class="xc-tag">
+              <span class="xc-dot green"></span>
+              <div>
+                <div class="xc-name">Pantalla OLED</div>
+                <div class="xc-status">OK — 100%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xray-callout xc-camera">
+            <div class="xc-line"></div>
+            <div class="xc-tag">
+              <span class="xc-dot green"></span>
+              <div>
+                <div class="xc-name">Cámara 48MP</div>
+                <div class="xc-status">OK</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xray-callout xc-battery">
+            <div class="xc-line"></div>
+            <div class="xc-tag">
+              <span class="xc-dot amber"></span>
+              <div>
+                <div class="xc-name">Batería</div>
+                <div class="xc-status warn">78% — Reemplazar</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xray-callout xc-chip">
+            <div class="xc-line"></div>
+            <div class="xc-tag">
+              <span class="xc-dot blue"></span>
+              <div>
+                <div class="xc-name">Chip A17 Pro</div>
+                <div class="xc-status">Escaneando...</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xray-callout xc-port">
+            <div class="xc-line"></div>
+            <div class="xc-tag">
+              <span class="xc-dot green"></span>
+              <div>
+                <div class="xc-name">USB-C</div>
+                <div class="xc-status">OK</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom readout bar -->
+          <div class="xray-readout">
+            <div class="xr-item">
+              <span class="xr-label">Estado</span>
+              <span class="xr-val">85%</span>
+            </div>
+            <div class="xr-sep"></div>
+            <div class="xr-item">
+              <span class="xr-label">Ciclos</span>
+              <span class="xr-val">487</span>
+            </div>
+            <div class="xr-sep"></div>
+            <div class="xr-item">
+              <span class="xr-label">Temp</span>
+              <span class="xr-val">32°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRUST — LARGE QUOTE + STATS SIDEBAR ====== -->
+  <section class="trust-section">
+    <div class="trust-layout reveal">
+      <div class="trust-quote">
+        <blockquote>
+          Somos transparentes, los datos de nuestros clientes están a salvo con nuestros procesos y siempre ofrecemos varias opciones para que el cliente elija la más adecuada a su necesidad.
+        </blockquote>
+        <div class="tq-author">
+          <div class="tq-avatar">QA</div>
+          <div>
+            <div class="tq-name">Quentin Abadie</div>
+            <div class="tq-role">Co-fundador, Salva Mi Máquina</div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-stats">
+        <div class="ts-stat-card">
+          <div class="tsc-icon">🏢</div>
+          <div>
+            <div class="tsc-val">200+</div>
+            <div class="tsc-lbl">Empresas confían en nosotros</div>
+          </div>
+        </div>
+        <div class="ts-stat-card">
+          <div class="tsc-icon">📱</div>
+          <div>
+            <div class="tsc-val">15,000+</div>
+            <div class="tsc-lbl">Equipos reparados</div>
+          </div>
+        </div>
+        <div class="ts-stat-card">
+          <div class="tsc-icon">⏱️</div>
+          <div>
+            <div class="tsc-val">40 MIN</div>
+            <div class="tsc-lbl">Pantalla iPhone más rápida</div>
+          </div>
+        </div>
+        <div class="ts-stat-card">
+          <div class="tsc-icon">📅</div>
+          <div>
+            <div class="tsc-val">2016</div>
+            <div class="tsc-lbl">Desde entonces salvando máquinas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LOCATIONS — MAP-STYLE SPLIT ====== -->
+  <section class="locations-section" id="ubicaciones">
+    <div class="locations-inner">
+      <div class="loc-map-side">
+        <span class="label" style="color: var(--green-dark);">Visítanos</span>
+        <h2>DOS<br>SUCURSALES.</h2>
+        <p>Estamos en los puntos más accesibles de la ciudad. Ven sin cita o programa tu visita — también recogemos tu equipo a domicilio.</p>
+        <div class="loc-hours">
+          <h4>Horarios</h4>
+          <p>Lunes a Viernes: 9:00 AM – 7:00 PM<br>Sábados: 9:00 AM – 5:00 PM<br>Domingos: Cerrado</p>
+        </div>
+      </div>
+      <div class="loc-cards-side">
+        <div class="loc-card">
+          <div class="lc-icon">📍</div>
+          <div class="lc-info">
+            <h4>San Francisco</h4>
+            <p>Edificio Marqueta, Vía Porras con calle Andrés Mojica, planta baja</p>
+            <div class="lc-phones">
+              <a href="tel:+5073949351" class="lc-phone">Tel: 394-9351</a>
+              <a href="tel:+50769780206" class="lc-phone">Cel: 6978-0206</a>
+            </div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="lc-icon">📍</div>
+          <div class="lc-info">
+            <h4>Bella Vista</h4>
+            <p>PH The Seawaves, Calle 52 Este con calle Federico Boyd, planta baja</p>
+            <div class="lc-phones">
+              <a href="tel:+5072032055" class="lc-phone">Tel: 203-2055</a>
+              <a href="tel:+50769327190" class="lc-phone">Cel: 6932-7190</a>
+            </div>
+          </div>
+        </div>
+        <div class="loc-card lc-domicilio">
+          <div class="lc-icon">🚀</div>
+          <div class="lc-info">
+            <h4>Servicio a Domicilio</h4>
+            <p>Mensajería especializada disponible en toda la ciudad de Panamá. Recogemos y entregamos tu equipo.</p>
+            <div class="lc-phones">
+              <a href="https://wa.me/+50769780206" class="lc-phone">WhatsApp →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA BAR ====== -->
+  <section class="cta-bar reveal">
+    <div>
+      <h2>¿LISTO PARA<br>SALVAR TU<br><span class="accent">MÁQUINA?</span></h2>
+      <p>No importa qué le pasó a tu equipo. Nosotros lo resolvemos. Contáctanos ahora y recibe un diagnóstico rápido sin compromiso.</p>
+    </div>
+    <div class="cta-bar-btns">
+      <a href="https://wa.me/+50769780206" class="btn-primary">WhatsApp →</a>
+      <a href="tel:+5073949351" class="btn-ghost">Llamar ahora</a>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="smm-logo">
+          <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
+        </a>
+        <p>Empresa líder en Panamá dedicada a la reparación, venta y leasing de dispositivos Apple y Windows. Desde 2016 salvando máquinas.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#">Reparación iPhone</a></li>
+          <li><a href="#">Reparación MacBook</a></li>
+          <li><a href="#">Reparación iPad</a></li>
+          <li><a href="#">Reparación Windows</a></li>
+          <li><a href="#">Diagnóstico</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tienda</h5>
+        <ul>
+          <li><a href="#">Tienda en línea</a></li>
+          <li><a href="#">Trade-In</a></li>
+          <li><a href="#">Leasing personal</a></li>
+          <li><a href="#">Leasing empresarial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Empresas</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Ubicaciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>"Mac", "iPhone", "iPad", "Apple Watch" son marcas registradas de Apple Inc.</p>
+      <p>© 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/SalvaMiMaquina/" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/salvamimaquina/" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/+50769780206" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script>
+    // Tab switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+
+        // Re-trigger reveal for newly visible cards
+        document.querySelectorAll('#tab-' + target + ' .reveal').forEach(el => {
+          el.classList.remove('visible');
+          void el.offsetWidth;
+          el.classList.add('visible');
+        });
+      });
+    });
+
+    // Accordion
+    function toggleAccord(head) {
+      const item = head.parentElement;
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.accord-item').forEach(i => i.classList.remove('open'));
+      // Open clicked (if wasn't open)
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Scroll reveal
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    // Navbar scroll
+    const navEl = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      navEl.style.background = window.scrollY > 60 ? 'rgba(8, 15, 46, 0.96)' : 'rgba(8, 15, 46, 0.85)';
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) {
+          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelector('.nav-links').classList.remove('mobile-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
