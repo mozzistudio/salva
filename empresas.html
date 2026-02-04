@@ -116,26 +116,32 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
 
-    /* ============ HERO — SPLIT: TEXT LEFT + VISUAL RIGHT ============ */
+    /* ============ HERO — CENTERED ============ */
     .hero-emp {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: relative;
-      padding-top: 64px;
+      padding: 100px 48px 60px;
       overflow: hidden;
     }
 
-    /* Left column — text */
+    /* Text content */
     .hero-left {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 80px 48px;
+      max-width: 800px;
       position: relative;
       z-index: 2;
+    }
+
+    .hero-right {
+      display: none;
     }
 
     .hero-badge {
