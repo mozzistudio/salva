@@ -120,15 +120,16 @@
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ============ HERO — CENTERED WITH DIAGNOSTIC VISUAL ============ */
+    /* ============ HERO — SPLIT: TEXT LEFT + DIAGNOSTIC VISUAL RIGHT ============ */
     .hero-repair {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 48px 60px;
+      padding: 100px 48px 80px;
+      gap: 48px;
+      max-width: 1400px;
+      margin: 0 auto;
       position: relative;
       overflow: hidden;
     }
@@ -164,15 +165,11 @@
     .hero-repair > * { position: relative; z-index: 1; }
 
     .hero-text {
-      max-width: 800px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      max-width: 600px;
     }
 
     .hero-visual {
-      display: none;
+      display: block;
     }
 
     .hero-irp-badge {
