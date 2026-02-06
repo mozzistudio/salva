@@ -22,7 +22,7 @@
       --card-hover: #F5F5F7;
 
       /* Light Theme Text */
-      --text: #1D1D1F;
+      --text: #0F1B3D;
       --text-2: #6E6E73;
       --text-3: #A1A1A6;
 
@@ -32,7 +32,7 @@
 
       /* Legacy mappings for compatibility */
       --white: #FFFFFF;
-      --navy: #1D1D1F;
+      --navy: #0F1B3D;
       --navy-deep: #FBFBFD;
       --navy-light: #F5F5F7;
       --navy-card: #FFFFFF;
@@ -40,7 +40,7 @@
       --gray-200: #dde1e8;
       --gray-400: #A1A1A6;
       --gray-600: #6E6E73;
-      --black: #1D1D1F;
+      --black: #0F1B3D;
       --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
@@ -130,7 +130,7 @@
     .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
     .btn-primary { background: var(--green); color: #FFFFFF; padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
-    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost { background: transparent; color: var(--text); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
     .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
@@ -903,30 +903,68 @@
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: 0.5px solid var(--border);
+      background: var(--text);
       padding: 64px 48px 40px;
+      color: #FFFFFF;
+    }
+
+    .footer-inner {
       max-width: 1400px;
       margin: 0 auto;
     }
 
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; margin-top: 16px; }
     .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { color: var(--text-2); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 0.5px solid var(--border);
+      border-top: 0.5px solid rgba(255,255,255,0.1);
       padding-top: 32px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
-    .footer-bottom p { font-size: 0.72rem; color: var(--text-2); }
+    .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
 
     .footer-socials { display: flex; gap: 10px; }
-    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-2); text-decoration: none; transition: all 0.3s; }
-    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; }
+    .footer-socials a { width: 44px; height: 44px; border-radius: 12px; background: transparent; border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; transform: translateY(-2px); }
+
+    /* ============ ANIMATED ILLUSTRATIONS ============ */
+    .anim-icon { display: inline-flex; align-items: center; justify-content: center; }
+    .anim-icon svg { transition: transform 0.3s; }
+    .step-card:hover .anim-icon svg, .service-card:hover .anim-icon svg { transform: scale(1.1); }
+
+    @keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+    .anim-wrench svg { animation: wiggle 3s ease-in-out infinite; }
+
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .anim-bag svg { animation: bounce 2.5s ease-in-out infinite; }
+
+    @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .anim-cycle svg { animation: spinSlow 6s linear infinite; }
+
+    @keyframes scalePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+    .anim-laptop svg { animation: scalePulse 3s ease-in-out infinite; }
+
+    @keyframes sway { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+    .anim-building svg { animation: sway 4s ease-in-out infinite; }
+
+    @keyframes phoneGlow { 0%, 100% { filter: drop-shadow(0 0 4px rgba(43,221,127,0.3)); } 50% { filter: drop-shadow(0 0 12px rgba(43,221,127,0.6)); } }
+    .anim-phone svg { animation: phoneGlow 3s ease-in-out infinite; }
+
+    @keyframes floatDevice { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.02); } }
+    .tradein-anim { animation: floatDevice 3s ease-in-out infinite; }
+    .tradein-anim-new { animation: floatDevice 3s ease-in-out infinite 0.5s; }
+
+    .product-anim { position: relative; display: flex; align-items: center; justify-content: center; }
+    .product-anim svg { animation: floatDevice 4s ease-in-out infinite; filter: drop-shadow(0 8px 24px rgba(15,27,61,0.12)); }
+
+    @keyframes pingLocation { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } 60% { transform: translateY(0); } }
+    .anim-location svg { animation: pingLocation 2.5s ease-in-out infinite; }
+    .anim-delivery svg { animation: sway 2s ease-in-out infinite; }
 
     /* ============ REVEAL ============ */
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
@@ -1052,13 +1090,13 @@
       <div class="orbit-scene">
         <div class="orbit-ring r1"></div>
         <div class="orbit-ring r2"></div>
-        <div class="orbit-center">🏢</div>
-        <div class="sat s1">💻<span class="sat-label">MacBook</span></div>
-        <div class="sat s2">📱<span class="sat-label">iPhone</span></div>
-        <div class="sat s3">🖥️<span class="sat-label">iMac</span></div>
-        <div class="sat s4">📱<span class="sat-label">iPad</span></div>
-        <div class="sat s5">⌚<span class="sat-label">Watch</span></div>
-        <div class="sat s6">🪟<span class="sat-label">Windows</span></div>
+        <div class="orbit-center"><span class="anim-icon anim-building"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span></div>
+        <div class="sat s1"><span class="anim-icon anim-laptop"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span><span class="sat-label">MacBook</span></div>
+        <div class="sat s2"><span class="anim-icon anim-phone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="sat-label">iPhone</span></div>
+        <div class="sat s3"><span class="anim-icon anim-laptop"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><span class="sat-label">iMac</span></div>
+        <div class="sat s4"><span class="anim-icon anim-phone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="sat-label">iPad</span></div>
+        <div class="sat s5"><span class="anim-icon anim-phone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2h6v4H9zM9 18h6v4H9z"/></svg></span><span class="sat-label">Watch</span></div>
+        <div class="sat s6"><span class="anim-icon anim-laptop"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span><span class="sat-label">Windows</span></div>
       </div>
     </div>
   </section>
@@ -1094,7 +1132,7 @@
     </div>
     <div class="bento-grid">
       <div class="bento-card b1 b-hero reveal">
-        <span class="b-emoji">📦</span>
+        <span class="b-emoji"><span class="anim-icon anim-bag"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span></span>
         <h3>LEASING SIN CAPEX</h3>
         <p>Equipos nuevos o reacondicionados por una cuota mensual predecible. MacBook, iMac, iPhone, iPad — todo disponible. Renovación automática al final del contrato.</p>
       </div>
@@ -1104,17 +1142,17 @@
         <p>Tu empresa no puede esperar. Respuesta el mismo día para clientes corporativos.</p>
       </div>
       <div class="bento-card b3 reveal">
-        <span class="b-emoji">🔧</span>
+        <span class="b-emoji"><span class="anim-icon anim-wrench"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></span>
         <h3>Reparación certificada</h3>
         <p>Técnicos Apple certificados. Repuestos originales. 6 meses de garantía.</p>
       </div>
       <div class="bento-card b4 reveal">
-        <span class="b-emoji">📊</span>
+        <span class="b-emoji"><span class="anim-icon anim-laptop"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span></span>
         <h3>Gestión de flotas</h3>
         <p>Sabe quién tiene qué, cuándo renovar, y cuánto llevas gastado. Todo centralizado.</p>
       </div>
       <div class="bento-card b5 reveal">
-        <span class="b-emoji">🌱</span>
+        <span class="b-emoji"><span class="anim-icon anim-bag"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34"/><path d="M17 8c3-1 7-1 7-1s-1 4-3 7c-2.17 3.25-5.12 5.13-8.18 6.34"/><path d="M2 22l2-2"/></svg></span></span>
         <h3>TI sostenible</h3>
         <p>Hasta 722 kg de CO₂ ahorrados por dispositivo reacondicionado.</p>
       </div>
@@ -1124,7 +1162,7 @@
         <p>Desde 2016 siendo la referencia en tecnología Apple en Panamá. Más de 15,000 equipos reparados.</p>
       </div>
       <div class="bento-card b7 reveal">
-        <span class="b-emoji">🪟</span>
+        <span class="b-emoji"><span class="anim-icon anim-laptop"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span></span>
         <h3>También Windows</h3>
         <p>Flotas mixtas? No hay problema. Laptops y PCs Windows con el mismo nivel de soporte y atención.</p>
       </div>
@@ -1136,7 +1174,7 @@
     <div class="offset-row reveal-left">
       <div class="offset-visual">
         <div class="ov-glow"></div>
-        <div class="ov-emoji">✨</div>
+        <div class="ov-emoji"><span class="anim-icon anim-wrench"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
       </div>
       <div class="offset-text">
         <span class="label">Dispositivos nuevos</span>
@@ -1165,7 +1203,7 @@
       </div>
       <div class="offset-visual">
         <div class="ov-glow"></div>
-        <div class="ov-emoji">🌱</div>
+        <div class="ov-emoji"><span class="anim-icon anim-bag"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34"/><path d="M17 8c3-1 7-1 7-1s-1 4-3 7c-2.17 3.25-5.12 5.13-8.18 6.34"/><path d="M2 22l2-2"/></svg></span></div>
       </div>
     </div>
   </section>
@@ -1260,26 +1298,26 @@
         <span class="label">Sostenibilidad</span>
         <h2>TI RESPONSABLE.<br>SIN SACRIFICAR<br>CALIDAD.</h2>
         <p>Cada equipo reacondicionado tiene una segunda vida. Lo renovamos, lo donamos o lo reciclamos responsablemente. Tu empresa reduce su huella de carbono sin renunciar al rendimiento.</p>
-        <a href="https://wa.me/+50769784955" class="btn-primary" style="background: var(--card); color: var(--white);">Saber más →</a>
+        <a href="https://wa.me/+50769784955" class="btn-primary" style="background: var(--card); color: var(--text);">Saber más →</a>
       </div>
       <div class="sustain-nums reveal">
         <div class="s-num">
-          <div class="s-icon">🌍</div>
+          <div class="s-icon"><span class="anim-icon anim-cycle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
           <div class="s-val">722 kg</div>
           <div class="s-label">CO₂ ahorrado por dispositivo</div>
         </div>
         <div class="s-num">
-          <div class="s-icon">♻️</div>
+          <div class="s-icon"><span class="anim-icon anim-cycle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span></div>
           <div class="s-val">100%</div>
           <div class="s-label">Equipos reciben segunda vida</div>
         </div>
         <div class="s-num">
-          <div class="s-icon">📦</div>
+          <div class="s-icon"><span class="anim-icon anim-bag"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span></div>
           <div class="s-val">A+</div>
           <div class="s-label">Grado de certificación</div>
         </div>
         <div class="s-num">
-          <div class="s-icon">⚡</div>
+          <div class="s-icon"><span class="anim-icon anim-wrench"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span></div>
           <div class="s-val">= Nuevo</div>
           <div class="s-label">Rendimiento garantizado</div>
         </div>
@@ -1300,28 +1338,28 @@
     </div>
     <div class="cta-right reveal">
       <div class="cta-card">
-        <div class="cc-ico">📍</div>
+        <div class="cc-ico"><span class="anim-icon anim-location"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span></div>
         <div>
           <h4>San Francisco</h4>
           <p>Vía Porras con Av. 3J Sur · Tel: 394-9351 · Cel: 6978-0206</p>
         </div>
       </div>
       <div class="cta-card">
-        <div class="cc-ico">📍</div>
+        <div class="cc-ico"><span class="anim-icon anim-location"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span></div>
         <div>
           <h4>Bella Vista</h4>
           <p>PH Seawaves, planta baja · Tel: 203-2055 · Cel: 6932-7190</p>
         </div>
       </div>
       <div class="cta-card">
-        <div class="cc-ico">📧</div>
+        <div class="cc-ico"><span class="anim-icon anim-delivery"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span></div>
         <div>
           <h4>Email corporativo</h4>
           <p>contact@salvamimaquina.com · Respuesta en menos de 24h</p>
         </div>
       </div>
       <div class="cta-card">
-        <div class="cc-ico">💬</div>
+        <div class="cc-ico"><span class="anim-icon anim-bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2BDD7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span></div>
         <div>
           <h4>WhatsApp directo</h4>
           <p>+507 6978-4955 · Línea exclusiva empresas</p>
@@ -1331,6 +1369,7 @@
   </section>
 
 <footer>
+  <div class="footer-inner">
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="smm-logo">
@@ -1374,6 +1413,7 @@
       <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a href="https://wa.me/+50769780206" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
+  </div>
   </div>
 </footer>
 

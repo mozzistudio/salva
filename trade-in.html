@@ -22,7 +22,7 @@
       --card-hover: #F5F5F7;
 
       /* Light Theme Text */
-      --text: #1D1D1F;
+      --text: #0F1B3D;
       --text-2: #6E6E73;
       --text-3: #A1A1A6;
 
@@ -32,7 +32,7 @@
 
       /* Legacy mappings for compatibility */
       --white: #FFFFFF;
-      --navy: #1D1D1F;
+      --navy: #0F1B3D;
       --navy-deep: #FBFBFD;
       --navy-light: #F5F5F7;
       --navy-card: #FFFFFF;
@@ -40,7 +40,7 @@
       --gray-200: #dde1e8;
       --gray-400: #A1A1A6;
       --gray-600: #6E6E73;
-      --black: #1D1D1F;
+      --black: #0F1B3D;
       --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
@@ -132,11 +132,30 @@
     .btn-primary { background: var(--green); color: #FFFFFF; padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
 
-    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost { background: transparent; color: var(--text); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
 
     .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
+
+    /* ============ ANIMATED ILLUSTRATIONS ============ */
+    .anim-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .anim-icon svg {
+      transition: transform 0.3s;
+    }
+
+    .how-card:hover .anim-icon svg,
+    .dcat:hover .anim-icon svg,
+    .buy-card:hover .anim-icon svg,
+    .eco-stat:hover .anim-icon svg,
+    .cond-card:hover .anim-icon svg {
+      transform: scale(1.1);
+    }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
@@ -207,7 +226,7 @@
       margin-bottom: 36px;
     }
 
-    .hero-ti-desc strong { color: var(--white); font-weight: 600; }
+    .hero-ti-desc strong { color: var(--text); font-weight: 600; }
 
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
 
@@ -320,7 +339,7 @@
       width: 120px;
       height: 180px;
       background: var(--card);
-      border: 2px solid rgba(255,255,255,0.08);
+      border: 2px solid var(--border);
       border-radius: 20px;
       position: relative;
       overflow: hidden;
@@ -345,7 +364,7 @@
     .ev-device .evd-notch {
       width: 36px;
       height: 8px;
-      background: rgba(255,255,255,0.06);
+      background: var(--bg-alt);
       border-radius: 0 0 6px 6px;
       margin: 0 auto;
     }
@@ -356,8 +375,8 @@
       border-radius: 6px;
       background: repeating-linear-gradient(
         0deg,
-        rgba(255,255,255,0.02) 0px,
-        rgba(255,255,255,0.02) 8px,
+        var(--bg-alt) 0px,
+        var(--bg-alt) 8px,
         transparent 8px,
         transparent 16px
       );
@@ -384,7 +403,7 @@
     .ev-device .evd-bar {
       width: 28px;
       height: 3px;
-      background: rgba(255,255,255,0.06);
+      background: var(--bg-alt);
       border-radius: 2px;
       margin: 0 auto;
     }
@@ -793,7 +812,7 @@
       padding: 8px 0;
       font-size: 0.8rem;
       color: var(--text-2);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
     }
 
     .cond-card .cc-check:last-child { border-bottom: none; }
@@ -802,6 +821,14 @@
     .cc-excellent .cci { background: rgba(43,221,127,0.15); color: var(--green); }
     .cc-good .cci { background: rgba(43,221,127,0.1); color: var(--green); }
     .cc-fair .cci { background: var(--amber-glow); color: var(--amber); }
+
+    /* Dark section fixes */
+    .cc-excellent h3 { color: #FFFFFF; }
+    .cc-excellent .cc-pct-label { color: rgba(255,255,255,0.5); }
+    .cc-excellent .cc-check { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
+
+    .cmp-tradein h3 { color: #FFFFFF; }
+    .cmp-tradein .cmp-item { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
 
     /* ============ ECO IMPACT BAND ============ */
     .eco-band {
@@ -938,7 +965,7 @@
     }
 
     .cmp-tradein .cmp-tag { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cmp-alone .cmp-tag { background: rgba(255,255,255,0.06); color: var(--text-2); }
+    .cmp-alone .cmp-tag { background: var(--bg-alt); color: var(--text-2); }
 
     .compare-card h3 {
       font-family: 'Geist', sans-serif;
@@ -976,7 +1003,7 @@
     }
 
     .cmp-tradein .cmp-ico { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cmp-alone .cmp-ico { background: rgba(255,255,255,0.06); color: var(--text-2); }
+    .cmp-alone .cmp-ico { background: var(--bg-alt); color: var(--text-2); }
 
     /* ============ BUYBACK CATEGORIES — QUICK BROWSE (what you can buy) ============ */
     .buy-section {
@@ -1167,8 +1194,12 @@
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: 0.5px solid var(--border);
+      background: var(--text);
       padding: 64px 48px 40px;
+      color: #FFFFFF;
+    }
+
+    .footer-inner {
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -1180,24 +1211,24 @@
       margin-bottom: 48px;
     }
 
-    .footer-brand p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; margin-top: 16px; }
     .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { color: var(--text-2); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 0.5px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 32px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
 
-    .footer-bottom p { font-size: 0.72rem; color: var(--text-2); }
+    .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
 
     .footer-socials { display: flex; gap: 10px; }
-    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-2); text-decoration: none; transition: all 0.3s; }
-    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; }
+    .footer-socials a { width: 44px; height: 44px; border-radius: 12px; background: transparent; border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; transform: translateY(-2px); }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
@@ -1326,21 +1357,21 @@
       </div>
       <div class="hero-values">
         <div class="hv-pill">
-          <span class="hvp-device">📱</span>
+          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
           <div class="hvp-text">
             <strong>iPhone 14</strong>
             Desde $150 crédito
           </div>
         </div>
         <div class="hv-pill">
-          <span class="hvp-device">💻</span>
+          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
           <div class="hvp-text">
             <strong>MacBook Pro</strong>
             Desde $250 crédito
           </div>
         </div>
         <div class="hv-pill">
-          <span class="hvp-device">📋</span>
+          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
           <div class="hvp-text">
             <strong>iPad</strong>
             Desde $80 crédito
@@ -1372,7 +1403,7 @@
         <!-- Center swap -->
         <div class="ev-center">
           <div class="ev-swap-ring">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D1D1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0F1B3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="17 1 21 5 17 9"></polyline>
               <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
               <polyline points="7 23 3 19 7 15"></polyline>
@@ -1411,19 +1442,19 @@
     <div class="how-rail">
       <div class="how-card reveal">
         <div class="hc-step">1</div>
-        <span class="hc-emoji">📊</span>
+        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
         <h3>Cotiza en línea o en tienda</h3>
         <p>Selecciona tu modelo, indica la condición y recibe una cotización estimada al instante. También puedes visitarnos para evaluación presencial en cualquier sucursal.</p>
       </div>
       <div class="how-card reveal">
         <div class="hc-step">2</div>
-        <span class="hc-emoji">🔍</span>
+        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
         <h3>Evaluación técnica</h3>
         <p>Nuestros técnicos certificados inspeccionan tu equipo y confirman el valor real. Sin sorpresas — si no estás de acuerdo, te llevas tu equipo sin costo.</p>
       </div>
       <div class="how-card reveal">
         <div class="hc-step">3</div>
-        <span class="hc-emoji">🎉</span>
+        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
         <h3>Elige tu equipo nuevo</h3>
         <p>El crédito se aplica directo a tu compra. iPhone, MacBook, iPad, Apple Watch, AirPods — nuevos o reacondicionados con garantía. ¡Así de fácil!</p>
       </div>
@@ -1442,7 +1473,7 @@
 
     <div class="device-cats">
       <div class="dcat reveal">
-        <span class="dcat-emoji">📱</span>
+        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         <h3>iPHONE</h3>
         <p>Desde iPhone X hasta iPhone 14 Pro Max. Evaluamos almacenamiento, estado de batería, pantalla y cuerpo.</p>
         <div class="dcat-models">
@@ -1465,7 +1496,7 @@
       </div>
 
       <div class="dcat reveal">
-        <span class="dcat-emoji">💻</span>
+        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
         <h3>MACBOOK</h3>
         <p>MacBook Air y MacBook Pro Retina desde 2016. Evaluamos procesador, RAM, SSD, batería y estado general.</p>
         <div class="dcat-models">
@@ -1481,7 +1512,7 @@
       </div>
 
       <div class="dcat reveal">
-        <span class="dcat-emoji">📋</span>
+        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         <h3>iPAD</h3>
         <p>Desde iPad Mini 3 hasta iPad 7. Evaluamos almacenamiento, conectividad, estado de pantalla y cuerpo.</p>
         <div class="dcat-models">
@@ -1510,8 +1541,8 @@
 
     <div class="cond-tiers">
       <div class="cond-card cc-excellent reveal">
-        <span class="cc-badge">⭐ RECOMENDADO</span>
-        <span class="cc-icon">✨</span>
+        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> RECOMENDADO</span>
+        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
         <h3>Excelente</h3>
         <div class="cc-pct">100%</div>
         <div class="cc-pct-label">del valor estimado</div>
@@ -1525,8 +1556,8 @@
       </div>
 
       <div class="cond-card cc-good reveal">
-        <span class="cc-badge">👍 ACEPTABLE</span>
-        <span class="cc-icon">👌</span>
+        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ACEPTABLE</span>
+        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></span>
         <h3>Bueno</h3>
         <div class="cc-pct">70%</div>
         <div class="cc-pct-label">del valor estimado</div>
@@ -1540,8 +1571,8 @@
       </div>
 
       <div class="cond-card cc-fair reveal">
-        <span class="cc-badge">⚠️ EVALUABLE</span>
-        <span class="cc-icon">🔧</span>
+        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> EVALUABLE</span>
+        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         <h3>Regular</h3>
         <div class="cc-pct">40%</div>
         <div class="cc-pct-label">del valor estimado</div>
@@ -1559,26 +1590,26 @@
   <!-- ====== ECO IMPACT ====== -->
   <section class="eco-band reveal">
     <div class="eco-inner">
-      <div class="eco-label">🌱 Impacto ambiental</div>
+      <div class="eco-label">Impacto ambiental</div>
       <h2>CADA TRADE-IN<br>AYUDA AL PLANETA.</h2>
       <div class="eco-stats">
         <div class="eco-stat">
-          <span class="es-emoji">♻️</span>
+          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
           <div class="es-val">722 KG</div>
           <div class="es-label">CO₂ ahorrado por dispositivo<br>reacondicionado</div>
         </div>
         <div class="eco-stat">
-          <span class="es-emoji">⛏️</span>
+          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
           <div class="es-val">80+</div>
           <div class="es-label">Minerales raros que<br>se reutilizan</div>
         </div>
         <div class="eco-stat">
-          <span class="es-emoji">🔋</span>
+          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="11" y1="10" x2="11" y2="14"/></svg></span>
           <div class="es-val">2X</div>
           <div class="es-label">Vida útil extendida<br>del dispositivo</div>
         </div>
         <div class="eco-stat">
-          <span class="es-emoji">🌍</span>
+          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
           <div class="es-val">0</div>
           <div class="es-label">Equipos a la basura.<br>Les damos segunda vida</div>
         </div>
@@ -1633,31 +1664,31 @@
 
     <div class="buy-grid">
       <div class="buy-card reveal">
-        <span class="bc-emoji">📱</span>
+        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         <h4>iPhone</h4>
         <p>Nuevos y reacondicionados</p>
         <span class="bc-tag">iPhone 16 · 15 · 14</span>
       </div>
       <div class="buy-card reveal">
-        <span class="bc-emoji">💻</span>
+        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
         <h4>MacBook</h4>
         <p>Air M4 · Pro M4</p>
         <span class="bc-tag">Nuevos desde 2024</span>
       </div>
       <div class="buy-card reveal">
-        <span class="bc-emoji">📋</span>
+        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         <h4>iPad</h4>
         <p>Nuevos y reacondicionados</p>
         <span class="bc-tag">iPad · iPad Air</span>
       </div>
       <div class="buy-card reveal">
-        <span class="bc-emoji">⌚</span>
+        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/></svg></span>
         <h4>Apple Watch</h4>
         <p>Series 10 · SE · Ultra</p>
         <span class="bc-tag">Nuevos en stock</span>
       </div>
       <div class="buy-card reveal">
-        <span class="bc-emoji">🎧</span>
+        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
         <h4>Accesorios</h4>
         <p>AirPods · Teclados</p>
         <span class="bc-tag">AirPods Pro 3</span>
@@ -1734,6 +1765,7 @@
   </section>
 
 <footer>
+  <div class="footer-inner">
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="smm-logo">
@@ -1777,6 +1809,7 @@
       <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a href="https://wa.me/+50769780206" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
+  </div>
   </div>
 </footer>
 
