@@ -22,7 +22,7 @@
       --card-hover: #F5F5F7;
 
       /* Light Theme Text */
-      --text: #1D1D1F;
+      --text: #0F1B3D;
       --text-2: #6E6E73;
       --text-3: #A1A1A6;
 
@@ -32,7 +32,7 @@
 
       /* Legacy mappings for compatibility */
       --white: #FFFFFF;
-      --navy: #1D1D1F;
+      --navy: #0F1B3D;
       --navy-deep: #FBFBFD;
       --navy-light: #F5F5F7;
       --navy-card: #FFFFFF;
@@ -40,7 +40,7 @@
       --gray-200: #dde1e8;
       --gray-400: #A1A1A6;
       --gray-600: #6E6E73;
-      --black: #1D1D1F;
+      --black: #0F1B3D;
       --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
@@ -132,13 +132,82 @@
     .btn-primary { background: var(--green); color: #FFFFFF; padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
 
-    .btn-ghost { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-ghost { background: transparent; color: var(--text); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
 
     .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ============ SVG ICON ANIMATIONS ============ */
+    @keyframes svgFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes svgPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes svgSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes svgBounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+    @keyframes svgWiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(6deg); }
+      75% { transform: rotate(-6deg); }
+    }
+    @keyframes svgGrow {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.05) translateY(-3px); }
+    }
+
+    .animated-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .animated-icon svg {
+      width: 1em;
+      height: 1em;
+    }
+    .icon-float svg { animation: svgFloat 3s ease-in-out infinite; }
+    .icon-pulse svg { animation: svgPulse 2.5s ease-in-out infinite; }
+    .icon-spin svg { animation: svgSpin 8s linear infinite; }
+    .icon-bounce svg { animation: svgBounce 2s ease-in-out infinite; }
+    .icon-wiggle svg { animation: svgWiggle 2s ease-in-out infinite; }
+    .icon-grow svg { animation: svgGrow 3s ease-in-out infinite; }
+
+    /* ============ ANIMATED ILLUSTRATIONS ============ */
+    .anim-icon { display: inline-flex; align-items: center; justify-content: center; }
+    .anim-icon svg { transition: transform 0.3s; }
+    .step-card:hover .anim-icon svg, .service-card:hover .anim-icon svg { transform: scale(1.1); }
+    @keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+    .anim-wrench svg { animation: wiggle 3s ease-in-out infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .anim-bag svg { animation: bounce 2.5s ease-in-out infinite; }
+    @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .anim-cycle svg { animation: spinSlow 6s linear infinite; }
+    @keyframes scalePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+    .anim-laptop svg { animation: scalePulse 3s ease-in-out infinite; }
+    @keyframes sway { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+    .anim-building svg { animation: sway 4s ease-in-out infinite; }
+    @keyframes phoneGlow { 0%, 100% { filter: drop-shadow(0 0 4px rgba(43,221,127,0.3)); } 50% { filter: drop-shadow(0 0 12px rgba(43,221,127,0.6)); } }
+    .anim-phone svg { animation: phoneGlow 3s ease-in-out infinite; }
+    @keyframes floatDevice { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.02); } }
+    .tradein-anim { animation: floatDevice 3s ease-in-out infinite; }
+    .product-anim { position: relative; display: flex; align-items: center; justify-content: center; }
+    .product-anim svg { animation: floatDevice 4s ease-in-out infinite; filter: drop-shadow(0 8px 24px rgba(15,27,61,0.12)); }
+    @keyframes pingLocation { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } 60% { transform: translateY(0); } }
+    .anim-location svg { animation: pingLocation 2.5s ease-in-out infinite; }
+    .anim-delivery svg { animation: sway 2s ease-in-out infinite; }
 
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -299,7 +368,7 @@
     .price-chip .pc-device {
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text);
       letter-spacing: 0.2px;
     }
 
@@ -1038,7 +1107,7 @@
       padding: 14px 28px 14px 16px;
       transition: all 0.3s;
       text-decoration: none;
-      color: var(--white);
+      color: var(--text);
     }
 
     .cpill:hover {
@@ -1074,13 +1143,17 @@
     .cpill .cp-value {
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text);
     }
 
     /* ============ FOOTER (consistent) ============ */
     footer {
-      border-top: 0.5px solid var(--border);
+      background: var(--text);
       padding: 64px 48px 40px;
+      color: #FFFFFF;
+    }
+
+    .footer-inner {
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -1092,24 +1165,24 @@
       margin-bottom: 48px;
     }
 
-    .footer-brand p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; max-width: 300px; margin-top: 16px; }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; margin-top: 16px; }
     .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { color: var(--text-2); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 0.5px solid var(--border);
+      border-top: 0.5px solid rgba(255,255,255,0.1);
       padding-top: 32px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
 
-    .footer-bottom p { font-size: 0.72rem; color: var(--text-2); }
+    .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
 
     .footer-socials { display: flex; gap: 10px; }
-    .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(43, 221, 127, 0.08); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-2); text-decoration: none; transition: all 0.3s; }
-    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; }
+    .footer-socials a { width: 44px; height: 44px; border-radius: 12px; background: transparent; border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; transform: translateY(-2px); }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
@@ -1227,21 +1300,21 @@
     </div>
     <div class="price-banner">
       <div class="price-chip">
-        <div class="pc-emoji">💻</div>
+        <div class="pc-emoji animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/><path d="M9 16v4"/><path d="M15 16v4"/></svg></div>
         <div class="pc-info">
           <div class="pc-device">MacBook Air M3</div>
           <div class="pc-price">DESDE $45/MES</div>
         </div>
       </div>
       <div class="price-chip">
-        <div class="pc-emoji">📱</div>
+        <div class="pc-emoji animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div class="pc-info">
           <div class="pc-device">iPhone 15</div>
           <div class="pc-price">DESDE $35/MES</div>
         </div>
       </div>
       <div class="price-chip">
-        <div class="pc-emoji">📱</div>
+        <div class="pc-emoji animated-icon icon-wiggle"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div class="pc-info">
           <div class="pc-device">iPad 11"</div>
           <div class="pc-price">DESDE $29/MES</div>
@@ -1283,7 +1356,7 @@
     <div class="zigzag-steps">
       <div class="zig-step reveal">
         <div class="zig-content">
-          <span class="zc-emoji">💬</span>
+          <span class="zc-emoji animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></span>
           <h3>Cuéntanos qué necesitas</h3>
           <p>Escríbenos por WhatsApp o visítanos. Te asesoramos para elegir el equipo ideal según tu presupuesto y uso diario.</p>
         </div>
@@ -1294,14 +1367,14 @@
         <div class="zig-spacer"></div>
         <div class="zig-node"><div class="zn-circle">02</div></div>
         <div class="zig-content">
-          <span class="zc-emoji">📋</span>
+          <span class="zc-emoji animated-icon icon-wiggle"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 2v2h6V2"/><path d="M9 12h6M9 16h4"/></svg></span>
           <h3>Elige tu plan</h3>
           <p>Selecciona entre equipo nuevo o reacondicionado Grado A+. Definimos la cuota mensual y el plazo que mejor te funcione.</p>
         </div>
       </div>
       <div class="zig-step reveal">
         <div class="zig-content">
-          <span class="zc-emoji">📦</span>
+          <span class="zc-emoji animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg></span>
           <h3>Recibe tu equipo</h3>
           <p>Te lo entregamos configurado y listo para usar. En nuestras sucursales o a domicilio — tú decides.</p>
         </div>
@@ -1312,7 +1385,7 @@
         <div class="zig-spacer"></div>
         <div class="zig-node"><div class="zn-circle">04</div></div>
         <div class="zig-content">
-          <span class="zc-emoji">🔄</span>
+          <span class="zc-emoji animated-icon icon-spin"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
           <h3>Renueva o quédate con él</h3>
           <p>Al terminar el plazo, haz upgrade al modelo más nuevo, compra tu equipo a precio residual, o simplemente devuélvelo. Tú mandas.</p>
         </div>
@@ -1333,7 +1406,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge new">Nuevo</span>
-          💻
+          <span class="animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/><path d="M9 16v4"/><path d="M15 16v4"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>MacBook Air M3</h3>
@@ -1347,7 +1420,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge refurb">Grado A+</span>
-          💻
+          <span class="animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/><path d="M9 16v4"/><path d="M15 16v4"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>MacBook Pro M2</h3>
@@ -1362,7 +1435,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge new">Nuevo</span>
-          📱
+          <span class="animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>iPhone 15</h3>
@@ -1376,7 +1449,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge new">Nuevo</span>
-          📱
+          <span class="animated-icon icon-wiggle"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>iPad 11" A16</h3>
@@ -1390,7 +1463,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge refurb">Grado A+</span>
-          💻
+          <span class="animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/><path d="M9 16v4"/><path d="M15 16v4"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>MacBook Air M2</h3>
@@ -1405,7 +1478,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge new">Nuevo</span>
-          📱
+          <span class="animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>iPhone 15 Pro</h3>
@@ -1419,7 +1492,7 @@
       <div class="device-card">
         <div class="dc-visual">
           <span class="dc-badge refurb">Grado A</span>
-          🖥️
+          <span class="animated-icon icon-pulse"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="80" height="80"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>
         </div>
         <div class="dc-info">
           <h3>iMac M1 24"</h3>
@@ -1444,14 +1517,14 @@
 
     <div class="mag-wide reveal">
       <div class="mag-card mc-highlight">
-        <span class="mc-emoji">💸</span>
+        <span class="mc-emoji animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
         <h3>OLVÍDATE DEL<br>GASTO FUERTE</h3>
         <p>Un MacBook puede costar más de $1,000. Con leasing, empiezas a usarlo desde $38 al mes. Sin entrada, sin sorpresas. Solo una cuota fija que cabe en tu presupuesto.</p>
         <div class="mc-stat">$0</div>
         <div class="mc-stat-label">Cuota inicial</div>
       </div>
       <div class="mag-card">
-        <span class="mc-emoji">🔄</span>
+        <span class="mc-emoji animated-icon icon-spin"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
         <h3>SIEMPRE<br>AL DÍA</h3>
         <p>Cada 2 años puedes hacer upgrade al modelo más reciente. Nunca más te quedarás con un equipo obsoleto.</p>
       </div>
@@ -1459,17 +1532,17 @@
 
     <div class="mag-trio reveal">
       <div class="mag-card">
-        <span class="mc-emoji">🛡️</span>
+        <span class="mc-emoji animated-icon icon-pulse"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
         <h3>GARANTÍA<br>TOTAL</h3>
         <p>Soporte técnico certificado Apple incluido. Si algo pasa, nosotros lo resolvemos.</p>
       </div>
       <div class="mag-card">
-        <span class="mc-emoji">📦</span>
+        <span class="mc-emoji animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
         <h3>ENTREGA<br>RÁPIDA</h3>
         <p>Te lo llevamos configurado y listo. Recógelo en tienda o recíbelo en tu casa.</p>
       </div>
       <div class="mag-card">
-        <span class="mc-emoji">🎯</span>
+        <span class="mc-emoji animated-icon icon-pulse"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--green)"/></svg></span>
         <h3>TÚ<br>DECIDES</h3>
         <p>Al final del contrato: renueva, compra a precio residual o devuelve. Sin ataduras.</p>
       </div>
@@ -1477,12 +1550,12 @@
 
     <div class="mag-wide reverse reveal">
       <div class="mag-card">
-        <span class="mc-emoji">📊</span>
+        <span class="mc-emoji animated-icon icon-grow"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></span>
         <h3>CUOTA<br>PREDECIBLE</h3>
         <p>Planifica tu mes sin sustos. La cuota es fija desde el primer día hasta el último. Sin intereses ocultos.</p>
       </div>
       <div class="mag-card mc-highlight">
-        <span class="mc-emoji">🌱</span>
+        <span class="mc-emoji animated-icon icon-grow"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M17 7c0 5-5 5-5 5S7 12 7 7a5 5 0 0110 0z"/><path d="M7 17c3-1 7-1 10 0"/></svg></span>
         <h3>SOSTENIBLE<br>POR DISEÑO</h3>
         <p>Cada dispositivo reacondicionado ahorra hasta 722 kg de CO₂. Usar tecnología de calidad y cuidar el planeta no están peleados.</p>
         <div class="mc-stat">722 KG</div>
@@ -1501,7 +1574,7 @@
     <div class="panels-row reveal">
       <div class="panel panel-new">
         <span class="panel-badge">✨ Dispositivo Nuevo</span>
-        <span class="panel-emoji">💻</span>
+        <span class="panel-emoji animated-icon icon-float"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M6 20h12"/><path d="M9 16v4"/><path d="M15 16v4"/></svg></span>
         <h3>RECIÉN<br>SALIDO DE CAJA.</h3>
         <p>La última generación Apple, sellada de fábrica. Configuraciones personalizadas según lo que necesites.</p>
         <ul class="p-checks">
@@ -1514,7 +1587,7 @@
       </div>
       <div class="panel panel-refurb">
         <span class="panel-badge">★ Recomendado</span>
-        <span class="panel-emoji">🌱</span>
+        <span class="panel-emoji animated-icon icon-grow"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M17 7c0 5-5 5-5 5S7 12 7 7a5 5 0 0110 0z"/><path d="M7 17c3-1 7-1 10 0"/></svg></span>
         <h3>COMO NUEVO.<br>MEJOR PRECIO.</h3>
         <p>Grado A+ certificado: sin marcas visibles, rendimiento idéntico al nuevo. Y ahorras hasta un 30%.</p>
         <ul class="p-checks">
@@ -1633,21 +1706,21 @@
     </div>
     <div class="contact-pills">
       <a href="#" class="cpill">
-        <div class="cp-ico">📍</div>
+        <div class="cp-ico animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="cp-text">
           <div class="cp-label">San Francisco</div>
           <div class="cp-value">394-9351</div>
         </div>
       </a>
       <a href="#" class="cpill">
-        <div class="cp-ico">📍</div>
+        <div class="cp-ico animated-icon icon-bounce"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="cp-text">
           <div class="cp-label">Bella Vista</div>
           <div class="cp-value">203-2055</div>
         </div>
       </a>
       <a href="https://wa.me/+50769784955" class="cpill">
-        <div class="cp-ico">💬</div>
+        <div class="cp-ico animated-icon icon-pulse"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
         <div class="cp-text">
           <div class="cp-label">WhatsApp</div>
           <div class="cp-value">+507 6978-4955</div>
@@ -1657,6 +1730,7 @@
   </section>
 
 <footer>
+<div class="footer-inner">
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="smm-logo">
@@ -1701,6 +1775,7 @@
       <a href="https://wa.me/+50769780206" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
   </div>
+</div>
 </footer>
 
   <a class="whatsapp-widget" href="https://wa.me/50769784955" target="_blank" rel="noopener" aria-label="WhatsApp">

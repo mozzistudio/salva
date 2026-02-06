@@ -21,7 +21,7 @@
       --card-hover: #F5F5F7;
 
       /* Light Theme Text */
-      --text: #1D1D1F;
+      --text: #0F1B3D;
       --text-2: #6E6E73;
       --text-3: #A1A1A6;
 
@@ -31,7 +31,7 @@
 
       /* Legacy mappings for compatibility */
       --white: #FFFFFF;
-      --navy: #1D1D1F;
+      --navy: #0F1B3D;
       --navy-deep: #FBFBFD;
       --navy-light: #F5F5F7;
       --navy-card: #FFFFFF;
@@ -39,7 +39,7 @@
       --gray-200: #dde1e8;
       --gray-400: #A1A1A6;
       --gray-600: #6E6E73;
-      --black: #1D1D1F;
+      --black: #0F1B3D;
       --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
@@ -364,7 +364,7 @@
 
     .btn-dark {
       background: var(--card);
-      color: var(--white);
+      color: var(--text);
       padding: 16px 36px;
       border-radius: 100px;
       font-size: 0.9rem;
@@ -417,7 +417,7 @@
       border-color: var(--green);
       background: rgba(43, 221, 127, 0.06);
       transform: translateY(-4px);
-      color: var(--white);
+      color: var(--green);
       box-shadow: 0 8px 30px rgba(43, 221, 127, 0.1);
     }
 
@@ -799,8 +799,8 @@
     /* ============ STATS ============ */
     .stats-section {
       padding: 100px 48px;
-      border-top: 0.5px solid var(--border);
-      border-bottom: 0.5px solid var(--border);
+      border-top: none;
+      border-bottom: none;
       background: var(--text);
     }
 
@@ -823,7 +823,7 @@
     .stat-item .stat-label {
       margin-top: 8px;
       font-size: 0.82rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       font-weight: 500;
       letter-spacing: 0.5px;
     }
@@ -835,7 +835,7 @@
       overflow: hidden;
       position: relative;
       background: var(--text);
-      border: 0.5px solid var(--border);
+      border: none;
     }
 
     .tradein-section::before {
@@ -860,6 +860,15 @@
 
     .tradein-content .section-title {
       font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: #FFFFFF;
+    }
+
+    .tradein-content .section-label {
+      color: var(--green);
+    }
+
+    .tradein-content .section-desc {
+      color: rgba(255,255,255,0.6);
     }
 
     .tradein-visual {
@@ -878,7 +887,7 @@
       width: 165px;
       height: 205px;
       background: rgba(43,221,127,0.04);
-      border: 0.5px solid var(--border);
+      border: 0.5px solid rgba(255,255,255,0.12);
       border-radius: 24px;
       display: flex;
       flex-direction: column;
@@ -891,7 +900,7 @@
 
     .tradein-device span {
       font-size: 0.75rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       font-weight: 600;
     }
 
@@ -993,7 +1002,7 @@
     .product-info .product-price {
       font-family: 'Geist', sans-serif;
       font-size: 1.8rem;
-      color: var(--white);
+      color: var(--text);
       letter-spacing: 1px;
     }
 
@@ -1040,7 +1049,7 @@
       background: var(--text);
       border-radius: 36px;
       padding: 100px 64px;
-      color: var(--white);
+      color: #FFFFFF;
       position: relative;
       overflow: hidden;
     }
@@ -1065,8 +1074,8 @@
       align-items: center;
     }
 
-    .empresas-content .section-title { color: var(--white); }
-    .empresas-content .section-desc { color: var(--text-3); }
+    .empresas-content .section-title { color: #FFFFFF; }
+    .empresas-content .section-desc { color: rgba(255,255,255,0.6); }
 
     .empresas-features {
       display: grid;
@@ -1175,8 +1184,12 @@
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: 0.5px solid var(--border);
+      background: var(--text);
       padding: 64px 48px 40px;
+      color: #FFFFFF;
+    }
+
+    .footer-inner {
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -1190,7 +1203,7 @@
 
     .footer-brand p {
       font-size: 0.82rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       line-height: 1.6;
       max-width: 300px;
       margin-top: 16px;
@@ -1207,10 +1220,10 @@
 
     .footer-col ul { list-style: none; }
 
-    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
 
     .footer-col ul a {
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       text-decoration: none;
       font-size: 0.82rem;
       transition: color 0.2s;
@@ -1219,7 +1232,7 @@
     .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 0.5px solid var(--border);
+      border-top: 0.5px solid rgba(255,255,255,0.1);
       padding-top: 32px;
       display: flex;
       justify-content: space-between;
@@ -1230,7 +1243,7 @@
 
     .footer-bottom p {
       font-size: 0.72rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.4);
     }
 
     .footer-socials {
@@ -1239,15 +1252,15 @@
     }
 
     .footer-socials a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(43, 221, 127, 0.08);
-      border: 0.5px solid var(--border);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1.5px solid var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-2);
+      color: #FFFFFF;
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -1256,7 +1269,140 @@
       background: var(--green);
       border-color: var(--green);
       color: #FFFFFF;
+      transform: translateY(-2px);
     }
+
+    /* ============ ANIMATED ILLUSTRATIONS ============ */
+    .anim-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .anim-icon svg {
+      transition: transform 0.3s;
+    }
+
+    .step-card:hover .anim-icon svg,
+    .service-card:hover .anim-icon svg {
+      transform: scale(1.1);
+    }
+
+    /* Wrench rotation */
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-12deg); }
+      75% { transform: rotate(12deg); }
+    }
+
+    .anim-wrench svg {
+      animation: wiggle 3s ease-in-out infinite;
+    }
+
+    /* Shopping bag bounce */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .anim-bag svg {
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+
+    /* Rotate cycle */
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .anim-cycle svg {
+      animation: spinSlow 6s linear infinite;
+    }
+
+    /* Laptop pulse */
+    @keyframes scalePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .anim-laptop svg {
+      animation: scalePulse 3s ease-in-out infinite;
+    }
+
+    /* Building sway */
+    @keyframes sway {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+    }
+
+    .anim-building svg {
+      animation: sway 4s ease-in-out infinite;
+    }
+
+    /* Phone screen glow */
+    @keyframes phoneGlow {
+      0%, 100% { filter: drop-shadow(0 0 4px rgba(43,221,127,0.3)); }
+      50% { filter: drop-shadow(0 0 12px rgba(43,221,127,0.6)); }
+    }
+
+    .anim-phone svg {
+      animation: phoneGlow 3s ease-in-out infinite;
+    }
+
+    /* Trade-in floating */
+    @keyframes floatDevice {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.02); }
+    }
+
+    .tradein-anim {
+      animation: floatDevice 3s ease-in-out infinite;
+    }
+
+    .tradein-anim-new {
+      animation: floatDevice 3s ease-in-out infinite 0.5s;
+    }
+
+    /* Product card shimmer */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .product-anim {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-anim svg {
+      animation: floatDevice 4s ease-in-out infinite;
+      filter: drop-shadow(0 8px 24px rgba(15,27,61,0.12));
+    }
+
+    /* Contact card icons */
+    @keyframes pingLocation {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+      60% { transform: translateY(0); }
+    }
+
+    .anim-location svg {
+      animation: pingLocation 2.5s ease-in-out infinite;
+    }
+
+    .anim-delivery svg {
+      animation: sway 2s ease-in-out infinite;
+    }
+
+    /* Hero device float stagger */
+    .hero-device:nth-child(1) { animation: fadeUp 0.8s ease-out 0.55s both; }
+    .hero-device:nth-child(2) { animation: fadeUp 0.8s ease-out 0.65s both; }
+    .hero-device:nth-child(3) { animation: fadeUp 0.8s ease-out 0.75s both; }
+    .hero-device:nth-child(4) { animation: fadeUp 0.8s ease-out 0.85s both; }
+    .hero-device:nth-child(5) { animation: fadeUp 0.8s ease-out 0.95s both; }
+    .hero-device:nth-child(6) { animation: fadeUp 0.8s ease-out 1.05s both; }
 
     /* ============ SCROLL ANIMATIONS ============ */
     .reveal {
@@ -1301,8 +1447,9 @@
       .product-grid { grid-template-columns: 1fr; }
       .empresas-features { grid-template-columns: 1fr; }
       .cta-section { padding: 80px 20px; }
-      footer { padding: 48px 20px 32px; }
+      footer { padding: 48px 24px 32px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-socials a { width: 40px; height: 40px; }
       .hero-devices { gap: 10px; }
       .hero-device { width: 96px; height: 96px; border-radius: 18px; }
       .hero-device .device-icon { font-size: 1.5rem; }
@@ -1344,7 +1491,7 @@
       }
       .nav-links.mobile-open a {
         font-size: 1.15rem;
-        color: var(--white);
+        color: var(--text);
       }
       .nav-links.mobile-open .nav-cta {
         text-align: center;
@@ -1503,35 +1650,68 @@
     <div class="steps-grid">
       <div class="step-card reveal">
         <span class="step-number">01</span>
-        <div class="step-icon">🔧</div>
+        <div class="step-icon anim-icon anim-wrench">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
         <h3>Reparación</h3>
         <p>iPhone, MacBook, iPad, iMac y Windows. Diagnóstico express, repuestos originales y 6 meses de garantía.</p>
         <span class="step-tag">⚡ Pantalla en 40 min</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">02</span>
-        <div class="step-icon">🛍️</div>
+        <div class="step-icon anim-icon anim-bag">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
         <h3>Tienda</h3>
         <p>Equipos Apple y Windows nuevos y reacondicionados con garantía. Al mejor precio de Panamá.</p>
         <span class="step-tag">🏷️ Nuevos y reacondicionados</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">03</span>
-        <div class="step-icon">🔄</div>
+        <div class="step-icon anim-icon anim-cycle">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </div>
         <h3>Trade-In</h3>
         <p>Trae tu equipo usado y recibe crédito inmediato para uno nuevo. Evaluación gratis, precio justo.</p>
         <span class="step-tag">💰 Crédito inmediato</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">04</span>
-        <div class="step-icon">💻</div>
+        <div class="step-icon anim-icon anim-laptop">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+            <line x1="8" y1="17" x2="8" y2="20"/>
+            <line x1="16" y1="17" x2="16" y2="20"/>
+          </svg>
+        </div>
         <h3>Leasing</h3>
         <p>Alquila MacBook, iPhone o iPad desde $29/mes. Sin inversión inicial, para personas y empresas.</p>
         <span class="step-tag">📋 Desde $29/mes</span>
       </div>
       <div class="step-card reveal">
         <span class="step-number">05</span>
-        <div class="step-icon">🏢</div>
+        <div class="step-icon anim-icon anim-building">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <line x1="9" y1="22" x2="9" y2="18"/>
+            <line x1="15" y1="22" x2="15" y2="18"/>
+            <rect x="8" y="6" width="3" height="3" rx="0.5"/>
+            <rect x="13" y="6" width="3" height="3" rx="0.5"/>
+            <rect x="8" y="12" width="3" height="3" rx="0.5"/>
+            <rect x="13" y="12" width="3" height="3" rx="0.5"/>
+          </svg>
+        </div>
         <h3>Empresas</h3>
         <p>Soluciones corporativas completas: reparación prioritaria, leasing de flotas y soporte dedicado.</p>
         <span class="step-tag">🤝 +200 clientes</span>
@@ -1544,7 +1724,13 @@
     <div class="feature-visual">
       <div class="glow-ring"></div>
       <div class="glow-ring"></div>
-      <div class="floating-device">🍎</div>
+      <div class="floating-device">
+        <svg width="120" height="148" viewBox="0 0 120 148" fill="none">
+          <path d="M99.8 113.7c-2.3 5.3-5 10.2-8.1 14.7-4.2 6.1-7.7 10.3-10.3 12.7-4.1 3.9-8.5 5.9-13.2 6-3.4 0-7.4-1-12.1-2.9-4.7-1.9-9.1-2.9-13-2.9-4.2 0-8.6 1-13.3 2.9-4.7 2-8.5 3-11.4 3.1-4.5.2-9-1.9-13.5-6.1-2.8-2.6-6.4-7-10.6-13.3-4.5-6.7-8.2-14.5-11.1-23.3C.4 95.3-.8 86.5-.8 78c0-9.8 2.1-18.2 6.3-25.3 3.3-5.6 7.7-10.1 13.2-13.4 5.5-3.3 11.5-5 17.9-5.1 3.6 0 8.3 1.1 14.2 3.3 5.9 2.2 9.6 3.3 11.3 3.3 1.2 0 5.4-1.3 12.4-3.9 6.6-2.4 12.2-3.4 16.8-3 12.4 1 21.7 5.9 27.9 14.7-11.1 6.7-16.6 16.1-16.5 28.2.1 9.4 3.5 17.2 10.2 23.4 3 2.9 6.4 5.1 10.2 6.6-.8 2.4-1.7 4.7-2.7 6.9zM76.6 2.8c0 7.4-2.7 14.3-8 20.7-6.4 7.5-14.2 11.9-22.6 11.2-.1-.9-.2-1.9-.2-2.9 0-7.1 3.1-14.7 8.5-20.9 2.7-3.1 6.2-5.7 10.3-7.8C68.7 1.1 72.6-.1 76.3 0c.1 1 .3 2 .3 2.8z" fill="var(--green)">
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+          </path>
+        </svg>
+      </div>
     </div>
     <div class="feature-content">
       <span class="section-label">¿Por qué nosotros?</span>
@@ -1573,28 +1759,57 @@
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">📱</span>
+        <span class="service-emoji anim-icon anim-phone">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect x="12" y="4" width="24" height="40" rx="5" stroke="var(--green)" stroke-width="2"/>
+            <rect x="15" y="9" width="18" height="26" rx="1.5" fill="var(--green)" opacity="0.1"/>
+            <circle cx="24" cy="40" r="2" fill="var(--green)"/>
+            <line x1="19" y1="6.5" x2="29" y2="6.5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
         <h3>Pantalla iPhone</h3>
         <p>Cambio de pantalla original en solo 40 minutos. Como si nada hubiera pasado.</p>
         <span class="service-price">DESDE $49</span>
       </div>
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">💻</span>
+        <span class="service-emoji anim-icon anim-laptop">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect x="6" y="8" width="36" height="24" rx="3" stroke="var(--green)" stroke-width="2"/>
+            <rect x="9" y="11" width="30" height="18" rx="1.5" fill="var(--green)" opacity="0.1"/>
+            <path d="M2 34h44" stroke="var(--green)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 32v2" stroke="var(--green)" stroke-width="2"/>
+            <path d="M30 32v2" stroke="var(--green)" stroke-width="2"/>
+          </svg>
+        </span>
         <h3>MacBook Nuevos</h3>
         <p>MacBook Air y Pro en stock. Nuevos, sellados y con garantía Apple completa.</p>
         <span class="service-price">EN TIENDA</span>
       </div>
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">🔄</span>
+        <span class="service-emoji anim-icon anim-cycle">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <polyline points="40 10 40 20 30 20" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="8 38 8 28 18 28" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.2 18a16 16 0 0 1 26.4-5.9L40 20M8 28l1.4 7.9A16 16 0 0 0 35.8 30" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
         <h3>Trade-In</h3>
         <p>Trae tu equipo usado y recibe crédito inmediato para uno nuevo. Evaluación en 15 min.</p>
         <span class="service-price">HASTA $350+</span>
       </div>
       <div class="service-card reveal">
         <span class="service-arrow">→</span>
-        <span class="service-emoji">📋</span>
+        <span class="service-emoji anim-icon anim-laptop">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="8" width="32" height="24" rx="2" stroke="var(--green)" stroke-width="2"/>
+            <rect x="11" y="11" width="26" height="18" rx="1" fill="var(--green)" opacity="0.1"/>
+            <path d="M4 35h40" stroke="var(--green)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="20" r="5" stroke="var(--green)" stroke-width="1.5"/>
+            <path d="M24 18v2l1.5 1" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
         <h3>Leasing</h3>
         <p>Alquila MacBook, iPhone o iPad desde $29/mes. Equipo último modelo sin inversión inicial.</p>
         <span class="service-price">DESDE $29/MES</span>
@@ -1637,13 +1852,32 @@
       </div>
       <div class="tradein-visual reveal">
         <div class="tradein-exchange">
-          <div class="tradein-device">
-            📱
+          <div class="tradein-device tradein-anim">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="12" y="4" width="24" height="40" rx="5" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+              <rect x="15" y="9" width="18" height="26" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+              <line x1="18" y1="20" x2="30" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <line x1="18" y1="24" x2="26" y2="24" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <path d="M20 30l3 3 5-6" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+            </svg>
             <span>Tu equipo actual</span>
           </div>
-          <span class="tradein-arrow">→</span>
-          <div class="tradein-device new-device">
-            ✨
+          <span class="tradein-arrow">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="tradein-device new-device tradein-anim-new">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="12" y="4" width="24" height="40" rx="5" stroke="var(--green)" stroke-width="2"/>
+              <rect x="15" y="9" width="18" height="26" rx="1.5" fill="var(--green)" opacity="0.1"/>
+              <circle cx="24" cy="40" r="2" fill="var(--green)"/>
+              <line x1="19" y1="6.5" x2="29" y2="6.5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M19 18l3 3 7-8" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <animate attributeName="stroke-dasharray" values="0 20;20 0" dur="2s" repeatCount="indefinite"/>
+              </path>
+            </svg>
             <span>Equipo nuevo</span>
           </div>
         </div>
@@ -1662,7 +1896,14 @@
       <div class="product-card reveal">
         <div class="product-image">
           <span class="product-tag">Nuevo</span>
-          📱
+          <div class="product-anim">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <rect x="15" y="8" width="50" height="64" rx="8" stroke="var(--text)" stroke-width="2"/>
+              <rect x="19" y="15" width="42" height="48" rx="2" fill="var(--green)" opacity="0.08"/>
+              <circle cx="40" cy="70" r="3" fill="var(--text)" opacity="0.3"/>
+              <circle cx="57" cy="40" r="1.5" fill="var(--text)" opacity="0.3"/>
+            </svg>
+          </div>
         </div>
         <div class="product-info">
           <h3>iPad 11" A16</h3>
@@ -1673,7 +1914,15 @@
       <div class="product-card reveal">
         <div class="product-image">
           <span class="product-tag" style="background: #2997ff; color: white;">Destacado</span>
-          💻
+          <div class="product-anim">
+            <svg width="100" height="80" viewBox="0 0 100 80" fill="none">
+              <rect x="15" y="8" width="70" height="46" rx="4" stroke="var(--text)" stroke-width="2"/>
+              <rect x="19" y="12" width="62" height="38" rx="2" fill="var(--green)" opacity="0.08"/>
+              <path d="M30 54v6" stroke="var(--text)" stroke-width="2"/>
+              <path d="M70 54v6" stroke="var(--text)" stroke-width="2"/>
+              <path d="M22 62h56" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
         </div>
         <div class="product-info">
           <h3>MacBook Air M3</h3>
@@ -1683,8 +1932,15 @@
       </div>
       <div class="product-card reveal">
         <div class="product-image">
-          <span class="product-tag" style="background: #ff9f0a; color: var(--text);">Oferta</span>
-          📱
+          <span class="product-tag" style="background: #ff9f0a; color: #FFFFFF;">Oferta</span>
+          <div class="product-anim">
+            <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+              <rect x="10" y="4" width="40" height="72" rx="9" stroke="var(--text)" stroke-width="2"/>
+              <rect x="14" y="12" width="32" height="50" rx="2" fill="var(--green)" opacity="0.08"/>
+              <circle cx="30" cy="70" r="3" fill="var(--text)" opacity="0.3"/>
+              <line x1="22" y1="8" x2="38" y2="8" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
         </div>
         <div class="product-info">
           <h3>iPhone 15 Pro</h3>
@@ -1725,27 +1981,35 @@
         <h2 class="section-title">TU FLOTA TECH,<br>BAJO CONTROL.</h2>
         <p class="section-desc">Soluciones corporativas de reparación, leasing y mantenimiento. Haz más sencillo el alquiler, manejo y actualización de tu equipo de cómputo.</p>
         <div style="margin-top: 32px;">
-          <a href="#contacto" class="btn-primary" style="background: var(--card); color: var(--white);">Cotiza Con Nosotros →</a>
+          <a href="#contacto" class="btn-primary" style="background: #FFFFFF; color: var(--text);">Cotiza Con Nosotros →</a>
         </div>
       </div>
       <div class="empresas-features reveal">
         <div class="emp-feature">
-          <div class="emp-icon">⚡</div>
+          <div class="emp-icon anim-icon" style="font-size:0;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <h4>Respuesta inmediata</h4>
           <p>Tiempos de respuesta prioritarios para clientes empresariales.</p>
         </div>
         <div class="emp-feature">
-          <div class="emp-icon">📦</div>
+          <div class="emp-icon anim-icon anim-bag" style="font-size:0;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
           <h4>Leasing de equipos</h4>
           <p>Dispositivos nuevos o reacondicionados. Elige entre Grado A+ y A.</p>
         </div>
         <div class="emp-feature">
-          <div class="emp-icon">📊</div>
+          <div class="emp-icon anim-icon anim-laptop" style="font-size:0;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
           <h4>Gestión de flotas</h4>
           <p>Sistema centralizado para la gestión de todos tus dispositivos.</p>
         </div>
         <div class="emp-feature">
-          <div class="emp-icon">💰</div>
+          <div class="emp-icon anim-icon anim-bag" style="font-size:0;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
           <h4>Mejor flujo de caja</h4>
           <p>Equipos siempre actualizados sin comprometer tu capital.</p>
         </div>
@@ -1764,17 +2028,34 @@
     </div>
     <div class="contact-grid">
       <div class="contact-card reveal">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon anim-icon anim-location">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
         <h4>San Francisco</h4>
         <p>Vía Porras con Av. 3J Sur<br>Tel: 394-9351 · Cel: 6978-0206</p>
       </div>
       <div class="contact-card reveal">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon anim-icon anim-location">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
         <h4>Bella Vista</h4>
         <p>PH Seawaves, planta baja<br>Tel: 203-2055 · Cel: 6932-7190</p>
       </div>
       <div class="contact-card reveal">
-        <div class="contact-icon">🚀</div>
+        <div class="contact-icon anim-icon anim-delivery">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
         <h4>Servicio a domicilio</h4>
         <p>Mensajería especializada<br>disponible en toda la ciudad</p>
       </div>
@@ -1783,6 +2064,7 @@
 
   <!-- ====== FOOTER ====== -->
 <footer>
+  <div class="footer-inner">
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="smm-logo">
@@ -1826,6 +2108,7 @@
       <a href="https://www.linkedin.com/company/salva-mi-maquina/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a href="https://wa.me/+50769780206" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
+  </div>
   </div>
 </footer>
 
