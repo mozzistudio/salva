@@ -5,39 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salva Mi Máquina — Expertos Apple en Panamá</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Brand Colors — extracted from official assets */
+      /* Brand Colors — Light Theme */
+      --verde: #2BDD7F;
+      --verde-dark: #1FBF6A;
       --green: #2BDD7F;
-      --green-dark: #22c46d;
-      --green-glow: rgba(43, 221, 127, 0.15);
-      --green-subtle: rgba(43, 221, 127, 0.08);
-      --navy: #0D1845;
-      --navy-deep: #080f2e;
-      --navy-light: #141f52;
-      --navy-card: #111a4a;
+      --green-dark: #1FBF6A;
 
-      --white: #f8fafb;
+      /* Light Theme Backgrounds */
+      --bg: #FBFBFD;
+      --bg-alt: #F5F5F7;
+      --card: #FFFFFF;
+      --card-hover: #F5F5F7;
+
+      /* Light Theme Text */
+      --text: #1D1D1F;
+      --text-2: #6E6E73;
+      --text-3: #A1A1A6;
+
+      /* Borders */
+      --border: rgba(0,0,0,0.06);
+      --border-hover: rgba(0,0,0,0.12);
+
+      /* Legacy mappings for compatibility */
+      --white: #FFFFFF;
+      --navy: #1D1D1F;
+      --navy-deep: #FBFBFD;
+      --navy-light: #F5F5F7;
+      --navy-card: #FFFFFF;
       --gray-100: #f0f2f5;
       --gray-200: #dde1e8;
-      --gray-400: #8b93a7;
-      --gray-600: #5a6380;
-      --black: #060a1e;
-
-      --mint-bg: #e8faf0;
+      --gray-400: #A1A1A6;
+      --gray-600: #6E6E73;
+      --black: #1D1D1F;
+      --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
+      --green-glow: rgba(43, 221, 127, 0.12);
+      --green-subtle: rgba(43, 221, 127, 0.06);
+      --r: 20px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--navy-deep);
-      color: var(--white);
+      font-family: 'Instrument Sans', 'Geist', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
     }
 
     /* ============ LOGO SVG ============ */
@@ -82,7 +101,7 @@
     .feature-visual .floating-device {
       font-size: 8rem;
       animation: float 6s ease-in-out infinite;
-      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
       position: relative;
       z-index: 1;
     }
@@ -98,10 +117,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(8, 15, 46, 0.85);
+      background: rgba(251, 251, 253, 0.72);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(43, 221, 127, 0.08);
+      border-bottom: 0.5px solid var(--border);
       transition: background 0.3s;
     }
 
@@ -113,7 +132,7 @@
     }
 
     .nav-links a {
-      color: var(--gray-400);
+      color: var(--text-2);
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 500;
@@ -121,8 +140,8 @@
       transition: color 0.25s;
     }
 
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a.active { color: var(--white); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
 
     .nav-catalog {
       background: transparent;
@@ -143,7 +162,7 @@
 
     .nav-cta {
       background: var(--green);
-      color: var(--navy-deep) !important;
+      color: #FFFFFF !important;
       padding: 10px 24px;
       border-radius: 100px;
       font-weight: 700 !important;
@@ -171,7 +190,7 @@
     .nav-hamburger span {
       width: 22px;
       height: 2px;
-      background: var(--white);
+      background: var(--text);
       border-radius: 2px;
       transition: 0.3s;
     }
@@ -187,7 +206,7 @@
       position: relative;
       padding: 120px 24px 80px;
       overflow: hidden;
-      background: var(--navy-deep);
+      background: var(--bg);
     }
 
     .hero::before {
@@ -198,7 +217,7 @@
       transform: translateX(-50%);
       width: 1000px;
       height: 1000px;
-      background: radial-gradient(circle, rgba(43,221,127,0.1) 0%, rgba(43,221,127,0.03) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, rgba(43,221,127,0.02) 40%, transparent 70%);
       pointer-events: none;
     }
 
@@ -218,8 +237,8 @@
       position: absolute;
       inset: 0;
       background-image: 
-        linear-gradient(rgba(43,221,127,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(43,221,127,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
       background-size: 80px 80px;
       pointer-events: none;
       mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
@@ -259,10 +278,10 @@
     }
 
     .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: clamp(4rem, 12vw, 10.5rem);
-      line-height: 0.88;
-      letter-spacing: -2px;
+      line-height: 1;
+      letter-spacing: -0.04em;
       animation: fadeUp 0.8s ease-out 0.1s both;
       position: relative;
       z-index: 1;
@@ -278,7 +297,7 @@
 
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--gray-400);
+      color: var(--text-2);
       max-width: 540px;
       margin: 32px auto 0;
       line-height: 1.7;
@@ -301,7 +320,7 @@
 
     .btn-primary {
       background: var(--green);
-      color: var(--navy-deep);
+      color: #FFFFFF;
       padding: 16px 36px;
       border-radius: 100px;
       font-size: 0.9rem;
@@ -344,14 +363,14 @@
     }
 
     .btn-dark {
-      background: var(--navy);
+      background: var(--card);
       color: var(--white);
       padding: 16px 36px;
       border-radius: 100px;
       font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 0.5px solid var(--border);
       transition: all 0.3s;
       display: inline-flex;
       align-items: center;
@@ -377,8 +396,8 @@
     .hero-device {
       width: 115px;
       height: 115px;
-      background: rgba(13, 24, 69, 0.7);
-      border: 1px solid rgba(43, 221, 127, 0.1);
+      background: var(--bg-alt);
+      border: 0.5px solid var(--border);
       border-radius: 22px;
       display: flex;
       flex-direction: column;
@@ -386,7 +405,7 @@
       justify-content: center;
       gap: 8px;
       font-size: 0.7rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       font-weight: 600;
       letter-spacing: 0.5px;
       transition: all 0.35s;
@@ -397,7 +416,7 @@
     .hero-device:hover {
       border-color: var(--green);
       background: rgba(43, 221, 127, 0.06);
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       color: var(--white);
       box-shadow: 0 8px 30px rgba(43, 221, 127, 0.1);
     }
@@ -428,9 +447,9 @@
     .marquee-section {
       padding: 18px 0;
       border-top: 1px solid rgba(43,221,127,0.08);
-      border-bottom: 1px solid rgba(43,221,127,0.08);
+      border-bottom: 0.5px solid var(--border);
       overflow: hidden;
-      background: rgba(43, 221, 127, 0.02);
+      background: var(--bg-alt);
     }
 
     .marquee-track {
@@ -446,7 +465,7 @@
       padding: 0 36px;
       white-space: nowrap;
       font-size: 0.78rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -477,16 +496,16 @@
     }
 
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -1px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       margin-bottom: 20px;
     }
 
     .section-desc {
       font-size: 1.05rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       line-height: 1.7;
       max-width: 550px;
     }
@@ -512,8 +531,8 @@
     }
 
     .step-card {
-      background: var(--navy);
-      border: 1px solid rgba(43,221,127,0.08);
+      background: var(--card);
+      border: 0.5px solid var(--border);
       border-radius: 28px;
       padding: 40px 24px 36px;
       position: relative;
@@ -522,9 +541,9 @@
     }
 
     .step-card:hover {
-      border-color: rgba(43,221,127,0.2);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
     }
 
     .step-card::before {
@@ -542,10 +561,10 @@
     .step-card:hover::before { opacity: 1; }
 
     .step-number {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: 5.5rem;
       line-height: 1;
-      color: rgba(43, 221, 127, 0.05);
+      color: rgba(43, 221, 127, 0.08);
       position: absolute;
       top: 16px;
       right: 24px;
@@ -571,7 +590,7 @@
     }
 
     .step-card p {
-      color: var(--gray-400);
+      color: var(--text-2);
       font-size: 0.92rem;
       line-height: 1.65;
     }
@@ -602,13 +621,13 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #041225, var(--navy) 60%, #062015);
+      background: linear-gradient(135deg, var(--bg-alt), var(--card) 60%, var(--bg-alt));
     }
 
     .feature-visual .floating-device {
       font-size: 8rem;
       animation: float 6s ease-in-out infinite;
-      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
     }
 
     .feature-visual .glow-ring {
@@ -616,7 +635,7 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      border: 1px solid rgba(43,221,127,0.15);
+      border: 0.5px solid rgba(43,221,127,0.15);
       animation: ringPulse 4s ease-in-out infinite;
     }
 
@@ -642,19 +661,19 @@
       flex-direction: column;
       justify-content: center;
       padding: 80px 64px;
-      background: var(--navy);
+      background: var(--card);
     }
 
     .feature-content h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: 3.5rem;
-      line-height: 0.95;
-      letter-spacing: -1px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       margin-bottom: 20px;
     }
 
     .feature-content p {
-      color: var(--gray-400);
+      color: var(--text-2);
       font-size: 1rem;
       line-height: 1.7;
       margin-bottom: 24px;
@@ -671,9 +690,9 @@
       align-items: center;
       gap: 14px;
       padding: 12px 0;
-      border-bottom: 1px solid rgba(43,221,127,0.06);
+      border-bottom: 0.5px solid var(--border);
       font-size: 0.92rem;
-      color: var(--gray-200);
+      color: var(--text-2);
     }
 
     .feature-list li .check {
@@ -713,8 +732,8 @@
     }
 
     .service-card {
-      background: var(--navy);
-      border: 1px solid rgba(43,221,127,0.08);
+      background: var(--card);
+      border: 0.5px solid var(--border);
       border-radius: 24px;
       padding: 40px 28px;
       text-align: center;
@@ -725,9 +744,9 @@
     }
 
     .service-card:hover {
-      border-color: rgba(43,221,127,0.25);
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
     }
 
     .service-card .service-emoji {
@@ -745,14 +764,14 @@
 
     .service-card p {
       font-size: 0.82rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       line-height: 1.55;
     }
 
     .service-card .service-price {
       display: inline-block;
       margin-top: 20px;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: 1.4rem;
       color: var(--green);
       letter-spacing: 1px;
@@ -780,9 +799,9 @@
     /* ============ STATS ============ */
     .stats-section {
       padding: 100px 48px;
-      border-top: 1px solid rgba(43,221,127,0.06);
-      border-bottom: 1px solid rgba(43,221,127,0.06);
-      background: rgba(43, 221, 127, 0.02);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      background: var(--text);
     }
 
     .stats-grid {
@@ -795,7 +814,7 @@
     }
 
     .stat-item .stat-number {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: 4rem;
       line-height: 1;
       color: var(--green);
@@ -804,7 +823,7 @@
     .stat-item .stat-label {
       margin-top: 8px;
       font-size: 0.82rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       font-weight: 500;
       letter-spacing: 0.5px;
     }
@@ -815,8 +834,8 @@
       border-radius: 36px;
       overflow: hidden;
       position: relative;
-      background: var(--navy);
-      border: 1px solid rgba(43,221,127,0.1);
+      background: var(--text);
+      border: 0.5px solid var(--border);
     }
 
     .tradein-section::before {
@@ -859,7 +878,7 @@
       width: 165px;
       height: 205px;
       background: rgba(43,221,127,0.04);
-      border: 1px solid rgba(43,221,127,0.12);
+      border: 0.5px solid var(--border);
       border-radius: 24px;
       display: flex;
       flex-direction: column;
@@ -872,7 +891,7 @@
 
     .tradein-device span {
       font-size: 0.75rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       font-weight: 600;
     }
 
@@ -917,8 +936,8 @@
     }
 
     .product-card {
-      background: var(--navy);
-      border: 1px solid rgba(43,221,127,0.08);
+      background: var(--card);
+      border: 0.5px solid var(--border);
       border-radius: 24px;
       overflow: hidden;
       transition: all 0.4s;
@@ -926,9 +945,9 @@
     }
 
     .product-card:hover {
-      border-color: rgba(43,221,127,0.2);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
     }
 
     .product-image {
@@ -937,7 +956,7 @@
       align-items: center;
       justify-content: center;
       font-size: 5rem;
-      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      background: linear-gradient(135deg, var(--bg-alt), var(--card));
       position: relative;
     }
 
@@ -952,7 +971,7 @@
       padding: 6px 14px;
       border-radius: 100px;
       background: var(--green);
-      color: var(--navy-deep);
+      color: #FFFFFF;
     }
 
     .product-info {
@@ -967,12 +986,12 @@
 
     .product-info .product-spec {
       font-size: 0.78rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       margin-bottom: 16px;
     }
 
     .product-info .product-price {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Geist', sans-serif;
       font-size: 1.8rem;
       color: var(--white);
       letter-spacing: 1px;
@@ -999,13 +1018,13 @@
     .client-logo {
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--gray-600);
+      color: var(--text-2);
       letter-spacing: 2px;
       text-transform: uppercase;
       opacity: 0.45;
       transition: all 0.3s;
       padding: 14px 24px;
-      border: 1px solid rgba(43,221,127,0.05);
+      border: 0.5px solid var(--border);
       border-radius: 12px;
     }
 
@@ -1018,10 +1037,10 @@
     /* ============ EMPRESAS ============ */
     .empresas-section {
       margin: 60px 48px;
-      background: var(--white);
+      background: var(--text);
       border-radius: 36px;
       padding: 100px 64px;
-      color: var(--navy-deep);
+      color: var(--white);
       position: relative;
       overflow: hidden;
     }
@@ -1046,8 +1065,8 @@
       align-items: center;
     }
 
-    .empresas-content .section-title { color: var(--navy-deep); }
-    .empresas-content .section-desc { color: var(--gray-600); }
+    .empresas-content .section-title { color: var(--white); }
+    .empresas-content .section-desc { color: var(--text-3); }
 
     .empresas-features {
       display: grid;
@@ -1077,13 +1096,13 @@
     .emp-feature h4 {
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--navy-deep);
+      color: var(--text);
       margin-bottom: 6px;
     }
 
     .emp-feature p {
       font-size: 0.78rem;
-      color: var(--gray-600);
+      color: var(--text-2);
       line-height: 1.55;
     }
 
@@ -1124,8 +1143,8 @@
     }
 
     .contact-card {
-      background: var(--navy);
-      border: 1px solid rgba(43,221,127,0.08);
+      background: var(--card);
+      border: 0.5px solid var(--border);
       border-radius: 20px;
       padding: 32px 24px;
       text-align: center;
@@ -1133,7 +1152,7 @@
     }
 
     .contact-card:hover {
-      border-color: rgba(43,221,127,0.2);
+      border-color: var(--border-hover);
       transform: translateY(-4px);
     }
 
@@ -1150,13 +1169,13 @@
 
     .contact-card p {
       font-size: 0.8rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       line-height: 1.55;
     }
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: 1px solid rgba(43,221,127,0.06);
+      border-top: 0.5px solid var(--border);
       padding: 64px 48px 40px;
       max-width: 1400px;
       margin: 0 auto;
@@ -1171,7 +1190,7 @@
 
     .footer-brand p {
       font-size: 0.82rem;
-      color: var(--gray-400);
+      color: var(--text-2);
       line-height: 1.6;
       max-width: 300px;
       margin-top: 16px;
@@ -1191,7 +1210,7 @@
     .footer-col ul li { margin-bottom: 10px; }
 
     .footer-col ul a {
-      color: var(--gray-600);
+      color: var(--text-2);
       text-decoration: none;
       font-size: 0.82rem;
       transition: color 0.2s;
@@ -1200,7 +1219,7 @@
     .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 1px solid rgba(43,221,127,0.06);
+      border-top: 0.5px solid var(--border);
       padding-top: 32px;
       display: flex;
       justify-content: space-between;
@@ -1211,7 +1230,7 @@
 
     .footer-bottom p {
       font-size: 0.72rem;
-      color: var(--gray-600);
+      color: var(--text-2);
     }
 
     .footer-socials {
@@ -1224,11 +1243,11 @@
       height: 36px;
       border-radius: 50%;
       background: rgba(43, 221, 127, 0.08);
-      border: 1px solid rgba(43, 221, 127, 0.1);
+      border: 0.5px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gray-400);
+      color: var(--text-2);
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -1236,7 +1255,7 @@
     .footer-socials a:hover {
       background: var(--green);
       border-color: var(--green);
-      color: var(--navy-deep);
+      color: #FFFFFF;
     }
 
     /* ============ SCROLL ANIMATIONS ============ */
@@ -1316,7 +1335,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(8, 15, 46, 0.98);
+        background: rgba(251, 251, 253, 0.98);
         backdrop-filter: blur(20px);
         padding: 40px 28px;
         gap: 20px;
@@ -1664,7 +1683,7 @@
       </div>
       <div class="product-card reveal">
         <div class="product-image">
-          <span class="product-tag" style="background: #ff9f0a; color: var(--navy-deep);">Oferta</span>
+          <span class="product-tag" style="background: #ff9f0a; color: var(--text);">Oferta</span>
           📱
         </div>
         <div class="product-info">
@@ -1706,7 +1725,7 @@
         <h2 class="section-title">TU FLOTA TECH,<br>BAJO CONTROL.</h2>
         <p class="section-desc">Soluciones corporativas de reparación, leasing y mantenimiento. Haz más sencillo el alquiler, manejo y actualización de tu equipo de cómputo.</p>
         <div style="margin-top: 32px;">
-          <a href="#contacto" class="btn-primary" style="background: var(--navy); color: var(--white);">Cotiza Con Nosotros →</a>
+          <a href="#contacto" class="btn-primary" style="background: var(--card); color: var(--white);">Cotiza Con Nosotros →</a>
         </div>
       </div>
       <div class="empresas-features reveal">
@@ -1827,8 +1846,8 @@
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       nav.style.background = window.scrollY > 60
-        ? 'rgba(8, 15, 46, 0.96)'
-        : 'rgba(8, 15, 46, 0.85)';
+        ? 'rgba(251, 251, 253, 0.88)'
+        : 'rgba(251, 251, 253, 0.72)';
     });
 
     // Smooth scroll
