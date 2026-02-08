@@ -516,152 +516,127 @@
       margin-top: 2px;
     }
 
-    /* ============ DIAGNOSTIC OVERLAY ON EXCHANGE VISUAL ============ */
-    .exchange-vis .ev-diag-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      border: 1px dashed rgba(43,221,127,0.08);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .exchange-vis .ev-diag-ring:nth-child(1) { width: 320px; height: 320px; }
-    .exchange-vis .ev-diag-ring:nth-child(2) { width: 440px; height: 440px; border-style: solid; border-color: rgba(43,221,127,0.05); }
-
-    .exchange-vis .ev-reticle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 380px;
-      height: 380px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(43,221,127,0.1);
-      animation: evReticleSpin 30s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .exchange-vis .ev-reticle::before {
+    /* ============ PREMIUM EXCHANGE ENHANCEMENTS ============ */
+    /* Scan sweep ONLY on old device */
+    .ev-device.old .evd-screen::after {
       content: '';
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--green);
-      border-radius: 50%;
-      box-shadow: 0 0 14px rgba(43,221,127,0.6);
-    }
-
-    .exchange-vis .ev-reticle::after {
-      content: '';
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      bottom: 20%;
-      right: -3px;
-      background: rgba(43,221,127,0.5);
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(43,221,127,0.4);
-    }
-
-    @keyframes evReticleSpin {
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* Corner brackets */
-    .exchange-vis .ev-bracket {
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border-color: var(--green);
-      border-style: solid;
-      border-width: 0;
-      z-index: 1;
-      opacity: 0.4;
-    }
-
-    .ev-bracket.eb-tl { top: 20px; left: 20px; border-top-width: 2px; border-left-width: 2px; }
-    .ev-bracket.eb-tr { top: 20px; right: 20px; border-top-width: 2px; border-right-width: 2px; }
-    .ev-bracket.eb-bl { bottom: 80px; left: 20px; border-bottom-width: 2px; border-left-width: 2px; }
-    .ev-bracket.eb-br { bottom: 80px; right: 20px; border-bottom-width: 2px; border-right-width: 2px; }
-
-    /* Floating status tags */
-    .exchange-vis .ev-tag {
-      position: absolute;
-      z-index: 7;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      padding: 6px 12px;
-      backdrop-filter: blur(10px);
-    }
-
-    .ev-tag .evt-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .evt-dot.dot-warn { background: #ff9f0a; box-shadow: 0 0 8px rgba(255,159,10,0.5); animation: evDotPulse 2s infinite; }
-    .evt-dot.dot-ok { background: var(--green); box-shadow: 0 0 8px rgba(43,221,127,0.5); animation: evDotPulse 2s 0.5s infinite; }
-    .evt-dot.dot-scan { background: #2997ff; box-shadow: 0 0 8px rgba(41,151,255,0.5); animation: evDotPulse 1.5s 0.3s infinite; }
-
-    @keyframes evDotPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.6); }
-    }
-
-    .ev-tag .evt-text {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      line-height: 1.3;
-    }
-
-    .ev-tag .evt-sub {
-      font-size: 0.55rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .evt-sub.sub-warn { color: #ff9f0a; }
-    .evt-sub.sub-ok { color: var(--green); }
-    .evt-sub.sub-scan { color: #2997ff; }
-
-    .ev-tag.et-old { top: 45px; left: 10px; }
-    .ev-tag.et-new { top: 45px; right: 10px; }
-    .ev-tag.et-eval { bottom: 110px; left: 50%; transform: translateX(-50%); }
-
-    /* Scan sweep across exchange */
-    .exchange-vis .ev-scan-sweep {
       position: absolute;
       left: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, transparent 0%, rgba(43,221,127,0.5) 50%, transparent 100%);
-      box-shadow: 0 0 10px rgba(43,221,127,0.3);
-      animation: evScanSweep 5s ease-in-out infinite;
-      z-index: 1;
-      pointer-events: none;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,184,48,0.6) 50%, transparent 100%);
+      box-shadow: 0 0 8px rgba(255,184,48,0.3);
+      animation: oldScan 3s ease-in-out infinite;
+      z-index: 2;
     }
 
-    @keyframes evScanSweep {
-      0% { top: 0; opacity: 0; }
-      10% { opacity: 0.8; }
-      50% { top: 85%; opacity: 0.8; }
-      60% { opacity: 0; }
-      100% { top: 0; opacity: 0; }
+    @keyframes oldScan {
+      0% { top: 0; }
+      50% { top: 100%; }
+      100% { top: 0; }
+    }
+
+    /* Pristine glow on new device */
+    .ev-device.new::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(105deg, transparent 40%, rgba(43,221,127,0.06) 45%, rgba(43,221,127,0.03) 50%, transparent 55%);
+      background-size: 250% 100%;
+      animation: newShimmer 5s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes newShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Status indicators on devices */
+    .ev-status {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .ev-status .evs-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .evs-dot.warn {
+      background: #ff9f0a;
+      box-shadow: 0 0 6px rgba(255,159,10,0.4);
+      animation: evsPulse 2s infinite;
+    }
+
+    .evs-dot.ok {
+      background: var(--green);
+      box-shadow: 0 0 6px rgba(43,221,127,0.4);
+      animation: evsPulse 2s 0.5s infinite;
+    }
+
+    @keyframes evsPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .ev-status .evs-label {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .evs-label.warn { color: #ff9f0a; }
+    .evs-label.ok { color: var(--green); }
+
+    /* Animated connecting line */
+    .ev-connect {
+      position: absolute;
+      top: 50%;
+      left: 140px;
+      right: 140px;
+      height: 1px;
+      background: rgba(13,24,68,0.06);
+      z-index: 1;
+      transform: translateY(-1px);
+    }
+
+    .ev-connect::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      height: 3px;
+      width: 40px;
+      background: linear-gradient(90deg, rgba(255,184,48,0.6), var(--green));
+      border-radius: 100px;
+      animation: connectFlow 3s ease-in-out infinite;
+    }
+
+    @keyframes connectFlow {
+      0% { left: 0; opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { left: calc(100% - 40px); opacity: 0; }
+    }
+
+    /* Animated value counter */
+    .ev-value-tag .evt-val {
+      font-family: 'Geist', sans-serif;
+      font-size: 1.6rem;
+      color: var(--green);
+      line-height: 1;
+      margin-top: 2px;
     }
 
     /* ============ HOW IT WORKS — HORIZONTAL RAIL (unique pattern — not vertical accordion) ============ */
@@ -1541,36 +1516,6 @@
     <!-- Exchange Visual -->
     <div class="hero-ti-visual">
       <div class="exchange-vis">
-        <!-- Diagnostic overlay rings -->
-        <div class="ev-diag-ring"></div>
-        <div class="ev-diag-ring"></div>
-        <div class="ev-reticle"></div>
-
-        <!-- Corner brackets -->
-        <div class="ev-bracket eb-tl"></div>
-        <div class="ev-bracket eb-tr"></div>
-        <div class="ev-bracket eb-bl"></div>
-        <div class="ev-bracket eb-br"></div>
-
-        <!-- Scan sweep -->
-        <div class="ev-scan-sweep"></div>
-
-        <!-- Status tags -->
-        <div class="ev-tag et-old">
-          <span class="evt-dot dot-warn"></span>
-          <div>
-            <div class="evt-text">Usado</div>
-            <div class="evt-sub sub-warn">Evaluando</div>
-          </div>
-        </div>
-        <div class="ev-tag et-new">
-          <span class="evt-dot dot-ok"></span>
-          <div>
-            <div class="evt-text">Nuevo</div>
-            <div class="evt-sub sub-ok">Listo</div>
-          </div>
-        </div>
-
         <!-- Old device -->
         <div class="ev-old">
           <div class="ev-device old">
@@ -1579,11 +1524,17 @@
             <div class="evd-bar"></div>
           </div>
           <span class="ev-device-label old-label">Tu equipo</span>
+          <div class="ev-status">
+            <span class="evs-dot warn"></span>
+            <span class="evs-label warn">Evaluando</span>
+          </div>
         </div>
 
         <!-- Flow arrows -->
         <div class="ev-arrow-left"></div>
         <div class="ev-arrow-right"></div>
+
+        <div class="ev-connect"></div>
 
         <!-- Center swap -->
         <div class="ev-center">
@@ -1605,6 +1556,10 @@
             <div class="evd-bar"></div>
           </div>
           <span class="ev-device-label new-label">Equipo nuevo</span>
+          <div class="ev-status">
+            <span class="evs-dot ok"></span>
+            <span class="evs-label ok">Listo</span>
+          </div>
         </div>
 
         <!-- Floating value tag -->
