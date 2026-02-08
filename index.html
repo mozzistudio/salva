@@ -21,7 +21,7 @@
       --card-hover: #F5F5F7;
 
       /* Light Theme Text */
-      --text: #1D1D1F;
+      --text: #0d1844;
       --text-2: #6E6E73;
       --text-3: #A1A1A6;
 
@@ -36,7 +36,7 @@
 
       /* Legacy mappings for compatibility */
       --white: #FFFFFF;
-      --navy: #1D1D1F;
+      --navy: #0d1844;
       --navy-deep: #FBFBFD;
       --navy-light: #F5F5F7;
       --navy-card: #FFFFFF;
@@ -44,7 +44,7 @@
       --gray-200: #dde1e8;
       --gray-400: #A1A1A6;
       --gray-600: #6E6E73;
-      --black: #1D1D1F;
+      --black: #0d1844;
       --mint-bg: #F0FFF6;
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
@@ -1211,10 +1211,10 @@
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: 0.5px solid var(--border);
+      border-top: none;
       padding: 48px 24px 32px;
-      background: var(--bg);
-      color: var(--text);
+      background: #0B1A2F;
+      color: rgba(255,255,255,0.85);
     }
 
     .footer-inner {
@@ -1231,7 +1231,7 @@
 
     .footer-brand p {
       font-size: 0.82rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       line-height: 1.6;
       max-width: 300px;
       margin-top: 16px;
@@ -1248,19 +1248,19 @@
 
     .footer-col ul { list-style: none; }
 
-    .footer-col ul li { margin-bottom: 10px; color: var(--text-2); font-size: 0.82rem; }
+    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
 
     .footer-col ul a {
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       text-decoration: none;
       font-size: 0.82rem;
       transition: color 0.2s;
     }
 
-    .footer-col ul a:hover { color: var(--verde); }
+    .footer-col ul a:hover { color: var(--green); }
 
     .footer-bottom {
-      border-top: 0.5px solid var(--border);
+      border-top: 0.5px solid rgba(255,255,255,0.1);
       padding-top: 32px;
       display: flex;
       justify-content: space-between;
@@ -1271,7 +1271,7 @@
 
     .footer-bottom p {
       font-size: 0.72rem;
-      color: var(--text-3);
+      color: rgba(255,255,255,0.35);
     }
 
     .footer-socials {
@@ -1284,11 +1284,11 @@
       height: 44px;
       border-radius: 12px;
       background: transparent;
-      border: 0.5px solid var(--border);
+      border: 1.5px solid var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-2);
+      color: var(--green);
       text-decoration: none;
       transition: all 0.3s;
     }
