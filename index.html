@@ -681,6 +681,132 @@
       50% { transform: translateY(-20px) rotate(2deg); }
     }
 
+    /* ============ DIAGNOSTIC APPLE VISUAL ============ */
+    .feature-visual .fv-reticle {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(43,221,127,0.12);
+      animation: fvReticleSpin 30s linear infinite;
+      z-index: 0;
+    }
+
+    .feature-visual .fv-reticle::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(43,221,127,0.6);
+    }
+
+    .feature-visual .fv-reticle::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      bottom: 18%;
+      right: -3px;
+      background: rgba(43,221,127,0.5);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(43,221,127,0.4);
+    }
+
+    @keyframes fvReticleSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    .feature-visual .fv-bracket {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-color: var(--green);
+      border-style: solid;
+      border-width: 0;
+      z-index: 2;
+      opacity: 0.35;
+    }
+
+    .fv-bracket.fb-tl { top: 32px; left: 32px; border-top-width: 2px; border-left-width: 2px; }
+    .fv-bracket.fb-tr { top: 32px; right: 32px; border-top-width: 2px; border-right-width: 2px; }
+    .fv-bracket.fb-bl { bottom: 32px; left: 32px; border-bottom-width: 2px; border-left-width: 2px; }
+    .fv-bracket.fb-br { bottom: 32px; right: 32px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    .feature-visual .fv-sweep {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(43,221,127,0.4) 50%, transparent 100%);
+      box-shadow: 0 0 10px rgba(43,221,127,0.2);
+      animation: fvSweep 5s ease-in-out infinite;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes fvSweep {
+      0% { top: 0; opacity: 0; }
+      10% { opacity: 0.7; }
+      50% { top: 100%; opacity: 0.7; }
+      60% { opacity: 0; }
+      100% { top: 0; opacity: 0; }
+    }
+
+    .feature-visual .fv-tag {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 7px 14px;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .fv-tag .fvt-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .fvt-dot.fvd-ok { background: var(--green); box-shadow: 0 0 8px rgba(43,221,127,0.5); animation: fvDotPulse 2s infinite; }
+    .fvt-dot.fvd-scan { background: #2997ff; box-shadow: 0 0 8px rgba(41,151,255,0.5); animation: fvDotPulse 2s 0.5s infinite; }
+
+    @keyframes fvDotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.6); }
+    }
+
+    .fv-tag .fvt-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
+
+    .fv-tag .fvt-sub {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .fvt-sub.fvs-ok { color: var(--green); }
+    .fvt-sub.fvs-scan { color: #2997ff; }
+
+    .fv-tag.ft-irp { top: 40px; right: 30px; }
+    .fv-tag.ft-cert { bottom: 50px; left: 30px; }
+
     .feature-content {
       display: flex;
       flex-direction: column;
@@ -1750,12 +1876,32 @@
     <div class="feature-visual">
       <div class="glow-ring"></div>
       <div class="glow-ring"></div>
+      <div class="fv-reticle"></div>
       <div class="floating-device">
         <svg width="120" height="148" viewBox="0 0 120 148" fill="none">
           <path d="M99.8 113.7c-2.3 5.3-5 10.2-8.1 14.7-4.2 6.1-7.7 10.3-10.3 12.7-4.1 3.9-8.5 5.9-13.2 6-3.4 0-7.4-1-12.1-2.9-4.7-1.9-9.1-2.9-13-2.9-4.2 0-8.6 1-13.3 2.9-4.7 2-8.5 3-11.4 3.1-4.5.2-9-1.9-13.5-6.1-2.8-2.6-6.4-7-10.6-13.3-4.5-6.7-8.2-14.5-11.1-23.3C.4 95.3-.8 86.5-.8 78c0-9.8 2.1-18.2 6.3-25.3 3.3-5.6 7.7-10.1 13.2-13.4 5.5-3.3 11.5-5 17.9-5.1 3.6 0 8.3 1.1 14.2 3.3 5.9 2.2 9.6 3.3 11.3 3.3 1.2 0 5.4-1.3 12.4-3.9 6.6-2.4 12.2-3.4 16.8-3 12.4 1 21.7 5.9 27.9 14.7-11.1 6.7-16.6 16.1-16.5 28.2.1 9.4 3.5 17.2 10.2 23.4 3 2.9 6.4 5.1 10.2 6.6-.8 2.4-1.7 4.7-2.7 6.9zM76.6 2.8c0 7.4-2.7 14.3-8 20.7-6.4 7.5-14.2 11.9-22.6 11.2-.1-.9-.2-1.9-.2-2.9 0-7.1 3.1-14.7 8.5-20.9 2.7-3.1 6.2-5.7 10.3-7.8C68.7 1.1 72.6-.1 76.3 0c.1 1 .3 2 .3 2.8z" fill="var(--green)">
             <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
           </path>
         </svg>
+      </div>
+      <div class="fv-bracket fb-tl"></div>
+      <div class="fv-bracket fb-tr"></div>
+      <div class="fv-bracket fb-bl"></div>
+      <div class="fv-bracket fb-br"></div>
+      <div class="fv-sweep"></div>
+      <div class="fv-tag ft-irp">
+        <span class="fvt-dot fvd-ok"></span>
+        <div>
+          <div class="fvt-label">IRP Apple</div>
+          <div class="fvt-sub fvs-ok">Certificado</div>
+        </div>
+      </div>
+      <div class="fv-tag ft-cert">
+        <span class="fvt-dot fvd-scan"></span>
+        <div>
+          <div class="fvt-label">Desde 2016</div>
+          <div class="fvt-sub fvs-scan">Activo</div>
+        </div>
       </div>
     </div>
     <div class="feature-content">
