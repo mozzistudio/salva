@@ -137,7 +137,7 @@
       letter-spacing: -0.02em;
     }
 
-    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
+    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
 
     .btn-primary { background: var(--green); color: #FFFFFF; padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
@@ -242,7 +242,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      font-style: italic;
     }
 
     .hero-ti-desc {
@@ -299,25 +298,6 @@
       width: 480px;
       height: 480px;
     }
-
-    /* Orbital ring */
-    .ev-orbit {
-      position: absolute;
-      inset: 0;
-      border: 1px dashed rgba(43,221,127,0.12);
-      border-radius: 50%;
-      animation: orbitSpin 60s linear infinite;
-    }
-
-    .ev-orbit-inner {
-      position: absolute;
-      inset: 60px;
-      border: 1px solid rgba(43,221,127,0.06);
-      border-radius: 50%;
-      animation: orbitSpin 40s linear infinite reverse;
-    }
-
-    @keyframes orbitSpin { to { transform: rotate(360deg); } }
 
     /* Center exchange icon */
     .ev-center {
@@ -678,7 +658,7 @@
       right: -50%;
       width: 180px;
       height: 180px;
-      background: radial-gradient(circle, rgba(43,221,127,0.04), transparent 70%);
+      background: transparent;
       pointer-events: none;
     }
 
@@ -813,6 +793,7 @@
     .cond-card .cc-pct {
       font-family: 'Geist', sans-serif;
       font-size: 3.5rem;
+      font-weight: 700;
       line-height: 1;
       margin: 16px 0 4px;
     }
@@ -874,7 +855,7 @@
     .eco-inner .eco-label {
       font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--green);
       margin-bottom: 24px;
@@ -910,6 +891,7 @@
     .eco-stat .es-val {
       font-family: 'Geist', sans-serif;
       font-size: 2.5rem;
+      font-weight: 700;
       line-height: 1;
       color: var(--green);
     }
@@ -1188,7 +1170,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(43,221,127,0.06), transparent 60%);
+      background: transparent;
       pointer-events: none;
     }
 
@@ -1240,7 +1222,7 @@
     }
 
     .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; margin-top: 16px; }
-    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--verde); margin-bottom: 20px; }
+    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--verde); margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
     .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
@@ -1411,9 +1393,6 @@
     <!-- Exchange Visual -->
     <div class="hero-ti-visual">
       <div class="exchange-vis">
-        <div class="ev-orbit"></div>
-        <div class="ev-orbit-inner"></div>
-
         <!-- Old device -->
         <div class="ev-old">
           <div class="ev-device old">
