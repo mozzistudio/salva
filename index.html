@@ -933,12 +933,14 @@
     }
 
     .service-card .service-price {
-      display: inline-block;
+      display: block;
       margin-top: 20px;
       font-family: 'Geist', sans-serif;
       font-size: 1.4rem;
+      font-weight: 700;
       color: var(--green);
       letter-spacing: 1px;
+      text-align: center;
     }
 
     .service-card .service-arrow {
@@ -975,6 +977,21 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
       text-align: center;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .stat-item {
+      background: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      padding: 0;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
 
     .stat-item .stat-number {
@@ -983,6 +1000,10 @@
       font-weight: 800;
       line-height: 1;
       color: var(--green);
+      background: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
     }
 
     .stat-item .stat-label {
@@ -1148,6 +1169,7 @@
 
     .product-info {
       padding: 24px;
+      text-align: center;
     }
 
     .product-info h3 {
@@ -1165,6 +1187,7 @@
     .product-info .product-price {
       font-family: 'Geist', sans-serif;
       font-size: 1.8rem;
+      font-weight: 700;
       color: var(--text);
       letter-spacing: 1px;
     }
@@ -1284,6 +1307,10 @@
       padding: 140px 48px;
       text-align: center;
       position: relative;
+      background: linear-gradient(160deg, var(--text) 0%, rgba(13,24,68,0.95) 60%, rgba(43,221,127,0.12) 100%);
+      border-radius: 36px;
+      margin: 0 48px 80px;
+      overflow: hidden;
     }
 
     .cta-section::before {
@@ -1294,11 +1321,17 @@
       transform: translate(-50%, -50%);
       width: 800px;
       height: 800px;
-      background: transparent;
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .cta-section > * { position: relative; z-index: 1; }
+
+    .cta-section .section-label { color: var(--green); }
+
+    .cta-section .section-title { color: #FFFFFF; }
+
+    .cta-section .section-desc { color: rgba(255,255,255,0.6); }
 
     .cta-buttons {
       display: flex;
@@ -1316,17 +1349,20 @@
     }
 
     .contact-card {
-      background: var(--card);
-      border: 0.5px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.1);
       border-radius: 20px;
       padding: 32px 24px;
       text-align: center;
       transition: all 0.3s;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .contact-card:hover {
-      border-color: var(--border-hover);
+      border-color: rgba(43,221,127,0.3);
       transform: translateY(-4px);
+      background: rgba(255,255,255,0.08);
     }
 
     .contact-card .contact-icon {
@@ -1338,11 +1374,12 @@
       font-size: 0.9rem;
       font-weight: 700;
       margin-bottom: 8px;
+      color: #FFFFFF;
     }
 
     .contact-card p {
       font-size: 0.8rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       line-height: 1.55;
     }
 
@@ -1787,7 +1824,7 @@
       .feature-content { padding: 48px 24px; }
       .product-grid { grid-template-columns: 1fr; }
       .empresas-features { grid-template-columns: 1fr; }
-      .cta-section { padding: 80px 20px; }
+      .cta-section { padding: 80px 20px; margin: 0 16px 60px; }
       footer { padding: 48px 24px 32px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-socials a { width: 40px; height: 40px; }
@@ -2662,8 +2699,8 @@
     <h2 class="section-title">¿Listo para<br>salvar tu máquina?</h2>
     <p class="section-desc" style="margin: 0 auto 44px;">No importa qué le pasó a tu equipo. Nosotros lo resolvemos. Contáctanos ahora y deja el estrés atrás.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp →</a>
-      <a href="#" class="btn-secondary" style="font-size: 1rem; padding: 18px 42px;">Llamar ahora</a>
+      <a href="https://wa.me/+50769780206" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp →</a>
+      <a href="tel:+5073949351" class="btn-ghost" style="font-size: 1rem; padding: 18px 42px; color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2);">Llamar ahora</a>
     </div>
     <div class="contact-grid">
       <div class="contact-card reveal">

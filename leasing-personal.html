@@ -1072,6 +1072,10 @@
       padding: 140px 48px 120px;
       text-align: center;
       position: relative;
+      background: linear-gradient(160deg, var(--text) 0%, rgba(13,24,69,0.95) 60%, rgba(43,221,127,0.12) 100%);
+      border-radius: 36px;
+      margin: 0 48px 80px;
+      overflow: hidden;
     }
 
     .cta-lease::before {
@@ -1082,7 +1086,7 @@
       transform: translate(-50%, -50%);
       width: 700px;
       height: 700px;
-      background: transparent;
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -1094,6 +1098,7 @@
       line-height: 1;
       letter-spacing: -0.03em;
       margin-bottom: 20px;
+      color: #FFFFFF;
     }
 
     .cta-lease h2 .accent {
@@ -1105,11 +1110,13 @@
 
     .cta-lease > p {
       font-size: 1.05rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.6);
       line-height: 1.7;
       max-width: 480px;
       margin: 0 auto 40px;
     }
+
+    .cta-lease .label { color: var(--green); }
 
     .cta-btns {
       display: flex;
@@ -1131,26 +1138,29 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      background: var(--card);
-      border: 0.5px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.1);
       border-radius: 100px;
       padding: 14px 28px 14px 16px;
       transition: all 0.3s;
       text-decoration: none;
-      color: var(--text);
+      color: #FFFFFF;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .cpill:hover {
-      border-color: var(--green);
+      border-color: rgba(43,221,127,0.3);
       transform: translateY(-3px);
       box-shadow: 0 8px 30px rgba(43,221,127,0.1);
+      background: rgba(255,255,255,0.08);
     }
 
     .cpill .cp-ico {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(43,221,127,0.1);
+      background: rgba(43,221,127,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1164,7 +1174,7 @@
 
     .cpill .cp-label {
       font-size: 0.68rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.5);
       font-weight: 600;
       letter-spacing: 0.3px;
       text-transform: uppercase;
@@ -1173,7 +1183,7 @@
     .cpill .cp-value {
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--text);
+      color: #FFFFFF;
     }
 
     /* ============ FOOTER (consistent) ============ */
@@ -1239,7 +1249,7 @@
       .compare-panels { padding: 80px 20px; }
       .faq-section { padding: 80px 20px; }
       .eco-band { margin: 0 16px; padding: 56px 24px; }
-      .cta-lease { padding: 80px 20px 60px; }
+      .cta-lease { padding: 80px 20px 60px; margin: 0 16px 60px; }
       footer { padding: 48px 20px 32px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
@@ -1733,7 +1743,7 @@
     <p>Sin compromiso. Te respondemos el mismo día con una cotización personalizada. Solo dinos qué equipo quieres y nosotros armamos tu plan.</p>
     <div class="cta-btns">
       <a href="https://wa.me/+50769784955" class="btn-primary" style="font-size: 1rem; padding: 18px 42px;">WhatsApp →</a>
-      <a href="tel:+5073949351" class="btn-ghost" style="font-size: 1rem; padding: 18px 42px;">Llamar ahora</a>
+      <a href="tel:+5073949351" class="btn-ghost" style="font-size: 1rem; padding: 18px 42px; color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2);">Llamar ahora</a>
     </div>
     <div class="contact-pills">
       <a href="#" class="cpill">

@@ -691,7 +691,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       text-align: center;
     }
@@ -700,10 +700,15 @@
       padding: 20px 12px;
       border-radius: 20px;
       transition: all 0.3s;
+      background: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .sb-stat:hover {
-      background: rgba(43,221,127,0.04);
+      background: none;
       transform: translateY(-4px);
     }
 
@@ -713,6 +718,9 @@
       line-height: 1;
       color: var(--green);
       font-weight: 800;
+      background: none;
+      border: none;
+      box-shadow: none;
     }
 
     .sb-stat .sb-label {

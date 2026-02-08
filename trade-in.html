@@ -50,6 +50,8 @@
       --mint-border: #c8f0da;
       --green-glow: rgba(43, 221, 127, 0.12);
       --green-subtle: rgba(43, 221, 127, 0.06);
+      --amber: #FFB830;
+      --amber-glow: rgba(255, 184, 48, 0.12);
       --r: 20px;
     }
 
@@ -755,6 +757,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      justify-items: stretch;
     }
 
     .dcat {
@@ -817,6 +820,8 @@
       margin-top: 20px;
       padding-top: 20px;
       border-top: 0.5px solid var(--border);
+      text-align: center;
+      width: 100%;
     }
 
     .dcat .dcat-range-label {
@@ -826,6 +831,7 @@
       text-transform: uppercase;
       color: var(--text-2);
       margin-bottom: 6px;
+      text-align: center;
     }
 
     .dcat .dcat-range-val {
@@ -834,6 +840,7 @@
       font-weight: 800;
       color: var(--green);
       line-height: 1;
+      text-align: center;
     }
 
     /* ============ CONDITION TIERS — UNIQUE VISUAL SCALE ============ */
@@ -871,32 +878,32 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(180deg, rgba(13,24,69,0.95) 0%, rgba(13,24,69,0.7) 60%, rgba(43,221,127,0.08) 100%);
+      border: 0.5px solid rgba(255,255,255,0.08);
     }
 
     .cond-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 40px rgba(13,24,68,0.06);
+      box-shadow: 0 12px 48px rgba(13,24,68,0.2);
     }
 
     .cond-card.cc-excellent {
-      background: var(--card);
-      border: 2px solid var(--green);
+      border: 2px solid rgba(43,221,127,0.4);
       box-shadow: 0 4px 24px rgba(0, 210, 106, 0.08);
     }
 
     .cond-card.cc-good {
-      background: var(--card);
-      border: 0.5px solid var(--border);
+      border: 0.5px solid rgba(255,255,255,0.1);
     }
 
     .cond-card.cc-fair {
-      background: var(--card);
-      border: 0.5px solid var(--border);
+      border: 0.5px solid rgba(255,255,255,0.1);
     }
 
     .cond-card .cc-badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       padding: 6px 16px;
       border-radius: 100px;
@@ -907,13 +914,13 @@
       margin-bottom: 20px;
     }
 
-    .cc-excellent .cc-badge { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cc-good .cc-badge { background: rgba(43,221,127,0.08); color: var(--green); }
-    .cc-fair .cc-badge { background: var(--amber-glow); color: var(--amber); }
+    .cc-excellent .cc-badge { background: rgba(43,221,127,0.2); color: var(--green); }
+    .cc-good .cc-badge { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
+    .cc-fair .cc-badge { background: rgba(255,184,48,0.15); color: var(--amber); }
 
-    .cond-card .cc-icon { font-size: 3rem; margin-bottom: 16px; display: block; }
+    .cond-card .cc-icon { font-size: 3rem; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
 
-    .cond-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+    .cond-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: #FFFFFF; }
 
     .cond-card .cc-pct {
       font-family: 'Geist', sans-serif;
@@ -929,7 +936,7 @@
 
     .cond-card .cc-pct-label {
       font-size: 0.72rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.45);
       font-weight: 600;
     }
 
@@ -944,21 +951,21 @@
       gap: 10px;
       padding: 8px 0;
       font-size: 0.8rem;
-      color: var(--text-2);
-      border-bottom: 1px solid var(--border);
+      color: rgba(255,255,255,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .cond-card .cc-check:last-child { border-bottom: none; }
 
     .cc-check .cci { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; flex-shrink: 0; }
-    .cc-excellent .cci { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cc-good .cci { background: rgba(43,221,127,0.1); color: var(--green); }
-    .cc-fair .cci { background: var(--amber-glow); color: var(--amber); }
+    .cc-excellent .cci { background: rgba(43,221,127,0.2); color: var(--green); }
+    .cc-good .cci { background: rgba(43,221,127,0.12); color: var(--green); }
+    .cc-fair .cci { background: rgba(255,184,48,0.15); color: var(--amber); }
 
-    /* Excellent card — clean light style */
-    .cc-excellent h3 { color: var(--text); }
-    .cc-excellent .cc-pct-label { color: var(--text-2); }
-    .cc-excellent .cc-check { color: var(--text-2); border-bottom-color: var(--border); }
+    /* Excellent card styling */
+    .cc-excellent h3 { color: #FFFFFF; }
+    .cc-excellent .cc-pct-label { color: rgba(255,255,255,0.45); }
+    .cc-excellent .cc-check { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.08); }
 
     .cmp-tradein h3 { color: #FFFFFF; }
     .cmp-tradein .cmp-item { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
@@ -1278,7 +1285,7 @@
     /* ============ CTA ============ */
     .cta-ti {
       margin: 0 48px 80px;
-      background: linear-gradient(145deg, var(--card) 0%, rgba(43,221,127,0.06) 100%);
+      background: linear-gradient(160deg, var(--text) 0%, rgba(13,24,69,0.95) 60%, rgba(43,221,127,0.12) 100%);
       border: 0.5px solid rgba(43,221,127,0.15);
       border-radius: 36px;
       padding: 80px 56px;
@@ -1295,7 +1302,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 600px;
-      background: transparent;
+      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -1307,6 +1314,7 @@
       line-height: 1.05;
       letter-spacing: -0.03em;
       margin-bottom: 16px;
+      color: #FFFFFF;
     }
 
     .cta-ti h2 .accent {
@@ -1318,11 +1326,13 @@
 
     .cta-ti > p {
       font-size: 1rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.6);
       max-width: 520px;
       margin: 0 auto 36px;
       line-height: 1.7;
     }
+
+    .cta-ti .label { color: var(--green); }
 
     .cta-ti-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
