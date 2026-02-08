@@ -895,33 +895,10 @@
 
     .offset-visual {
       position: relative;
-      background: linear-gradient(135deg, var(--bg-alt) 0%, var(--card) 50%, var(--bg-alt) 100%);
-      border: 0.5px solid var(--border);
-      border-radius: 28px;
       height: 360px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      box-shadow: inset 0 0 0 1px rgba(13,24,68,0.03), 0 12px 30px rgba(13,24,68,0.06);
-    }
-
-    .offset-visual::before {
-      content: '';
-      position: absolute;
-      inset: 16px;
-      border-radius: 22px;
-      border: 1px solid rgba(43,221,127,0.18);
-      background: transparent;
-      opacity: 0.8;
-    }
-
-    .offset-visual::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      opacity: 0.7;
     }
 
     .offset-visual .ov-emoji {
@@ -1357,7 +1334,7 @@
       .b1, .b2, .b3, .b4, .b5, .b6, .b7 { grid-column: auto; grid-row: auto; }
       .offset-row, .offset-row.reverse { grid-template-columns: 1fr; }
       .offset-row.reverse .offset-visual, .offset-row.reverse .offset-text { order: unset; }
-      .offset-visual { height: 280px; }
+      .offset-visual { height: auto; }
       .compare-cards { grid-template-columns: 1fr; }
       .process-track { flex-direction: column; gap: 32px; }
       .process-track::before { display: none; }
@@ -1527,53 +1504,6 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-illustration">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="85" fill="#E6FBF0"/>
-          <g style="transform-origin: 100px 168px; animation: buildingGrow 4s ease-in-out infinite;">
-            <rect x="70" y="55" width="60" height="115" rx="4" fill="#1A1D2B"/>
-            <rect x="80" y="65" width="12" height="10" rx="2" fill="#00D26A" opacity="0.6" style="animation: windowBlink 4s ease-in-out infinite 0.2s;"/>
-            <rect x="108" y="65" width="12" height="10" rx="2" fill="#00D26A" opacity="0.4" style="animation: windowBlink 4s ease-in-out infinite 0.8s;"/>
-            <rect x="80" y="85" width="12" height="10" rx="2" fill="#00D26A" opacity="0.5" style="animation: windowBlink 4s ease-in-out infinite 1.4s;"/>
-            <rect x="108" y="85" width="12" height="10" rx="2" fill="#00D26A" opacity="0.7" style="animation: windowBlink 4s ease-in-out infinite 0.5s;"/>
-            <rect x="80" y="105" width="12" height="10" rx="2" fill="#00D26A" opacity="0.4" style="animation: windowBlink 4s ease-in-out infinite 1.1s;"/>
-            <rect x="108" y="105" width="12" height="10" rx="2" fill="#00D26A" opacity="0.6" style="animation: windowBlink 4s ease-in-out infinite 1.7s;"/>
-            <rect x="80" y="125" width="12" height="10" rx="2" fill="#00D26A" opacity="0.3" style="animation: windowBlink 4s ease-in-out infinite 0.3s;"/>
-            <rect x="108" y="125" width="12" height="10" rx="2" fill="#00D26A" opacity="0.5" style="animation: windowBlink 4s ease-in-out infinite 0.9s;"/>
-            <rect x="92" y="148" width="16" height="22" rx="3" fill="#2D3142"/>
-          </g>
-          <rect x="35" y="90" width="35" height="80" rx="3" fill="#2D3142"/>
-          <rect x="42" y="100" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.3" style="animation: windowBlink 4s ease-in-out infinite 0.6s;"/>
-          <rect x="55" y="100" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.4" style="animation: windowBlink 4s ease-in-out infinite 1.2s;"/>
-          <rect x="42" y="115" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.5" style="animation: windowBlink 4s ease-in-out infinite 1.8s;"/>
-          <rect x="55" y="115" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.3" style="animation: windowBlink 4s ease-in-out infinite 0.4s;"/>
-          <rect x="130" y="100" width="38" height="70" rx="3" fill="#2D3142"/>
-          <rect x="137" y="110" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.4" style="animation: windowBlink 4s ease-in-out infinite 1s;"/>
-          <rect x="153" y="110" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.3" style="animation: windowBlink 4s ease-in-out infinite 1.6s;"/>
-          <rect x="137" y="125" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.5" style="animation: windowBlink 4s ease-in-out infinite 0.7s;"/>
-          <rect x="153" y="125" width="8" height="8" rx="1.5" fill="#00D26A" opacity="0.6" style="animation: windowBlink 4s ease-in-out infinite 1.3s;"/>
-          <circle cx="52" cy="85" r="4" fill="#00D26A">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="148" cy="95" r="4" fill="#00D26A">
-            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-          </circle>
-          <circle cx="100" cy="45" r="5" fill="#00D26A">
-            <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-          </circle>
-          <line x1="52" y1="85" x2="100" y2="45" stroke="#00D26A" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4">
-            <animate attributeName="stroke-dashoffset" values="0;-14" dur="1.5s" repeatCount="indefinite"/>
-          </line>
-          <line x1="148" y1="95" x2="100" y2="45" stroke="#00D26A" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4">
-            <animate attributeName="stroke-dashoffset" values="0;-14" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          </line>
-          <path d="M100 38 C100 35, 104 33, 104 36 C104 39, 100 42, 100 42 C100 42, 96 39, 96 36 C96 33, 100 35, 100 38Z" fill="white"/>
-          <line x1="25" y1="170" x2="175" y2="170" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
     </div>
   </section>
 
@@ -1649,43 +1579,6 @@
   <section class="offset-section">
     <div class="offset-row reveal-left">
       <div class="offset-visual">
-        <div class="hero-illustration">
-          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="85" fill="#E6FBF0"/>
-            <g style="animation: bagFloat 3s ease-in-out infinite;">
-              <path d="M55 80 L55 160 C55 165 59 168 64 168 L136 168 C141 168 145 165 145 160 L145 80 Z" fill="white" stroke="#1A1D2B" stroke-width="2.5"/>
-              <path d="M78 80 C78 60, 78 50, 100 50 C122 50, 122 60, 122 80" fill="none" stroke="#1A1D2B" stroke-width="2.5" stroke-linecap="round"/>
-              <g transform="translate(100, 118)">
-                <path d="M0 -12 C0 -20, 12 -24, 12 -15 C12 -6, 0 5, 0 5 C0 5, -12 -6, -12 -15 C-12 -24, 0 -20, 0 -12Z" fill="#00D26A"/>
-                <path d="M2 -18 C2 -18, 6 -24, 10 -22" stroke="#00B85C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              </g>
-              <rect x="58" y="82" width="5" height="40" rx="2.5" fill="#00D26A" opacity="0.08">
-                <animate attributeName="opacity" values="0.05;0.15;0.05" dur="2.5s" repeatCount="indefinite"/>
-                <animate attributeName="height" values="30;50;30" dur="2.5s" repeatCount="indefinite"/>
-              </rect>
-              <g style="transform-origin: 150px 95px; animation: tagSwing 2s ease-in-out infinite;">
-                <rect x="130" y="85" width="42" height="20" rx="10" fill="#00D26A"/>
-                <text x="151" y="99" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="system-ui, sans-serif">NUEVO</text>
-              </g>
-              <g style="transform-origin: 38px 110px; animation: tagSwing 2s ease-in-out infinite 0.5s;">
-                <rect x="18" y="100" width="52" height="20" rx="10" fill="#1A1D2B"/>
-                <text x="44" y="114" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="system-ui, sans-serif">REFURB</text>
-              </g>
-            </g>
-            <circle cx="40" cy="55" r="5" fill="#00D26A" opacity="0.3">
-              <animate attributeName="cy" values="55;48;55" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="165" cy="60" r="4" fill="#00D26A" opacity="0.4">
-              <animate attributeName="cy" values="60;52;60" dur="2.2s" repeatCount="indefinite" begin="0.3s"/>
-            </circle>
-            <g opacity="0.5" style="animation: sparkleAnim 2.5s ease-in-out infinite 0.2s;">
-              <path d="M38 140 L40 136 L42 140 L46 142 L42 144 L40 148 L38 144 L34 142Z" fill="#00D26A"/>
-            </g>
-            <g opacity="0.4" style="animation: sparkleAnim 2.5s ease-in-out infinite 1s;">
-              <path d="M162 130 L164 127 L166 130 L169 131 L166 133 L164 136 L162 133 L159 131Z" fill="#00D26A"/>
-            </g>
-          </svg>
-        </div>
       </div>
       <div class="offset-text">
         <span class="label">Dispositivos nuevos</span>
@@ -1713,59 +1606,6 @@
         <a href="https://wa.me/+50769784955" class="btn-primary">Cotizar reacondicionados →</a>
       </div>
       <div class="offset-visual">
-        <div class="hero-illustration">
-          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="120" cy="120" r="100" fill="#E6FBF0"/>
-            <circle cx="120" cy="120" r="72" fill="none" stroke="#00D26A" stroke-width="1.5" opacity="0.3">
-              <animate attributeName="r" values="72;80;72" dur="3s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.3;0.08;0.3" dur="3s" repeatCount="indefinite"/>
-            </circle>
-            <g style="transform-origin: 120px 120px; animation: orbitalSpin 12s linear infinite;">
-              <circle cx="120" cy="120" r="68" fill="none" stroke="#00D26A" stroke-width="0.5" stroke-dasharray="3 8" opacity="0.25"/>
-              <circle cx="188" cy="120" r="4" fill="#00D26A" opacity="0.7"/>
-              <circle cx="52" cy="120" r="3" fill="#00D26A" opacity="0.5"/>
-            </g>
-            <circle cx="120" cy="120" r="44" fill="#E6FBF0" stroke="#00D26A" stroke-width="1" opacity="0.5"/>
-            <g style="transform-origin: 178px 63px; animation: wrenchSwing 3s ease-in-out infinite;">
-              <rect x="172" y="47" width="4" height="24" rx="2" fill="#1A1D2B"/>
-              <circle cx="174" cy="45" r="7" fill="none" stroke="#1A1D2B" stroke-width="2.5"/>
-              <circle cx="174" cy="45" r="2.5" fill="#E6FBF0"/>
-              <rect x="171" y="69" width="6" height="4" rx="1" fill="#1A1D2B"/>
-            </g>
-            <g style="transform-origin: 55px 175px; animation: gearSpin 5s linear infinite;">
-              <circle cx="55" cy="175" r="11" fill="none" stroke="#00D26A" stroke-width="2.5"/>
-              <circle cx="55" cy="175" r="4.5" fill="#00D26A" opacity="0.3"/>
-              <line x1="55" y1="161" x2="55" y2="166" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="55" y1="184" x2="55" y2="189" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="41" y1="175" x2="46" y2="175" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="64" y1="175" x2="69" y2="175" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="46" y1="166" x2="49.5" y2="169.5" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="60.5" y1="180.5" x2="64" y2="184" stroke="#00D26A" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <g style="transform-origin: 62px 62px; animation: gearSpinReverse 4s linear infinite;">
-              <circle cx="62" cy="62" r="7" fill="none" stroke="#1B5E5A" stroke-width="2" opacity="0.5"/>
-              <circle cx="62" cy="62" r="2.5" fill="#1B5E5A" opacity="0.3"/>
-              <line x1="62" y1="52" x2="62" y2="56" stroke="#1B5E5A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <line x1="62" y1="68" x2="62" y2="72" stroke="#1B5E5A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <line x1="52" y1="62" x2="56" y2="62" stroke="#1B5E5A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <line x1="68" y1="62" x2="72" y2="62" stroke="#1B5E5A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-            </g>
-            <g style="transform-origin: 192px 173px; animation: shieldPulse 2.5s ease-in-out infinite;">
-              <path d="M192 157 L205 163 L205 180 C205 187 199 193 192 195 C185 193 179 187 179 180 L179 163 Z" fill="#00D26A"/>
-              <path d="M186 177 L190 181 L199 171" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                <animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" repeatCount="indefinite"/>
-                <animate attributeName="stroke-dasharray" values="0 20;20 0" dur="1.5s" repeatCount="indefinite"/>
-              </path>
-            </g>
-            <circle cx="30" cy="105" r="2.5" fill="#00D26A" style="animation: sparkleIn 2.5s ease-in-out infinite 0.2s;"/>
-            <circle cx="210" cy="95" r="2" fill="#00D26A" style="animation: sparkleIn 2.8s ease-in-out infinite 0.7s;"/>
-            <circle cx="95" cy="35" r="2" fill="#1B5E5A" style="animation: sparkleIn 3s ease-in-out infinite 1.2s;"/>
-            <circle cx="160" cy="215" r="2.5" fill="#00D26A" style="animation: sparkleIn 2.6s ease-in-out infinite 0.4s;"/>
-            <g opacity="0.5" style="animation: sparkleIn 3s ease-in-out infinite 0.8s;">
-              <path d="M22 150 L24 145 L26 150 L31 152 L26 154 L24 159 L22 154 L17 152Z" fill="#00D26A"/>
-            </g>
-          </svg>
-        </div>
       </div>
     </div>
   </section>
