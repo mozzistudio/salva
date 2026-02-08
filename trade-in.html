@@ -820,17 +820,18 @@
     }
 
     .dcat .dcat-range-label {
-      font-size: 0.62rem;
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--text-2);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .dcat .dcat-range-val {
       font-family: 'Geist', sans-serif;
       font-size: 1.8rem;
+      font-weight: 800;
       color: var(--green);
       line-height: 1;
     }
@@ -878,8 +879,9 @@
     }
 
     .cond-card.cc-excellent {
-      background: linear-gradient(160deg, var(--navy) 0%, rgba(43,221,127,0.08) 100%);
-      border: 2px solid rgba(43,221,127,0.25);
+      background: var(--card);
+      border: 2px solid var(--green);
+      box-shadow: 0 4px 24px rgba(0, 210, 106, 0.08);
     }
 
     .cond-card.cc-good {
@@ -889,7 +891,7 @@
 
     .cond-card.cc-fair {
       background: var(--card);
-      border: 1px solid rgba(255,184,48,0.15);
+      border: 0.5px solid var(--border);
     }
 
     .cond-card .cc-badge {
@@ -916,7 +918,7 @@
     .cond-card .cc-pct {
       font-family: 'Geist', sans-serif;
       font-size: 3.5rem;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1;
       margin: 16px 0 4px;
     }
@@ -953,10 +955,10 @@
     .cc-good .cci { background: rgba(43,221,127,0.1); color: var(--green); }
     .cc-fair .cci { background: var(--amber-glow); color: var(--amber); }
 
-    /* Dark section fixes */
-    .cc-excellent h3 { color: #FFFFFF; }
-    .cc-excellent .cc-pct-label { color: rgba(255,255,255,0.5); }
-    .cc-excellent .cc-check { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
+    /* Excellent card — clean light style */
+    .cc-excellent h3 { color: var(--text); }
+    .cc-excellent .cc-pct-label { color: var(--text-2); }
+    .cc-excellent .cc-check { color: var(--text-2); border-bottom-color: var(--border); }
 
     .cmp-tradein h3 { color: #FFFFFF; }
     .cmp-tradein .cmp-item { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
@@ -1014,14 +1016,14 @@
     .eco-stat .es-val {
       font-family: 'Geist', sans-serif;
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1;
       color: var(--green);
     }
 
     .eco-stat .es-label {
       margin-top: 8px;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--text-2);
       font-weight: 600;
       line-height: 1.4;
