@@ -1,3 +1,4 @@
+<!-- PRIX APPLE TRADE-IN: derniere collecte le 2026-02-27. Source: apple.com/shop/trade-in via 9to5mac.com/2026/01/15/apple-trade-in-values-january-2026/ -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,60 +7,32 @@
   <title>Trade-In — Salva Mi Máquina | Cambia tu equipo por uno nuevo</title>
   <link rel="icon" href="https://cdn.prod.website-files.com/64d26bb91c013aac3de81bbb/6982c124218110474678d598_favicon%20(1).png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Brand Colors — Light Theme */
-      --verde: #2BDD7F;
-      --verde-dark: #1FBF6A;
-      --green: #2BDD7F;
-      --green-dark: #1FBF6A;
-
-      /* Light Theme Backgrounds */
-      --bg: #FBFBFD;
-      --bg-alt: #F5F5F7;
-      --card: #FFFFFF;
-      --card-hover: #F5F5F7;
-
-      /* Light Theme Text */
-      --text: #0d1844;
-      --text-2: #6E6E73;
-      --text-3: #A1A1A6;
-
-      /* Borders */
-      --border: rgba(13,24,68,0.06);
-      --border-hover: rgba(13,24,68,0.12);
-
-      /* Glass */
-      --glass: rgba(255,255,255,0.72);
-      --glass-border: rgba(255,255,255,0.2);
-      --glass-shadow: 0 8px 32px rgba(13,24,68,0.04);
-
-      /* Legacy mappings for compatibility */
-      --white: #FFFFFF;
-      --navy: #0d1844;
-      --navy-deep: #FBFBFD;
-      --navy-light: #F5F5F7;
-      --navy-card: #FFFFFF;
-      --gray-100: #f0f2f5;
-      --gray-200: #dde1e8;
-      --gray-400: #A1A1A6;
-      --gray-600: #6E6E73;
-      --black: #0d1844;
-      --mint-bg: #F0FFF6;
-      --mint-border: #c8f0da;
-      --green-glow: rgba(43, 221, 127, 0.12);
-      --green-subtle: rgba(43, 221, 127, 0.06);
-      --amber: #FFB830;
-      --amber-glow: rgba(255, 184, 48, 0.12);
-      --r: 20px;
+      --bg: #0a0a0a;
+      --bg-alt: #0f0f0f;
+      --card: #141414;
+      --card-hover: #1a1a1a;
+      --green: #34d399;
+      --green-dark: #2bb583;
+      --green-glow: rgba(52, 211, 153, 0.15);
+      --green-subtle: rgba(52, 211, 153, 0.08);
+      --text: #f5f5f5;
+      --text-2: #a1a1a6;
+      --text-3: #6e6e73;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.15);
+      --glass: rgba(10,10,10,0.8);
+      --gold: #f59e0b;
+      --r: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'Instrument Sans', 'Geist', system-ui, sans-serif;
+      font-family: 'DM Sans', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
@@ -67,1440 +40,604 @@
       letter-spacing: -0.01em;
     }
 
+    h1, h2, h3 { font-family: 'Syne', system-ui, sans-serif; }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
     /* ============ NAV ============ */
     .smm-logo { display: inline-flex; align-items: center; text-decoration: none; }
-    .smm-logo img { height: 38px; width: auto; object-fit: contain; flex-shrink: 0; }
+    .smm-logo img { height: 38px; width: auto; object-fit: contain; flex-shrink: 0; filter: brightness(0) invert(1); }
 
     nav {
       position: fixed; top: 0; width: 100%; z-index: 1000;
-      padding: 0 max(24px, calc((100vw - 1200px)/2)); height: 52px;
+      padding: 0 max(24px, calc((100vw - 1200px)/2)); height: 56px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(251, 251, 253, 0.72);
+      background: rgba(10, 10, 10, 0.72);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 0.5px solid var(--border);
-      transition: all 0.4s;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
     }
+    nav.scrolled { background: rgba(10, 10, 10, 0.92); }
 
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--text-2); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links {
+      display: flex; align-items: center; gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-2); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500;
+      padding: 6px 14px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
     .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--text); }
+    .nav-links a.active { color: var(--green); }
+
     .nav-catalog {
-      background: transparent;
+      border: 1px solid var(--border) !important;
       color: var(--green) !important;
-      padding: 8px 18px;
-      border: 1.5px solid var(--green);
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.3px;
-      transition: all 0.25s;
+    }
+    .nav-catalog:hover { background: var(--green-subtle) !important; border-color: var(--green) !important; }
+
+    .nav-cta {
+      background: var(--green) !important; color: #0a0a0a !important;
+      font-weight: 600 !important; border-radius: 8px !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    .nav-hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 5px; padding: 8px;
+    }
+    .nav-hamburger span {
+      width: 20px; height: 2px; background: var(--text);
+      border-radius: 2px; transition: 0.3s;
     }
 
-    .nav-catalog:hover {
-      background: rgba(43, 221, 127, 0.1);
-      transform: scale(1.02);
-    }
-
-    .nav-cta { background: var(--verde); color: var(--white) !important; padding: 8px 20px; border-radius: 980px; font-weight: 600 !important; font-size: 0.8rem !important; transition: all 0.2s; }
-    .nav-cta:hover { background: var(--verde-dark); transform: scale(1.02); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-
-    .whatsapp-widget {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-decoration: none;
-      box-shadow: 0 12px 30px rgba(13,24,68,0.12);
-      z-index: 1200;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .whatsapp-widget:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 16px 40px rgba(13,24,68,0.15);
-    }
-
-    .whatsapp-widget svg { width: 26px; height: 26px; }
-
-    /* ============ SHARED ============ */
-    h1, h2, h3 {
-      font-family: 'Geist', sans-serif;
-      letter-spacing: -0.02em;
-    }
-
-    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-block; }
-
-    .btn-primary { background: var(--green); color: #FFFFFF; padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.3px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(43, 221, 127, 0.3); }
-
-    .btn-ghost { background: transparent; color: var(--text); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
-
-    .btn-secondary { background: rgba(43, 221, 127, 0.08); color: var(--green); padding: 16px 36px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(43, 221, 127, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-secondary:hover { background: rgba(43, 221, 127, 0.14); transform: translateY(-2px); border-color: rgba(43, 221, 127, 0.4); }
-
-    /* ============ ANIMATED ILLUSTRATIONS ============ */
-    .anim-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .anim-icon svg {
-      transition: transform 0.3s;
-    }
-
-    .how-card:hover .anim-icon svg,
-    .dcat:hover .anim-icon svg,
-    .buy-card:hover .anim-icon svg,
-    .eco-stat:hover .anim-icon svg,
-    .cond-card:hover .anim-icon svg {
-      transform: scale(1.1);
-    }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ============ GLASS CARD ============ */
-    .glass-card {
-      background: var(--glass);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border: 0.5px solid var(--border);
-      border-radius: var(--r);
-      box-shadow: var(--glass-shadow);
-      transition: all 0.3s ease;
-    }
-
-    .glass-card:hover {
-      box-shadow: 0 12px 40px rgba(13,24,68,0.08);
-      transform: translateY(-2px);
-    }
-
-    /* ============ HERO — EXCHANGE FLOW CONCEPT ============ */
+    /* ============ HERO ============ */
     .hero-ti {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 100px 48px 80px;
-      gap: 48px;
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .hero-ti-text {
-      animation: fadeUp 0.7s ease-out;
+      padding: 120px max(24px, calc((100vw - 1200px)/2)) 80px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: center; min-height: 100vh;
+      background: linear-gradient(180deg, #0a0a0a 0%, #0f1210 100%);
     }
 
     .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, rgba(43,221,127,0.1), rgba(43,221,127,0.03));
-      border: 1px solid rgba(43,221,127,0.2);
-      padding: 10px 24px;
-      border-radius: 100px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 32px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 100px;
+      background: var(--green-subtle);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 1.5px; color: var(--green);
+      margin-bottom: 24px; text-transform: uppercase;
     }
-
-    .hero-pill .hp-dot {
-      width: 7px; height: 7px;
+    .hp-dot {
+      width: 6px; height: 6px; border-radius: 50%;
       background: var(--green);
-      border-radius: 50%;
       animation: pulse 2s infinite;
     }
-
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
 
     .hero-ti h1 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em; margin-bottom: 20px;
     }
-
-    .hero-ti h1 .accent {
-      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    .hero-ti h1 .accent { color: var(--green); }
 
     .hero-ti-desc {
-      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-      color: var(--text-2);
-      line-height: 1.75;
-      max-width: 460px;
-      margin-bottom: 36px;
+      font-size: 1.05rem; color: var(--text-2);
+      line-height: 1.6; margin-bottom: 32px;
+      max-width: 480px;
     }
 
-    .hero-ti-desc strong { color: var(--text); font-weight: 600; }
-
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
-
-    /* Hero value teaser pills */
-    .hero-values {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 12px;
+      background: var(--green); color: #0a0a0a;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.3s; font-family: 'DM Sans', system-ui, sans-serif;
+      box-shadow: 0 0 30px rgba(52, 211, 153, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(52, 211, 153, 0.35);
     }
 
-    .hv-pill {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 12px;
+      background: transparent; color: var(--text);
+      font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; border: 1px solid var(--border);
+      cursor: pointer; transition: all 0.3s;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+    .btn-secondary:hover {
+      border-color: var(--green); color: var(--green);
+      background: var(--green-subtle);
+    }
+
+    /* ============ ESTIMATOR ============ */
+    .estimator {
       background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 18px;
-      transition: all 0.3s;
-    }
-
-    .hv-pill:hover {
-      border-color: var(--green);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(43,221,127,0.1);
-    }
-
-    .hv-pill .hvp-device { font-size: 1.5rem; }
-    .hv-pill .hvp-text { font-size: 0.72rem; color: var(--text-2); font-weight: 600; line-height: 1.3; }
-    .hv-pill .hvp-text strong { color: var(--green); font-weight: 800; font-size: 0.85rem; display: block; }
-
-    /* ============ HERO VISUAL — CSS ANIMATED EXCHANGE (unique to trade-in) ============ */
-    .hero-ti-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      animation: fadeUp 0.7s ease-out 0.2s both;
-    }
-
-    .exchange-vis {
-      position: relative;
-      width: 480px;
-      height: 480px;
-    }
-
-    /* Center exchange icon */
-    .ev-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 5;
-    }
-
-    .ev-swap-ring {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--green), #22c46d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 60px rgba(43,221,127,0.25), 0 0 120px rgba(43,221,127,0.1);
-      animation: swapPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes swapPulse {
-      0%, 100% { box-shadow: 0 0 60px rgba(43,221,127,0.25), 0 0 120px rgba(43,221,127,0.1); transform: scale(1); }
-      50% { box-shadow: 0 0 80px rgba(43,221,127,0.35), 0 0 160px rgba(43,221,127,0.15); transform: scale(1.06); }
-    }
-
-    .ev-swap-ring svg { width: 36px; height: 36px; }
-
-    /* Old device — LEFT */
-    .ev-old {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      animation: floatOld 5s ease-in-out infinite;
-    }
-
-    @keyframes floatOld {
-      0%, 100% { transform: translateY(-50%) translateX(0); }
-      50% { transform: translateY(-50%) translateX(8px); }
-    }
-
-    .ev-device {
-      width: 120px;
-      height: 180px;
-      background: var(--card);
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      margin: 0 auto 12px;
-    }
-
-    .ev-device.old {
-      border-color: rgba(255,184,48,0.3);
-    }
-
-    .ev-device.old::after {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background: rgba(255,184,48,0.4);
-      transform: rotate(-35deg);
-    }
-
-    .ev-device .evd-notch {
-      width: 36px;
-      height: 8px;
-      background: var(--bg-alt);
-      border-radius: 0 0 6px 6px;
-      margin: 0 auto;
-    }
-
-    .ev-device .evd-screen {
-      margin: 12px 10px;
-      height: 110px;
-      border-radius: 6px;
-      background: repeating-linear-gradient(
-        0deg,
-        var(--bg-alt) 0px,
-        var(--bg-alt) 8px,
-        transparent 8px,
-        transparent 16px
-      );
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ev-device.old .evd-screen {
-      opacity: 0.5;
-    }
-
-    /* Crack line on old device */
-    .ev-device.old .evd-screen::before {
-      content: '';
-      position: absolute;
-      top: 10%;
-      left: 60%;
-      width: 1px;
-      height: 80%;
-      background: rgba(255,184,48,0.4);
-      transform: rotate(15deg);
-    }
-
-    .ev-device .evd-bar {
-      width: 28px;
-      height: 3px;
-      background: var(--bg-alt);
-      border-radius: 2px;
-      margin: 0 auto;
-    }
-
-    .ev-device-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .ev-device-label.old-label { color: var(--amber); }
-    .ev-device-label.new-label { color: var(--green); }
-
-    /* New device — RIGHT */
-    .ev-new {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      animation: floatNew 5s ease-in-out infinite 2.5s;
-    }
-
-    @keyframes floatNew {
-      0%, 100% { transform: translateY(-50%) translateX(0); }
-      50% { transform: translateY(-50%) translateX(-8px); }
-    }
-
-    .ev-device.new {
-      border-color: rgba(43,221,127,0.3);
-      box-shadow: 0 0 40px rgba(43,221,127,0.08);
-    }
-
-    .ev-device.new .evd-screen {
-      background: linear-gradient(180deg, rgba(43,221,127,0.05), rgba(43,221,127,0.02));
-    }
-
-    /* Animated arrows between devices */
-    .ev-arrow-left, .ev-arrow-right {
-      position: absolute;
-      top: 50%;
-      height: 2px;
-      z-index: 3;
-    }
-
-    .ev-arrow-left {
-      left: 130px;
-      width: 80px;
-      transform: translateY(-4px);
-      background: linear-gradient(90deg, var(--amber), transparent);
-      animation: arrowFlowLeft 2.5s ease-in-out infinite;
-    }
-
-    .ev-arrow-right {
-      right: 130px;
-      width: 80px;
-      transform: translateY(6px);
-      background: linear-gradient(270deg, var(--green), transparent);
-      animation: arrowFlowRight 2.5s ease-in-out infinite 1.25s;
-    }
-
-    @keyframes arrowFlowLeft {
-      0% { opacity: 0; transform: translateY(-6px) translateX(-10px); }
-      50% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(-6px) translateX(10px); }
-    }
-
-    @keyframes arrowFlowRight {
-      0% { opacity: 0; transform: translateY(6px) translateX(10px); }
-      50% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(6px) translateX(-10px); }
-    }
-
-    /* Value tag floating */
-    .ev-value-tag {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--card);
-      border: 1px solid rgba(43,221,127,0.2);
-      border-radius: 14px;
-      padding: 12px 20px;
-      text-align: center;
-      z-index: 6;
-      animation: fadeUp 0.7s ease-out 0.5s both;
-    }
-
-    .ev-value-tag .evt-label {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-2);
-    }
-
-    .ev-value-tag .evt-val {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.6rem;
-      color: var(--green);
-      line-height: 1;
-      margin-top: 2px;
-    }
-
-    /* ============ PREMIUM EXCHANGE ENHANCEMENTS ============ */
-    /* Scan sweep ONLY on old device */
-    .ev-device.old .evd-screen::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,184,48,0.6) 50%, transparent 100%);
-      box-shadow: 0 0 8px rgba(255,184,48,0.3);
-      animation: oldScan 3s ease-in-out infinite;
-      z-index: 2;
-    }
-
-    @keyframes oldScan {
-      0% { top: 0; }
-      50% { top: 100%; }
-      100% { top: 0; }
-    }
-
-    /* Pristine glow on new device */
-    .ev-device.new::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 20px;
-      background: linear-gradient(105deg, transparent 40%, rgba(43,221,127,0.06) 45%, rgba(43,221,127,0.03) 50%, transparent 55%);
-      background-size: 250% 100%;
-      animation: newShimmer 5s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    @keyframes newShimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* Status indicators on devices */
-    .ev-status {
-      position: absolute;
-      bottom: -28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .ev-status .evs-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .evs-dot.warn {
-      background: #ff9f0a;
-      box-shadow: 0 0 6px rgba(255,159,10,0.4);
-      animation: evsPulse 2s infinite;
-    }
-
-    .evs-dot.ok {
-      background: var(--green);
-      box-shadow: 0 0 6px rgba(43,221,127,0.4);
-      animation: evsPulse 2s 0.5s infinite;
-    }
-
-    @keyframes evsPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .ev-status .evs-label {
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .evs-label.warn { color: #ff9f0a; }
-    .evs-label.ok { color: var(--green); }
-
-    /* Animated connecting line */
-    .ev-connect {
-      position: absolute;
-      top: 50%;
-      left: 140px;
-      right: 140px;
-      height: 1px;
-      background: rgba(13,24,68,0.06);
-      z-index: 1;
-      transform: translateY(-1px);
-    }
-
-    .ev-connect::after {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 0;
-      height: 3px;
-      width: 40px;
-      background: linear-gradient(90deg, rgba(255,184,48,0.6), var(--green));
-      border-radius: 100px;
-      animation: connectFlow 3s ease-in-out infinite;
-    }
-
-    @keyframes connectFlow {
-      0% { left: 0; opacity: 0; }
-      20% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { left: calc(100% - 40px); opacity: 0; }
-    }
-
-    /* Animated value counter */
-    .ev-value-tag .evt-val {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.6rem;
-      color: var(--green);
-      line-height: 1;
-      margin-top: 2px;
-    }
-
-    /* ============ HOW IT WORKS — HORIZONTAL RAIL (unique pattern — not vertical accordion) ============ */
-    .how-section {
-      padding: 120px 48px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .how-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-
-    .how-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-    }
-
-    .how-header p {
-      font-size: 1rem;
-      color: var(--text-2);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* Horizontal process rail with connecting line */
-    .how-rail {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      padding: 32px;
       position: relative;
     }
-
-    /* Connecting line behind cards */
-    .how-rail::before {
-      content: '';
-      position: absolute;
-      top: 80px;
-      left: 10%;
-      right: 10%;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(43,221,127,0.05), rgba(43,221,127,0.2), rgba(43,221,127,0.05));
-      z-index: 0;
+    .estimator-title {
+      font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 24px; color: var(--text);
     }
 
-    .how-card {
-      background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 28px;
-      padding: 40px 28px 36px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      transition: all 0.4s;
+    .est-step { margin-bottom: 20px; }
+    .est-label {
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--text-3); letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 8px;
     }
 
-    .how-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 40px rgba(13,24,68,0.06);
+    .est-types {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
     }
-
-    .hc-step {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--green), #22c46d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-family: 'Geist', sans-serif;
-      font-size: 1.5rem;
-      color: var(--text);
-      box-shadow: 0 8px 30px rgba(43,221,127,0.2);
+    .est-type-btn {
+      padding: 10px 8px; border-radius: 10px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text-2); font-size: 0.8rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s; text-align: center;
+      font-family: 'DM Sans', system-ui, sans-serif;
     }
-
-    .how-card .hc-emoji { font-size: 2.5rem; display: block; margin-bottom: 16px; }
-    .how-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
-    .how-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
-
-    /* ============ DEVICES — CATEGORY CARDS WITH HOVER EXPAND ============ */
-    .devices-section {
-      padding: 100px 48px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .devices-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 56px;
-    }
-
-    .devices-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-    }
-
-    .devices-header p {
-      font-size: 1rem;
-      color: var(--text-2);
-      line-height: 1.7;
-    }
-
-    .device-cats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      justify-items: stretch;
-    }
-
-    .dcat {
-      background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 28px;
-      padding: 40px 28px;
-      transition: all 0.4s;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .dcat:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 40px rgba(13,24,68,0.06);
-    }
-
-    .dcat::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 180px;
-      height: 180px;
-      background: transparent;
-      pointer-events: none;
-    }
-
-    .dcat > * { position: relative; z-index: 1; }
-    .dcat .dcat-emoji { font-size: 3rem; margin-bottom: 20px; display: block; }
-    .dcat h3 { font-family: 'Geist', sans-serif; font-size: 1.8rem; line-height: 1.08; letter-spacing: -0.5px; margin-bottom: 12px; }
-    .dcat p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; margin-bottom: 20px; }
-
-    .dcat .dcat-models {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .dcat .dcat-tag {
-      font-size: 0.62rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 100px;
-      background: rgba(43,221,127,0.06);
-      border: 0.5px solid var(--border);
-      color: var(--text-2);
-      letter-spacing: 0.3px;
-      transition: all 0.2s;
-    }
-
-    .dcat:hover .dcat-tag {
-      color: var(--green);
-      border-color: var(--border-hover);
-    }
-
-    .dcat .dcat-range {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 0.5px solid var(--border);
-      text-align: center;
-      width: 100%;
-    }
-
-    .dcat .dcat-range-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-2);
-      margin-bottom: 6px;
-      text-align: center;
-    }
-
-    .dcat .dcat-range-val {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--green);
-      line-height: 1;
-      text-align: center;
-    }
-
-    /* ============ CONDITION TIERS — UNIQUE VISUAL SCALE ============ */
-    .condition-section {
-      padding: 120px 48px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .condition-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .condition-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-    }
-
-    .condition-header p { font-size: 1rem; color: var(--text-2); max-width: 500px; margin: 0 auto; line-height: 1.7; }
-
-    .cond-tiers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .cond-card {
-      border-radius: 28px;
-      padding: 40px 28px;
-      transition: all 0.4s;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(13,24,69,0.95) 0%, rgba(13,24,69,0.7) 60%, rgba(43,221,127,0.08) 100%);
-      border: 0.5px solid rgba(255,255,255,0.08);
-    }
-
-    .cond-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 48px rgba(13,24,68,0.2);
-    }
-
-    .cond-card.cc-excellent {
-      border: 2px solid rgba(43,221,127,0.4);
-      box-shadow: 0 4px 24px rgba(0, 210, 106, 0.08);
-    }
-
-    .cond-card.cc-good {
-      border: 0.5px solid rgba(255,255,255,0.1);
-    }
-
-    .cond-card.cc-fair {
-      border: 0.5px solid rgba(255,255,255,0.1);
-    }
-
-    .cond-card .cc-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .cc-excellent .cc-badge { background: rgba(43,221,127,0.2); color: var(--green); }
-    .cc-good .cc-badge { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
-    .cc-fair .cc-badge { background: rgba(255,184,48,0.15); color: var(--amber); }
-
-    .cond-card .cc-icon { font-size: 3rem; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
-
-    .cond-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: #FFFFFF; }
-
-    .cond-card .cc-pct {
-      font-family: 'Geist', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1;
-      margin: 16px 0 4px;
-    }
-
-    .cc-excellent .cc-pct { color: var(--green); }
-    .cc-good .cc-pct { color: var(--green); }
-    .cc-fair .cc-pct { color: var(--amber); }
-
-    .cond-card .cc-pct-label {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.45);
-      font-weight: 600;
-    }
-
-    .cond-card .cc-checks {
-      margin-top: 24px;
-      text-align: left;
-    }
-
-    .cond-card .cc-check {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 0;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .cond-card .cc-check:last-child { border-bottom: none; }
-
-    .cc-check .cci { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; flex-shrink: 0; }
-    .cc-excellent .cci { background: rgba(43,221,127,0.2); color: var(--green); }
-    .cc-good .cci { background: rgba(43,221,127,0.12); color: var(--green); }
-    .cc-fair .cci { background: rgba(255,184,48,0.15); color: var(--amber); }
-
-    /* Excellent card styling */
-    .cc-excellent h3 { color: #FFFFFF; }
-    .cc-excellent .cc-pct-label { color: rgba(255,255,255,0.45); }
-    .cc-excellent .cc-check { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.08); }
-
-    .cmp-tradein h3 { color: #FFFFFF; }
-    .cmp-tradein .cmp-item { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.12); }
-
-    /* ============ ECO IMPACT BAND ============ */
-    .eco-band {
-      padding: 80px 48px;
-      background: var(--card);
-      border-top: 0.5px solid var(--border);
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .eco-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .eco-inner .eco-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 24px;
-    }
-
-    .eco-inner h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 48px;
-    }
-
-    .eco-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .eco-stat {
-      padding: 24px 16px;
-      border-radius: 20px;
-      transition: all 0.3s;
-    }
-
-    .eco-stat:hover {
-      background: rgba(43,221,127,0.04);
-      transform: translateY(-4px);
-    }
-
-    .eco-stat .es-emoji { font-size: 2rem; margin-bottom: 12px; display: block; }
-
-    .eco-stat .es-val {
-      font-family: 'Geist', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1;
+    .est-type-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .est-type-btn.active {
+      background: var(--green-subtle); border-color: var(--green);
       color: var(--green);
     }
 
-    .eco-stat .es-label {
+    .est-select {
+      width: 100%; padding: 12px 16px; border-radius: 10px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.9rem;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a1a1a6' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center;
+    }
+    .est-select:focus { outline: none; border-color: var(--green); }
+    .est-select option { background: var(--card); color: var(--text); }
+
+    .est-conditions {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    }
+    .est-cond-btn {
+      padding: 10px 8px; border-radius: 10px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text-2); font-size: 0.78rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s; text-align: center;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+    .est-cond-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .est-cond-btn.active {
+      background: var(--green-subtle); border-color: var(--green);
+      color: var(--green);
+    }
+    .est-cond-pct { display: block; font-size: 0.65rem; color: var(--text-3); margin-top: 2px; }
+
+    .est-result {
+      display: none; padding: 24px; margin-top: 16px;
+      background: linear-gradient(135deg, rgba(52,211,153,0.06), rgba(52,211,153,0.02));
+      border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 14px; text-align: center;
+    }
+    .est-result.show { display: block; animation: fadeUp 0.4s ease; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .est-apple-price {
+      font-size: 1rem; color: var(--text-3);
+      text-decoration: line-through; margin-bottom: 4px;
+    }
+    .est-smm-price {
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--green); font-family: 'Syne', system-ui, sans-serif;
+    }
+    .est-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 12px; border-radius: 100px;
+      background: rgba(52,211,153,0.15);
+      color: var(--green); font-size: 0.75rem; font-weight: 600;
       margin-top: 8px;
-      font-size: 0.78rem;
-      color: var(--text-2);
-      font-weight: 600;
-      line-height: 1.4;
+    }
+    .est-cta-row { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .est-wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--green); color: #0a0a0a;
+      font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; transition: all 0.3s;
+      width: 100%; justify-content: center;
+    }
+    .est-wa-btn:hover { background: var(--green-dark); }
+    .est-link {
+      font-size: 0.78rem; color: var(--text-3);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .est-link:hover { color: var(--green); }
+
+    /* ============ COMO FUNCIONA ============ */
+    .como-section {
+      padding: 80px max(24px, calc((100vw - 1200px)/2));
+      background: var(--bg-alt);
+    }
+    .como-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; text-align: center;
+      margin-bottom: 48px; letter-spacing: -0.02em;
+    }
+    .como-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .como-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 28px;
+      transition: all 0.3s; position: relative;
+    }
+    .como-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .como-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .como-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .como-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.5; }
+    .como-time {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin-top: 12px; padding: 4px 10px;
+      background: var(--green-subtle); border-radius: 6px;
+      font-size: 0.72rem; font-weight: 600; color: var(--green);
     }
 
-    /* ============ COMPARISON — TRADE-IN VS VENDER SOLO (split design) ============ */
-    .compare-section {
-      padding: 120px 48px;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* ============ PRECIOS ============ */
+    .precios-section {
+      padding: 80px max(24px, calc((100vw - 1200px)/2));
+      background: var(--bg);
+    }
+    .precios-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; text-align: center;
+      margin-bottom: 8px; letter-spacing: -0.02em;
+    }
+    .precios-sub {
+      text-align: center; color: var(--text-2);
+      font-size: 1rem; margin-bottom: 40px;
     }
 
-    .compare-header {
-      text-align: center;
-      margin-bottom: 64px;
+    .tab-nav {
+      display: flex; justify-content: center; gap: 4px;
+      margin-bottom: 32px; padding: 4px;
+      background: var(--card); border-radius: 12px;
+      border: 1px solid var(--border);
+      width: fit-content; margin-left: auto; margin-right: auto;
+    }
+    .tab-btn {
+      padding: 10px 24px; border-radius: 8px;
+      background: transparent; border: none;
+      color: var(--text-2); font-size: 0.85rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { background: var(--green); color: #0a0a0a; font-weight: 600; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeUp 0.3s ease; }
+
+    .price-table {
+      width: 100%; max-width: 800px; margin: 0 auto;
+      border-collapse: separate; border-spacing: 0;
+      background: var(--card); border-radius: var(--r);
+      overflow: hidden; border: 1px solid var(--border);
+    }
+    .price-table thead th {
+      padding: 14px 20px; text-align: left;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--text-3); letter-spacing: 1px;
+      text-transform: uppercase; background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .price-table thead th:last-child { text-align: right; }
+    .price-table thead th:nth-child(2) { text-align: right; }
+    .price-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .price-table tbody tr:last-child { border-bottom: none; }
+    .price-table tbody tr:hover { background: var(--bg); }
+    .price-table tbody td {
+      padding: 14px 20px; font-size: 0.9rem;
+    }
+    .price-table tbody td:nth-child(2) {
+      text-align: right; color: var(--text-3);
+      text-decoration: line-through; font-size: 0.85rem;
+    }
+    .price-table tbody td:last-child {
+      text-align: right; color: var(--green);
+      font-weight: 700; font-size: 1rem;
+    }
+    .price-table tr.highlight {
+      background: var(--green-subtle);
+    }
+    .price-table tr.highlight:hover { background: rgba(52,211,153,0.1); }
+
+    .precios-btn-row {
+      text-align: center; margin-top: 32px;
     }
 
-    .compare-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+    /* ============ SOCIAL PROOF ============ */
+    .social-section {
+      padding: 80px max(24px, calc((100vw - 1200px)/2));
+      background: var(--bg-alt);
     }
 
-    .compare-header p { font-size: 1rem; color: var(--text-2); max-width: 480px; margin: 0 auto; line-height: 1.7; }
-
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .compare-card {
-      border-radius: 28px;
-      padding: 48px 36px;
-      transition: all 0.4s;
-    }
-
-    .compare-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .compare-card.cmp-tradein {
-      background: linear-gradient(160deg, var(--navy) 0%, rgba(43,221,127,0.06) 100%);
-      border: 2px solid rgba(43,221,127,0.2);
-    }
-
-    .compare-card.cmp-tradein:hover {
-      box-shadow: 0 20px 60px rgba(43,221,127,0.08);
-    }
-
-    .compare-card.cmp-alone {
-      background: var(--card);
-      border: 0.5px solid var(--border);
-    }
-
-    .compare-card.cmp-alone:hover {
-      box-shadow: 0 8px 40px rgba(13,24,68,0.06);
-    }
-
-    .compare-card .cmp-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .cmp-tradein .cmp-tag { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cmp-alone .cmp-tag { background: var(--bg-alt); color: var(--text-2); }
-
-    .compare-card h3 {
-      font-family: 'Geist', sans-serif;
-      font-size: 2rem;
-      line-height: 1.08;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-    }
-
-    .compare-card .cmp-list { list-style: none; }
-
-    .compare-card .cmp-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 0.5px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--text-2);
-      line-height: 1.5;
-    }
-
-    .compare-card .cmp-item:last-child { border-bottom: none; }
-
-    .cmp-item .cmp-ico {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .cmp-tradein .cmp-ico { background: rgba(43,221,127,0.15); color: var(--green); }
-    .cmp-alone .cmp-ico { background: var(--bg-alt); color: var(--text-2); }
-
-    /* ============ BUYBACK CATEGORIES — QUICK BROWSE (what you can buy) ============ */
-    .buy-section {
-      padding: 100px 48px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .buy-header {
-      text-align: center;
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
       margin-bottom: 56px;
     }
-
-    .buy-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+    .stat-card {
+      text-align: center; padding: 32px 20px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r);
     }
-
-    .buy-header p { font-size: 1rem; color: var(--text-2); max-width: 520px; margin: 0 auto; line-height: 1.7; }
-
-    .buy-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
+    .stat-num {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      font-family: 'Syne', system-ui, sans-serif;
+      color: var(--green); margin-bottom: 4px;
     }
+    .stat-label { font-size: 0.85rem; color: var(--text-2); }
 
-    .buy-card {
-      background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 24px;
-      padding: 32px 16px;
-      text-align: center;
-      transition: all 0.4s;
-      cursor: pointer;
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
     }
-
-    .buy-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 40px rgba(13,24,68,0.06);
+    .test-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 28px;
     }
-
-    .buy-card .bc-emoji { font-size: 2.5rem; margin-bottom: 14px; display: block; }
-    .buy-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
-    .buy-card p { font-size: 0.7rem; color: var(--text-2); line-height: 1.4; }
-    .buy-card .bc-tag {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 100px;
-      background: rgba(43,221,127,0.08);
-      color: var(--green);
-      letter-spacing: 0.5px;
+    .test-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .test-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--green-subtle); border: 1px solid rgba(52,211,153,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; color: var(--green);
     }
+    .test-name { font-weight: 600; font-size: 0.9rem; }
+    .test-loc { font-size: 0.78rem; color: var(--text-3); }
+    .test-stars { margin-bottom: 12px; color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; }
+    .test-quote { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; font-style: italic; }
 
-    /* ============ FAQ — MINIMAL ACCORDION ============ */
+    /* ============ FAQ ============ */
     .faq-section {
-      padding: 100px 48px;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 80px max(24px, calc((100vw - 1200px)/2));
+      background: var(--bg);
     }
-
-    .faq-header {
-      text-align: center;
-      margin-bottom: 48px;
+    .faq-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; text-align: center;
+      margin-bottom: 48px; letter-spacing: -0.02em;
     }
-
-    .faq-header h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
+    .faq-list {
+      max-width: 720px; margin: 0 auto;
     }
-
-    .faq-header p { font-size: 1rem; color: var(--text-2); }
-
     .faq-item {
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-
     .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 0;
-      cursor: pointer;
-      font-size: 0.95rem;
-      font-weight: 600;
+      width: 100%; padding: 20px 0; display: flex;
+      align-items: center; justify-content: space-between;
+      background: none; border: none; color: var(--text);
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      text-align: left; font-family: 'DM Sans', system-ui, sans-serif;
       transition: color 0.2s;
-      user-select: none;
     }
-
     .faq-q:hover { color: var(--green); }
-
-    .faq-q .fq-toggle {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(43,221,127,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      color: var(--green);
-      flex-shrink: 0;
-      transition: all 0.3s;
+    .faq-icon {
+      font-size: 1.2rem; color: var(--text-3);
+      transition: transform 0.3s; flex-shrink: 0;
+      margin-left: 16px;
     }
-
-    .faq-item.open .fq-toggle {
-      background: var(--green);
-      color: var(--text);
-      transform: rotate(45deg);
-    }
-
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
     .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
     }
-
-    .faq-item.open .faq-a {
-      max-height: 300px;
-      padding-bottom: 22px;
-    }
-
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
     .faq-a p {
-      font-size: 0.88rem;
-      color: var(--text-2);
-      line-height: 1.65;
+      font-size: 0.9rem; color: var(--text-2); line-height: 1.7;
     }
 
-    /* ============ CTA ============ */
-    .cta-ti {
-      margin: 0 48px 80px;
-      background: linear-gradient(160deg, var(--text) 0%, rgba(13,24,69,0.95) 60%, rgba(43,221,127,0.12) 100%);
-      border: 0.5px solid rgba(43,221,127,0.15);
-      border-radius: 36px;
-      padding: 80px 56px;
+    /* ============ CTA FINAL ============ */
+    .cta-final {
+      padding: 80px max(24px, calc((100vw - 1200px)/2));
+      background: linear-gradient(180deg, var(--bg) 0%, #0d1a12 50%, var(--bg) 100%);
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
-    .cta-ti::before {
-      content: '';
-      position: absolute;
-      top: -150px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(43,221,127,0.06) 0%, transparent 70%);
-      pointer-events: none;
+    .cta-final h2 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      margin-bottom: 12px; letter-spacing: -0.02em;
     }
-
-    .cta-ti > * { position: relative; z-index: 1; }
-
-    .cta-ti h2 {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-      color: #FFFFFF;
+    .cta-final-sub { font-size: 1.05rem; color: var(--text-2); margin-bottom: 32px; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-info {
+      margin-top: 32px; font-size: 0.8rem; color: var(--text-3);
     }
-
-    .cta-ti h2 .accent {
-      background: linear-gradient(135deg, var(--green) 0%, #5befa5 50%, #2BDD7F 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .cta-ti > p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.6);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-
-    .cta-ti .label { color: var(--green); }
-
-    .cta-ti-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
     /* ============ FOOTER ============ */
     footer {
-      border-top: none;
-      padding: 48px 24px 32px;
-      background: #0B1A2F;
-      color: rgba(255,255,255,0.85);
+      background: #050505;
+      padding: 48px max(24px, calc((100vw - 1200px)/2)) 24px;
+      border-top: 1px solid var(--border);
     }
-
-    .footer-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
     .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 40px;
     }
-
-    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; margin-top: 16px; }
-    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--verde); margin-bottom: 20px; }
+    .footer-brand p { color: var(--text-3); font-size: 0.82rem; line-height: 1.6; margin-top: 16px; }
+    .footer-col h5 { color: var(--text-2); font-size: 0.72rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
-    .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--verde); }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: var(--text-3); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--green); }
+    .footer-col li:not(:has(a)) { color: var(--text-3); font-size: 0.85rem; }
 
     .footer-bottom {
-      border-top: 0.5px solid rgba(255,255,255,0.1);
-      padding-top: 32px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid var(--border); padding-top: 24px;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .footer-bottom p { color: var(--text-3); font-size: 0.75rem; }
+    .footer-socials { display: flex; gap: 16px; }
+    .footer-socials a { color: var(--text-3); transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--green); }
+
+    /* ============ MODAL ============ */
+    .modal-overlay {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%; z-index: 2000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      justify-content: center; align-items: flex-start;
+      padding: 40px 20px; overflow-y: auto;
+    }
+    .modal-overlay.show { display: flex; }
+
+    .modal-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; width: 100%; max-width: 900px;
+      padding: 40px; position: relative;
+      animation: fadeUp 0.3s ease;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text-2); font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center;
+      justify-content: center; transition: all 0.2s;
+    }
+    .modal-close:hover { border-color: var(--text-3); color: var(--text); }
+
+    .modal-box h2 {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .modal-meta {
+      font-size: 0.8rem; color: var(--text-3); margin-bottom: 24px;
+    }
+    .modal-meta a { color: var(--green); text-decoration: none; }
+    .modal-meta a:hover { text-decoration: underline; }
+
+    .modal-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 20px;
+    }
+    .modal-table thead th {
+      padding: 12px 16px; text-align: left;
+      font-size: 0.7rem; font-weight: 600;
+      color: var(--text-3); letter-spacing: 1px;
+      text-transform: uppercase; background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-table thead th:nth-child(2),
+    .modal-table thead th:nth-child(3),
+    .modal-table thead th:nth-child(4) { text-align: right; }
+    .modal-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-table tbody tr:last-child { border-bottom: none; }
+    .modal-table tbody td { padding: 10px 16px; font-size: 0.85rem; }
+    .modal-table tbody td:nth-child(2) {
+      text-align: right; color: var(--text-3);
+      text-decoration: line-through; font-size: 0.82rem;
+    }
+    .modal-table tbody td:nth-child(3) {
+      text-align: right; color: var(--green);
+      font-weight: 700;
+    }
+    .modal-table tbody td:nth-child(4) {
+      text-align: right; color: var(--green);
+      font-size: 0.78rem; font-weight: 600;
     }
 
-    .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+    .modal-footer { text-align: center; margin-top: 24px; }
+    .modal-apple-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 10px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text-2); font-size: 0.85rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .modal-apple-link:hover { border-color: var(--text-3); color: var(--text); }
 
-    .footer-socials { display: flex; gap: 10px; }
-    .footer-socials a { width: 44px; height: 44px; border-radius: 12px; background: transparent; border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; color: var(--green); text-decoration: none; transition: all 0.3s; }
-    .footer-socials a:hover { background: var(--green); border-color: var(--green); color: #FFFFFF; transform: translateY(-2px); }
+    /* ============ WHATSAPP WIDGET ============ */
+    .whatsapp-widget {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; color: white;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      transition: transform 0.3s;
+    }
+    .whatsapp-widget:hover { transform: scale(1.1); }
+    .whatsapp-widget svg { width: 28px; height: 28px; }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
-      .hero-ti { grid-template-columns: 1fr; text-align: center; }
+      .hero-ti { grid-template-columns: 1fr; gap: 40px; min-height: auto; padding-top: 100px; }
+      .hero-ti-text { text-align: center; }
       .hero-ti-desc { margin-left: auto; margin-right: auto; }
-      .hero-btns { justify-content: center; }
-      .hero-values { justify-content: center; }
-      .hero-ti-visual { margin-top: 32px; }
-      .exchange-vis { width: 360px; height: 360px; }
-      .ev-device { width: 90px; height: 140px; }
-      .ev-swap-ring { width: 68px; height: 68px; }
-      .ev-arrow-left { left: 100px; width: 60px; }
-      .ev-arrow-right { right: 100px; width: 60px; }
-      .devices-header { grid-template-columns: 1fr; }
-      .device-cats { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-      .compare-grid { grid-template-columns: 1fr; }
-      .buy-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-ti-text .btn-primary { margin: 0 auto; }
+      .estimator { max-width: 500px; margin: 0 auto; }
     }
-
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
+      .nav-links { 
+        display: none; position: fixed; top: 56px; left: 0; right: 0;
+        background: rgba(10,10,10,0.96); backdrop-filter: blur(20px);
+        flex-direction: column; padding: 20px; gap: 4px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.mobile-open { display: flex; }
       .nav-hamburger { display: flex; }
 
-      .hero-ti { padding: 100px 20px 60px; }
-      .how-section { padding: 80px 20px; }
-      .devices-section { padding: 80px 20px; }
-      .condition-section { padding: 80px 20px; }
-      .compare-section { padding: 80px 20px; }
-      .buy-section { padding: 80px 20px; }
-      .faq-section { padding: 60px 20px; }
-      .cta-ti { margin: 0 16px 60px; padding: 48px 24px; }
-      footer { padding: 48px 20px 32px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .como-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
 
-      .how-rail { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .how-rail::before { display: none; }
-      .cond-tiers { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .eco-stats { grid-template-columns: repeat(2, 1fr); }
-      .buy-grid { grid-template-columns: repeat(2, 1fr); }
+      .tab-nav { flex-wrap: wrap; }
+      .est-types { grid-template-columns: repeat(2, 1fr); }
+      .est-conditions { grid-template-columns: repeat(3, 1fr); }
 
-      .exchange-vis { width: 300px; height: 300px; }
-      .ev-device { width: 76px; height: 120px; }
-      .ev-device .evd-screen { margin: 8px 8px; height: 80px; }
-      .ev-swap-ring { width: 56px; height: 56px; }
-      .ev-swap-ring svg { width: 28px; height: 28px; }
-      .ev-orbit-inner { inset: 40px; }
-      .ev-arrow-left { left: 84px; width: 40px; }
-      .ev-arrow-right { right: 84px; width: 40px; }
-      .ev-value-tag { bottom: 30px; }
-
-      .smm-logo img { height: 32px; }
-
-      .nav-links.mobile-open {
-        display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        top: 64px; left: 0; right: 0; bottom: 0;
-        background: rgba(251, 251, 253, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 40px 28px;
-        gap: 20px;
-        z-index: 999;
-        animation: fadeUp 0.3s ease;
-      }
-      .nav-links.mobile-open a { font-size: 1.15rem; color: var(--text); }
-      .nav-links.mobile-open .nav-cta { text-align: center; font-size: 1rem !important; padding: 16px; margin-top: 8px; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .cta-btns a, .cta-btns button { width: 100%; max-width: 320px; justify-content: center; }
+      .modal-box { padding: 24px; }
     }
-
     @media (max-width: 480px) {
-      .hero-ti h1 { font-size: 3.4rem; }
-      .hero-values { flex-direction: column; }
-      .buy-grid { grid-template-columns: 1fr; }
-      .cta-ti-btns { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-secondary, .btn-ghost { justify-content: center; }
-      .exchange-vis { width: 260px; height: 260px; }
-      .ev-device { width: 64px; height: 100px; }
-      .ev-device .evd-screen { margin: 6px 6px; height: 66px; }
-      .ev-swap-ring { width: 48px; height: 48px; }
-      .ev-swap-ring svg { width: 22px; height: 22px; }
-      .ev-orbit-inner { inset: 30px; }
-      .ev-arrow-left { left: 70px; width: 30px; }
-      .ev-arrow-right { right: 70px; width: 30px; }
+      .hero-ti { padding: 90px 20px 60px; }
+      .hero-ti h1 { font-size: 2rem; }
+      .estimator { padding: 24px; }
+      .est-types { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
     }
-  
-    /* ============ SVG ILLUSTRATION ANIMATIONS ============ */
-    @keyframes slideLeft {
-      0%, 100% { transform: translateX(0); opacity: 1; }
-      40% { transform: translateX(-12px); opacity: 0.4; }
-      60% { transform: translateX(-12px); opacity: 0.4; }
-    }
-    @keyframes slideRight {
-      0%, 100% { transform: translateX(0); opacity: 1; }
-      40% { transform: translateX(12px); opacity: 0.4; }
-      60% { transform: translateX(12px); opacity: 0.4; }
-    }
-    @keyframes arrowBounce {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(6px); }
-    }
-    @keyframes arrowBounceLeft {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(-6px); }
-    }
-    @keyframes sparkleAnim {
-      0%, 100% { opacity: 0; transform: scale(0); }
-      50% { opacity: 1; transform: scale(1); }
-    }
-
-    .trade-in-illustration {
-      width: 100%;
-      max-width: 420px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .trade-in-illustration svg {
-      width: 100%;
-      height: auto;
-    }
-</style>
+  </style>
 </head>
 <body>
 
-  <!-- ====== NAV ====== -->
 <nav>
   <a href="index.html" class="smm-logo">
     <img src="https://cdn.prod.website-files.com/65834a62ccb16c13c98336ec/658fbf93cc289cdec0bc79ad_62e2c60cf050ec4ce9565d77_Group%2061-p-500.png" alt="Salva Mi Máquina">
@@ -1512,437 +649,254 @@
     <li><a href="empresas.html">Empresas</a></li>
     <li><a href="nosotros.html">Nosotros</a></li>
     <li><a href="https://salva.softr.app/" class="nav-catalog">Catálogo</a></li>
-    <li><a href="https://wa.me/+50769780206" class="nav-cta">Cotiza Ahora</a></li>
+    <li><a href="#estimador" class="nav-cta">Cotiza Ahora</a></li>
   </ul>
   <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-  <!-- ====== HERO ====== -->
-  <section class="hero-ti">
-    <div class="hero-ti-text">
-      <div class="hero-pill">
-        <span class="hp-dot"></span>
-        PROGRAMA TRADE-IN
-      </div>
-      <h1>
-        Tu equipo<br>
-        viejo <span class="accent">vale.</span>
-      </h1>
-      <p class="hero-ti-desc">
-        Trae tu iPhone, iPad o MacBook usado y recibe <strong>crédito inmediato</strong> para uno nuevo o reacondicionado. Sin complicaciones, evaluación en minutos, precio justo garantizado.
-      </p>
-      <div class="hero-btns">
-        <a href="https://www.salvamimaquina.com/trade_in/nuevo" class="btn-primary">Cotizar mi equipo →</a>
-        <a href="#como-funciona" class="btn-ghost">¿Cómo funciona?</a>
-      </div>
-      <div class="hero-values">
-        <div class="hv-pill">
-          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-          <div class="hvp-text">
-            <strong>iPhone 14</strong>
-            Desde $150 crédito
-          </div>
-        </div>
-        <div class="hv-pill">
-          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
-          <div class="hvp-text">
-            <strong>MacBook Pro</strong>
-            Desde $250 crédito
-          </div>
-        </div>
-        <div class="hv-pill">
-          <span class="hvp-device anim-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-          <div class="hvp-text">
-            <strong>iPad</strong>
-            Desde $80 crédito
-          </div>
-        </div>
+<!-- ====== HERO + ESTIMATOR ====== -->
+<section class="hero-ti">
+  <div class="hero-ti-text">
+    <div class="hero-pill">
+      <span class="hp-dot"></span>
+      PROGRAMA TRADE-IN
+    </div>
+    <h1>Tu iPhone 12 &rarr; iPhone 16<br>desde <span class="accent">$299</span> con trade-in</h1>
+    <p class="hero-ti-desc">Trae tu equipo Apple usado y recibe hasta un 10% más de crédito que Apple. Sin esperas, sin vueltas. Crédito aplicado el mismo día en cualquiera de nuestras 2 sucursales.</p>
+    <a href="#estimador" class="btn-primary">Estimar mi crédito &darr;</a>
+  </div>
+
+  <div class="estimator" id="estimador">
+    <div class="estimator-title">Estima tu crédito al instante</div>
+
+    <div class="est-step">
+      <div class="est-label">1. Tipo de equipo</div>
+      <div class="est-types" id="est-types">
+        <button class="est-type-btn" data-type="iphone">iPhone</button>
+        <button class="est-type-btn" data-type="ipad">iPad</button>
+        <button class="est-type-btn" data-type="mac">Mac</button>
+        <button class="est-type-btn" data-type="watch">Apple Watch</button>
       </div>
     </div>
 
-    <!-- Exchange Visual -->
-    <div class="hero-ti-visual">
-      <div class="trade-in-illustration">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="85" fill="#E6FBF0"/>
-          <!-- Old device (left) -->
-          <g style="animation: slideLeft 3.5s ease-in-out infinite;">
-            <rect x="28" y="62" width="50" height="80" rx="8" fill="#B0B8C4" opacity="0.7"/>
-            <rect x="33" y="72" width="40" height="55" rx="3" fill="#D1D5DB"/>
-            <path d="M45 75 L55 90 L48 105 L58 120" stroke="#9CA3AF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <circle cx="53" cy="137" r="3" fill="#9CA3AF"/>
-          </g>
-          <!-- Arrows in center -->
-          <g>
-            <g style="animation: arrowBounce 1.5s ease-in-out infinite;">
-              <path d="M82 88 L118 88" stroke="#00D26A" stroke-width="3" stroke-linecap="round"/>
-              <path d="M112 82 L120 88 L112 94" stroke="#00D26A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </g>
-            <g style="animation: arrowBounceLeft 1.5s ease-in-out infinite 0.4s;">
-              <path d="M118 112 L82 112" stroke="#00D26A" stroke-width="3" stroke-linecap="round"/>
-              <path d="M88 106 L80 112 L88 118" stroke="#00D26A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </g>
-            <text x="100" y="104" text-anchor="middle" fill="#00D26A" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">$</text>
-          </g>
-          <!-- New device (right) -->
-          <g style="animation: slideRight 3.5s ease-in-out infinite;">
-            <rect x="122" y="58" width="52" height="84" rx="10" fill="#1A1D2B"/>
-            <rect x="127" y="68" width="42" height="60" rx="4" fill="#2D3142"/>
-            <rect x="127" y="68" width="42" height="60" rx="4" fill="#00D26A" opacity="0.1">
-              <animate attributeName="opacity" values="0.05;0.15;0.05" dur="2s" repeatCount="indefinite"/>
-            </rect>
-            <rect x="140" y="60" width="16" height="5" rx="2.5" fill="#2D3142"/>
-            <rect x="139" y="135" width="18" height="3" rx="1.5" fill="#444"/>
-            <circle cx="162" cy="60" r="4" fill="#00D26A" opacity="0.8">
-              <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-            </circle>
-          </g>
-          <!-- Floating coins -->
-          <circle cx="42" cy="48" r="8" fill="#00D26A" opacity="0.2" style="animation: sparkleAnim 3s ease-in-out infinite 0.5s;"/>
-          <text x="42" y="52" text-anchor="middle" fill="#00D26A" font-size="10" font-weight="bold" style="animation: sparkleAnim 3s ease-in-out infinite 0.5s;">$</text>
-          <circle cx="160" cy="155" r="6" fill="#00D26A" opacity="0.2" style="animation: sparkleAnim 3s ease-in-out infinite 1s;"/>
-          <text x="160" y="159" text-anchor="middle" fill="#00D26A" font-size="8" font-weight="bold" style="animation: sparkleAnim 3s ease-in-out infinite 1s;">$</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== HOW IT WORKS ====== -->
-  <section class="how-section" id="como-funciona">
-    <div class="how-header reveal">
-      <span class="label">Cómo funciona</span>
-      <h2>Tres pasos.<br>Un equipo nuevo.</h2>
-      <p>Evaluamos tu equipo gratis, te damos un precio justo y lo descontamos directo de tu compra. Simple como debe ser.</p>
+    <div class="est-step">
+      <div class="est-label">2. Modelo</div>
+      <select class="est-select" id="est-model" disabled>
+        <option value="">Selecciona un tipo primero</option>
+      </select>
     </div>
 
-    <div class="how-rail">
-      <div class="how-card reveal">
-        <div class="hc-step">1</div>
-        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-        <h3>Cotiza en línea o en tienda</h3>
-        <p>Selecciona tu modelo, indica la condición y recibe una cotización estimada al instante. También puedes visitarnos para evaluación presencial en cualquier sucursal.</p>
-      </div>
-      <div class="how-card reveal">
-        <div class="hc-step">2</div>
-        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-        <h3>Evaluación técnica</h3>
-        <p>Nuestros técnicos certificados inspeccionan tu equipo y confirman el valor real. Sin sorpresas — si no estás de acuerdo, te llevas tu equipo sin costo.</p>
-      </div>
-      <div class="how-card reveal">
-        <div class="hc-step">3</div>
-        <span class="hc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-        <h3>Elige tu equipo nuevo</h3>
-        <p>El crédito se aplica directo a tu compra. iPhone, MacBook, iPad, Apple Watch, AirPods — nuevos o reacondicionados con garantía. ¡Así de fácil!</p>
+    <div class="est-step">
+      <div class="est-label">3. Condición</div>
+      <div class="est-conditions" id="est-conditions">
+        <button class="est-cond-btn" data-pct="1">Excelente<span class="est-cond-pct">100%</span></button>
+        <button class="est-cond-btn" data-pct="0.7">Bueno<span class="est-cond-pct">70%</span></button>
+        <button class="est-cond-btn" data-pct="0.4">Regular<span class="est-cond-pct">40%</span></button>
       </div>
     </div>
-  </section>
 
-  <!-- ====== DEVICE CATEGORIES ====== -->
-  <section class="devices-section" id="equipos">
-    <div class="devices-header reveal">
-      <div>
-        <span class="label">Equipos aceptados</span>
-        <h2>¿Qué puedes<br>traer?</h2>
-      </div>
-      <p>Aceptamos una amplia gama de dispositivos Apple. Mientras más reciente y mejor cuidado, mayor es tu crédito. Aquí los rangos estimados.</p>
-    </div>
-
-    <div class="device-cats">
-      <div class="dcat reveal">
-        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-        <h3>iPhone</h3>
-        <p>Desde iPhone X hasta iPhone 14 Pro Max. Evaluamos almacenamiento, estado de batería, pantalla y cuerpo.</p>
-        <div class="dcat-models">
-          <span class="dcat-tag">iPhone X</span>
-          <span class="dcat-tag">iPhone Xr</span>
-          <span class="dcat-tag">iPhone Xs</span>
-          <span class="dcat-tag">iPhone 11</span>
-          <span class="dcat-tag">iPhone 11 Pro</span>
-          <span class="dcat-tag">iPhone 12</span>
-          <span class="dcat-tag">iPhone 12 Pro</span>
-          <span class="dcat-tag">iPhone 13</span>
-          <span class="dcat-tag">iPhone 13 Pro</span>
-          <span class="dcat-tag">iPhone 14</span>
-          <span class="dcat-tag">iPhone 14 Pro</span>
-        </div>
-        <div class="dcat-range">
-          <div class="dcat-range-label">Rango de crédito</div>
-          <div class="dcat-range-val">$40 – $350+</div>
-        </div>
-      </div>
-
-      <div class="dcat reveal">
-        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
-        <h3>MacBook</h3>
-        <p>MacBook Air y MacBook Pro Retina desde 2016. Evaluamos procesador, RAM, SSD, batería y estado general.</p>
-        <div class="dcat-models">
-          <span class="dcat-tag">Air 2018–2019</span>
-          <span class="dcat-tag">Pro Retina 2016–17</span>
-          <span class="dcat-tag">Pro Retina 2018–19</span>
-          <span class="dcat-tag">Pro Retina 2020</span>
-        </div>
-        <div class="dcat-range">
-          <div class="dcat-range-label">Rango de crédito</div>
-          <div class="dcat-range-val">$150 – $500+</div>
-        </div>
-      </div>
-
-      <div class="dcat reveal">
-        <span class="dcat-emoji anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-        <h3>iPad</h3>
-        <p>Desde iPad Mini 3 hasta iPad 7. Evaluamos almacenamiento, conectividad, estado de pantalla y cuerpo.</p>
-        <div class="dcat-models">
-          <span class="dcat-tag">iPad Mini 3</span>
-          <span class="dcat-tag">iPad 4</span>
-          <span class="dcat-tag">iPad Mini 4</span>
-          <span class="dcat-tag">iPad 5</span>
-          <span class="dcat-tag">iPad 6</span>
-          <span class="dcat-tag">iPad 7</span>
-        </div>
-        <div class="dcat-range">
-          <div class="dcat-range-label">Rango de crédito</div>
-          <div class="dcat-range-val">$40 – $200+</div>
-        </div>
+    <div class="est-result" id="est-result">
+      <div class="est-apple-price">Apple Trade-In: <span id="res-apple">$0</span></div>
+      <div class="est-smm-price" id="res-smm">$0</div>
+      <div class="est-badge" id="res-badge">+$0 más que Apple</div>
+      <div class="est-cta-row">
+        <a class="est-wa-btn" id="est-wa-link" href="https://wa.me/50769784955" target="_blank" rel="noopener">Confirmar por WhatsApp &rarr;</a>
+        <a class="est-link" href="#" onclick="openModal(); return false;">Ver todos los precios Apple Trade-In &rarr;</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== CONDITION TIERS ====== -->
-  <section class="condition-section" id="condicion">
-    <div class="condition-header reveal">
-      <span class="label">La condición importa</span>
-      <h2>Cuida tu equipo,<br>vale más.</h2>
-      <p>El estado de tu dispositivo determina cuánto crédito recibes. Estos son los tres niveles de evaluación.</p>
+<!-- ====== COMO FUNCIONA ====== -->
+<section class="como-section">
+  <h2 class="reveal">¿Cómo funciona?</h2>
+  <div class="como-grid">
+    <div class="como-card reveal">
+      <div class="como-icon">&#9889;</div>
+      <h3>Cotiza en línea</h3>
+      <p>Usa el estimador arriba y recibe tu crédito estimado al instante. Sin registro, sin complicaciones.</p>
+      <div class="como-time">30 seg</div>
     </div>
-
-    <div class="cond-tiers">
-      <div class="cond-card cc-excellent reveal">
-        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> RECOMENDADO</span>
-        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-        <h3>Excelente</h3>
-        <div class="cc-pct">100%</div>
-        <div class="cc-pct-label">del valor estimado</div>
-        <div class="cc-checks">
-          <div class="cc-check"><span class="cci">✓</span> Pantalla sin rayones ni manchas</div>
-          <div class="cc-check"><span class="cci">✓</span> Batería +80% de salud</div>
-          <div class="cc-check"><span class="cci">✓</span> Cuerpo sin golpes ni abolladuras</div>
-          <div class="cc-check"><span class="cci">✓</span> Todas las funciones operativas</div>
-          <div class="cc-check"><span class="cci">✓</span> Sin bloqueos de iCloud o MDM</div>
-        </div>
-      </div>
-
-      <div class="cond-card cc-good reveal">
-        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ACEPTABLE</span>
-        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></span>
-        <h3>Bueno</h3>
-        <div class="cc-pct">70%</div>
-        <div class="cc-pct-label">del valor estimado</div>
-        <div class="cc-checks">
-          <div class="cc-check"><span class="cci">✓</span> Rayones menores en pantalla</div>
-          <div class="cc-check"><span class="cci">✓</span> Batería +60% de salud</div>
-          <div class="cc-check"><span class="cci">✓</span> Marcas ligeras de uso</div>
-          <div class="cc-check"><span class="cci">✓</span> Funciones principales operativas</div>
-          <div class="cc-check"><span class="cci">✓</span> Sin bloqueos de iCloud o MDM</div>
-        </div>
-      </div>
-
-      <div class="cond-card cc-fair reveal">
-        <span class="cc-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> EVALUABLE</span>
-        <span class="cc-icon anim-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-        <h3>Regular</h3>
-        <div class="cc-pct">40%</div>
-        <div class="cc-pct-label">del valor estimado</div>
-        <div class="cc-checks">
-          <div class="cc-check"><span class="cci">~</span> Pantalla con daños visibles</div>
-          <div class="cc-check"><span class="cci">~</span> Batería degradada</div>
-          <div class="cc-check"><span class="cci">~</span> Golpes o abolladuras notorias</div>
-          <div class="cc-check"><span class="cci">~</span> Algunas funciones limitadas</div>
-          <div class="cc-check"><span class="cci">✓</span> Sin bloqueos de iCloud o MDM</div>
-        </div>
-      </div>
+    <div class="como-card reveal">
+      <div class="como-icon">&#9201;</div>
+      <h3>Trae tu equipo</h3>
+      <p>Visítanos en San Francisco o Bella Vista. Evaluación técnica rápida sin cita previa.</p>
+      <div class="como-time">~15 min</div>
     </div>
-  </section>
-
-  <!-- ====== ECO IMPACT ====== -->
-  <section class="eco-band reveal">
-    <div class="eco-inner">
-      <div class="eco-label">Impacto ambiental</div>
-      <h2>Cada trade-in<br>ayuda al planeta.</h2>
-      <div class="eco-stats">
-        <div class="eco-stat">
-          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
-          <div class="es-val">722 KG</div>
-          <div class="es-label">CO₂ ahorrado por dispositivo<br>reacondicionado</div>
-        </div>
-        <div class="eco-stat">
-          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
-          <div class="es-val">80+</div>
-          <div class="es-label">Minerales raros que<br>se reutilizan</div>
-        </div>
-        <div class="eco-stat">
-          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="11" y1="10" x2="11" y2="14"/></svg></span>
-          <div class="es-val">2X</div>
-          <div class="es-label">Vida útil extendida<br>del dispositivo</div>
-        </div>
-        <div class="eco-stat">
-          <span class="es-emoji anim-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-          <div class="es-val">0</div>
-          <div class="es-label">Equipos a la basura.<br>Les damos segunda vida</div>
-        </div>
-      </div>
+    <div class="como-card reveal">
+      <div class="como-icon">&#9989;</div>
+      <h3>Recibe tu crédito</h3>
+      <p>Aplícalo directamente a tu nuevo equipo. Te vas con tu nueva máquina el mismo día.</p>
+      <div class="como-time">El mismo día</div>
     </div>
-  </section>
+  </div>
+</section>
+<!-- ====== PRECIOS REALES ====== -->
+<section class="precios-section" id="precios">
+  <h2 class="reveal">Precios reales, no rangos vagos</h2>
+  <p class="precios-sub reveal">Siempre pagamos más que Apple. Garantizado.</p>
 
-  <!-- ====== COMPARISON ====== -->
-  <section class="compare-section" id="comparar">
-    <div class="compare-header reveal">
-      <span class="label">¿Por qué con nosotros?</span>
-      <h2>Trade-in vs.<br>Vender por tu cuenta.</h2>
-      <p>Compara las opciones y decide. Spoiler: es mucho más fácil con nosotros.</p>
+  <div class="tab-nav reveal" id="precios-tabs">
+    <button class="tab-btn active" data-tab="iphone-tab">iPhone</button>
+    <button class="tab-btn" data-tab="ipad-tab">iPad</button>
+    <button class="tab-btn" data-tab="mac-tab">Mac</button>
+    <button class="tab-btn" data-tab="watch-tab">Apple Watch</button>
+  </div>
+
+  <div class="tab-content active" id="iphone-tab">
+    <table class="price-table">
+      <thead><tr><th>Modelo</th><th>Apple Trade-In</th><th>Crédito SMM</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>iPhone 16 Pro Max</td><td>$650</td><td>$715</td></tr>
+        <tr class="highlight"><td>iPhone 16 Pro</td><td>$530</td><td>$585</td></tr>
+        <tr><td>iPhone 16 Plus</td><td>$440</td><td>$485</td></tr>
+        <tr><td>iPhone 16</td><td>$410</td><td>$455</td></tr>
+        <tr class="highlight"><td>iPhone 15 Pro Max</td><td>$450</td><td>$495</td></tr>
+        <tr><td>iPhone 15 Pro</td><td>$380</td><td>$420</td></tr>
+        <tr><td>iPhone 15</td><td>$300</td><td>$330</td></tr>
+        <tr><td>iPhone 14 Pro Max</td><td>$350</td><td>$385</td></tr>
+        <tr><td>iPhone 14 Pro</td><td>$280</td><td>$310</td></tr>
+        <tr><td>iPhone 13 Pro Max</td><td>$280</td><td>$310</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="ipad-tab">
+    <table class="price-table">
+      <thead><tr><th>Modelo</th><th>Apple Trade-In</th><th>Crédito SMM</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>iPad Pro (M4)</td><td>$685</td><td>$755</td></tr>
+        <tr class="highlight"><td>iPad Air (M2)</td><td>$400</td><td>$440</td></tr>
+        <tr><td>iPad mini (A17 Pro)</td><td>$255</td><td>$285</td></tr>
+        <tr><td>iPad (10th gen)</td><td>$170</td><td>$190</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="mac-tab">
+    <table class="price-table">
+      <thead><tr><th>Modelo</th><th>Apple Trade-In</th><th>Crédito SMM</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>MacBook Pro</td><td>$710</td><td>$785</td></tr>
+        <tr class="highlight"><td>MacBook Air</td><td>$470</td><td>$520</td></tr>
+        <tr><td>iMac</td><td>$375</td><td>$415</td></tr>
+        <tr><td>Mac mini</td><td>$340</td><td>$375</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="watch-tab">
+    <table class="price-table">
+      <thead><tr><th>Modelo</th><th>Apple Trade-In</th><th>Crédito SMM</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>Apple Watch Ultra 2</td><td>$335</td><td>$370</td></tr>
+        <tr><td>Apple Watch Series 10</td><td>$150</td><td>$165</td></tr>
+        <tr><td>Apple Watch Ultra</td><td>$225</td><td>$250</td></tr>
+        <tr><td>Apple Watch Series 9</td><td>$115</td><td>$130</td></tr>
+        <tr><td>Apple Watch Series 8</td><td>$85</td><td>$95</td></tr>
+        <tr><td>Apple Watch SE (2nd gen)</td><td>$55</td><td>$65</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="precios-btn-row reveal">
+    <button class="btn-secondary" onclick="openModal()">Ver tabla completa de precios &rarr;</button>
+  </div>
+</section>
+
+<!-- ====== SOCIAL PROOF ====== -->
+<section class="social-section">
+  <div class="stats-row">
+    <div class="stat-card reveal">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">trade-ins completados</div>
     </div>
-
-    <div class="compare-grid">
-      <div class="compare-card cmp-tradein reveal">
-        <span class="cmp-tag">✓ TRADE-IN SMM</span>
-        <h3>Trade-in con<br>Salva Mi Máquina</h3>
-        <ul class="cmp-list">
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Evaluación gratuita en minutos</li>
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Precio justo garantizado — sin regateo</li>
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Crédito aplicado directo a tu compra</li>
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Equipos nuevos y reacondicionados con garantía</li>
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Borrado seguro de tus datos personales</li>
-          <li class="cmp-item"><span class="cmp-ico">✓</span> Todo en un solo lugar, el mismo día</li>
-        </ul>
-      </div>
-
-      <div class="compare-card cmp-alone reveal">
-        <span class="cmp-tag">✕ VENTA PARTICULAR</span>
-        <h3>Vender por<br>tu cuenta</h3>
-        <ul class="cmp-list">
-          <li class="cmp-item"><span class="cmp-ico">—</span> Publicar anuncios, esperar compradores</li>
-          <li class="cmp-item"><span class="cmp-ico">—</span> Negociar precio con desconocidos</li>
-          <li class="cmp-item"><span class="cmp-ico">—</span> Riesgo de estafas o fraudes</li>
-          <li class="cmp-item"><span class="cmp-ico">—</span> Comprar el nuevo por separado</li>
-          <li class="cmp-item"><span class="cmp-ico">—</span> Tú eres responsable de borrar datos</li>
-          <li class="cmp-item"><span class="cmp-ico">—</span> Semanas o meses de proceso</li>
-        </ul>
-      </div>
+    <div class="stat-card reveal">
+      <div class="stat-num">4.8 &#9733;</div>
+      <div class="stat-label">en Google Reviews</div>
     </div>
-  </section>
-
-  <!-- ====== WHAT YOU CAN BUY ====== -->
-  <section class="buy-section" id="comprar">
-    <div class="buy-header reveal">
-      <span class="label">Tu siguiente equipo</span>
-      <h2>Elige tu<br>nuevo equipo.</h2>
-      <p>Tu crédito de trade-in se aplica a cualquier producto de nuestra tienda. Equipos nuevos, reacondicionados y accesorios con garantía.</p>
+    <div class="stat-card reveal">
+      <div class="stat-num">15 min</div>
+      <div class="stat-label">tiempo promedio</div>
     </div>
+  </div>
 
-    <div class="buy-grid">
-      <div class="buy-card reveal">
-        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-        <h4>iPhone</h4>
-        <p>Nuevos y reacondicionados</p>
-        <span class="bc-tag">iPhone 16 · 15 · 14</span>
+  <div class="testimonials-grid">
+    <div class="test-card reveal">
+      <div class="test-header">
+        <div class="test-avatar">MR</div>
+        <div><div class="test-name">Marco R.</div><div class="test-loc">San Francisco</div></div>
       </div>
-      <div class="buy-card reveal">
-        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
-        <h4>MacBook</h4>
-        <p>Air M4 · Pro M4</p>
-        <span class="bc-tag">Nuevos desde 2024</span>
-      </div>
-      <div class="buy-card reveal">
-        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-        <h4>iPad</h4>
-        <p>Nuevos y reacondicionados</p>
-        <span class="bc-tag">iPad · iPad Air</span>
-      </div>
-      <div class="buy-card reveal">
-        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/></svg></span>
-        <h4>Apple Watch</h4>
-        <p>Series 10 · SE · Ultra</p>
-        <span class="bc-tag">Nuevos en stock</span>
-      </div>
-      <div class="buy-card reveal">
-        <span class="bc-emoji anim-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
-        <h4>Accesorios</h4>
-        <p>AirPods · Teclados</p>
-        <span class="bc-tag">AirPods Pro 3</span>
-      </div>
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="test-quote">"Cambié mi iPhone 13 Pro y me dieron $70 más que Apple. Todo en 20 minutos. Super recomendado."</p>
     </div>
-  </section>
-
-  <!-- ====== FAQ ====== -->
-  <section class="faq-section" id="preguntas">
-    <div class="faq-header reveal">
-      <span class="label">Preguntas frecuentes</span>
-      <h2>¿Tienes dudas?</h2>
-      <p>Respuestas a lo que más nos preguntan sobre trade-in.</p>
+    <div class="test-card reveal">
+      <div class="test-header">
+        <div class="test-avatar">LC</div>
+        <div><div class="test-name">Laura C.</div><div class="test-loc">Bella Vista</div></div>
+      </div>
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="test-quote">"El estimador fue exacto. Llegué, me evaluaron el Mac y salí con mi crédito aplicado. Así de fácil."</p>
     </div>
+    <div class="test-card reveal">
+      <div class="test-header">
+        <div class="test-avatar">JP</div>
+        <div><div class="test-name">José P.</div><div class="test-loc">Costa del Este</div></div>
+      </div>
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <p class="test-quote">"Tenía un iPad con pantalla rota y aún así me dieron crédito. En Apple no lo aceptaban."</p>
+    </div>
+  </div>
+</section>
 
+<!-- ====== FAQ ====== -->
+<section class="faq-section" id="faq">
+  <h2 class="reveal">Preguntas frecuentes</h2>
+  <div class="faq-list">
     <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿Los precios de trade-in son fijos?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>La cotización en línea es estimada. El valor final se confirma tras la evaluación presencial en cualquiera de nuestras sucursales, donde verificamos estado de pantalla, batería, cuerpo y funcionalidad. Si no estás de acuerdo con el valor, te llevas tu equipo sin costo.</p></div>
+      <button class="faq-q">
+        &iquest;Aceptan equipos con iCloud bloqueado?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>No. El equipo debe estar desbloqueado de iCloud y con Find My desactivado. Esto es un requisito de seguridad para proteger al dueño original. Si necesitas ayuda para desbloquear tu cuenta, podemos guiarte en sucursal.</p></div>
     </div>
-
     <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿Qué pasa con mis datos personales?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>Antes del trade-in, te ayudamos a hacer respaldo y borrado seguro de todos tus datos. Nuestros procesos garantizan que tu información personal queda completamente eliminada del dispositivo.</p></div>
+      <button class="faq-q">
+        &iquest;Qué pasa con mis datos personales?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Antes de entregarnos tu equipo, te pedimos que hagas un respaldo y borres todo. En sucursal te ayudamos con el proceso si lo necesitas. Una vez recibido, hacemos un borrado certificado de fábrica.</p></div>
     </div>
-
     <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿Aceptan equipos con pantalla rota o dañados?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>Sí, aceptamos equipos con daños. El valor de trade-in será menor (generalmente 40% del valor estimado para condición regular), pero siempre le damos un valor a tu equipo. Lo importante es que no tenga bloqueo de iCloud o MDM activo.</p></div>
+      <button class="faq-q">
+        &iquest;Aceptan equipos con pantalla rota?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Sí. Equipos con daño cosmético o pantalla rota califican para crédito en la categoría "Regular" (40% del valor máximo). El estimador te muestra el precio exacto según la condición.</p></div>
     </div>
-
     <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿Puedo usar el crédito para cualquier producto?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>Sí. El crédito de trade-in se aplica a cualquier producto de nuestra tienda: iPhones, MacBooks, iPads, Apple Watch, AirPods, equipos Windows y accesorios. Tanto nuevos como reacondicionados con garantía.</p></div>
+      <button class="faq-q">
+        &iquest;Los precios del estimador son fijos?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Los precios son estimados basados en los valores actuales del mercado. El crédito final se confirma después de la evaluación técnica en sucursal, pero en el 95% de los casos el precio del estimador se mantiene.</p></div>
     </div>
+  </div>
+</section>
 
-    <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿Necesito cita previa?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>No necesitas cita. Puedes visitarnos en cualquiera de nuestras sucursales (San Francisco o Bella Vista) de lunes a viernes de 9am a 7pm y sábados de 9am a 5pm. La evaluación toma aproximadamente 15 minutos.</p></div>
-    </div>
-
-    <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        ¿No conozco el modelo de mi equipo. ¿Pueden ayudarme?
-        <span class="fq-toggle">+</span>
-      </div>
-      <div class="faq-a"><p>¡Claro! Tenemos una herramienta en línea para identificar tu modelo, o simplemente visítanos y nuestros técnicos lo identifican por ti en segundos. También puedes enviarnos foto por WhatsApp.</p></div>
-    </div>
-  </section>
-
-  <!-- ====== CTA ====== -->
-  <section class="cta-ti reveal">
-    <span class="label">¿Listo para cambiar?</span>
-    <h2>Tu equipo viejo<br><span class="accent">tiene valor.</span></h2>
-    <p>Cotiza ahora en línea o visítanos en cualquier sucursal. Evaluación gratis, precio justo y crédito inmediato para tu próximo equipo.</p>
-    <div class="cta-ti-btns">
-      <a href="https://www.salvamimaquina.com/trade_in/nuevo" class="btn-primary">Cotizar mi equipo →</a>
-      <a href="https://wa.me/+50769780206" class="btn-secondary">WhatsApp →</a>
-    </div>
-  </section>
-
+<!-- ====== CTA FINAL ====== -->
+<section class="cta-final">
+  <h2 class="reveal">Cotiza en 30 segundos</h2>
+  <p class="cta-final-sub reveal">Tu equipo viejo tiene más valor del que crees.</p>
+  <div class="cta-btns reveal">
+    <a href="#estimador" class="btn-primary">Usar el estimador &uarr;</a>
+    <a href="https://wa.me/50769784955" target="_blank" rel="noopener" class="btn-secondary">WhatsApp directo</a>
+  </div>
+  <p class="cta-info reveal">L&ndash;S 9am&ndash;6pm &middot; San Francisco: 394-9351 &middot; Bella Vista: 203-2055</p>
+</section>
+<!-- ====== FOOTER ====== -->
 <footer>
   <div class="footer-inner">
   <div class="footer-grid">
@@ -1973,15 +927,15 @@
     <div class="footer-col">
       <h5>Ubicaciones</h5>
       <ul>
-        <li>San Francisco — Tel: 394-9351</li>
-        <li>Bella Vista — Tel: 203-2055</li>
+        <li>San Francisco &mdash; Tel: 394-9351</li>
+        <li>Bella Vista &mdash; Tel: 203-2055</li>
         <li>Cel: 6978-0206</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>"Mac", "iPhone", "iPad", "Apple Watch" son marcas registradas de Apple Inc.</p>
-    <p>© 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Salva Mi Máquina. Todos los derechos reservados.</p>
     <div class="footer-socials">
       <a href="https://www.facebook.com/SalvaMiMaquina/" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
       <a href="https://www.instagram.com/salvamimaquina/" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
@@ -1997,33 +951,288 @@
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
+<!-- ====== MODAL PRECIOS ====== -->
+<div class="modal-overlay" id="modal-precios">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2>Precios Apple Trade-In vs Crédito SMM</h2>
+    <p class="modal-meta">Última actualización: 27 de febrero de 2026 &middot; <a href="https://www.apple.com/shop/trade-in" target="_blank" rel="noopener">Verificar en apple.com/shop/trade-in &rarr;</a></p>
 
-  <!-- ====== SCRIPTS ====== -->
-  <script>
-    // Scroll reveal
-    const els = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(el => obs.observe(el));
+    <div class="tab-nav" id="modal-tabs">
+      <button class="tab-btn active" data-tab="m-iphone">iPhone</button>
+      <button class="tab-btn" data-tab="m-ipad">iPad</button>
+      <button class="tab-btn" data-tab="m-mac">Mac</button>
+      <button class="tab-btn" data-tab="m-watch">Apple Watch</button>
+    </div>
 
-    // Navbar scroll
-    const navEl = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      navEl.style.background = window.scrollY > 60 ? 'rgba(251, 251, 253, 0.88)' : 'rgba(251, 251, 253, 0.72)';
-    });
+    <div class="tab-content active" id="m-iphone">
+      <table class="modal-table">
+        <thead><tr><th>Modelo</th><th>Apple</th><th>SMM</th><th>Bonus</th></tr></thead>
+        <tbody>
+          <tr><td>iPhone 16 Pro Max</td><td>$650</td><td>$715</td><td>+$65</td></tr>
+          <tr><td>iPhone 16 Pro</td><td>$530</td><td>$585</td><td>+$55</td></tr>
+          <tr><td>iPhone 16 Plus</td><td>$440</td><td>$485</td><td>+$45</td></tr>
+          <tr><td>iPhone 16</td><td>$410</td><td>$455</td><td>+$45</td></tr>
+          <tr><td>iPhone 15 Pro Max</td><td>$450</td><td>$495</td><td>+$45</td></tr>
+          <tr><td>iPhone 15 Pro</td><td>$380</td><td>$420</td><td>+$40</td></tr>
+          <tr><td>iPhone 15 Plus</td><td>$320</td><td>$355</td><td>+$35</td></tr>
+          <tr><td>iPhone 15</td><td>$300</td><td>$330</td><td>+$30</td></tr>
+          <tr><td>iPhone 14 Pro Max</td><td>$350</td><td>$385</td><td>+$35</td></tr>
+          <tr><td>iPhone 14 Pro</td><td>$280</td><td>$310</td><td>+$30</td></tr>
+          <tr><td>iPhone 14 Plus</td><td>$230</td><td>$255</td><td>+$25</td></tr>
+          <tr><td>iPhone 14</td><td>$210</td><td>$235</td><td>+$25</td></tr>
+          <tr><td>iPhone SE (3rd gen)</td><td>$80</td><td>$90</td><td>+$10</td></tr>
+          <tr><td>iPhone 13 Pro Max</td><td>$280</td><td>$310</td><td>+$30</td></tr>
+          <tr><td>iPhone 13 Pro</td><td>$230</td><td>$255</td><td>+$25</td></tr>
+          <tr><td>iPhone 13</td><td>$180</td><td>$200</td><td>+$20</td></tr>
+          <tr><td>iPhone 13 mini</td><td>$140</td><td>$155</td><td>+$15</td></tr>
+          <tr><td>iPhone 12 Pro Max</td><td>$210</td><td>$235</td><td>+$25</td></tr>
+          <tr><td>iPhone 12 Pro</td><td>$160</td><td>$180</td><td>+$20</td></tr>
+          <tr><td>iPhone 12</td><td>$120</td><td>$135</td><td>+$15</td></tr>
+          <tr><td>iPhone 12 mini</td><td>$80</td><td>$90</td><td>+$10</td></tr>
+          <tr><td>iPhone SE (2nd gen)</td><td>$50</td><td>$55</td><td>+$5</td></tr>
+          <tr><td>iPhone 11 Pro Max</td><td>$140</td><td>$155</td><td>+$15</td></tr>
+          <tr><td>iPhone 11 Pro</td><td>$120</td><td>$135</td><td>+$15</td></tr>
+          <tr><td>iPhone 11</td><td>$100</td><td>$110</td><td>+$10</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        const t = document.querySelector(this.getAttribute('href'));
-        if (t) {
-          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          document.querySelector('.nav-links').classList.remove('mobile-open');
-        }
+    <div class="tab-content" id="m-ipad">
+      <table class="modal-table">
+        <thead><tr><th>Modelo</th><th>Apple</th><th>SMM</th><th>Bonus</th></tr></thead>
+        <tbody>
+          <tr><td>iPad Pro (M4)</td><td>$685</td><td>$755</td><td>+$70</td></tr>
+          <tr><td>iPad Air (M2)</td><td>$400</td><td>$440</td><td>+$40</td></tr>
+          <tr><td>iPad mini (A17 Pro)</td><td>$255</td><td>$285</td><td>+$30</td></tr>
+          <tr><td>iPad (10th gen)</td><td>$170</td><td>$190</td><td>+$20</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="m-mac">
+      <table class="modal-table">
+        <thead><tr><th>Modelo</th><th>Apple</th><th>SMM</th><th>Bonus</th></tr></thead>
+        <tbody>
+          <tr><td>MacBook Pro</td><td>$710</td><td>$785</td><td>+$75</td></tr>
+          <tr><td>MacBook Air</td><td>$470</td><td>$520</td><td>+$50</td></tr>
+          <tr><td>iMac</td><td>$375</td><td>$415</td><td>+$40</td></tr>
+          <tr><td>Mac mini</td><td>$340</td><td>$375</td><td>+$35</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="m-watch">
+      <table class="modal-table">
+        <thead><tr><th>Modelo</th><th>Apple</th><th>SMM</th><th>Bonus</th></tr></thead>
+        <tbody>
+          <tr><td>Apple Watch Ultra 2</td><td>$335</td><td>$370</td><td>+$35</td></tr>
+          <tr><td>Apple Watch Series 10</td><td>$150</td><td>$165</td><td>+$15</td></tr>
+          <tr><td>Apple Watch Ultra</td><td>$225</td><td>$250</td><td>+$25</td></tr>
+          <tr><td>Apple Watch Series 9</td><td>$115</td><td>$130</td><td>+$15</td></tr>
+          <tr><td>Apple Watch Series 8</td><td>$85</td><td>$95</td><td>+$10</td></tr>
+          <tr><td>Apple Watch SE (2nd gen)</td><td>$55</td><td>$65</td><td>+$10</td></tr>
+          <tr><td>Apple Watch Series 7</td><td>$60</td><td>$70</td><td>+$10</td></tr>
+          <tr><td>Apple Watch Series 6</td><td>$45</td><td>$50</td><td>+$5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-footer">
+      <a class="modal-apple-link" href="https://www.apple.com/shop/trade-in" target="_blank" rel="noopener">&#127822; Ir a Apple Trade-In oficial &rarr;</a>
+    </div>
+  </div>
+</div>
+<!-- ====== SCRIPTS ====== -->
+<script>
+  // ===== TRADE-IN PRICE DATA =====
+  const tradeInData = {
+    iphone: [
+      { model: 'iPhone 16 Pro Max', apple: 650, smm: 715 },
+      { model: 'iPhone 16 Pro', apple: 530, smm: 585 },
+      { model: 'iPhone 16 Plus', apple: 440, smm: 485 },
+      { model: 'iPhone 16', apple: 410, smm: 455 },
+      { model: 'iPhone 15 Pro Max', apple: 450, smm: 495 },
+      { model: 'iPhone 15 Pro', apple: 380, smm: 420 },
+      { model: 'iPhone 15 Plus', apple: 320, smm: 355 },
+      { model: 'iPhone 15', apple: 300, smm: 330 },
+      { model: 'iPhone 14 Pro Max', apple: 350, smm: 385 },
+      { model: 'iPhone 14 Pro', apple: 280, smm: 310 },
+      { model: 'iPhone 14 Plus', apple: 230, smm: 255 },
+      { model: 'iPhone 14', apple: 210, smm: 235 },
+      { model: 'iPhone SE (3rd gen)', apple: 80, smm: 90 },
+      { model: 'iPhone 13 Pro Max', apple: 280, smm: 310 },
+      { model: 'iPhone 13 Pro', apple: 230, smm: 255 },
+      { model: 'iPhone 13', apple: 180, smm: 200 },
+      { model: 'iPhone 13 mini', apple: 140, smm: 155 },
+      { model: 'iPhone 12 Pro Max', apple: 210, smm: 235 },
+      { model: 'iPhone 12 Pro', apple: 160, smm: 180 },
+      { model: 'iPhone 12', apple: 120, smm: 135 },
+      { model: 'iPhone 12 mini', apple: 80, smm: 90 },
+      { model: 'iPhone SE (2nd gen)', apple: 50, smm: 55 },
+      { model: 'iPhone 11 Pro Max', apple: 140, smm: 155 },
+      { model: 'iPhone 11 Pro', apple: 120, smm: 135 },
+      { model: 'iPhone 11', apple: 100, smm: 110 }
+    ],
+    ipad: [
+      { model: 'iPad Pro (M4)', apple: 685, smm: 755 },
+      { model: 'iPad Air (M2)', apple: 400, smm: 440 },
+      { model: 'iPad mini (A17 Pro)', apple: 255, smm: 285 },
+      { model: 'iPad (10th gen)', apple: 170, smm: 190 }
+    ],
+    mac: [
+      { model: 'MacBook Pro', apple: 710, smm: 785 },
+      { model: 'MacBook Air', apple: 470, smm: 520 },
+      { model: 'iMac', apple: 375, smm: 415 },
+      { model: 'Mac mini', apple: 340, smm: 375 }
+    ],
+    watch: [
+      { model: 'Apple Watch Ultra 2', apple: 335, smm: 370 },
+      { model: 'Apple Watch Series 10', apple: 150, smm: 165 },
+      { model: 'Apple Watch Ultra', apple: 225, smm: 250 },
+      { model: 'Apple Watch Series 9', apple: 115, smm: 130 },
+      { model: 'Apple Watch Series 8', apple: 85, smm: 95 },
+      { model: 'Apple Watch SE (2nd gen)', apple: 55, smm: 65 },
+      { model: 'Apple Watch Series 7', apple: 60, smm: 70 },
+      { model: 'Apple Watch Series 6', apple: 45, smm: 50 }
+    ]
+  };
+
+  // ===== ESTIMATOR =====
+  let selectedType = null;
+  let selectedModel = null;
+  let selectedCondition = null;
+
+  const typeButtons = document.querySelectorAll('#est-types .est-type-btn');
+  const modelSelect = document.getElementById('est-model');
+  const condButtons = document.querySelectorAll('#est-conditions .est-cond-btn');
+  const resultDiv = document.getElementById('est-result');
+
+  typeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedType = btn.dataset.type;
+      selectedModel = null;
+      selectedCondition = null;
+      resultDiv.classList.remove('show');
+      condButtons.forEach(b => b.classList.remove('active'));
+
+      const models = tradeInData[selectedType];
+      modelSelect.disabled = false;
+      modelSelect.innerHTML = '<option value="">Selecciona tu modelo</option>';
+      models.forEach((m, i) => {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = m.model;
+        modelSelect.appendChild(opt);
       });
     });
-  </script>
+  });
+
+  modelSelect.addEventListener('change', () => {
+    if (modelSelect.value === '') { selectedModel = null; resultDiv.classList.remove('show'); return; }
+    selectedModel = tradeInData[selectedType][parseInt(modelSelect.value)];
+    updateResult();
+  });
+
+  condButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      condButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCondition = parseFloat(btn.dataset.pct);
+      updateResult();
+    });
+  });
+
+  function updateResult() {
+    if (!selectedModel || selectedCondition === null) return;
+
+    const applePrice = Math.round(selectedModel.apple * selectedCondition);
+    const smmPrice = Math.round(selectedModel.smm * selectedCondition);
+    const bonus = smmPrice - applePrice;
+
+    document.getElementById('res-apple').textContent = '$' + applePrice;
+    document.getElementById('res-smm').textContent = '$' + smmPrice;
+    document.getElementById('res-badge').textContent = '+$' + bonus + ' más que Apple';
+
+    const condText = selectedCondition === 1 ? 'Excelente' : selectedCondition === 0.7 ? 'Bueno' : 'Regular';
+    const msg = encodeURIComponent('¡Hola! Quiero hacer trade-in de mi ' + selectedModel.model + ' en condición ' + condText + '. El estimador me dio un crédito de $' + smmPrice + '. Quiero confirmar.');
+    document.getElementById('est-wa-link').href = 'https://wa.me/50769784955?text=' + msg;
+
+    resultDiv.classList.add('show');
+  }
+
+  // ===== TABS =====
+  function setupTabs(navId) {
+    const nav = document.getElementById(navId);
+    if (!nav) return;
+    const btns = nav.querySelectorAll('.tab-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const parent = nav.closest('section') || nav.closest('.modal-box');
+        parent.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        const target = document.getElementById(btn.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
+  }
+  setupTabs('precios-tabs');
+  setupTabs('modal-tabs');
+
+  // ===== FAQ =====
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(fi => fi.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ===== MODAL =====
+  function openModal() {
+    document.getElementById('modal-precios').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal-precios').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal-precios').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ===== SCROLL REVEAL =====
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ===== NAVBAR SCROLL =====
+  const navEl = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) navEl.classList.add('scrolled');
+    else navEl.classList.remove('scrolled');
+  });
+
+  // ===== SMOOTH SCROLL =====
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) {
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector('.nav-links').classList.remove('mobile-open');
+      }
+    });
+  });
+</script>
 </body>
 </html>
